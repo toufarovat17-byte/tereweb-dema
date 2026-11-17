@@ -1,0 +1,114 @@
+{
+ "firma": "Zemní práce Menzi Muck",
+ "mesto": "Budyně nad Ohří",
+ "telefon": "+420 777 089 325",
+ "email": "info@menzi-muck.cz",
+ "adresa": "Břežany nad Ohří 86, Budyně nad Ohří",
+ "logo_url": "",
+ "theme": {
+  "bg": "#EEEEEC",
+  "dark": "#22252A",
+  "dark2": "#33373E",
+  "acc": "#E2A400",
+  "accl": "#F5D36B",
+  "soft": "#B8BCC4"
+ },
+ "headline": "Zemní práce kráčivými rypadly i v těžkém terénu.",
+ "lead": "Pracujeme kráčivými rypadly Menzi Muck na svazích, u vodních toků i v rozbahněném terénu, kam se běžný bagr nedostane.",
+ "cta": "Poslat poptávku",
+ "facts": [
+  {
+   "b": "Kráčivá rypadla",
+   "t": "svahy, vodní toky, bahno"
+  },
+  {
+   "b": "Šetrně k okolí",
+   "t": "i v chráněných oblastech"
+  }
+ ],
+ "widget": {
+  "title": "Poptávka zemních prací",
+  "sub": "Vyberte a pošlete poptávku za pár vteřin.",
+  "questions": [
+   {
+    "label": "Typ práce",
+    "options": [
+     "Vodní tok / rybník",
+     "Výkopy a sítě",
+     "Svahování",
+     "Demolice"
+    ]
+   },
+   {
+    "label": "Terén",
+    "options": [
+     "Svah",
+     "Podmáčený",
+     "Běžný"
+    ]
+   },
+   {
+    "label": "Kdy",
+    "options": [
+     "Co nejdřív",
+     "Do měsíce",
+     "Plánuji"
+    ]
+   }
+  ]
+ },
+ "services_title": "Co pro vás uděláme",
+ "services_sub": "Práce tam, kam se jiný stroj nedostane.",
+ "services": [
+  {
+   "t": "Vodní toky a rybníky",
+   "d": "Úpravy a rekonstrukce toků, odbahnění rybníků a podmáčených pozemků."
+  },
+  {
+   "t": "Výkopové práce",
+   "d": "Kompletní výkopy včetně sítí vedených v zemi."
+  },
+  {
+   "t": "Svahování a terénní úpravy",
+   "d": "Úpravy svahů, rekultivace a renaturalizace."
+  },
+  {
+   "t": "Bourání a demolice",
+   "d": "Demolice a stavby i opravy těžkých rovnanin."
+  }
+ ],
+ "highlights": [
+  {
+   "t": "Proč kráčivé rypadlo",
+   "d": "Každou nohu stroje lze nastavit zvlášť, takže zvládne svahy, vodní toky i rozbahněný terén a půdu přitom zatíží co nejméně."
+  }
+ ],
+ "steps_sub": "Od prohlídky terénu po hotovou práci.",
+ "steps": [
+  {
+   "t": "Poptávka",
+   "d": "Popíšete, co a kde je potřeba udělat."
+  },
+  {
+   "t": "Prohlídka",
+   "d": "Podíváme se na terén a navrhneme postup."
+  },
+  {
+   "t": "Realizace",
+   "d": "Přivezeme stroj a práci provedeme v domluveném termínu."
+  },
+  {
+   "t": "Předání",
+   "d": "Místo uklidíme a předáme hotovou práci."
+  }
+ ],
+ "gallery": [
+  "Vodní toky",
+  "Svahy",
+  "Odbahnění",
+  "Výkopy"
+ ],
+ "contact_title": "Máte náročný terén?",
+ "contact_sub": "Zavolejte nebo napište, ozveme se co nejdřív.",
+ "form_placeholder": "Např. odbahnění rybníka, cca 0,5 ha"
+}

@@ -1,0 +1,102 @@
+{
+ "firma": "Kosmetický salon Lucie",
+ "mesto": "Buštěhrad",
+ "telefon": "+420 776 700 058",
+ "email": "stulcovalucka@seznam.cz",
+ "adresa": "Hutnická 505/6, Buštěhrad",
+ "logo_url": "",
+ "theme": {
+  "bg": "#F4EFEE",
+  "dark": "#4A2433",
+  "dark2": "#5E3243",
+  "acc": "#C46A86",
+  "accl": "#F0C3D0",
+  "soft": "#D9BDC6"
+ },
+ "headline": "Kosmetika, manikúra a pedikúra v Buštěhradu.",
+ "lead": "Kosmetické ošetření, manikúra, pedikúra a parafínové zábaly. Udělejte si chvíli čas pro sebe a nechte se hýčkat.",
+ "cta": "Objednat se",
+ "facts": [
+  {
+   "b": "Kosmetika i nehty",
+   "t": "vše na jednom místě"
+  },
+  {
+   "b": "I večer a o víkendu",
+   "t": "otevřeno do večera"
+  }
+ ],
+ "widget": {
+  "title": "Objednávka termínu",
+  "sub": "Vyberte a pošlete poptávku za pár vteřin.",
+  "questions": [
+   {
+    "label": "Služba",
+    "options": [
+     "Kosmetika",
+     "Manikúra / gellak",
+     "Pedikúra",
+     "Parafínový zábal"
+    ]
+   },
+   {
+    "label": "Kdy se vám hodí",
+    "options": [
+     "Dopoledne",
+     "Odpoledne",
+     "Večer",
+     "Víkend"
+    ]
+   }
+  ]
+ },
+ "services_title": "Co pro vás uděláme",
+ "services_sub": "Péče o pleť, ruce i nohy.",
+ "services": [
+  {
+   "t": "Kosmetické ošetření",
+   "d": "Ošetření pleti podle toho, co zrovna potřebuje."
+  },
+  {
+   "t": "Manikúra a gellak",
+   "d": "Manikúra, gellak i japonská manikúra P-shine."
+  },
+  {
+   "t": "Pedikúra",
+   "d": "Péče o chodidla a nehty na nohou."
+  },
+  {
+   "t": "Parafínové zábaly",
+   "d": "Zábaly pro hebké a vyživené ruce."
+  }
+ ],
+ "highlights": [],
+ "steps_sub": "Jednoduše od objednání po odpočinek.",
+ "steps": [
+  {
+   "t": "Objednáte se",
+   "d": "Zavoláte nebo pošlete poptávku přes web."
+  },
+  {
+   "t": "Termín",
+   "d": "Domluvíme čas, který se vám hodí."
+  },
+  {
+   "t": "Ošetření",
+   "d": "Postaráme se o vás v klidu a pohodě."
+  },
+  {
+   "t": "Doporučení",
+   "d": "Poradíme, jak o sebe pečovat i doma."
+  }
+ ],
+ "gallery": [
+  "Salon",
+  "Manikúra",
+  "Pedikúra",
+  "Kosmetika"
+ ],
+ "contact_title": "Chcete se objednat?",
+ "contact_sub": "Zavolejte nebo napište, ozveme se co nejdřív.",
+ "form_placeholder": "Např. gellak a pedikúra, nejlépe ve čtvrtek večer"
+}
