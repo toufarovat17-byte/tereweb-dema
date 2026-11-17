@@ -1,0 +1,40 @@
+{
+ "firma": "Instalatérství Zdeněk Balaj",
+ "mesto": "Budišov nad Budišovkou",
+ "telefon": "+420 603 752 895",
+ "email": "zdenekbalaj@seznam.cz",
+ "logo_url": "",
+ "theme": {"bg": "#EDF0F3", "dark": "#14324A", "dark2": "#1F4766", "acc": "#2F7FC1", "accl": "#9FD0F5", "soft": "#B4C8D8"},
+ "headline": "Voda, topení a plyn v Budišově a okolí.",
+ "lead": "Opravy, montáže i revize plynu. Přijedeme, poradíme a uděláme to pořádně.",
+ "cta": "Poslat poptávku",
+ "facts": [{"b": "Voda, topení, plyn", "t": "vše od jednoho řemeslníka"}, {"b": "Budišov a okolí", "t": "přijedeme k vám"}],
+ "widget": {
+  "title": "Co potřebujete?",
+  "sub": "Vyberte a pošlete poptávku za pár vteřin.",
+  "questions": [
+   {"label": "Typ práce", "options": ["Oprava", "Nová montáž", "Revize plynu"]},
+   {"label": "Týká se", "options": ["Voda", "Topení", "Plyn"]},
+   {"label": "Kdy", "options": ["Co nejdřív", "Do týdne", "Nespěchá"]}
+  ]
+ },
+ "services_title": "Co pro vás uděláme",
+ "services_sub": "Malé opravy i kompletní rozvody.",
+ "services": [
+  {"t": "Voda", "d": "Rozvody, baterie, odpady a výměna bojlerů."},
+  {"t": "Topení", "d": "Montáž a servis kotlů, radiátorů a rozvodů."},
+  {"t": "Plyn", "d": "Plynové rozvody, připojení spotřebičů a revize."}
+ ],
+ "highlights": [],
+ "steps_sub": "Jednoduše a bez zbytečného čekání.",
+ "steps": [
+  {"t": "Zavoláte", "d": "Popíšete, co se děje nebo co potřebujete."},
+  {"t": "Prohlídka", "d": "Přijedeme a domluvíme řešení i cenu."},
+  {"t": "Práce", "d": "Uděláme to v domluveném termínu."},
+  {"t": "Hotovo", "d": "Vše vyzkoušíme a uklidíme po sobě."}
+ ],
+ "gallery": ["Koupelny", "Kotle", "Rozvody"],
+ "contact_title": "Potřebujete instalatéra?",
+ "contact_sub": "Zavolejte nebo napište, ozveme se co nejdřív.",
+ "form_placeholder": "Např. kape baterie v kuchyni, Budišov"
+}
