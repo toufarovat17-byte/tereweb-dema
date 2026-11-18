@@ -1,0 +1,110 @@
+{
+ "firma": "MP Steel",
+ "mesto": "Buštěhrad",
+ "adresa": "V Palandě 261/2, Buštěhrad",
+ "telefon": "+420 736 763 990",
+ "email": "pulec.m@seznam.cz",
+ "logo_url": "",
+ "theme": {
+  "bg": "#EEEEEC",
+  "dark": "#22252A",
+  "dark2": "#33373E",
+  "acc": "#E2A400",
+  "accl": "#F5D36B",
+  "soft": "#B8BCC4"
+ },
+ "headline": "Zakázková kovovýroba a svářečské práce v Buštěhradu.",
+ "lead": "Vyrobíme zábradlí, přístřešky, kotce, vozíky i atypické konstrukce přesně podle vašich potřeb.",
+ "cta": "Poptat výrobu",
+ "facts": [
+  {
+   "b": "Výroba na zakázku",
+   "t": "kusově i atypicky"
+  },
+  {
+   "b": "Buštěhrad a okolí",
+   "t": "Kladensko a okolí"
+  }
+ ],
+ "widget": {
+  "title": "Poptávka kovovýroby",
+  "sub": "Vyberte, co potřebujete, a pošlete poptávku.",
+  "questions": [
+   {
+    "label": "Co vyrobit",
+    "options": [
+     "Zábradlí",
+     "Přístřešek nebo stříška",
+     "Kotec nebo box",
+     "Jiná konstrukce"
+    ]
+   },
+   {
+    "label": "Materiál",
+    "options": [
+     "Ocel",
+     "Nerez",
+     "Hliník",
+     "Poradíte mi"
+    ]
+   },
+   {
+    "label": "Kdy",
+    "options": [
+     "Co nejdřív",
+     "Do měsíce",
+     "Nespěchá"
+    ]
+   }
+  ]
+ },
+ "services_title": "Co vyrábíme",
+ "services_sub": "Zakázková kovovýroba a svařování.",
+ "services": [
+  {
+   "t": "Zábradlí",
+   "d": "Kovová zábradlí na schody, balkony i terasy."
+  },
+  {
+   "t": "Přístřešky a stříšky",
+   "d": "Přístřešky nad vchodové dveře a další kovové konstrukce."
+  },
+  {
+   "t": "Kotce, boxy a vozíky",
+   "d": "Kotce, přepravní boxy, přívěsné vozíky i překážky pro výcvik."
+  },
+  {
+   "t": "Atypická výroba",
+   "d": "Stojany do obchodů, lávky, hliníkové nájezdy pro vozíčkáře a další."
+  }
+ ],
+ "highlights": [],
+ "steps_sub": "Od nápadu po hotový výrobek.",
+ "steps": [
+  {
+   "t": "Poptávka",
+   "d": "Pošlete nám, co potřebujete, ideálně i s rozměry nebo fotkou."
+  },
+  {
+   "t": "Návrh a cena",
+   "d": "Domluvíme provedení, materiál a cenu."
+  },
+  {
+   "t": "Výroba",
+   "d": "Vyrobíme a svaříme v dílně."
+  },
+  {
+   "t": "Předání",
+   "d": "Výrobek předáme nebo namontujeme na místě."
+  }
+ ],
+ "gallery": [
+  "Zábradlí",
+  "Přístřešky",
+  "Kotce a boxy",
+  "Atypické konstrukce"
+ ],
+ "contact_title": "Potřebujete něco vyrobit z kovu?",
+ "contact_sub": "Napište nebo zavolejte, ozveme se co nejdřív.",
+ "form_placeholder": "Např. zábradlí na terasu, délka 6 m"
+}

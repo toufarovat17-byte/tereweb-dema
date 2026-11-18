@@ -1,0 +1,109 @@
+{
+ "firma": "Petr Moucha",
+ "mesto": "Buštěhrad",
+ "adresa": "Liliová 746, Buštěhrad",
+ "telefon": "+420 731 518 444",
+ "email": "pemouch@seznam.cz",
+ "logo_url": "",
+ "theme": {
+  "bg": "#ECEAE4",
+  "dark": "#1F3A2E",
+  "dark2": "#2C5140",
+  "acc": "#C08A55",
+  "accl": "#E2C29C",
+  "soft": "#B9CBBF"
+ },
+ "headline": "Truhlářské práce v Buštěhradu a okolí.",
+ "lead": "Vyrobíme nábytek na míru, opravíme i namontujeme. Stačí zavolat a domluvíme se.",
+ "cta": "Poslat poptávku",
+ "facts": [
+  {
+   "b": "Truhlářské práce",
+   "t": "výroba, opravy i montáž"
+  },
+  {
+   "b": "Dle domluvy",
+   "t": "termín přizpůsobíme vám"
+  }
+ ],
+ "widget": {
+  "title": "Poptávka truhlářských prací",
+  "sub": "Vyberte a pošlete poptávku za pár vteřin.",
+  "questions": [
+   {
+    "label": "Co potřebujete",
+    "options": [
+     "Nábytek na míru",
+     "Oprava",
+     "Montáž"
+    ]
+   },
+   {
+    "label": "Kam",
+    "options": [
+     "Kuchyně",
+     "Pokoj nebo ložnice",
+     "Předsíň",
+     "Jinam"
+    ]
+   },
+   {
+    "label": "Kdy",
+    "options": [
+     "Co nejdřív",
+     "Do 3 měsíců",
+     "Nespěchá"
+    ]
+   }
+  ]
+ },
+ "services_title": "Co pro vás uděláme",
+ "services_sub": "Poctivá práce se dřevem.",
+ "services": [
+  {
+   "t": "Nábytek na míru",
+   "d": "Skříně, police a další nábytek přesně do vašeho prostoru."
+  },
+  {
+   "t": "Kuchyňské linky",
+   "d": "Kuchyně podle rozměrů vaší místnosti."
+  },
+  {
+   "t": "Opravy a úpravy",
+   "d": "Opravíme nebo upravíme stávající nábytek."
+  },
+  {
+   "t": "Montáž",
+   "d": "Nábytek dovezeme a namontujeme na místě."
+  }
+ ],
+ "highlights": [],
+ "steps_sub": "Od zaměření po hotový kus.",
+ "steps": [
+  {
+   "t": "Zavoláte",
+   "d": "Popíšete, co byste potřebovali."
+  },
+  {
+   "t": "Zaměření",
+   "d": "Přijedeme, zaměříme a domluvíme materiál i cenu."
+  },
+  {
+   "t": "Výroba",
+   "d": "Vyrobíme v dílně v domluveném termínu."
+  },
+  {
+   "t": "Montáž",
+   "d": "Dovezeme, namontujeme a uklidíme po sobě."
+  }
+ ],
+ "gallery": [
+  "Nábytek na míru",
+  "Kuchyně",
+  "Skříně",
+  "Opravy"
+ ],
+ "contact_title": "Potřebujete truhláře?",
+ "contact_sub": "Zavolejte nebo napište, ozveme se co nejdřív.",
+ "form_placeholder": "Např. vestavěná skříň do předsíně, šířka 2 m"
+}

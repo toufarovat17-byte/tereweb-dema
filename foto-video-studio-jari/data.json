@@ -1,0 +1,115 @@
+{
+ "firma": "FOTO VIDEO STUDIO JARI",
+ "mesto": "Buštěhrad",
+ "adresa": "Ořešín 920, Buštěhrad",
+ "telefon": "+420 777 268 289",
+ "email": "jarmila@riesova.cz",
+ "logo_url": "",
+ "theme": {
+  "bg": "#ECEBE8",
+  "dark": "#2C2A28",
+  "dark2": "#3E3B38",
+  "acc": "#A0825D",
+  "accl": "#DCC9AE",
+  "soft": "#C2BCB4"
+ },
+ "headline": "Fotografie, video a digitalizace z Buštěhradu.",
+ "lead": "Fotoreportáže, portréty, fotografování dětí, videoprezentace i digitalizace starých filmů a kazet VHS.",
+ "cta": "Objednat focení",
+ "facts": [
+  {
+   "b": "Foto i video",
+   "t": "od portrétu po reportáž"
+  },
+  {
+   "b": "Digitalizace",
+   "t": "filmy, VHS i staré fotografie"
+  }
+ ],
+ "widget": {
+  "title": "Co potřebujete?",
+  "sub": "Vyberte službu a pošlete poptávku.",
+  "questions": [
+   {
+    "label": "Služba",
+    "options": [
+     "Focení",
+     "Video",
+     "Digitalizace VHS a filmů",
+     "Renovace fotografií"
+    ]
+   },
+   {
+    "label": "Příležitost",
+    "options": [
+     "Portrét",
+     "Děti",
+     "Obřad nebo akce",
+     "Jiné"
+    ]
+   },
+   {
+    "label": "Kdy",
+    "options": [
+     "Co nejdřív",
+     "Do měsíce",
+     "Nespěchá"
+    ]
+   }
+  ]
+ },
+ "services_title": "Co pro vás uděláme",
+ "services_sub": "Foto, video i péče o rodinné vzpomínky.",
+ "services": [
+  {
+   "t": "Fotoreportáže",
+   "d": "Fotografie z obřadů, akcí a událostí."
+  },
+  {
+   "t": "Portréty a děti",
+   "d": "Portrétní a modelingové fotografie, fotografování dětí."
+  },
+  {
+   "t": "Video",
+   "d": "Videoprezentace, dokumenty a střih záběrů zákazníka."
+  },
+  {
+   "t": "Digitalizace a renovace",
+   "d": "Převod filmů a kazet VHS do digitální podoby, renovace starých fotografií."
+  }
+ ],
+ "highlights": [
+  {
+   "t": "Staré záznamy nečekají",
+   "d": "Magnetický pásek na kazetách VHS časem slábne. Digitalizací si rodinné záznamy uchováte natrvalo."
+  }
+ ],
+ "steps_sub": "Jednoduše od domluvy po hotové fotky.",
+ "steps": [
+  {
+   "t": "Poptávka",
+   "d": "Napíšete, o jakou službu máte zájem."
+  },
+  {
+   "t": "Domluva",
+   "d": "Domluvíme termín, místo a podobu výsledku."
+  },
+  {
+   "t": "Focení nebo zpracování",
+   "d": "Nafotíme, natočíme nebo převedeme vaše záznamy."
+  },
+  {
+   "t": "Předání",
+   "d": "Hotové fotografie a videa vám předáme."
+  }
+ ],
+ "gallery": [
+  "Portréty",
+  "Děti",
+  "Reportáže",
+  "Digitalizace"
+ ],
+ "contact_title": "Chcete se domluvit na focení?",
+ "contact_sub": "Zavolejte nebo napište, ozveme se co nejdřív.",
+ "form_placeholder": "Např. digitalizace 5 kazet VHS"
+}

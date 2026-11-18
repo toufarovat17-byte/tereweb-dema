@@ -1,0 +1,109 @@
+{
+ "firma": "Voda, topení, plyn - Václav Volf",
+ "mesto": "Buštěhrad",
+ "adresa": "Javorová 1256, Buštěhrad",
+ "telefon": "+420 605 121 836",
+ "email": "vasekvolf.cz@gmail.com",
+ "logo_url": "",
+ "theme": {
+  "bg": "#EDF0F3",
+  "dark": "#14324A",
+  "dark2": "#1F4766",
+  "acc": "#2F7FC1",
+  "accl": "#9FD0F5",
+  "soft": "#B4C8D8"
+ },
+ "headline": "Voda, topení a plyn v Buštěhradu a okolí.",
+ "lead": "Rozvody vody, topení i plynu, kotle a tepelná čerpadla. Výkopy pro přípojky uděláme vlastním minibagrem.",
+ "cta": "Poslat poptávku",
+ "facts": [
+  {
+   "b": "Voda, topení, plyn",
+   "t": "vše od jednoho řemeslníka"
+  },
+  {
+   "b": "Vlastní minibagr",
+   "t": "výkopy pro přípojky i kanalizaci"
+  }
+ ],
+ "widget": {
+  "title": "Co potřebujete?",
+  "sub": "Vyberte a pošlete poptávku za pár vteřin.",
+  "questions": [
+   {
+    "label": "Typ práce",
+    "options": [
+     "Oprava",
+     "Nová montáž",
+     "Výkop přípojky"
+    ]
+   },
+   {
+    "label": "Týká se",
+    "options": [
+     "Voda a kanalizace",
+     "Topení a kotel",
+     "Plyn",
+     "Tepelné čerpadlo"
+    ]
+   },
+   {
+    "label": "Kdy",
+    "options": [
+     "Co nejdřív",
+     "Do měsíce",
+     "Nespěchá"
+    ]
+   }
+  ]
+ },
+ "services_title": "Co pro vás uděláme",
+ "services_sub": "Od drobné opravy po kompletní rozvody v domě.",
+ "services": [
+  {
+   "t": "Voda a kanalizace",
+   "d": "Rozvody vody, odpady, kanalizační přípojky a výměna baterií."
+  },
+  {
+   "t": "Topení a kotle",
+   "d": "Montáž a servis plynových kotlů, radiátorů a podlahového topení."
+  },
+  {
+   "t": "Tepelná čerpadla a solár",
+   "d": "Instalace tepelných čerpadel a solárních systémů pro ohřev."
+  },
+  {
+   "t": "Zemní práce minibagrem",
+   "d": "Výkopy pro přípojky vody, plynu a kanalizace."
+  }
+ ],
+ "highlights": [],
+ "steps_sub": "Jednoduše a bez zbytečného čekání.",
+ "steps": [
+  {
+   "t": "Zavoláte",
+   "d": "Popíšete, co potřebujete opravit nebo postavit."
+  },
+  {
+   "t": "Prohlídka",
+   "d": "Přijedeme, podíváme se a domluvíme řešení i cenu."
+  },
+  {
+   "t": "Práce",
+   "d": "Uděláme to v domluveném termínu."
+  },
+  {
+   "t": "Hotovo",
+   "d": "Vše vyzkoušíme, předáme a uklidíme po sobě."
+  }
+ ],
+ "gallery": [
+  "Kotelny",
+  "Koupelny",
+  "Přípojky",
+  "Tepelná čerpadla"
+ ],
+ "contact_title": "Potřebujete instalatéra?",
+ "contact_sub": "Zavolejte nebo napište, ozveme se co nejdřív.",
+ "form_placeholder": "Např. výměna plynového kotle v rodinném domě, Buštěhrad"
+}

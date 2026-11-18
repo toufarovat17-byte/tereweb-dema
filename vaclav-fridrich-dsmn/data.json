@@ -1,0 +1,109 @@
+{
+ "firma": "Václav Fridrich DSMN",
+ "mesto": "Buštěhrad",
+ "adresa": "Hřebečská 515/40, Buštěhrad",
+ "telefon": "+420 608 449 597",
+ "email": "dsmn@email.cz",
+ "logo_url": "",
+ "theme": {
+  "bg": "#EEF1EA",
+  "dark": "#24402A",
+  "dark2": "#33583B",
+  "acc": "#6FA35A",
+  "accl": "#CDE6B8",
+  "soft": "#BCD0BF"
+ },
+ "headline": "Úklid domácností a firem v Buštěhradu a okolí.",
+ "lead": "Pravidelné i jednorázové úklidy bytů, domů, kanceláří, obchodů a skladů.",
+ "cta": "Poptat úklid",
+ "facts": [
+  {
+   "b": "Pravidelně i jednorázově",
+   "t": "podle vašich potřeb"
+  },
+  {
+   "b": "Domácnosti i firmy",
+   "t": "byty, kanceláře, sklady"
+  }
+ ],
+ "widget": {
+  "title": "Poptávka úklidu",
+  "sub": "Vyberte a pošlete poptávku za pár vteřin.",
+  "questions": [
+   {
+    "label": "Co uklidit",
+    "options": [
+     "Byt nebo dům",
+     "Kancelář",
+     "Obchod nebo sklad",
+     "Bytový dům"
+    ]
+   },
+   {
+    "label": "Jak často",
+    "options": [
+     "Jednorázově",
+     "Každý týden",
+     "Jinak pravidelně"
+    ]
+   },
+   {
+    "label": "Kdy začít",
+    "options": [
+     "Co nejdřív",
+     "Do měsíce",
+     "Nespěchá"
+    ]
+   }
+  ]
+ },
+ "services_title": "Co pro vás uklidíme",
+ "services_sub": "Domácnosti i komerční prostory.",
+ "services": [
+  {
+   "t": "Úklid domácností",
+   "d": "Pravidelný i jednorázový úklid bytů a rodinných domů."
+  },
+  {
+   "t": "Kanceláře a obchody",
+   "d": "Úklid kanceláří, obchodů, hotelů a dalších komerčních prostor."
+  },
+  {
+   "t": "Bytové domy a sklady",
+   "d": "Úklid společných prostor bytových domů a skladů, ruční i strojové zametání."
+  },
+  {
+   "t": "Okna a sociální zařízení",
+   "d": "Mytí oken, podlah a desinfekce sociálních zařízení."
+  }
+ ],
+ "highlights": [],
+ "steps_sub": "Jednoduše a bez starostí.",
+ "steps": [
+  {
+   "t": "Poptávka",
+   "d": "Napíšete nebo zavoláte, jaký prostor a jak často."
+  },
+  {
+   "t": "Domluva",
+   "d": "Domluvíme rozsah úklidu, termíny a cenu."
+  },
+  {
+   "t": "Úklid",
+   "d": "Přijedeme a uklidíme v domluveném čase."
+  },
+  {
+   "t": "Kontrola",
+   "d": "Projdeme spolu výsledek a doladíme detaily."
+  }
+ ],
+ "gallery": [
+  "Domácnosti",
+  "Kanceláře",
+  "Společné prostory",
+  "Okna"
+ ],
+ "contact_title": "Potřebujete uklidit?",
+ "contact_sub": "Zavolejte nebo napište, ozveme se co nejdřív.",
+ "form_placeholder": "Např. pravidelný úklid kanceláře 80 m², 1x týdně"
+}
