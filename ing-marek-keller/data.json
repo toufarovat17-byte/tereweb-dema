@@ -1,0 +1,109 @@
+{
+ "firma": "Ing. Marek Keller",
+ "mesto": "Buštěhrad",
+ "telefon": "+420 603 537 830",
+ "email": "fa.make@volny.cz",
+ "adresa": "Palackého 62/4, Buštěhrad",
+ "logo_url": "",
+ "theme": {
+  "bg": "#ECEBE8",
+  "dark": "#2C2A28",
+  "dark2": "#3E3B38",
+  "acc": "#A0825D",
+  "accl": "#DCC9AE",
+  "soft": "#C2BCB4"
+ },
+ "headline": "Stavební a zemní práce v Buštěhradu",
+ "lead": "Pozemní, stavební, zednické a výkopové práce. Stavíme obytné i průmyslové stavby a komunikace.",
+ "cta": "Poslat poptávku",
+ "facts": [
+  {
+   "b": "Stavba i výkopy",
+   "t": "vše od jedné firmy"
+  },
+  {
+   "b": "Buštěhrad a okolí",
+   "t": "přijedeme na místo"
+  }
+ ],
+ "widget": {
+  "title": "Co potřebujete postavit?",
+  "sub": "Vyberte a pošlete poptávku za pár vteřin.",
+  "questions": [
+   {
+    "label": "Typ práce",
+    "options": [
+     "Stavba",
+     "Zednické práce",
+     "Výkopy",
+     "Komunikace"
+    ]
+   },
+   {
+    "label": "Rozsah",
+    "options": [
+     "Menší zakázka",
+     "Rekonstrukce",
+     "Novostavba"
+    ]
+   },
+   {
+    "label": "Kdy",
+    "options": [
+     "Co nejdřív",
+     "Do 3 měsíců",
+     "Plánuji"
+    ]
+   }
+  ]
+ },
+ "services_title": "Co pro vás uděláme",
+ "services_sub": "Od výkopu základů po hotovou stavbu.",
+ "services": [
+  {
+   "t": "Pozemní stavby",
+   "d": "Výstavba obytných i průmyslových objektů."
+  },
+  {
+   "t": "Zednické práce",
+   "d": "Zdění, omítky, betonáže a stavební úpravy."
+  },
+  {
+   "t": "Výkopové práce",
+   "d": "Výkopy pro základy, přípojky a sítě."
+  },
+  {
+   "t": "Komunikace",
+   "d": "Zpevněné plochy, příjezdy a cesty."
+  }
+ ],
+ "highlights": [],
+ "steps_sub": "Přehledně od první schůzky po předání.",
+ "steps": [
+  {
+   "t": "Poptávka",
+   "d": "Popíšete, co plánujete stavět nebo opravit."
+  },
+  {
+   "t": "Prohlídka",
+   "d": "Přijedeme na místo a probereme řešení."
+  },
+  {
+   "t": "Nabídka",
+   "d": "Připravíme rozpočet a termín."
+  },
+  {
+   "t": "Realizace",
+   "d": "Stavbu provedeme a předáme hotovou."
+  }
+ ],
+ "gallery": [
+  "Stavby",
+  "Zednické práce",
+  "Výkopy",
+  "Komunikace"
+ ],
+ "contact_title": "Plánujete stavbu?",
+ "contact_sub": "Zavolejte nebo napište, ozveme se co nejdřív.",
+ "form_placeholder": "Např. výkop základů pro garáž, Buštěhrad"
+}

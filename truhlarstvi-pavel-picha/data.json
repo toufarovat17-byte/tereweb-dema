@@ -1,0 +1,109 @@
+{
+ "firma": "Truhlářství Pavel Pícha",
+ "mesto": "Buštěhrad",
+ "telefon": "+420 603 480 710",
+ "email": "p.picha@volny.cz",
+ "adresa": "Liliová 759, Buštěhrad",
+ "logo_url": "",
+ "theme": {
+  "bg": "#ECEAE4",
+  "dark": "#1F3A2E",
+  "dark2": "#2C5140",
+  "acc": "#C08A55",
+  "accl": "#E2C29C",
+  "soft": "#B9CBBF"
+ },
+ "headline": "Nábytek na míru z Buštěhradu",
+ "lead": "Navrhneme a vyrobíme vestavěné skříně, kuchyně a nábytek přesně na míru. Do bytu, domu i provozovny.",
+ "cta": "Poslat poptávku",
+ "facts": [
+  {
+   "b": "Návrh i výroba",
+   "t": "vše od jednoho truhláře"
+  },
+  {
+   "b": "Montáž u vás",
+   "t": "Buštěhrad a okolí"
+  }
+ ],
+ "widget": {
+  "title": "Poptávka nábytku",
+  "sub": "Vyberte a pošlete poptávku za pár vteřin.",
+  "questions": [
+   {
+    "label": "Co potřebujete",
+    "options": [
+     "Kuchyně",
+     "Vestavěná skříň",
+     "Koupelna nebo předsíň",
+     "Jiný nábytek"
+    ]
+   },
+   {
+    "label": "Kam",
+    "options": [
+     "Byt",
+     "Dům",
+     "Provozovna"
+    ]
+   },
+   {
+    "label": "Kdy",
+    "options": [
+     "Co nejdřív",
+     "Do 3 měsíců",
+     "Plánuji"
+    ]
+   }
+  ]
+ },
+ "services_title": "Co pro vás vyrobíme",
+ "services_sub": "Nábytek, který přesně sedí do vašeho prostoru.",
+ "services": [
+  {
+   "t": "Kuchyně",
+   "d": "Kuchyňské linky na míru vašemu prostoru."
+  },
+  {
+   "t": "Vestavěné skříně",
+   "d": "Skříně s posuvnými dveřmi do každého rohu."
+  },
+  {
+   "t": "Obývací a dětské pokoje",
+   "d": "Obývací stěny, pracovní stoly a dětský nábytek."
+  },
+  {
+   "t": "Koupelny, předsíně, provozovny",
+   "d": "Koupelnový nábytek, botníky i vybavení provozoven."
+  }
+ ],
+ "highlights": [],
+ "steps_sub": "Od zaměření po montáž.",
+ "steps": [
+  {
+   "t": "Poptávka",
+   "d": "Popíšete, co si představujete."
+  },
+  {
+   "t": "Zaměření",
+   "d": "Přijedeme, zaměříme a poradíme."
+  },
+  {
+   "t": "Návrh a výroba",
+   "d": "Připravíme návrh a nábytek vyrobíme."
+  },
+  {
+   "t": "Montáž",
+   "d": "Nábytek namontujeme a uklidíme po sobě."
+  }
+ ],
+ "gallery": [
+  "Kuchyně",
+  "Vestavěné skříně",
+  "Obývací a dětské pokoje",
+  "Koupelny a předsíně"
+ ],
+ "contact_title": "Chcete nábytek na míru?",
+ "contact_sub": "Zavolejte nebo napište, ozveme se co nejdřív.",
+ "form_placeholder": "Např. vestavěná skříň do předsíně, šířka 2,5 m"
+}

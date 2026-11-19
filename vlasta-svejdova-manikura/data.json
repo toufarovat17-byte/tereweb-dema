@@ -1,0 +1,111 @@
+{
+ "firma": "Vlasta Švejdová - Manikúra",
+ "mesto": "Buštěhrad",
+ "telefon": "+420 733 688 105",
+ "email": "svejdova.vlasta@seznam.cz",
+ "adresa": "Javorová 699/1, Buštěhrad",
+ "logo_url": "",
+ "theme": {
+  "bg": "#F4EFEE",
+  "dark": "#4A2433",
+  "dark2": "#5E3243",
+  "acc": "#C46A86",
+  "accl": "#F0C3D0",
+  "soft": "#D9BDC6"
+ },
+ "headline": "Manikúra a péče o nehty v Buštěhradu",
+ "lead": "Mokrá i suchá manikúra, japonská manikúra P-shine a permanentní lak CND Shellac. Pro dámy i pány.",
+ "cta": "Objednat se",
+ "facts": [
+  {
+   "b": "Shellac až 14 dní",
+   "t": "permanentní lak CND"
+  },
+  {
+   "b": "Dámská i pánská",
+   "t": "manikúra pro každého"
+  }
+ ],
+ "widget": {
+  "title": "Objednávka manikúry",
+  "sub": "Vyberte a pošlete poptávku za pár vteřin.",
+  "questions": [
+   {
+    "label": "Služba",
+    "options": [
+     "Klasická manikúra",
+     "Japonská P-shine",
+     "Permanentní lak"
+    ]
+   },
+   {
+    "label": "Pro koho",
+    "options": [
+     "Dámská",
+     "Pánská"
+    ]
+   },
+   {
+    "label": "Kdy",
+    "options": [
+     "Tento týden",
+     "Příští týden",
+     "Kdykoli"
+    ]
+   }
+  ]
+ },
+ "services_title": "Co pro vás uděláme",
+ "services_sub": "Upravené a zdravé nehty bez spěchu.",
+ "services": [
+  {
+   "t": "Mokrá a suchá manikúra",
+   "d": "Klasická péče o nehty a nehtovou kůžičku."
+  },
+  {
+   "t": "Japonská manikúra P-shine",
+   "d": "Přírodní lesk a vyšší pevnost nehtů."
+  },
+  {
+   "t": "Permanentní lak",
+   "d": "CND Shellac a Creative Play, vydrží až 14 dní."
+  },
+  {
+   "t": "Pánská manikúra",
+   "d": "Upravené ruce a nehty i pro muže."
+  }
+ ],
+ "highlights": [
+  {
+   "t": "Japonská manikúra",
+   "d": "Metoda P-shine nehty posiluje a dodá jim přirozený lesk bez laku."
+  }
+ ],
+ "steps_sub": "Jednoduše a v klidu.",
+ "steps": [
+  {
+   "t": "Objednáte se",
+   "d": "Zavoláte nebo napíšete, co si přejete."
+  },
+  {
+   "t": "Termín",
+   "d": "Domluvíme čas, který vám sedí."
+  },
+  {
+   "t": "Péče",
+   "d": "V klidu se postaráme o vaše nehty."
+  },
+  {
+   "t": "Hotovo",
+   "d": "Poradíme, jak o nehty pečovat doma."
+  }
+ ],
+ "gallery": [
+  "Klasická manikúra",
+  "P-shine",
+  "Shellac"
+ ],
+ "contact_title": "Chcete krásné nehty?",
+ "contact_sub": "Zavolejte nebo napište, ozveme se co nejdřív.",
+ "form_placeholder": "Např. permanentní lak, nejlépe ve čtvrtek odpoledne"
+}

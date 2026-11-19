@@ -1,0 +1,108 @@
+{
+ "firma": "Petr Ton",
+ "mesto": "Buštěhrad",
+ "telefon": "+420 606 585 325",
+ "email": "tonp@seznam.cz",
+ "adresa": "Družstevní 437/7, Buštěhrad",
+ "logo_url": "",
+ "theme": {
+  "bg": "#F1F0EA",
+  "dark": "#1D2340",
+  "dark2": "#2B3358",
+  "acc": "#F2B705",
+  "accl": "#FFE08A",
+  "soft": "#B9BEDA"
+ },
+ "headline": "Revize elektro a hromosvodů",
+ "lead": "Revize, montáže, opravy a zkoušky elektrických zařízení vysokého i nízkého napětí a hromosvodů. Projektujeme i v investiční výstavbě.",
+ "cta": "Poslat poptávku",
+ "facts": [
+  {
+   "b": "VN i NN",
+   "t": "vysoké i nízké napětí"
+  },
+  {
+   "b": "Revize i projekty",
+   "t": "od jednoho technika"
+  }
+ ],
+ "widget": {
+  "title": "Co potřebujete?",
+  "sub": "Vyberte a pošlete poptávku za pár vteřin.",
+  "questions": [
+   {
+    "label": "Typ práce",
+    "options": [
+     "Revize",
+     "Montáž",
+     "Oprava",
+     "Projekt"
+    ]
+   },
+   {
+    "label": "Týká se",
+    "options": [
+     "Elektroinstalace",
+     "Hromosvod",
+     "Vysoké napětí"
+    ]
+   },
+   {
+    "label": "Objekt",
+    "options": [
+     "Rodinný dům",
+     "Byt",
+     "Firma"
+    ]
+   }
+  ]
+ },
+ "services_title": "Co pro vás uděláme",
+ "services_sub": "Bezpečná elektřina s platnou dokumentací.",
+ "services": [
+  {
+   "t": "Revize elektro",
+   "d": "Revize a zkoušky elektrických zařízení NN i VN."
+  },
+  {
+   "t": "Hromosvody",
+   "d": "Revize, montáž a opravy hromosvodů."
+  },
+  {
+   "t": "Montáže a opravy",
+   "d": "Montáž a opravy elektrických zařízení."
+  },
+  {
+   "t": "Projektování",
+   "d": "Projekty elektro v investiční výstavbě."
+  }
+ ],
+ "highlights": [],
+ "steps_sub": "Jednoduše a bez zbytečného čekání.",
+ "steps": [
+  {
+   "t": "Ozvete se",
+   "d": "Popíšete, jakou revizi nebo práci potřebujete."
+  },
+  {
+   "t": "Termín",
+   "d": "Domluvíme, kdy přijedeme."
+  },
+  {
+   "t": "Kontrola",
+   "d": "Provedeme revizi nebo práci na místě."
+  },
+  {
+   "t": "Zpráva",
+   "d": "Předáme revizní zprávu a doporučení."
+  }
+ ],
+ "gallery": [
+  "Revize",
+  "Hromosvody",
+  "Rozvaděče"
+ ],
+ "contact_title": "Potřebujete revizi?",
+ "contact_sub": "Zavolejte nebo napište, ozveme se co nejdřív.",
+ "form_placeholder": "Např. revize elektroinstalace v rodinném domě"
+}

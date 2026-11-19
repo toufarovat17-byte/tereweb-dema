@@ -1,0 +1,108 @@
+{
+ "firma": "Vizážistka Gabriela Bosáková Lukaševič",
+ "mesto": "Buštěhrad",
+ "telefon": "+420 736 460 610",
+ "email": "mua.bosakova@gmail.com",
+ "adresa": "Ořešín 1049, Buštěhrad",
+ "logo_url": "",
+ "theme": {
+  "bg": "#F4EFEE",
+  "dark": "#4A2433",
+  "dark2": "#5E3243",
+  "acc": "#C46A86",
+  "accl": "#F0C3D0",
+  "soft": "#D9BDC6"
+ },
+ "headline": "Líčení a účesy na každou příležitost",
+ "lead": "Make up a vlasový styling pro svatby, oslavy i focení. Připravíme vás tak, abyste se cítila sama sebou, jen ve sváteční verzi.",
+ "cta": "Poslat poptávku",
+ "facts": [
+  {
+   "b": "Make up i účes",
+   "t": "vše od jedné vizážistky"
+  },
+  {
+   "b": "Buštěhrad a okolí",
+   "t": "domluvíme místo i čas"
+  }
+ ],
+ "widget": {
+  "title": "Na jakou příležitost?",
+  "sub": "Vyberte a pošlete poptávku za pár vteřin.",
+  "questions": [
+   {
+    "label": "Příležitost",
+    "options": [
+     "Svatba",
+     "Focení",
+     "Ples nebo oslava"
+    ]
+   },
+   {
+    "label": "Co potřebujete",
+    "options": [
+     "Make up",
+     "Účes",
+     "Make up i účes"
+    ]
+   },
+   {
+    "label": "Kdy",
+    "options": [
+     "Tento měsíc",
+     "Do 3 měsíců",
+     "Později"
+    ]
+   }
+  ]
+ },
+ "services_title": "Co pro vás uděláme",
+ "services_sub": "Líčení a styling přizpůsobený vám i příležitosti.",
+ "services": [
+  {
+   "t": "Svatební líčení",
+   "d": "Make up pro nevěstu i doprovod, který vydrží celý den."
+  },
+  {
+   "t": "Foto make up",
+   "d": "Líčení pro focení, které dobře vypadá před objektivem."
+  },
+  {
+   "t": "Vlasový styling",
+   "d": "Účesy, vlny a drdoly k šatům i k příležitosti."
+  },
+  {
+   "t": "Společenské líčení",
+   "d": "Make up na ples, oslavu nebo večírek."
+  }
+ ],
+ "highlights": [],
+ "steps_sub": "Jednoduše a v klidu.",
+ "steps": [
+  {
+   "t": "Ozvete se",
+   "d": "Napíšete termín a o jakou příležitost jde."
+  },
+  {
+   "t": "Domluva",
+   "d": "Probereme styl, místo a časový plán."
+  },
+  {
+   "t": "Zkouška",
+   "d": "U svateb si můžeme líčení předem vyzkoušet."
+  },
+  {
+   "t": "Váš den",
+   "d": "Připravíme vás v klidu a včas."
+  }
+ ],
+ "gallery": [
+  "Svatby",
+  "Focení",
+  "Účesy",
+  "Společenské líčení"
+ ],
+ "contact_title": "Chystáte se na velký den?",
+ "contact_sub": "Napište nebo zavolejte, ozveme se co nejdřív.",
+ "form_placeholder": "Např. svatba 12. června, líčení a účes pro nevěstu"
+}
