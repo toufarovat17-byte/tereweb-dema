@@ -1,0 +1,107 @@
+{
+ "firma": "Tomáš Buch, žaluzie a sítě",
+ "mesto": "Buštěhrad",
+ "telefon": "+420 607 852 505",
+ "email": "tomasbuch@seznam.cz",
+ "adresa": "Ořešín 1044, Buštěhrad",
+ "logo_url": "",
+ "theme": {
+  "bg": "#ECEBE8",
+  "dark": "#2C2A28",
+  "dark2": "#3E3B38",
+  "acc": "#A0825D",
+  "accl": "#DCC9AE",
+  "soft": "#C2BCB4"
+ },
+ "headline": "Žaluzie a sítě proti hmyzu na míru.",
+ "lead": "Prodej, montáž a opravy žaluzií a sítí do oken. Přijedeme, zaměříme a namontujeme bez zásahu do okenního rámu.",
+ "cta": "Poslat poptávku",
+ "facts": [
+  {
+   "b": "Žaluzie i sítě",
+   "t": "prodej, montáž, opravy"
+  },
+  {
+   "b": "Buštěhrad, Kladno, Praha",
+   "t": "přijedeme k vám"
+  }
+ ],
+ "widget": {
+  "title": "Poptávka žaluzií",
+  "sub": "Vyberte a pošlete poptávku za pár vteřin.",
+  "questions": [
+   {
+    "label": "Co potřebujete",
+    "options": [
+     "Nové žaluzie",
+     "Sítě proti hmyzu",
+     "Oprava"
+    ]
+   },
+   {
+    "label": "Počet oken",
+    "options": [
+     "1 až 2",
+     "3 až 5",
+     "Více"
+    ]
+   },
+   {
+    "label": "Kdy",
+    "options": [
+     "Co nejdřív",
+     "Do měsíce",
+     "Nespěchá"
+    ]
+   }
+  ]
+ },
+ "services_title": "Co pro vás uděláme",
+ "services_sub": "Od zaměření po hotovou montáž.",
+ "services": [
+  {
+   "t": "Žaluzie do oken",
+   "d": "Horizontální žaluzie v široké škále barev, i v imitaci dřeva."
+  },
+  {
+   "t": "Sítě proti hmyzu",
+   "d": "Sítě do oken na míru, ať můžete větrat bez much a komárů."
+  },
+  {
+   "t": "Montáž do lišt",
+   "d": "Montujeme do krycích lišt skel, bez vrtání do okenního rámu."
+  },
+  {
+   "t": "Opravy a servis",
+   "d": "Opravíme i žaluzie, které montoval někdo jiný."
+  }
+ ],
+ "highlights": [],
+ "steps_sub": "Jednoduše a bez zbytečného čekání.",
+ "steps": [
+  {
+   "t": "Poptávka",
+   "d": "Zavoláte nebo napíšete, co potřebujete."
+  },
+  {
+   "t": "Zaměření",
+   "d": "Přijedeme, změříme okna a vybereme barvu."
+  },
+  {
+   "t": "Výroba",
+   "d": "Připravíme žaluzie nebo sítě přesně na míru."
+  },
+  {
+   "t": "Montáž",
+   "d": "Namontujeme, vyzkoušíme a ukážeme ovládání."
+  }
+ ],
+ "gallery": [
+  "Žaluzie",
+  "Sítě proti hmyzu",
+  "Montáže"
+ ],
+ "contact_title": "Chcete nové žaluzie?",
+ "contact_sub": "Zavolejte nebo napište, ozveme se co nejdřív.",
+ "form_placeholder": "Např. 4 okna v obýváku, Kladno"
+}

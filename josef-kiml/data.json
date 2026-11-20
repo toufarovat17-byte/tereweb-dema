@@ -1,0 +1,108 @@
+{
+ "firma": "Josef Kiml, pneuservis",
+ "mesto": "Buštěhrad",
+ "telefon": "+420 602 939 392",
+ "email": "martinka.jedlickova@centrum.cz",
+ "adresa": "Hřebečská 366/20, Buštěhrad",
+ "logo_url": "",
+ "theme": {
+  "bg": "#EEEEEC",
+  "dark": "#22252A",
+  "dark2": "#33373E",
+  "acc": "#E2A400",
+  "accl": "#F5D36B",
+  "soft": "#B8BCC4"
+ },
+ "headline": "Pneuservis a údržba aut v Buštěhradu.",
+ "lead": "Prodej a opravy pneumatik, výměna oleje, nástřik spodku, autoskla, servis klimatizací i příprava na STK.",
+ "cta": "Objednat auto",
+ "facts": [
+  {
+   "b": "Pneu, olej, klima",
+   "t": "vše na jednom místě"
+  },
+  {
+   "b": "Příprava na STK",
+   "t": "ať projedete napoprvé"
+  }
+ ],
+ "widget": {
+  "title": "Objednávka servisu",
+  "sub": "Vyberte a pošlete objednávku za pár vteřin.",
+  "questions": [
+   {
+    "label": "Služba",
+    "options": [
+     "Pneumatiky",
+     "Výměna oleje",
+     "Klimatizace",
+     "Příprava na STK"
+    ]
+   },
+   {
+    "label": "Vozidlo",
+    "options": [
+     "Osobní",
+     "SUV",
+     "Dodávka"
+    ]
+   },
+   {
+    "label": "Kdy",
+    "options": [
+     "Co nejdřív",
+     "Tento týden",
+     "Nespěchá"
+    ]
+   }
+  ]
+ },
+ "services_title": "Co pro vás uděláme",
+ "services_sub": "Pravidelná péče o vaše auto.",
+ "services": [
+  {
+   "t": "Pneumatiky",
+   "d": "Prodej, přezutí a opravy pneumatik."
+  },
+  {
+   "t": "Výměna oleje",
+   "d": "Výměna oleje a filtrů podle předpisu výrobce."
+  },
+  {
+   "t": "Nástřik spodku",
+   "d": "Ochrana podvozku proti korozi."
+  },
+  {
+   "t": "Klimatizace a autoskla",
+   "d": "Servis klimatizací a nabídka autoskel."
+  }
+ ],
+ "highlights": [],
+ "steps_sub": "Jednoduše a bez zbytečného čekání.",
+ "steps": [
+  {
+   "t": "Objednáte se",
+   "d": "Zavoláte nebo pošlete objednávku z webu."
+  },
+  {
+   "t": "Přivezete auto",
+   "d": "V domluvený čas přijedete k nám."
+  },
+  {
+   "t": "Servis",
+   "d": "Uděláme, co je potřeba, a řekneme vám cenu předem."
+  },
+  {
+   "t": "Hotovo",
+   "d": "Auto si odvezete připravené na cestu."
+  }
+ ],
+ "gallery": [
+  "Pneumatiky",
+  "Servis",
+  "Příprava na STK"
+ ],
+ "contact_title": "Potřebujete přezout?",
+ "contact_sub": "Zavolejte nebo napište, ozveme se co nejdřív.",
+ "form_placeholder": "Např. přezutí a výměna oleje, Fabia"
+}

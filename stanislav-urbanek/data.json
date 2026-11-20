@@ -1,0 +1,109 @@
+{
+ "firma": "Stanislav Urbánek, stavby",
+ "mesto": "Buštěhrad",
+ "telefon": "+420 608 306 122",
+ "email": "info@urbanekstavba.cz",
+ "adresa": "Bořivojova 46/11, Buštěhrad",
+ "logo_url": "",
+ "theme": {
+  "bg": "#ECEBE8",
+  "dark": "#2C2A28",
+  "dark2": "#3E3B38",
+  "acc": "#A0825D",
+  "accl": "#DCC9AE",
+  "soft": "#C2BCB4"
+ },
+ "headline": "Stavby a rekonstrukce rodinných domů.",
+ "lead": "Stavíme a rekonstruujeme rodinné domy, děláme půdní vestavby i inženýrské sítě. Pomůžeme i se stavebním povolením.",
+ "cta": "Poslat poptávku",
+ "facts": [
+  {
+   "b": "Od povolení po stavbu",
+   "t": "vše od jedné firmy"
+  },
+  {
+   "b": "Buštěhrad a okolí",
+   "t": "přijedeme k vám"
+  }
+ ],
+ "widget": {
+  "title": "Poptávka stavby",
+  "sub": "Vyberte a pošlete poptávku za pár vteřin.",
+  "questions": [
+   {
+    "label": "Typ práce",
+    "options": [
+     "Novostavba",
+     "Rekonstrukce",
+     "Půdní vestavba",
+     "Sítě"
+    ]
+   },
+   {
+    "label": "Objekt",
+    "options": [
+     "Rodinný dům",
+     "Komerční prostor",
+     "Jiné"
+    ]
+   },
+   {
+    "label": "Kdy začít",
+    "options": [
+     "Co nejdřív",
+     "Letos",
+     "Příští rok"
+    ]
+   }
+  ]
+ },
+ "services_title": "Co pro vás uděláme",
+ "services_sub": "Menší úpravy i celé stavby.",
+ "services": [
+  {
+   "t": "Stavby domů",
+   "d": "Výstavba rodinných domů a komerčních prostor."
+  },
+  {
+   "t": "Rekonstrukce",
+   "d": "Rekonstrukce rodinných domů a půdní vestavby."
+  },
+  {
+   "t": "Inženýrské sítě",
+   "d": "Přípojky a rozvody vody, kanalizace a dalších sítí."
+  },
+  {
+   "t": "Povolení a materiál",
+   "d": "Vyřídíme stavební povolení a zajistíme stavební materiál."
+  }
+ ],
+ "highlights": [],
+ "steps_sub": "Jednoduše a přehledně.",
+ "steps": [
+  {
+   "t": "Poptávka",
+   "d": "Popíšete, co plánujete."
+  },
+  {
+   "t": "Prohlídka",
+   "d": "Přijedeme, prohlédneme místo a probereme řešení."
+  },
+  {
+   "t": "Nabídka",
+   "d": "Připravíme rozpočet a harmonogram prací."
+  },
+  {
+   "t": "Stavba",
+   "d": "Postavíme a předáme hotové dílo."
+  }
+ ],
+ "gallery": [
+  "Novostavby",
+  "Rekonstrukce",
+  "Půdní vestavby",
+  "Sítě"
+ ],
+ "contact_title": "Plánujete stavbu?",
+ "contact_sub": "Zavolejte nebo napište, ozveme se co nejdřív.",
+ "form_placeholder": "Např. rekonstrukce domu, Kladno"
+}

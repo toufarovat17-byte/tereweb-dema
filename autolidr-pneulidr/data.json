@@ -1,0 +1,109 @@
+{
+ "firma": "AUTOLIDR & PNEULIDR",
+ "mesto": "Buštěhrad",
+ "telefon": "+420 775 500 369",
+ "email": "autolidr@seznam.cz",
+ "adresa": "Třinecká 679, Buštěhrad",
+ "logo_url": "",
+ "theme": {
+  "bg": "#EEEEEC",
+  "dark": "#22252A",
+  "dark2": "#33373E",
+  "acc": "#E2A400",
+  "accl": "#F5D36B",
+  "soft": "#B8BCC4"
+ },
+ "headline": "Autoservis a pneuservis v Buštěhradu.",
+ "lead": "Opravy aut, přezutí pneumatik, odtahová služba i ruční mytí. Všechno na jednom místě.",
+ "cta": "Objednat auto",
+ "facts": [
+  {
+   "b": "Servis i pneu",
+   "t": "na jednom místě"
+  },
+  {
+   "b": "Odtah a mytí",
+   "t": "když je potřeba"
+  }
+ ],
+ "widget": {
+  "title": "Objednávka servisu",
+  "sub": "Vyberte a pošlete objednávku za pár vteřin.",
+  "questions": [
+   {
+    "label": "Služba",
+    "options": [
+     "Oprava",
+     "Přezutí",
+     "Odtah",
+     "Mytí"
+    ]
+   },
+   {
+    "label": "Vozidlo",
+    "options": [
+     "Osobní",
+     "SUV",
+     "Dodávka"
+    ]
+   },
+   {
+    "label": "Kdy",
+    "options": [
+     "Co nejdřív",
+     "Tento týden",
+     "Nespěchá"
+    ]
+   }
+  ]
+ },
+ "services_title": "Co pro vás uděláme",
+ "services_sub": "Postaráme se o vaše auto.",
+ "services": [
+  {
+   "t": "Autoservis",
+   "d": "Běžné opravy, údržba a výměny dílů osobních aut."
+  },
+  {
+   "t": "Pneuservis",
+   "d": "Přezutí, vyvážení a oprava pneumatik."
+  },
+  {
+   "t": "Odtahová služba",
+   "d": "Když auto nepojede, odtáhneme ho k nám do servisu."
+  },
+  {
+   "t": "Ruční mytí",
+   "d": "Šetrné ruční mytí vozidla."
+  }
+ ],
+ "highlights": [],
+ "steps_sub": "Jednoduše a bez zbytečného čekání.",
+ "steps": [
+  {
+   "t": "Objednáte se",
+   "d": "Zavoláte nebo pošlete objednávku z webu."
+  },
+  {
+   "t": "Přivezete auto",
+   "d": "Nebo ho k nám odtáhneme."
+  },
+  {
+   "t": "Oprava",
+   "d": "Domluvíme rozsah a cenu a auto opravíme."
+  },
+  {
+   "t": "Předání",
+   "d": "Řekneme, co jsme dělali, a předáme klíče."
+  }
+ ],
+ "gallery": [
+  "Servis",
+  "Pneumatiky",
+  "Odtah",
+  "Mytí"
+ ],
+ "contact_title": "Potřebujete servis?",
+ "contact_sub": "Zavolejte nebo napište, ozveme se co nejdřív.",
+ "form_placeholder": "Např. přezutí na zimní, Octavia"
+}

@@ -1,0 +1,114 @@
+{
+ "firma": "Kamil Klejna, zemní vruty",
+ "mesto": "Buštěhrad",
+ "telefon": "",
+ "email": "kamil.solage@gmail.com",
+ "adresa": "Ořešín 1108, Buštěhrad",
+ "logo_url": "",
+ "theme": {
+  "bg": "#EEEEEC",
+  "dark": "#22252A",
+  "dark2": "#33373E",
+  "acc": "#E2A400",
+  "accl": "#F5D36B",
+  "soft": "#B8BCC4"
+ },
+ "headline": "Základy na zemních vrutech za jeden den.",
+ "lead": "Zakládáme stavby pomocí zemních vrutů, od pergol a plotů po terasy a rodinné domy. Instalujeme po celé ČR.",
+ "cta": "Poslat poptávku",
+ "facts": [
+  {
+   "b": "Instalace za den",
+   "t": "a hned se staví dál"
+  },
+  {
+   "b": "Po celé ČR",
+   "t": "přijedeme k vám"
+  }
+ ],
+ "widget": {
+  "title": "Poptávka zemních vrutů",
+  "sub": "Vyberte a pošlete poptávku za pár vteřin.",
+  "questions": [
+   {
+    "label": "Co stavíte",
+    "options": [
+     "Pergola",
+     "Plot",
+     "Terasa",
+     "Dům"
+    ]
+   },
+   {
+    "label": "Typ vrutů",
+    "options": [
+     "Hobby",
+     "Profi",
+     "Poradíte"
+    ]
+   },
+   {
+    "label": "Kdy",
+    "options": [
+     "Co nejdřív",
+     "Do měsíce",
+     "Nespěchá"
+    ]
+   }
+  ]
+ },
+ "services_title": "Co pro vás uděláme",
+ "services_sub": "Pevný základ bez betonování.",
+ "services": [
+  {
+   "t": "Pergoly a přístřešky",
+   "d": "Základy pro pergoly, carporty a zahradní domky."
+  },
+  {
+   "t": "Ploty",
+   "d": "Vruty pro sloupky plotů a brány bez kopání a betonu."
+  },
+  {
+   "t": "Terasy",
+   "d": "Rovný a pevný podklad pro dřevěné i kompozitní terasy."
+  },
+  {
+   "t": "Rodinné domy",
+   "d": "Profi vruty až do délky dvou metrů pro větší stavby."
+  }
+ ],
+ "highlights": [
+  {
+   "t": "Bez čekání na beton",
+   "d": "Vruty se zašroubují za jeden den a na základ se dá stavět hned."
+  }
+ ],
+ "steps_sub": "Jednoduše a bez zbytečného čekání.",
+ "steps": [
+  {
+   "t": "Poptávka",
+   "d": "Napíšete, co stavíte a kde."
+  },
+  {
+   "t": "Návrh",
+   "d": "Doporučíme typ a počet vrutů."
+  },
+  {
+   "t": "Instalace",
+   "d": "Přijedeme a vruty zašroubujeme za jeden den."
+  },
+  {
+   "t": "Stavíte",
+   "d": "Na hotový základ můžete hned navázat."
+  }
+ ],
+ "gallery": [
+  "Pergoly",
+  "Ploty",
+  "Terasy",
+  "Domy"
+ ],
+ "contact_title": "Plánujete stavbu?",
+ "contact_sub": "Napište nám, ozveme se co nejdřív.",
+ "form_placeholder": "Např. terasa 4 x 5 m, Kladno"
+}
