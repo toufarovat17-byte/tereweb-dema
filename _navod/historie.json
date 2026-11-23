@@ -1,0 +1,3 @@
+[
+ {"slug": "sablona-2026-11", "datum": "2026-11-23", "obor": "všechna dema před 23. 11.", "pisma": ["Archivo", "Source Sans 3"], "paleta": ["#ECEAE4", "#1F3A2E", "#C08A55"], "hero": "levý sloupec s velkým nadpisem a pravý tmavý panel s poptávkou", "interakce": "výběr možností (chips) se souhrnem poptávky", "layout": "hero split, řádky služeb s linkou, tmavá sekce postupu 4 kroky, galerie s filtrem, bílý kontaktní box"}
+]
