@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Autoopravy Václav Tichý – Bystré (návrh webu)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --zluta:#FFC531;   /* výstražná žlutá */
+  --asfalt:#1E2227;  /* asfalt */
+  --papir:#F5F4F0;   /* servisní papír */
+  --cervena:#C8202F; /* brzdová červená */
+  --ocel:#5E6770;    /* ocel */
+  --linka:#D9D7D0;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Onest',system-ui,sans-serif;color:var(--asfalt);background:var(--papir);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:'Big Shoulders Display',Impact,sans-serif;font-weight:900;line-height:.95;margin:0 0 .4em;text-transform:uppercase;letter-spacing:.01em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cervena);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.strip{background:#000;color:#eee;font-size:14px;text-align:center;padding:8px 14px}
+.strip b{color:var(--zluta)}
+header{background:var(--asfalt);color:#fff}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo .vt{width:46px;height:46px;background:var(--zluta);color:var(--asfalt);display:grid;place-items:center;font-family:'Big Shoulders Display';font-weight:900;font-size:26px;clip-path:polygon(12% 0,100% 0,88% 100%,0 100%)}
+.logo b{font-family:'Big Shoulders Display';font-size:24px;text-transform:uppercase;letter-spacing:.03em;line-height:1}
+.logo small{display:block;font-size:13px;color:#aab2ba;font-weight:400;letter-spacing:0;text-transform:none;font-family:'Onest'}
+.menu{display:flex;gap:24px;font-size:15px}
+.menu a{text-decoration:none;color:#d6dadf}
+.menu a:hover{color:var(--zluta)}
+.tel{background:var(--zluta);color:var(--asfalt);font-weight:600;text-decoration:none;padding:10px 16px;white-space:nowrap}
+.tel:hover{background:#ffd666}
+/* HERO: plná barevná plocha */
+.hero{background:var(--zluta);position:relative;overflow:hidden}
+.hero .wrap{padding-top:64px;padding-bottom:110px;position:relative;z-index:2}
+.hero h1{font-size:clamp(58px,10.5vw,150px);margin:0}
+.hero h1 span{display:block}
+.hero .pod{display:flex;flex-direction:column;gap:24px;align-items:flex-start;margin-top:26px}
+.hero p{max-width:46ch;margin:0;font-size:19px;font-weight:500}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:14px 22px;font-weight:600;text-decoration:none;font-size:16px;border:2px solid var(--asfalt);cursor:pointer;font-family:inherit}
+.btn.tm{background:var(--asfalt);color:#fff}
+.btn.tm:hover{background:#000}
+.btn.ob{background:transparent;color:var(--asfalt)}
+.btn.ob:hover{background:var(--asfalt);color:var(--zluta)}
+.silnice{position:absolute;left:0;right:0;bottom:0;height:54px;background:var(--asfalt)}
+.silnice::after{content:"";position:absolute;left:0;right:0;top:25px;height:5px;background:repeating-linear-gradient(90deg,#fff 0 60px,transparent 60px 110px);animation:jizda 1.6s linear infinite}
+@keyframes jizda{to{background-position:-110px 0}}
+.auto{position:absolute;right:6%;bottom:40px;width:min(380px,40vw);z-index:1}
+/* SERVISNÍ LIST */
+section{padding:80px 0}
+.hlav{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+.hlav h2{font-size:clamp(40px,5vw,64px);margin:0}
+.hlav p{max-width:44ch;margin:0;color:var(--ocel)}
+.list{background:#fff;border:2px solid var(--asfalt)}
+.radek{display:grid;grid-template-columns:70px 1fr 1.3fr;gap:20px;padding:20px 24px;border-bottom:1px solid var(--linka);align-items:start}
+.radek:last-child{border-bottom:0}
+.radek svg{width:46px;height:46px}
+.radek h3{font-size:30px;margin:0}
+.radek p{margin:0;color:#3d444b}
+/* STK HLÍDAČ */
+.stk{background:var(--asfalt);color:#fff}
+.stk .hlav p{color:#aab2ba}
+.stk-box{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid #3a4149}
+.vstup{padding:30px;border-right:2px solid #3a4149}
+.vstup fieldset{border:0;padding:0;margin:0 0 22px}
+.vstup legend{font-weight:600;margin-bottom:10px;color:var(--zluta)}
+.prep{display:flex;flex-wrap:wrap;gap:8px}
+.prep button{font:inherit;font-size:15.5px;padding:10px 14px;background:transparent;color:#fff;border:1.5px solid #59626b;cursor:pointer}
+.prep button[aria-pressed="true"]{background:var(--zluta);color:var(--asfalt);border-color:var(--zluta);font-weight:600}
+.dvojice{display:flex;gap:12px}
+.dvojice label{flex:1;font-size:14px;color:#c4cad0}
+select{width:100%;font:inherit;font-size:16px;padding:10px;background:#2a2f35;color:#fff;border:1.5px solid #59626b;margin-top:5px}
+.vystup{padding:30px;display:flex;flex-direction:column;justify-content:center}
+.stitek-stk{width:150px;height:150px;border-radius:50%;background:#fff;color:var(--asfalt);display:grid;place-items:center;text-align:center;border:6px solid var(--zluta);margin-bottom:20px;position:relative}
+.stitek-stk b{font-family:'Big Shoulders Display';font-size:46px;line-height:1;display:block}
+.stitek-stk small{font-size:13px;font-weight:600}
+.vystup .zbyva{font-family:'Big Shoulders Display';font-size:40px;text-transform:uppercase;line-height:1;margin-bottom:8px}
+.vystup .zbyva.blizko{color:var(--zluta)}
+.vystup .zbyva.po{color:#ff6b77}
+.vystup p{color:#c4cad0;margin:0 0 18px}
+.vystup .btn{border-color:var(--zluta);background:var(--zluta);color:var(--asfalt);align-self:flex-start}
+.pozn{font-size:13.5px;color:#8f99a3;margin-top:14px}
+/* PROČ MY */
+.proc{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.proc div{border-top:6px solid var(--zluta);padding-top:16px}
+.proc h3{font-size:30px}
+.proc p{margin:0}
+/* GALERIE */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.ph{aspect-ratio:4/3;background:#2a2f35;color:#d6dadf;display:flex;align-items:flex-end;padding:12px;font-size:14px;position:relative;overflow:hidden}
+.ph::before{content:"";position:absolute;top:0;left:0;right:0;height:8px;background:repeating-linear-gradient(135deg,var(--zluta) 0 12px,var(--asfalt) 12px 24px)}
+.ph:nth-child(2n){background:#3a4149}
+.gal-p{margin-top:12px;color:var(--ocel)}
+/* KONTAKT */
+.kontakt{background:#fff;border-top:2px solid var(--asfalt)}
+.k-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.velky-tel{font-family:'Big Shoulders Display';font-weight:900;font-size:clamp(44px,6vw,72px);text-decoration:none;display:block;line-height:1;margin:10px 0 18px}
+.velky-tel:hover{color:var(--cervena)}
+dl{margin:0}
+dt{font-size:13.5px;color:var(--ocel);margin-top:14px}
+dd{margin:0;font-weight:600}
+form label{display:block;font-weight:600;font-size:14.5px;margin-bottom:5px}
+form input,form textarea{width:100%;font:inherit;padding:11px 12px;border:2px solid var(--asfalt);margin-bottom:14px;background:var(--papir)}
+form textarea{min-height:110px}
+form input:focus,form textarea:focus{outline:none;border-color:var(--cervena)}
+.hlaska{display:none;background:var(--zluta);padding:12px 14px;margin-top:12px;font-weight:500}
+footer{background:var(--asfalt);color:#aab2ba;padding:24px 0;font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media (max-width:1100px){.auto{display:none}}
+@media (max-width:900px){
+  .menu{display:none}
+  .stk-box,.k-grid{grid-template-columns:1fr}
+  .vstup{border-right:0;border-bottom:2px solid #3a4149}
+  .proc{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr}
+  .auto{display:none}
+  .radek{grid-template-columns:52px 1fr}
+  .radek p{grid-column:2}
+}
+@media (max-width:480px){
+  .logo small{display:none}
+  .radek{padding:18px 16px;gap:12px}
+  .vstup,.vystup{padding:22px}
+  section{padding:56px 0}
+  .hero .wrap{padding-top:44px}
+}
+@media (prefers-reduced-motion:reduce){.silnice::after{animation:none}}
+</style>
+</head>
+<body>
+<div class="strip">Návrh nového webu pro <b>Autoopravy Václav Tichý</b>, připravila Tereza Toufarová z Tereweb.cz</div>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top"><span class="vt" aria-hidden="true">VT</span><b>Autoopravy Tichý<small>Bystré, Vrchlického 184</small></b></a>
+    <nav class="menu" aria-label="Hlavní menu"><a href="#servis">Servis</a><a href="#stk">Hlídač STK</a><a href="#kontakt">Kontakt</a></nav>
+    <a class="tel" href="tel:+420606368386">606 368 386</a>
+  </div>
+</header>
+<main id="top">
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <h1><span>Opravy aut</span><span>v Bystrém</span></h1>
+    <div class="pod">
+      <p>Osobní auta, dodávky i menší nákladní vozy. Opravy, příprava na STK a emise, geometrie, karosářské a lakýrnické práce.</p>
+      <div class="btns"><a class="btn tm" href="tel:+420606368386">Zavolat a domluvit opravu</a><a class="btn ob" href="#stk">Kdy mám STK?</a></div>
+    </div>
+  </div>
+  <svg class="auto" viewBox="0 0 380 130" aria-hidden="true">
+    <path d="M20 96 L34 60 Q42 44 62 42 L120 40 L160 14 Q170 8 186 8 L262 8 Q280 8 292 20 L318 44 L350 52 Q364 56 364 72 L364 96 Z" fill="#1E2227"/>
+    <path d="M170 20 L190 20 L190 42 L140 42 Z M200 20 L258 20 Q270 20 278 30 L290 42 L200 42 Z" fill="#FFC531" opacity=".55"/>
+    <circle cx="96" cy="98" r="26" fill="#1E2227" stroke="#FFC531" stroke-width="5"/><circle cx="96" cy="98" r="9" fill="#FFC531"/>
+    <circle cx="300" cy="98" r="26" fill="#1E2227" stroke="#FFC531" stroke-width="5"/><circle cx="300" cy="98" r="9" fill="#FFC531"/>
+  </svg>
+  <div class="silnice" aria-hidden="true"></div>
+</section>
+
+<section id="servis">
+  <div class="wrap">
+    <div class="hlav"><h2>Co u nás opravíme</h2><p>Všechno podle popisu na našem profilu. Nevíte, kam s problémem? Zavolejte a poradíme.</p></div>
+    <div class="list">
+      <div class="radek"><svg viewBox="0 0 46 46" aria-hidden="true"><circle cx="23" cy="23" r="17" fill="none" stroke="#1E2227" stroke-width="3"/><circle cx="23" cy="23" r="6" fill="#FFC531" stroke="#1E2227" stroke-width="2"/><path d="M23 6v8M23 32v8M6 23h8M32 23h8" stroke="#1E2227" stroke-width="3"/></svg><h3>Opravy vozidel</h3><p>Mechanické opravy osobních aut, dodávek a menších nákladních aut.</p></div>
+      <div class="radek"><svg viewBox="0 0 46 46" aria-hidden="true"><rect x="6" y="8" width="34" height="30" fill="none" stroke="#1E2227" stroke-width="3"/><path d="M14 23l6 6 12-12" fill="none" stroke="#C8202F" stroke-width="3.5"/></svg><h3>STK a emise</h3><p>Zajištění technické kontroly a měření emisí, evidenční kontroly a přepis automobilů.</p></div>
+      <div class="radek"><svg viewBox="0 0 46 46" aria-hidden="true"><path d="M8 38 23 8 38 38" fill="none" stroke="#1E2227" stroke-width="3"/><path d="M14 26h18" stroke="#FFC531" stroke-width="4"/></svg><h3>Geometrie podvozku</h3><p>Seřízení geometrie, aby auto jelo rovně a pneumatiky se nesjížděly nerovnoměrně.</p></div>
+      <div class="radek"><svg viewBox="0 0 46 46" aria-hidden="true"><path d="M10 36 30 16l6 6-20 20H10z" fill="#FFC531" stroke="#1E2227" stroke-width="2.5"/><path d="M28 10l8 8" stroke="#1E2227" stroke-width="4"/></svg><h3>Karoserie a lak</h3><p>Karosářské a lakýrnické práce po nehodě i při opotřebení.</p></div>
+      <div class="radek"><svg viewBox="0 0 46 46" aria-hidden="true"><rect x="8" y="14" width="30" height="20" fill="none" stroke="#C8202F" stroke-width="3"/><circle cx="23" cy="24" r="5" fill="none" stroke="#1E2227" stroke-width="3"/><path d="M38 20h4M4 28h4" stroke="#1E2227" stroke-width="3"/></svg><h3>Hasičská čerpadla</h3><p>Opravy požárních stříkaček PS 12, PS 15, případně PS 18 až 21 a čerpadel CAS 25 a CAS 32.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="stk" id="stk">
+  <div class="wrap">
+    <div class="hlav"><h2>Hlídač STK</h2><p>Zadejte, kdy jste byli naposledy na technické. Spočítáme, kdy vám platnost končí, a auto vám na STK připravíme.</p></div>
+    <div class="stk-box">
+      <div class="vstup">
+        <fieldset><legend>Typ vozidla</legend>
+          <div class="prep" id="typ">
+            <button type="button" aria-pressed="true" data-roky="2">Osobní auto</button>
+            <button type="button" aria-pressed="false" data-roky="2">Dodávka do 3,5 t</button>
+            <button type="button" aria-pressed="false" data-roky="1">Nákladní nad 3,5 t</button>
+          </div>
+        </fieldset>
+        <fieldset><legend>Poslední STK</legend>
+          <div class="dvojice">
+            <label>Měsíc<select id="mesic"></select></label>
+            <label>Rok<select id="rok"></select></label>
+          </div>
+        </fieldset>
+      </div>
+      <div class="vystup" aria-live="polite">
+        <div class="stitek-stk"><div><small>platí do</small><b id="do">--</b><small id="do-rok"></small></div></div>
+        <div class="zbyva" id="zbyva"></div>
+        <p id="rada"></p>
+        <a class="btn" href="#kontakt" id="objednat">Objednat přípravu na STK</a>
+      </div>
+    </div>
+    <p class="pozn">Počítáme s obvyklou lhůtou (osobní a dodávky každé 2 roky, nákladní nad 3,5 t každý rok). Přesné datum najdete v osvědčení nebo na kontrolní nálepce.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="hlav"><h2>Proč k nám</h2></div>
+    <div class="proc">
+      <div><h3>Jedno místo</h3><p>Oprava, geometrie, lak i STK s emisemi. Nemusíte objíždět víc servisů.</p></div>
+      <div><h3>Nejen osobáky</h3><p>Opravíme i dodávku nebo menší nákladní auto, se kterým jezdíte do práce.</p></div>
+      <div><h3>Přímo v Bystrém</h3><p>Dílna ve Vrchlického ulici, domluva po telefonu s tím, kdo auto opravuje.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="hlav"><h2>Z dílny</h2></div>
+    <div class="gal"><div class="ph">Oprava podvozku</div><div class="ph">Lakování</div><div class="ph">Geometrie</div><div class="ph">Příprava na STK</div></div>
+    <p class="gal-p">Sem přijdou fotky vašich zakázek.</p>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="wrap k-grid">
+    <div>
+      <h2 style="font-size:clamp(40px,5vw,64px)">Domluvte si termín</h2>
+      <a class="velky-tel" href="tel:+420606368386">606 368 386</a>
+      <dl>
+        <dt>E-mail</dt><dd><a href="mailto:tav@seznam.cz">tav@seznam.cz</a></dd>
+        <dt>Adresa dílny</dt><dd>Vrchlického 184, 569 92 Bystré</dd>
+      </dl>
+    </div>
+    <form id="formular" novalidate>
+      <label for="jm">Jméno</label><input id="jm" autocomplete="name">
+      <label for="tl">Telefon</label><input id="tl" type="tel" autocomplete="tel">
+      <label for="zp">Co je s autem</label><textarea id="zp"></textarea>
+      <button class="btn tm" type="submit">Odeslat</button>
+      <p class="hlaska" id="hlaska" role="status">Toto je ukázka formuláře. V hotovém webu by zpráva přišla rovnou na váš e-mail.</p>
+    </form>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><span>© 2026 Autoopravy Václav Tichý</span><span>Návrh připravila Tereweb.cz</span></div></footer>
+<script>
+var mesice=['leden','únor','březen','duben','květen','červen','červenec','srpen','září','říjen','listopad','prosinec'];
+var dnes=new Date(),mS=document.getElementById('mesic'),rS=document.getElementById('rok'),roky=2;
+mesice.forEach(function(m,i){mS.add(new Option(m,i));});
+for(var y=dnes.getFullYear();y>=dnes.getFullYear()-4;y--){rS.add(new Option(y,y));}
+mS.value=dnes.getMonth();rS.value=dnes.getFullYear()-1;
+function spocti(){
+  var m=+mS.value,y=+rS.value+roky,konec=new Date(y,m+1,0);
+  document.getElementById('do').textContent=(m+1)+'/'+String(y).slice(2);
+  document.getElementById('do-rok').textContent=mesice[m]+' '+y;
+  var dny=Math.ceil((konec-dnes)/864e5),z=document.getElementById('zbyva'),r=document.getElementById('rada');
+  z.className='zbyva';
+  if(dny<0){z.textContent='STK už propadla';z.classList.add('po');r.textContent='S propadlou technickou nejezděte. Zavolejte, auto zkontrolujeme a na STK připravíme.';}
+  else if(dny<=60){z.textContent='Zbývá '+dny+' dní';z.classList.add('blizko');r.textContent='Je nejvyšší čas. Objednejte se, ať auto projde napoprvé.';}
+  else{var mes=Math.floor(dny/30.4);z.textContent='Zbývá '+mes+' '+(mes===1?'měsíc':mes<5?'měsíce':'měsíců');r.textContent='Máte čas. Měsíc předem se ozvěte a připravíme auto na kontrolu.';}
+}
+document.getElementById('typ').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;this.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');roky=+b.dataset.roky;spocti();});
+mS.addEventListener('change',spocti);rS.addEventListener('change',spocti);
+document.getElementById('objednat').addEventListener('click',function(){document.getElementById('zp').value='Dobrý den, chtěl(a) bych připravit auto na STK. Platnost končí '+document.getElementById('do-rok').textContent+'.';});
+document.getElementById('formular').addEventListener('submit',function(e){e.preventDefault();document.getElementById('hlaska').style.display='block';});
+spocti();
+</script>
+</body>
+</html>

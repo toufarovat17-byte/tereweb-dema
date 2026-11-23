@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Milan Fajmon, elektroservis – Bystré (návrh webu)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Lexend:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --led:#EAF4FA;     /* led */
+  --noc:#0F2A44;     /* zimní noc */
+  --mraz:#8CCBEB;    /* mráz */
+  --teplo:#E8622C;   /* teplo, porucha */
+  --sed:#4F5F6E;     /* text sekundární */
+  --bila:#FFFFFF;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Lexend',system-ui,sans-serif;font-weight:300;color:var(--noc);background:var(--bila);line-height:1.65;font-size:17px}
+h1,h2,h3{font-family:'Sora',sans-serif;font-weight:700;line-height:1.12;margin:0 0 .5em;letter-spacing:-.02em}
+strong,b{font-weight:500}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teplo);outline-offset:3px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+.strip{background:var(--noc);color:#cfe3f1;font-size:14px;text-align:center;padding:8px 14px}
+.strip b{color:#fff}
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-bottom:1px solid #dbe8f1}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 0}
+.logo{display:flex;gap:10px;align-items:center;text-decoration:none;font-family:'Sora';font-weight:600;font-size:18px}
+.logo small{display:block;font-family:'Lexend';font-weight:300;font-size:13px;color:var(--sed)}
+.menu{display:flex;gap:24px;font-size:15.5px}
+.menu a{text-decoration:none}
+.menu a:hover{color:var(--teplo)}
+.tel{background:var(--noc);color:#fff;text-decoration:none;padding:10px 18px;border-radius:40px;font-weight:400;white-space:nowrap}
+.tel:hover{background:#1b3e60}
+/* HERO split */
+.hero{background:linear-gradient(180deg,var(--led),#fff);padding:60px 0 70px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(36px,5vw,60px)}
+.hero p{font-size:19px;max-width:40ch;color:#29415a;margin:0 0 28px}
+.btn{display:inline-block;padding:14px 24px;border-radius:40px;text-decoration:none;font-weight:400;font-size:16px;border:0;cursor:pointer;font-family:inherit}
+.btn.hl{background:var(--teplo);color:#fff}
+.btn.hl:hover{background:#c94f1e}
+.btn.dr{background:transparent;color:var(--noc);box-shadow:inset 0 0 0 1.5px var(--noc)}
+.btn.dr:hover{background:var(--noc);color:#fff}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.hero .adr{margin:26px 0 0;font-size:15px;color:var(--sed)}
+.lednice{justify-self:center;width:100%;max-width:380px}
+.lednice svg{width:100%;height:auto}
+#rtut{transform-origin:50% 100%;transform-box:fill-box;animation:chlad 3s ease-out forwards}
+@keyframes chlad{from{transform:scaleY(1)}to{transform:scaleY(.32)}}
+.vlocka{animation:pada 6s linear infinite;opacity:.8}
+@keyframes pada{from{transform:translateY(-20px)}to{transform:translateY(40px);opacity:0}}
+/* SLUŽBY */
+section{padding:80px 0}
+.uvod{max-width:620px;margin-bottom:38px}
+.uvod h2{font-size:clamp(30px,3.6vw,42px)}
+.uvod p{margin:0;color:var(--sed)}
+.sl{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.karta{background:var(--led);padding:26px 22px;border-radius:18px;position:relative;overflow:hidden}
+.karta svg{width:50px;height:50px;margin-bottom:16px}
+.karta h3{font-size:19px;margin-bottom:6px}
+.karta p{margin:0;font-size:15.5px;color:#29415a}
+.karta.tm{background:var(--noc);color:#fff}
+.karta.tm p{color:#c7dbeb}
+/* DIAGNOSTIKA */
+.diag{background:var(--noc);color:#fff}
+.diag .uvod p{color:#b9d2e6}
+.d-box{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.krok{background:#163756;border-radius:18px;padding:24px}
+.krok h3{font-size:16px;font-weight:600;color:var(--mraz);margin-bottom:14px;letter-spacing:0}
+.vol{display:flex;flex-wrap:wrap;gap:8px}
+.vol button{font:inherit;font-weight:300;font-size:15.5px;padding:9px 16px;border-radius:30px;border:1.5px solid #3b6286;background:transparent;color:#fff;cursor:pointer}
+.vol button:hover{border-color:var(--mraz)}
+.vol button[aria-pressed="true"]{background:var(--mraz);color:var(--noc);border-color:var(--mraz);font-weight:500}
+.vysledek{grid-column:1/-1;background:#fff;color:var(--noc);border-radius:18px;padding:26px 28px;display:grid;grid-template-columns:90px 1fr auto;gap:22px;align-items:center}
+.teplomer{width:90px;height:90px}
+.vysledek h3{font-size:22px;margin-bottom:6px}
+.vysledek p{margin:0;color:#29415a}
+.vysledek .ukol{margin-top:8px;font-size:15px;color:var(--sed)}
+/* JAK */
+.jak{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1.5px solid var(--noc)}
+.jak div{padding:24px 26px 0 0}
+.jak div+div{padding-left:26px;border-left:1px solid #d3e1ec}
+.jak h3{font-size:20px}
+.jak p{margin:0;color:var(--sed)}
+.jak .ic{font-family:'Sora';font-size:14px;color:var(--teplo);font-weight:600;margin-bottom:10px;display:block}
+/* GALERIE */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ph{aspect-ratio:4/3;border-radius:18px;background:linear-gradient(160deg,#d6ebf7,#a9d3ec);display:flex;align-items:flex-end;padding:16px;font-size:14.5px;color:var(--noc);position:relative;overflow:hidden}
+.ph::after{content:"";position:absolute;right:-30px;top:-30px;width:120px;height:120px;border-radius:50%;border:14px solid rgba(255,255,255,.45)}
+.ph:nth-child(2){background:linear-gradient(160deg,#18405f,#0F2A44);color:#fff}
+.gal-p{margin-top:14px;color:var(--sed)}
+/* KONTAKT */
+.kontakt{background:var(--led)}
+.k-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:start}
+.kk{list-style:none;padding:0;margin:20px 0 0}
+.kk li{display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid #cfe0ec}
+.kk svg{width:26px;height:26px;flex:none}
+.kk a{text-decoration:none;font-weight:500}
+form{background:#fff;padding:28px;border-radius:18px}
+label{display:block;font-size:14.5px;font-weight:400;margin-bottom:5px}
+input,textarea{width:100%;font:inherit;padding:11px 14px;border:1.5px solid #cfe0ec;border-radius:12px;margin-bottom:14px}
+input:focus,textarea:focus{outline:none;border-color:var(--noc)}
+textarea{min-height:110px}
+.hlaska{display:none;background:var(--led);border-radius:12px;padding:12px 14px;margin-top:12px;font-size:15px}
+footer{background:var(--noc);color:#b9d2e6;padding:24px 0;font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media (max-width:920px){
+  .hero-grid,.d-box,.k-grid{grid-template-columns:1fr}
+  .lednice{max-width:260px;order:-1}
+  .sl{grid-template-columns:1fr 1fr}
+  .jak{grid-template-columns:1fr}
+  .jak div+div{padding-left:0;border-left:0;border-top:1px solid #d3e1ec}
+  .jak div{padding:20px 0}
+  .menu{display:none}
+  .vysledek{grid-template-columns:70px 1fr}
+  .vysledek .btn{grid-column:1/-1;justify-self:start}
+  .teplomer{width:70px;height:70px}
+}
+@media (max-width:520px){
+  .sl,.gal{grid-template-columns:1fr}
+  .logo small{display:none}
+  section{padding:56px 0}
+  .hero{padding:36px 0 52px}
+}
+@media (prefers-reduced-motion:reduce){#rtut,.vlocka{animation:none}}
+</style>
+</head>
+<body>
+<div class="strip">Návrh nového webu pro <b>Milan Fajmon, elektroservis</b>, připravila Tereza Toufarová z Tereweb.cz</div>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#0F2A44"/><path d="M20 8v24M9.6 14l20.8 12M9.6 26l20.8-12" stroke="#8CCBEB" stroke-width="2.4" stroke-linecap="round"/><circle cx="20" cy="20" r="4" fill="#E8622C"/></svg><span>Milan Fajmon<small>elektroservis a chlazení, Bystré</small></span></a>
+    <nav class="menu" aria-label="Hlavní menu"><a href="#sluzby">Co opravuji</a><a href="#diagnostika">Co se děje?</a><a href="#kontakt">Kontakt</a></nav>
+    <a class="tel" href="tel:+420603782573">603 782 573</a>
+  </div>
+</header>
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Lednice nechladí? Klimatizace nefouká? Opravím to.</h1>
+      <p>Opravy klimatizací, chladicích a mrazicích zařízení i domácích chladniček a mrazniček. Bystré a okolí.</p>
+      <div class="btns"><a class="btn hl" href="tel:+420603782573">Zavolat opraváře</a><a class="btn dr" href="#diagnostika">Zjistit, co se děje</a></div>
+      <p class="adr">Vrchlického 497, 569 92 Bystré</p>
+    </div>
+    <div class="lednice">
+      <svg viewBox="0 0 320 400" role="img" aria-label="Ilustrace lednice s teploměrem, který klesá">
+        <rect x="60" y="20" width="170" height="360" rx="18" fill="#fff" stroke="#0F2A44" stroke-width="4"/>
+        <path d="M60 140h170" stroke="#0F2A44" stroke-width="4"/>
+        <rect x="200" y="60" width="8" height="50" rx="4" fill="#0F2A44"/>
+        <rect x="200" y="170" width="8" height="80" rx="4" fill="#0F2A44"/>
+        <g fill="#8CCBEB"><path class="vlocka" d="M110 60l4 8 8 1-6 6 2 8-8-4-8 4 2-8-6-6 8-1z"/><path class="vlocka" style="animation-delay:-3s" d="M150 80l3 6 6 1-4 4 1 6-6-3-6 3 1-6-4-4 6-1z"/></g>
+        <rect x="258" y="70" width="26" height="250" rx="13" fill="#fff" stroke="#0F2A44" stroke-width="4"/>
+        <rect id="rtut" x="266" y="90" width="10" height="220" rx="5" fill="#E8622C"/>
+        <circle cx="271" cy="330" r="22" fill="#E8622C" stroke="#0F2A44" stroke-width="4"/>
+        <g font-family="Lexend" font-size="12" fill="#4F5F6E"><text x="292" y="96">20°</text><text x="292" y="200">8°</text><text x="292" y="300">4°</text></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="sluzby">
+  <div class="wrap">
+    <div class="uvod"><h2>Co opravuji</h2><p>Spotřebiče a zařízení, které mají chladit. Doma, v kanceláři i v provozovně.</p></div>
+    <div class="sl">
+      <div class="karta"><svg viewBox="0 0 50 50" aria-hidden="true"><rect x="5" y="12" width="40" height="18" rx="4" fill="none" stroke="#0F2A44" stroke-width="2.5"/><path d="M12 36c0 4 4 4 4 8M25 36c0 4 4 4 4 8M38 36c0 4-4 4-4 8" stroke="#8CCBEB" stroke-width="2.5" fill="none"/></svg><h3>Klimatizace</h3><p>Opravy klimatizačních jednotek, když přestanou chladit nebo hlásí chybu.</p></div>
+      <div class="karta tm"><svg viewBox="0 0 50 50" aria-hidden="true"><rect x="12" y="3" width="26" height="44" rx="4" fill="none" stroke="#8CCBEB" stroke-width="2.5"/><path d="M12 18h26M33 8v6M33 23v8" stroke="#8CCBEB" stroke-width="2.5"/></svg><h3>Domácí chladničky</h3><p>Lednice, které nechladí, hlučí, namrzají nebo pod nimi teče voda.</p></div>
+      <div class="karta"><svg viewBox="0 0 50 50" aria-hidden="true"><rect x="5" y="14" width="40" height="28" rx="4" fill="none" stroke="#0F2A44" stroke-width="2.5"/><path d="M5 22h40" stroke="#0F2A44" stroke-width="2.5"/><path d="M25 27v10M20 29l10 6M30 29l-10 6" stroke="#8CCBEB" stroke-width="2.2"/></svg><h3>Mrazničky a mrazáky</h3><p>Pultové i skříňové mrazničky, které nedrží teplotu.</p></div>
+      <div class="karta"><svg viewBox="0 0 50 50" aria-hidden="true"><rect x="4" y="8" width="42" height="34" rx="3" fill="none" stroke="#0F2A44" stroke-width="2.5"/><path d="M4 20h42M17 8v34M33 8v34" stroke="#8CCBEB" stroke-width="2"/></svg><h3>Chladicí zařízení</h3><p>Chladicí a mrazicí zařízení pro obchody, restaurace a provozovny.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="diag" id="diagnostika">
+  <div class="wrap">
+    <div class="uvod"><h2>Co se děje?</h2><p>Klikněte, co máte za zařízení a jak se projevuje. Napovíme, co můžete zkontrolovat sami, a když to nepomůže, rovnou se domluvíme.</p></div>
+    <div class="d-box">
+      <div class="krok"><h3>Zařízení</h3>
+        <div class="vol" data-sk="zar">
+          <button type="button" aria-pressed="true" data-v="lednice">Lednice</button>
+          <button type="button" aria-pressed="false" data-v="mraznicka">Mraznička</button>
+          <button type="button" aria-pressed="false" data-v="klima">Klimatizace</button>
+          <button type="button" aria-pressed="false" data-v="provoz">Zařízení v provozovně</button>
+        </div>
+      </div>
+      <div class="krok"><h3>Co dělá</h3>
+        <div class="vol" data-sk="pro">
+          <button type="button" aria-pressed="true" data-v="nechladi">Nechladí</button>
+          <button type="button" aria-pressed="false" data-v="hluk">Hlučí</button>
+          <button type="button" aria-pressed="false" data-v="voda">Teče voda</button>
+          <button type="button" aria-pressed="false" data-v="led">Namrzá</button>
+          <button type="button" aria-pressed="false" data-v="nejede">Nejde zapnout</button>
+        </div>
+      </div>
+      <div class="vysledek" aria-live="polite">
+        <svg class="teplomer" viewBox="0 0 90 90" aria-hidden="true"><circle cx="45" cy="45" r="42" fill="#EAF4FA"/><circle id="ind" cx="45" cy="45" r="26" fill="#E8622C"/><path d="M45 28v34M30 36l30 18M30 54l30-18" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>
+        <div><h3 id="v-nadpis"></h3><p id="v-text"></p><p class="ukol" id="v-ukol"></p></div>
+        <a class="btn hl" href="#kontakt" id="v-btn">Objednat opravu</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="uvod"><h2>Jak oprava probíhá</h2></div>
+    <div class="jak">
+      <div><span class="ic">Telefon</span><h3>Popíšete závadu</h3><p>Řeknete, o jaké zařízení jde a co dělá. Typový štítek nebo jeho fotka pomůže.</p></div>
+      <div><span class="ic">Termín</span><h3>Domluvíme se</h3><p>Domluvíme termín, kdy se na zařízení podívám.</p></div>
+      <div><span class="ic">Oprava</span><h3>Opravím a vyzkouším</h3><p>Po opravě zkontroluji, že zařízení zase chladí, jak má.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="uvod"><h2>Ukázky oprav</h2></div>
+    <div class="gal"><div class="ph">Oprava chladničky</div><div class="ph">Servis klimatizace</div><div class="ph">Chladicí vitrína</div></div>
+    <p class="gal-p">Sem přijdou fotky vašich zakázek.</p>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="wrap k-grid">
+    <div>
+      <h2 style="font-size:clamp(30px,3.6vw,42px)">Zavolejte nebo napište</h2>
+      <p style="color:var(--sed);margin:0">Čím dřív se ozvete, tím menší šance, že se zkazí jídlo v lednici.</p>
+      <ul class="kk">
+        <li><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M6 3h5l2 6-3 2a12 12 0 0 0 5 5l2-3 6 2v5c0 1-1 2-2 2C11 22 4 15 4 5c0-1 1-2 2-2z" fill="#0F2A44"/></svg><a href="tel:+420603782573">+420 603 782 573</a></li>
+        <li><svg viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="6" width="20" height="14" rx="2" fill="none" stroke="#0F2A44" stroke-width="2"/><path d="M3 7l10 7 10-7" fill="none" stroke="#0F2A44" stroke-width="2"/></svg><a href="mailto:milan.fajmon@quick.cz">milan.fajmon@quick.cz</a></li>
+        <li><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M13 2a8 8 0 0 0-8 8c0 6 8 14 8 14s8-8 8-14a8 8 0 0 0-8-8z" fill="#E8622C"/><circle cx="13" cy="10" r="3" fill="#fff"/></svg><span>Vrchlického 497, 569 92 Bystré</span></li>
+      </ul>
+    </div>
+    <form id="formular" novalidate>
+      <label for="jm">Jméno</label><input id="jm" autocomplete="name">
+      <label for="tl">Telefon</label><input id="tl" type="tel" autocomplete="tel">
+      <label for="zp">Popis závady</label><textarea id="zp"></textarea>
+      <button class="btn hl" type="submit">Odeslat</button>
+      <p class="hlaska" id="hlaska" role="status">Toto je ukázka formuláře. V hotovém webu by zpráva přišla rovnou na váš e-mail.</p>
+    </form>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><span>© 2026 Milan Fajmon, elektroservis</span><span>Návrh připravila Tereweb.cz</span></div></footer>
+<script>
+var s={zar:'lednice',pro:'nechladi'};
+var zN={lednice:'Lednice',mraznicka:'Mraznička',klima:'Klimatizace',provoz:'Chladicí zařízení v provozovně'};
+var pN={nechladi:'nechladí',hluk:'hlučí',voda:'teče voda',led:'namrzá',nejede:'nejde zapnout'};
+var tipy={
+ nechladi:['Zkontrolujte nastavení termostatu a jestli dvířka dobře těsní.','Když to nepomůže, bývá na vině kompresor, ventilátor nebo únik chladiva. To je práce pro opraváře.'],
+ hluk:['Ověřte, že zařízení stojí rovně a nic se nedotýká zadní stěny.','Trvalé bzučení, cvakání nebo drnčení často znamená opotřebený ventilátor či kompresor.'],
+ voda:['Podívejte se, jestli není ucpaný odtok kondenzátu.','Pokud voda teče dál, je potřeba zkontrolovat odvod kondenzátu a těsnění.'],
+ led:['Zkontrolujte těsnění dvířek a zda se dvířka nenechávají pootevřená.','Silné namrzání může souviset s termostatem nebo odmrazováním.'],
+ nejede:['Zkontrolujte zásuvku, jistič a přívodní kabel.','Když proud jde a zařízení přesto nenaskočí, ozvěte se, podíváme se na elektroniku a kompresor.']
+};
+function obnov(){
+  var t=tipy[s.pro],p=pN[s.pro];
+  document.getElementById('v-nadpis').textContent=zN[s.zar]+': '+p;
+  document.getElementById('v-text').textContent=t[0];
+  document.getElementById('v-ukol').textContent=t[1];
+  document.getElementById('ind').setAttribute('fill',s.pro==='led'?'#8CCBEB':'#E8622C');
+}
+document.querySelectorAll('.vol').forEach(function(g){g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');s[g.dataset.sk]=b.dataset.v;obnov();});});
+document.getElementById('v-btn').addEventListener('click',function(){document.getElementById('zp').value='Dobrý den, prosím o opravu. Zařízení: '+zN[s.zar].toLowerCase()+', závada: '+pN[s.pro]+'.';});
+document.getElementById('formular').addEventListener('submit',function(e){e.preventDefault();document.getElementById('hlaska').style.display='block';});
+obnov();
+</script>
+</body>
+</html>

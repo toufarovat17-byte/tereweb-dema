@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Truhlářství Macek – Bystré (návrh webu)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --smrk:#1F3A32;      /* tmavá smrková zeleň */
+  --dub:#B07A43;       /* dubové dřevo */
+  --orech:#3B2A1F;     /* ořech, text */
+  --hobl:#F1EDE6;      /* hoblovaná bříza */
+  --pily:#DCD3C4;      /* piliny, linky */
+  --bila:#FFFFFF;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Instrument Sans',system-ui,sans-serif;color:var(--orech);background:var(--hobl);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:'Young Serif',Georgia,serif;font-weight:400;line-height:1.15;margin:0 0 .5em;color:var(--smrk)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--dub);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+.proužek,.strip{background:var(--orech);color:#F1EDE6;font-size:14px;text-align:center;padding:8px 14px}
+.strip b{color:#E9C08F}
+header{background:var(--hobl);border-bottom:1px solid var(--pily);position:sticky;top:0;z-index:20}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.znak{display:flex;align-items:center;gap:12px;text-decoration:none}
+.znak svg{flex:none}
+.znak span{font-family:'Young Serif',serif;font-size:21px;color:var(--smrk)}
+.znak small{display:block;font-family:'Instrument Sans';font-size:12.5px;letter-spacing:.04em;color:#6b5a4c}
+.menu{display:flex;gap:26px;font-size:15.5px}
+.menu a{text-decoration:none}
+.menu a:hover{color:var(--dub)}
+.tel{background:var(--smrk);color:#fff;text-decoration:none;padding:10px 18px;border-radius:4px;font-weight:600;white-space:nowrap}
+.tel:hover{background:#2c4f45}
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:72px 0 80px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(38px,5.2vw,62px);margin-bottom:22px}
+.hero p.lead{font-size:20px;max-width:34ch;margin:0 0 30px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:14px 22px;border-radius:4px;font-weight:600;text-decoration:none;border:2px solid var(--smrk);font-size:16px;cursor:pointer;font-family:inherit}
+.btn.plny{background:var(--smrk);color:#fff}
+.btn.plny:hover{background:#2c4f45}
+.btn.obrys{color:var(--smrk);background:transparent}
+.btn.obrys:hover{background:var(--smrk);color:#fff}
+.kmen{position:relative;aspect-ratio:1;max-width:460px;justify-self:end;width:100%}
+.kmen svg{width:100%;height:100%}
+.kmen .ring{fill:none;stroke:var(--dub);stroke-width:1.4;opacity:.75;stroke-dasharray:1200;stroke-dashoffset:1200;animation:ring 2.4s ease-out forwards}
+@keyframes ring{to{stroke-dashoffset:0}}
+.kmen .stitek{position:absolute;bottom:8%;left:-6%;background:var(--bila);border-left:4px solid var(--dub);padding:12px 16px;font-size:14.5px;box-shadow:0 10px 30px rgba(59,42,31,.12);max-width:230px}
+.misto{font-size:15px;color:#6b5a4c;margin-top:26px}
+/* SLUŽBY */
+section{padding:78px 0}
+.sluzby{background:var(--bila)}
+.uvod{max-width:640px;margin-bottom:40px}
+.uvod p{margin:0}
+.sl-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--smrk)}
+.sl{padding:28px 26px 30px 0;border-bottom:1px solid var(--pily)}
+.sl:not(:nth-child(3n+1)){padding-left:26px;border-left:1px solid var(--pily)}
+.sl svg{width:44px;height:44px;margin-bottom:14px}
+.sl h3{font-size:23px;margin-bottom:8px}
+.sl p{margin:0;font-size:16px}
+/* KONFIGURÁTOR */
+.konf{background:var(--smrk);color:#EDE7DD}
+.konf h2{color:#fff}
+.konf .uvod p{color:#cfd9d4}
+.k-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:34px;align-items:start}
+.krok{margin-bottom:24px}
+.krok h3{font-family:'Instrument Sans';font-size:15px;font-weight:600;color:#E9C08F;margin-bottom:10px;letter-spacing:.02em}
+.volby{display:flex;flex-wrap:wrap;gap:8px}
+.volby button{font-family:inherit;font-size:15.5px;background:transparent;color:#fff;border:1.5px solid #5d786e;padding:9px 15px;border-radius:3px;cursor:pointer}
+.volby button:hover{border-color:#E9C08F}
+.volby button[aria-pressed="true"]{background:#E9C08F;color:var(--orech);border-color:#E9C08F;font-weight:600}
+.rozmer{display:flex;align-items:center;gap:14px}
+.rozmer input{flex:1;accent-color:#E9C08F}
+.rozmer output{min-width:74px;font-weight:600;color:#fff}
+.vykres{background:#F1EDE6;border-radius:4px;padding:18px;color:var(--orech)}
+.vykres svg{width:100%;height:auto;display:block;background:
+  linear-gradient(#e5ddd0 1px,transparent 1px) 0 0/20px 20px,
+  linear-gradient(90deg,#e5ddd0 1px,transparent 1px) 0 0/20px 20px}
+.souhrn{margin:14px 0 0;font-size:15.5px}
+.souhrn strong{color:var(--smrk)}
+.vykres .btn{margin-top:14px}
+/* POSTUP */
+.postup-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.postup-grid::before{content:"";position:absolute;top:21px;left:0;right:0;border-top:2px dashed var(--dub)}
+.kr{padding-right:22px;position:relative}
+.kr .bod{width:44px;height:44px;border-radius:50%;background:var(--hobl);border:2px solid var(--dub);display:grid;place-items:center;font-family:'Young Serif';font-size:19px;color:var(--dub);margin-bottom:16px;position:relative}
+.kr h3{font-size:21px;margin-bottom:6px}
+.kr p{margin:0;font-size:16px}
+/* GALERIE */
+.galerie{background:var(--bila)}
+.gal{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:200px 200px;gap:12px}
+.ph{border-radius:3px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:14px;color:#fff;font-size:14px;font-weight:500}
+.ph::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(100deg,rgba(255,255,255,.07) 0 3px,transparent 3px 11px)}
+.ph span{position:relative}
+.ph.a{grid-row:span 2;background:linear-gradient(135deg,#8a5a2f,#B07A43)}
+.ph.b{background:linear-gradient(135deg,#1F3A32,#3f6457)}
+.ph.c{background:linear-gradient(135deg,#5b4030,#7a5540)}
+.ph.d{background:linear-gradient(135deg,#c79a66,#a77442)}
+.ph.e{background:linear-gradient(135deg,#2f4a40,#1F3A32)}
+.gal-pozn{margin-top:14px;font-size:15px;color:#6b5a4c}
+/* KONTAKT */
+.k2{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px}
+.udaje{list-style:none;padding:0;margin:0 0 20px}
+.udaje li{padding:14px 0;border-bottom:1px solid var(--pily)}
+.udaje small{display:block;color:#7a6a5c;font-size:13.5px}
+.udaje a{font-weight:600;font-size:19px;text-decoration:none;color:var(--smrk)}
+form{background:var(--bila);padding:28px;border-radius:4px;border-top:4px solid var(--dub)}
+label{display:block;font-size:14.5px;font-weight:600;margin:0 0 5px}
+input,textarea,select{width:100%;font:inherit;font-size:16px;padding:11px 12px;border:1.5px solid var(--pily);border-radius:3px;background:#fff;color:var(--orech);margin-bottom:16px}
+input:focus,textarea:focus{border-color:var(--smrk);outline:none}
+textarea{min-height:110px;resize:vertical}
+.hlaska{display:none;background:#e7efe9;border-left:4px solid var(--smrk);padding:12px 14px;margin-top:14px;font-size:15px}
+footer{background:var(--orech);color:#d9cfc2;padding:28px 0;font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media (max-width:900px){
+  .hero-grid,.k-grid,.k2{grid-template-columns:1fr}
+  .kmen{justify-self:center;max-width:340px}
+  .kmen .stitek{left:0}
+  .sl-grid{grid-template-columns:1fr 1fr}
+  .sl,.sl:not(:nth-child(3n+1)){padding:24px 18px 24px 0;border-left:0}
+  .sl:nth-child(2n){padding-left:18px;border-left:1px solid var(--pily)}
+  .postup-grid{grid-template-columns:1fr 1fr;gap:28px}
+  .postup-grid::before{display:none}
+  .menu{display:none}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .sl-grid{grid-template-columns:1fr}
+  .sl:nth-child(2n){padding-left:0;border-left:0}
+  .postup-grid{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr;grid-template-rows:180px 130px 130px}
+  .ph.a{grid-column:span 2;grid-row:auto}
+  .znak small{display:none}
+  .tel{padding:9px 12px;font-size:15px}
+  section{padding:56px 0}
+  .hero{padding:44px 0 56px}
+}
+@media (prefers-reduced-motion:reduce){.kmen .ring{animation:none;stroke-dashoffset:0}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="strip">Návrh nového webu pro <b>Truhlářství Macek</b>, připravila Tereza Toufarová z Tereweb.cz</div>
+<header>
+  <div class="wrap nav">
+    <a class="znak" href="#top" aria-label="Truhlářství Macek, úvod">
+      <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="21" fill="#1F3A32"/><circle cx="22" cy="22" r="15" fill="none" stroke="#B07A43" stroke-width="1.3"/><circle cx="23" cy="21" r="9.5" fill="none" stroke="#B07A43" stroke-width="1.3"/><text x="22" y="27.5" text-anchor="middle" font-family="Young Serif, serif" font-size="16" fill="#F1EDE6">M</text></svg>
+      <span>Truhlářství Macek<small>Bystré u Dobrušky</small></span>
+    </a>
+    <nav class="menu" aria-label="Hlavní menu">
+      <a href="#sluzby">Co vyrábíme</a><a href="#navrh">Navrhněte si</a><a href="#postup">Jak to probíhá</a><a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="tel" href="tel:+420737467909">737 467 909</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Okna, dveře, schody i kuchyně. Na míru vašemu domu.</h1>
+      <p class="lead">Zakázková truhlářská výroba z Bystrého pod Orlickými horami. Z masivu i z lamina, přesně podle vašich rozměrů.</p>
+      <div class="btns">
+        <a class="btn plny" href="#navrh">Navrhnout si zakázku</a>
+        <a class="btn obrys" href="tel:+420737467909">Zavolat truhláři</a>
+      </div>
+      <p class="misto">Bystré 23, 518 01 · Dobrušsko a okolí</p>
+    </div>
+    <div class="kmen">
+      <svg viewBox="0 0 400 400" role="img" aria-label="Ilustrace letokruhů v průřezu kmene">
+        <ellipse cx="200" cy="200" rx="190" ry="186" fill="#E3CDAE"/>
+        <ellipse cx="200" cy="200" rx="190" ry="186" fill="none" stroke="#8a5a2f" stroke-width="6"/>
+        <g id="kruhy"></g>
+        <path d="M204 196 L330 120" stroke="#8a5a2f" stroke-width="1.4" opacity=".5"/>
+      </svg>
+      <div class="stitek"><strong>Ze dřeva, které známe.</strong><br>Masiv, lamino i spojení obojího podle toho, kam výrobek patří.</div>
+    </div>
+  </div>
+</section>
+
+<section class="sluzby" id="sluzby">
+  <div class="wrap">
+    <div class="uvod">
+      <h2>Co pro vás vyrobíme</h2>
+      <p>Specializujeme se hlavně na stavební truhlářství a zakázkovou výrobu. Menší tesařské práce zvládneme také.</p>
+    </div>
+    <div class="sl-grid">
+      <div class="sl"><svg viewBox="0 0 44 44" aria-hidden="true"><rect x="8" y="5" width="28" height="34" fill="none" stroke="#1F3A32" stroke-width="2"/><path d="M22 5v34M8 22h28" stroke="#B07A43" stroke-width="2"/></svg><h3>Okna</h3><p>Dřevěná okna vyrobená na rozměr otvoru, pro novostavby i rekonstrukce.</p></div>
+      <div class="sl"><svg viewBox="0 0 44 44" aria-hidden="true"><rect x="11" y="4" width="22" height="36" fill="none" stroke="#1F3A32" stroke-width="2"/><rect x="15" y="9" width="14" height="11" fill="none" stroke="#B07A43" stroke-width="1.6"/><circle cx="29" cy="25" r="1.8" fill="#B07A43"/></svg><h3>Dveře</h3><p>Vnitřní i vstupní dveře podle vašeho přání a stylu domu.</p></div>
+      <div class="sl"><svg viewBox="0 0 44 44" aria-hidden="true"><path d="M5 39h8v-8h8v-8h8v-8h8V7" fill="none" stroke="#1F3A32" stroke-width="2"/><path d="M9 33 37 9" stroke="#B07A43" stroke-width="1.6"/></svg><h3>Schodiště</h3><p>Dřevěná schodiště vyrobená přesně do vašeho prostoru.</p></div>
+      <div class="sl"><svg viewBox="0 0 44 44" aria-hidden="true"><rect x="4" y="20" width="36" height="18" fill="none" stroke="#1F3A32" stroke-width="2"/><path d="M16 20v18M28 20v18M4 26h36" stroke="#B07A43" stroke-width="1.6"/><rect x="6" y="6" width="32" height="9" fill="none" stroke="#1F3A32" stroke-width="2"/></svg><h3>Kuchyně</h3><p>Kuchyňské linky na míru, z masivu, z lamina nebo v kombinaci.</p></div>
+      <div class="sl"><svg viewBox="0 0 44 44" aria-hidden="true"><rect x="6" y="4" width="32" height="36" fill="none" stroke="#1F3A32" stroke-width="2"/><path d="M22 4v36M6 14h16" stroke="#B07A43" stroke-width="1.6"/><path d="M19 24v4M25 24v4" stroke="#1F3A32" stroke-width="2"/></svg><h3>Nábytek a vestavěné skříně</h3><p>Nábytek z masivu i lamina, vestavěné skříně do podkroví, výklenků i chodeb.</p></div>
+      <div class="sl"><svg viewBox="0 0 44 44" aria-hidden="true"><path d="M4 18 22 6l18 12" fill="none" stroke="#1F3A32" stroke-width="2"/><path d="M8 18v20M36 18v20M8 38h28" stroke="#B07A43" stroke-width="1.8"/></svg><h3>Tesařské práce</h3><p>Pergoly, zahradní domky, zahradní nábytek a menší střechy.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="konf" id="navrh">
+  <div class="wrap">
+    <div class="uvod">
+      <h2>Navrhněte si, co potřebujete</h2>
+      <p>Vyberte výrobek, materiál a přibližný rozměr. Nákres se mění s vámi a s hotovým zadáním se nám rovnou ozvete.</p>
+    </div>
+    <div class="k-grid">
+      <div>
+        <div class="krok"><h3>1. Co vyrobit</h3>
+          <div class="volby" data-skupina="vyrobek">
+            <button type="button" aria-pressed="true" data-v="kuchyne">Kuchyňská linka</button>
+            <button type="button" aria-pressed="false" data-v="skrin">Vestavěná skříň</button>
+            <button type="button" aria-pressed="false" data-v="schody">Schodiště</button>
+            <button type="button" aria-pressed="false" data-v="dvere">Dveře</button>
+            <button type="button" aria-pressed="false" data-v="okno">Okno</button>
+            <button type="button" aria-pressed="false" data-v="pergola">Pergola</button>
+          </div>
+        </div>
+        <div class="krok"><h3>2. Materiál</h3>
+          <div class="volby" data-skupina="material">
+            <button type="button" aria-pressed="true" data-v="masiv">Masiv</button>
+            <button type="button" aria-pressed="false" data-v="lamino">Lamino</button>
+            <button type="button" aria-pressed="false" data-v="kombinace">Kombinace</button>
+          </div>
+        </div>
+        <div class="krok"><h3 id="rozmer-nadpis">3. Přibližná délka</h3>
+          <div class="rozmer"><input type="range" id="rozmer" min="60" max="600" step="10" value="300" aria-labelledby="rozmer-nadpis"><output id="rozmer-out">300 cm</output></div>
+        </div>
+      </div>
+      <div class="vykres">
+        <svg id="nakres" viewBox="0 0 420 260" role="img" aria-label="Živý nákres zvoleného výrobku"></svg>
+        <p class="souhrn" id="souhrn"></p>
+        <a class="btn plny" href="#kontakt" id="poslat">Poslat zadání truhláři</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="postup">
+  <div class="wrap">
+    <div class="uvod"><h2>Jak zakázka probíhá</h2><p>Od prvního telefonu po montáž u vás doma.</p></div>
+    <div class="postup-grid">
+      <div class="kr"><div class="bod">1</div><h3>Zavoláte nebo napíšete</h3><p>Popíšete, co potřebujete. Fotka místa nebo náčrt hodně pomůže.</p></div>
+      <div class="kr"><div class="bod">2</div><h3>Zaměření</h3><p>Přijedeme se podívat a vše přesně změříme.</p></div>
+      <div class="kr"><div class="bod">3</div><h3>Výroba v dílně</h3><p>Vyrobíme vše na míru z materiálu, na kterém se domluvíme.</p></div>
+      <div class="kr"><div class="bod">4</div><h3>Montáž</h3><p>Hotový výrobek přivezeme a namontujeme.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="galerie">
+  <div class="wrap">
+    <div class="uvod"><h2>Z naší dílny</h2></div>
+    <div class="gal">
+      <div class="ph a"><span>Kuchyně na míru</span></div>
+      <div class="ph b"><span>Schodiště</span></div>
+      <div class="ph c"><span>Vstupní dveře</span></div>
+      <div class="ph d"><span>Vestavěná skříň</span></div>
+      <div class="ph e"><span>Pergola</span></div>
+    </div>
+    <p class="gal-pozn">Sem přijdou fotky vašich zakázek.</p>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap k2">
+    <div>
+      <h2>Ozvěte se nám</h2>
+      <p>Rádi s vámi probereme, co máte v plánu.</p>
+      <ul class="udaje">
+        <li><small>Telefon</small><a href="tel:+420737467909">+420 737 467 909</a></li>
+        <li><small>E-mail</small><a href="mailto:tpmacek@seznam.cz">tpmacek@seznam.cz</a></li>
+        <li><small>Adresa</small>Bystré 23, 518 01 Bystré</li>
+      </ul>
+    </div>
+    <form id="formular" novalidate>
+      <label for="jmeno">Jméno</label><input id="jmeno" name="jmeno" autocomplete="name">
+      <label for="kontakt-pole">Telefon nebo e-mail</label><input id="kontakt-pole" name="kontakt">
+      <label for="zprava">Co potřebujete vyrobit</label><textarea id="zprava" name="zprava"></textarea>
+      <button class="btn plny" type="submit">Odeslat poptávku</button>
+      <p class="hlaska" id="hlaska" role="status">Toto je ukázka formuláře. V hotovém webu by zpráva přišla rovnou na váš e-mail.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Truhlářství Macek</span><span>Návrh připravila Tereweb.cz</span></div></footer>
+
+<script>
+// letokruhy
+(function(){
+  var g=document.getElementById('kruhy'),ns='http://www.w3.org/2000/svg';
+  for(var i=0;i<14;i++){
+    var r=176-i*12.4, e=document.createElementNS(ns,'ellipse');
+    e.setAttribute('cx',200+i*0.9);e.setAttribute('cy',200-i*0.7);
+    e.setAttribute('rx',r*(1+((i%3)-1)*0.015));e.setAttribute('ry',r*(1-((i%4)-1.5)*0.01));
+    e.setAttribute('class','ring');e.style.animationDelay=(i*0.09)+'s';
+    g.appendChild(e);
+  }
+})();
+// konfigurátor
+var stav={vyrobek:'kuchyne',material:'masiv',rozmer:300};
+var nazvy={kuchyne:'kuchyňská linka',skrin:'vestavěná skříň',schody:'schodiště',dvere:'dveře',okno:'okno',pergola:'pergola'};
+var matN={masiv:'z masivu',lamino:'z lamina',kombinace:'kombinace masivu a lamina'};
+var rozsahy={kuchyne:[120,600,'Délka linky'],skrin:[60,400,'Šířka skříně'],schody:[200,500,'Výška patra'],dvere:[60,120,'Šířka dveří'],okno:[50,250,'Šířka okna'],pergola:[200,600,'Délka pergoly']};
+var barvy={masiv:['#C99A66','#8a5a2f'],lamino:['#E8E4DC','#9a958c'],kombinace:['#E8E4DC','#8a5a2f']};
+var svg=document.getElementById('nakres');
+function r(x,y,w,h,f,s){return '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" fill="'+f+'" stroke="'+s+'" stroke-width="2"/>';}
+function kota(x1,x2,y,t){return '<path d="M'+x1+' '+y+'H'+x2+'M'+x1+' '+(y-6)+'v12M'+x2+' '+(y-6)+'v12" stroke="#1F3A32" stroke-width="1.2"/><text x="'+((x1+x2)/2)+'" y="'+(y-8)+'" text-anchor="middle" font-size="13" font-family="Instrument Sans" fill="#1F3A32">'+t+'</text>';}
+function kresli(){
+  var v=stav.vyrobek,c=barvy[stav.material],f=c[0],s=c[1],h=stav.material==='kombinace'?'#C99A66':f,o='',d=stav.rozmer;
+  var mn=rozsahy[v][0],mx=rozsahy[v][1],t=(d-mn)/(mx-mn),W=Math.round(140+t*240),x=(420-W)/2;
+  if(v==='kuchyne'){var n=Math.max(2,Math.round(d/60));o+=r(x,40,W,60,f,s);o+=r(x,140,W,80,h,s);for(var i=1;i<n;i++){var xx=x+W*i/n;o+='<path d="M'+xx+' 40v60M'+xx+' 140v80" stroke="'+s+'" stroke-width="1.5"/>';}o+='<rect x="'+x+'" y="132" width="'+W+'" height="8" fill="#3B2A1F"/>';}
+  if(v==='skrin'){var n2=Math.max(1,Math.round(d/60));o+=r(x,20,W,210,f,s);for(var j=1;j<n2;j++){var xj=x+W*j/n2;o+='<path d="M'+xj+' 20v210" stroke="'+s+'" stroke-width="1.5"/>';}o+='<path d="M'+x+' 60H'+(x+W)+'" stroke="'+s+'" stroke-width="1.5"/>';}
+  if(v==='schody'){var k=Math.round(d/18),sw=W/k,sh=190/k,p='M'+x+' 225';for(var q=0;q<k;q++){p+='v'+(-sh)+'h'+sw;}o+='<path d="'+p+'V225Z" fill="'+h+'" stroke="'+s+'" stroke-width="2"/>';}
+  if(v==='dvere'){W=Math.round(70+t*90);x=(420-W)/2;o+=r(x-8,22,W+16,208,'none',s)+r(x,30,W,200,f,s)+r(x+14,46,W-28,70,'none',s)+r(x+14,132,W-28,80,'none',s)+'<circle cx="'+(x+W-14)+'" cy="128" r="4" fill="#3B2A1F"/>';}
+  if(v==='okno'){var H=150;o+=r(x,40,W,H,'#dfe9ea',s)+'<rect x="'+x+'" y="40" width="'+W+'" height="'+H+'" fill="none" stroke="'+(stav.material==='lamino'?'#9a958c':'#8a5a2f')+'" stroke-width="10"/>';if(W>200)o+='<path d="M'+(x+W/2)+' 40v'+H+'" stroke="'+s+'" stroke-width="8"/>';}
+  if(v==='pergola'){o+='<path d="M'+x+' 80H'+(x+W)+'" stroke="'+s+'" stroke-width="10"/>';var n3=Math.max(2,Math.round(d/150));for(var m=0;m<=n3;m++){var xm=x+W*m/n3;o+='<rect x="'+(xm-5)+'" y="80" width="10" height="145" fill="'+f+'" stroke="'+s+'"/>';}for(var z=0;z<W;z+=22){o+='<rect x="'+(x+z)+'" y="62" width="8" height="14" fill="'+f+'" stroke="'+s+'"/>';}}
+  o+=kota(x,x+W,250,d+' cm');
+  svg.innerHTML=o;
+  document.getElementById('souhrn').innerHTML='Vaše zadání: <strong>'+nazvy[v]+'</strong>, '+matN[stav.material]+', '+rozsahy[v][2].toLowerCase()+' přibližně <strong>'+d+' cm</strong>.';
+}
+function nastavRozsah(){var z=rozsahy[stav.vyrobek],i=document.getElementById('rozmer');i.min=z[0];i.max=z[1];stav.rozmer=Math.round((z[0]+z[1])/2/10)*10;i.value=stav.rozmer;document.getElementById('rozmer-nadpis').textContent='3. '+z[2];document.getElementById('rozmer-out').textContent=stav.rozmer+' cm';}
+document.querySelectorAll('.volby').forEach(function(sk){
+  sk.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
+    sk.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');
+    stav[sk.dataset.skupina]=b.dataset.v;if(sk.dataset.skupina==='vyrobek')nastavRozsah();kresli();});
+});
+document.getElementById('rozmer').addEventListener('input',function(e){stav.rozmer=+e.target.value;document.getElementById('rozmer-out').textContent=stav.rozmer+' cm';kresli();});
+document.getElementById('poslat').addEventListener('click',function(){
+  document.getElementById('zprava').value='Dobrý den, mám zájem o: '+nazvy[stav.vyrobek]+', '+matN[stav.material]+', '+rozsahy[stav.vyrobek][2].toLowerCase()+' cca '+stav.rozmer+' cm.';
+});
+document.getElementById('formular').addEventListener('submit',function(e){e.preventDefault();document.getElementById('hlaska').style.display='block';});
+nastavRozsah();kresli();
+</script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Martin Romančák – Bystré (návrh webu)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@75..150,700..900&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --grafit:#15191D;  /* grafit */
+  --ocel:#DDE2E6;    /* broušená nerez */
+  --ocel2:#AEB7BE;   /* tmavší nerez */
+  --slama:#D9A441;   /* náběhová barva svaru, sláma */
+  --modra:#3D5BC0;   /* náběhová barva svaru, modrá */
+  --bila:#F8F9FA;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Manrope',system-ui,sans-serif;color:var(--grafit);background:var(--bila);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:'Anybody',sans-serif;font-stretch:130%;font-weight:800;line-height:1.02;margin:0 0 .45em;letter-spacing:-.01em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--slama);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+.strip{background:#000;color:#cfd5da;font-size:14px;text-align:center;padding:8px 14px}
+.strip b{color:var(--slama)}
+header{background:var(--grafit);color:#fff}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 0}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo b{font-family:'Anybody';font-stretch:120%;font-weight:800;font-size:19px;line-height:1.1}
+.logo small{display:block;font-size:12.5px;color:#9aa4ac;font-weight:500}
+.menu{display:flex;gap:24px;font-size:15px}
+.menu a{text-decoration:none;color:#cfd5da}
+.menu a:hover{color:var(--slama)}
+.tel{border:1.5px solid var(--slama);color:var(--slama);text-decoration:none;font-weight:700;padding:9px 16px;white-space:nowrap}
+.tel:hover{background:var(--slama);color:var(--grafit)}
+/* HERO s konfigurátorem */
+.hero{background:var(--grafit);color:#fff;padding:56px 0 70px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 1px,transparent 1px 5px)}
+.hero .wrap{position:relative}
+.hero h1{font-size:clamp(34px,5.4vw,70px);max-width:15ch}
+.hero .lead{color:#b9c2c9;max-width:52ch;font-size:18.5px;margin:0 0 34px}
+.konf{display:grid;grid-template-columns:320px 1fr;background:linear-gradient(120deg,#E8ECEF,#C9D0D6 45%,#EEF1F3 60%,#BFC7CD);color:var(--grafit)}
+.ovl{padding:24px;border-right:1.5px solid var(--grafit);background:rgba(255,255,255,.55)}
+.ovl fieldset{border:0;padding:0;margin:0 0 20px}
+.ovl legend{font-weight:700;font-size:14px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em}
+.ch{display:flex;flex-wrap:wrap;gap:6px}
+.ch button{font:inherit;font-size:15px;padding:8px 12px;border:1.5px solid var(--grafit);background:transparent;cursor:pointer;color:var(--grafit)}
+.ch button:hover{background:#fff}
+.ch button[aria-pressed="true"]{background:var(--grafit);color:#fff}
+.del{display:flex;align-items:center;gap:10px}
+.del input{flex:1;accent-color:var(--grafit)}
+.del output{font-weight:700;min-width:52px}
+.scena{padding:20px 24px;display:flex;flex-direction:column}
+.scena svg{width:100%;height:auto;flex:1;min-height:220px}
+.souhrn{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;border-top:1.5px solid var(--grafit);padding-top:14px;margin-top:10px}
+.souhrn p{margin:0;font-weight:500}
+.btn{display:inline-block;font-weight:700;text-decoration:none;padding:13px 20px;border:1.5px solid var(--grafit);background:var(--grafit);color:#fff;font-size:16px;cursor:pointer;font-family:inherit}
+.btn:hover{background:#000}
+.btn.sl{background:var(--slama);color:var(--grafit);border-color:var(--slama)}
+#zabradli line,#zabradli rect,#zabradli path{transition:all .35s}
+/* SLUŽBY – horizontální pás */
+section{padding:84px 0}
+.pas{display:grid;grid-template-columns:repeat(4,1fr);border:1.5px solid var(--grafit)}
+.pas div{padding:28px 22px;border-right:1.5px solid var(--grafit);position:relative}
+.pas div:last-child{border-right:0}
+.pas div::after{content:"";position:absolute;left:22px;right:22px;bottom:0;height:5px;background:linear-gradient(90deg,var(--slama),#b9774a,var(--modra))}
+.pas h3{font-size:20px;font-stretch:115%}
+.pas p{margin:0;font-size:15.5px;color:#3c444b}
+.pas svg{width:48px;height:48px;margin-bottom:14px}
+.nadpis{font-size:clamp(30px,4vw,50px)}
+.podnad{color:#56606a;max-width:56ch;margin:-6px 0 32px}
+/* MATERIÁLY */
+.mat{background:var(--ocel)}
+.mat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.vz{background:#fff;padding:18px}
+.vz .plat{height:90px;margin-bottom:14px;border:1px solid #9aa4ac}
+.vz h3{font-size:18px;font-stretch:110%;margin-bottom:4px}
+.vz p{margin:0;font-size:15px;color:#3c444b}
+/* POSTUP */
+.post{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.post div{border-left:4px solid var(--grafit);padding-left:18px}
+.post h3{font-size:21px;font-stretch:115%}
+.post p{margin:0;color:#3c444b}
+/* GALERIE */
+.gal{display:flex;gap:12px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x mandatory}
+.ph{flex:0 0 300px;height:220px;scroll-snap-align:start;background:linear-gradient(115deg,#cfd6db,#f0f2f4 40%,#b4bdc4 70%,#e2e6e9);display:flex;align-items:flex-end;padding:14px;font-weight:700;border:1.5px solid var(--grafit)}
+.ph:nth-child(even){background:linear-gradient(115deg,#2a3036,#4a535b 50%,#20262b);color:#fff}
+.gal-p{color:#56606a;margin-top:10px}
+/* KONTAKT */
+.kontakt{background:var(--grafit);color:#fff}
+.k-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.kontakt a.big{font-family:'Anybody';font-stretch:120%;font-weight:800;font-size:clamp(28px,3.6vw,44px);text-decoration:none;color:var(--slama);display:block;margin:6px 0 20px}
+.kontakt dl{margin:0}
+.kontakt dt{color:#9aa4ac;font-size:14px;margin-top:12px}
+.kontakt dd{margin:0;font-weight:700}
+form{background:#20262b;padding:26px;border:1.5px solid #3a4249}
+label{display:block;font-weight:700;font-size:14.5px;margin-bottom:5px}
+input,textarea{width:100%;font:inherit;padding:11px 12px;border:1.5px solid #4a535b;background:#15191D;color:#fff;margin-bottom:14px}
+input:focus,textarea:focus{outline:none;border-color:var(--slama)}
+textarea{min-height:110px}
+.hlaska{display:none;background:var(--slama);color:var(--grafit);padding:12px 14px;margin-top:12px;font-weight:500}
+footer{background:#000;color:#9aa4ac;padding:22px 0;font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+@media (max-width:960px){
+  .menu{display:none}
+  .konf{grid-template-columns:1fr}
+  .ovl{border-right:0;border-bottom:1.5px solid var(--grafit)}
+  .pas,.mat-grid{grid-template-columns:1fr 1fr}
+  .pas div:nth-child(2){border-right:0}
+  .pas div:nth-child(-n+2){border-bottom:1.5px solid var(--grafit)}
+  .post,.k-grid{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .pas,.mat-grid{grid-template-columns:1fr}
+  .pas div{border-right:0;border-bottom:1.5px solid var(--grafit)}
+  .pas div:last-child{border-bottom:0}
+  .logo small{display:none}
+  .ovl,.scena{padding:18px}
+  section{padding:58px 0}
+  .ph{flex-basis:250px}
+}
+@media (prefers-reduced-motion:reduce){#zabradli line,#zabradli rect,#zabradli path{transition:none}}
+</style>
+</head>
+<body>
+<div class="strip">Návrh nového webu pro <b>Martin Romančák</b>, připravila Tereza Toufarová z Tereweb.cz</div>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top"><svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true"><defs><linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="#D9A441"/><stop offset=".55" stop-color="#b9774a"/><stop offset="1" stop-color="#3D5BC0"/></linearGradient></defs><rect x="1" y="1" width="40" height="40" fill="none" stroke="#DDE2E6" stroke-width="2"/><path d="M10 32V10h12a6 6 0 0 1 0 12H10m10 0 10 10" fill="none" stroke="url(#lg)" stroke-width="4"/></svg><b>Martin Romančák<small>nerez a hliník · Bystré u Stárkova</small></b></a>
+    <nav class="menu" aria-label="Hlavní menu"><a href="#sluzby">Výroba</a><a href="#materialy">Materiály</a><a href="#kontakt">Kontakt</a></nav>
+    <a class="tel" href="tel:+420777803902">777 803 902</a>
+  </div>
+</header>
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <h1>Nerezové zábradlí, brány a schodiště</h1>
+    <p class="lead">Výroba z nerezu a hliníku, svařování a povrchové úpravy kovů. Poskládejte si zábradlí rovnou tady a pošlete nám poptávku.</p>
+    <div class="konf">
+      <div class="ovl">
+        <fieldset><legend>Výrobek</legend>
+          <div class="ch" data-k="typ"><button type="button" aria-pressed="true" data-v="zabradli">Zábradlí</button><button type="button" aria-pressed="false" data-v="brana">Brána</button><button type="button" aria-pressed="false" data-v="schody">Schodiště</button></div>
+        </fieldset>
+        <fieldset><legend>Výplň</legend>
+          <div class="ch" data-k="vypln"><button type="button" aria-pressed="true" data-v="svisle">Svislé příčle</button><button type="button" aria-pressed="false" data-v="lanka">Vodorovné tyče</button><button type="button" aria-pressed="false" data-v="sklo">Sklo</button><button type="button" aria-pressed="false" data-v="plech">Děrovaný plech</button></div>
+        </fieldset>
+        <fieldset><legend>Materiál</legend>
+          <div class="ch" data-k="mat"><button type="button" aria-pressed="true" data-v="nerez">Nerez</button><button type="button" aria-pressed="false" data-v="hlinik">Hliník</button></div>
+        </fieldset>
+        <fieldset><legend id="dl">Délka</legend>
+          <div class="del"><input type="range" id="delka" min="1" max="15" step="0.5" value="4" aria-labelledby="dl"><output id="delo">4 m</output></div>
+        </fieldset>
+      </div>
+      <div class="scena">
+        <svg id="zabradli" viewBox="0 0 600 260" role="img" aria-label="Živý nákres zvoleného výrobku"></svg>
+        <div class="souhrn"><p id="shr"></p><a class="btn" href="#kontakt" id="popt">Poslat poptávku</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sluzby">
+  <div class="wrap">
+    <h2 class="nadpis">Co vyrábíme</h2>
+    <p class="podnad">Všechno z nerezu a hliníku, na míru vašemu domu, zahradě nebo provozovně.</p>
+    <div class="pas">
+      <div><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 14h40M8 14v28M40 14v28M16 14v28M24 14v28M32 14v28" stroke="#15191D" stroke-width="3"/></svg><h3>Zábradlí</h3><p>Nerezová a hliníková zábradlí na schody, balkony a terasy.</p></div>
+      <div><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="4" y="10" width="40" height="30" fill="none" stroke="#15191D" stroke-width="3"/><path d="M24 10v30M10 10v30M38 10v30" stroke="#15191D" stroke-width="2"/></svg><h3>Brány</h3><p>Brány a branky z nerezu a hliníku.</p></div>
+      <div><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 44h10V34h10V24h10V14h10" fill="none" stroke="#15191D" stroke-width="3"/><path d="M8 34 44 6" stroke="#D9A441" stroke-width="3"/></svg><h3>Schodiště</h3><p>Nerezová schodiště a jejich konstrukce.</p></div>
+      <div><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40 24 24" stroke="#15191D" stroke-width="4"/><path d="M26 22l6-6" stroke="#D9A441" stroke-width="4"/><circle cx="36" cy="12" r="5" fill="#3D5BC0"/></svg><h3>Svařování a úpravy</h3><p>Svařování a povrchové úpravy kovů, nerezu, litiny a hliníku.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="mat" id="materialy">
+  <div class="wrap">
+    <h2 class="nadpis">S čím pracujeme</h2>
+    <p class="podnad">Svařujeme a upravujeme tyto materiály.</p>
+    <div class="mat-grid">
+      <div class="vz"><div class="plat" style="background:linear-gradient(100deg,#d5dbe0,#f4f6f7 35%,#bfc7cd 60%,#e6eaed)"></div><h3>Nerez</h3><p>Odolá počasí, nepotřebuje nátěr.</p></div>
+      <div class="vz"><div class="plat" style="background:linear-gradient(100deg,#c9cdd1,#e9ebed 50%,#b7bcc1)"></div><h3>Hliník</h3><p>Lehký materiál pro brány a zábradlí.</p></div>
+      <div class="vz"><div class="plat" style="background:linear-gradient(100deg,#3b3f43,#5b6066 50%,#2f3337)"></div><h3>Litina</h3><p>Svařování a opravy litinových dílů.</p></div>
+      <div class="vz"><div class="plat" style="background:linear-gradient(100deg,#6a6f74,#8d9297 50%,#55595e)"></div><h3>Kovy</h3><p>Svařování a povrchové úpravy kovů.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="nadpis">Jak to probíhá</h2>
+    <div class="post">
+      <div><h3>Zaměření</h3><p>Probereme, co potřebujete, a změříme místo.</p></div>
+      <div><h3>Výroba</h3><p>Výrobek připravíme v dílně z nerezu nebo hliníku.</p></div>
+      <div><h3>Montáž</h3><p>Hotový výrobek namontujeme na místě.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 class="nadpis">Realizace</h2>
+    <div class="gal" tabindex="0" aria-label="Galerie realizací, posouvejte do strany">
+      <div class="ph">Nerezové zábradlí</div><div class="ph">Brána</div><div class="ph">Schodiště</div><div class="ph">Zábradlí se sklem</div><div class="ph">Svařování</div>
+    </div>
+    <p class="gal-p">Sem přijdou fotky vašich zakázek.</p>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="wrap k-grid">
+    <div>
+      <h2 class="nadpis">Kontakt</h2>
+      <a class="big" href="tel:+420777803902">+420 777 803 902</a>
+      <dl>
+        <dt>E-mail</dt><dd><a href="mailto:romancakmartin@seznam.cz">romancakmartin@seznam.cz</a></dd>
+        <dt>Adresa</dt><dd>Bystré 89, 549 31 Stárkov</dd>
+      </dl>
+    </div>
+    <form id="formular" novalidate>
+      <label for="jm">Jméno</label><input id="jm" autocomplete="name">
+      <label for="tl">Telefon nebo e-mail</label><input id="tl">
+      <label for="zp">Co potřebujete</label><textarea id="zp"></textarea>
+      <button class="btn sl" type="submit">Odeslat poptávku</button>
+      <p class="hlaska" id="hlaska" role="status">Toto je ukázka formuláře. V hotovém webu by zpráva přišla rovnou na váš e-mail.</p>
+    </form>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><span>© 2026 Martin Romančák</span><span>Návrh připravila Tereweb.cz</span></div></footer>
+<script>
+var s={typ:'zabradli',vypln:'svisle',mat:'nerez',delka:4};
+var N={zabradli:'zábradlí',brana:'brána',schody:'schodiště se zábradlím'},V={svisle:'svislé příčle',lanka:'vodorovné tyče',sklo:'skleněná výplň',plech:'děrovaný plech'},M={nerez:'nerez',hlinik:'hliník'};
+var svg=document.getElementById('zabradli');
+function kresli(){
+  var c=s.mat==='nerez'?'#7d8891':'#9ea6ad',hl=s.mat==='nerez'?'#4a545c':'#6f777e';
+  var W=Math.min(540,120+s.delka*28),x0=(600-W)/2,top=60,bot=215,o='';
+  var sch=s.typ==='schody',br=s.typ==='brana';
+  function y(x,base){return sch?base-(x-x0)/W*110:base;}
+  // podlaha nebo schody
+  if(sch){var n=Math.max(4,Math.round(s.delka*2)),sw=W/n,p='M'+x0+' 235';for(var i=0;i<n;i++){p+='v'+(-110/n)+'h'+sw;}o+='<path d="'+p+'V235Z" fill="#c9d0d6" stroke="#15191D" stroke-width="1.5"/>';}
+  else o+='<path d="M20 235H580" stroke="#15191D" stroke-width="2"/>';
+  var base=sch?225:235,hT=br?150:110;
+  // sloupky
+  var sl=br?[x0,x0+W]:[];if(!br){var k=Math.max(2,Math.ceil(s.delka/1.5));for(var j=0;j<=k;j++)sl.push(x0+W*j/k);}
+  // výplň
+  var yt=function(x){return y(x,base)-hT;},yb=function(x){return y(x,base)-12;};
+  if(s.vypln==='svisle'){for(var x=x0+10;x<x0+W-4;x+=14)o+='<line x1="'+x+'" y1="'+(yt(x)+8)+'" x2="'+x+'" y2="'+yb(x)+'" stroke="'+c+'" stroke-width="3"/>';}
+  if(s.vypln==='lanka'){for(var r=1;r<=(br?7:5);r++){var f=r/((br?7:5)+1);o+='<line x1="'+x0+'" y1="'+(yt(x0)+f*hT)+'" x2="'+(x0+W)+'" y2="'+(yt(x0+W)+f*hT)+'" stroke="'+c+'" stroke-width="3"/>';}}
+  if(s.vypln==='sklo'){for(var q=0;q<sl.length-1||(br&&q<1);q++){var a=sl[q]+6,b=(sl[q+1]||x0+W)-6;o+='<path d="M'+a+' '+(yt(a)+14)+'L'+b+' '+(yt(b)+14)+'L'+b+' '+(yb(b)-4)+'L'+a+' '+(yb(a)-4)+'Z" fill="rgba(140,190,215,.35)" stroke="#6fa3bd"/>';if(br)break;}}
+  if(s.vypln==='plech'){o+='<defs><pattern id="dir" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="'+c+'"/><circle cx="5" cy="5" r="2.4" fill="#eef1f3"/></pattern></defs>';o+='<path d="M'+x0+' '+(yt(x0)+12)+'L'+(x0+W)+' '+(yt(x0+W)+12)+'L'+(x0+W)+' '+(yb(x0+W)-2)+'L'+x0+' '+(yb(x0)-2)+'Z" fill="url(#dir)" stroke="'+hl+'"/>';}
+  // sloupky a madlo
+  sl.forEach(function(xx){o+='<line x1="'+xx+'" y1="'+yt(xx)+'" x2="'+xx+'" y2="'+y(xx,base)+'" stroke="'+hl+'" stroke-width="7"/>';});
+  o+='<line x1="'+(x0-6)+'" y1="'+yt(x0)+'" x2="'+(x0+W+6)+'" y2="'+yt(x0+W)+'" stroke="'+hl+'" stroke-width="9" stroke-linecap="round"/>';
+  o+='<line x1="'+(x0-6)+'" y1="'+(yt(x0)-2)+'" x2="'+(x0+W+6)+'" y2="'+(yt(x0+W)-2)+'" stroke="#fff" stroke-width="2" opacity=".6"/>';
+  if(br){o+='<line x1="'+(x0+W/2)+'" y1="'+yt(0)+'" x2="'+(x0+W/2)+'" y2="'+base+'" stroke="'+hl+'" stroke-width="5"/>';}
+  // kóta
+  o+='<path d="M'+x0+' 250H'+(x0+W)+'M'+x0+' 244v12M'+(x0+W)+' 244v12" stroke="#15191D" stroke-width="1.2"/><text x="300" y="20" text-anchor="middle" font-family="Manrope" font-weight="700" font-size="14" fill="#15191D">'+String(s.delka).replace('.',',')+' m</text>';
+  svg.innerHTML=o;
+  document.getElementById('shr').textContent=N[s.typ].charAt(0).toUpperCase()+N[s.typ].slice(1)+', '+V[s.vypln]+', '+M[s.mat]+', délka '+String(s.delka).replace('.',',')+' m';
+}
+document.querySelectorAll('.ch').forEach(function(g){g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');s[g.dataset.k]=b.dataset.v;kresli();});});
+document.getElementById('delka').addEventListener('input',function(e){s.delka=+e.target.value;document.getElementById('delo').textContent=String(s.delka).replace('.',',')+' m';kresli();});
+document.getElementById('popt').addEventListener('click',function(){document.getElementById('zp').value='Dobrý den, poptávám: '+document.getElementById('shr').textContent+'.';});
+document.getElementById('formular').addEventListener('submit',function(e){e.preventDefault();document.getElementById('hlaska').style.display='block';});
+kresli();
+</script>
+</body>
+</html>

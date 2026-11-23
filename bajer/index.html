@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Bajer – Bystré (návrh webu)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sadra:#F4F4F1;   /* sádra */
+  --grafit:#26292C;  /* tužka, text */
+  --deska:#5E9A7E;   /* zelená impregnovaná deska */
+  --profil:#8E99A3;  /* CD/UD profil */
+  --metr:#F2C230;    /* skládací metr */
+  --vata:#E9D9A6;    /* minerální vata */
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Familjen Grotesk',system-ui,sans-serif;color:var(--grafit);background:var(--sadra);line-height:1.6;font-size:17.5px}
+h1,h2,h3{font-weight:700;line-height:1.08;margin:0 0 .45em;letter-spacing:-.015em}
+.mono{font-family:'IBM Plex Mono',monospace;font-size:13.5px;letter-spacing:.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--deska);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.strip{background:var(--grafit);color:#e6e6e2;font-size:14px;text-align:center;padding:8px 14px}
+.strip b{color:var(--metr)}
+header{background:var(--sadra);border-bottom:1.5px solid var(--grafit)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 0}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo b{font-size:24px;letter-spacing:-.02em}
+.logo .mono{color:#5f666c;display:block;font-size:12px}
+.menu{display:flex;gap:26px}
+.menu a{text-decoration:none;font-size:16px}
+.menu a:hover{text-decoration:underline;text-decoration-color:var(--metr);text-decoration-thickness:3px}
+.tel{background:var(--metr);color:var(--grafit);font-weight:700;text-decoration:none;padding:10px 16px;border:1.5px solid var(--grafit);white-space:nowrap}
+/* HERO: karta přes ilustraci řezu */
+.hero{position:relative;background:#e9e9e4;border-bottom:1.5px solid var(--grafit);overflow:hidden}
+.rez{display:block;width:100%;height:540px}
+.rez .vrstva{opacity:0;animation:vrstva .6s ease-out forwards}
+@keyframes vrstva{to{opacity:1}}
+.karta{position:absolute;left:max(22px,calc((100% - 1180px)/2 + 22px));top:50%;transform:translateY(-50%);background:#fff;border:1.5px solid var(--grafit);padding:30px 32px;max-width:520px;box-shadow:10px 10px 0 var(--metr)}
+.karta h1{font-size:clamp(32px,4.2vw,52px)}
+.karta p{margin:0 0 22px;font-size:18px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;padding:13px 20px;font-weight:700;text-decoration:none;border:1.5px solid var(--grafit);font-size:16px;cursor:pointer;font-family:inherit;background:#fff;color:var(--grafit)}
+.btn.pl{background:var(--grafit);color:#fff}
+.btn.pl:hover{background:#000}
+.btn:hover{background:var(--metr)}
+/* SLUŽBY jako seznam s kótou */
+section{padding:80px 0}
+.hl{display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:start}
+.hl h2{font-size:clamp(32px,4vw,48px)}
+.hl .mono{color:#5f666c}
+.polozky{border-top:1.5px solid var(--grafit)}
+.pol{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:20px 0;border-bottom:1px dashed #9ea5ab}
+.pol .mono{padding-top:4px;color:var(--deska);font-weight:500}
+.pol h3{font-size:22px;margin-bottom:4px}
+.pol p{margin:0;color:#41474c}
+/* SKLADBA – interakce */
+.skladba{background:var(--grafit);color:#f1f1ee}
+.skladba .mono{color:#b6bcc1}
+.s-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:36px;align-items:start;margin-top:30px}
+.typy{display:flex;flex-direction:column;gap:8px}
+.typy button{display:flex;justify-content:space-between;align-items:center;font:inherit;font-weight:600;font-size:17px;text-align:left;padding:14px 16px;background:transparent;color:#fff;border:1.5px solid #4a5056;cursor:pointer}
+.typy button:hover{border-color:var(--metr)}
+.typy button[aria-pressed="true"]{background:var(--metr);color:var(--grafit);border-color:var(--metr)}
+.typy button span{font-family:'IBM Plex Mono';font-size:12.5px;font-weight:400}
+.vykres{background:var(--sadra);color:var(--grafit);padding:22px;border:1.5px solid #fff}
+.vykres svg{width:100%;height:auto;display:block}
+.legenda{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:6px}
+.legenda li{display:flex;gap:10px;align-items:center;font-size:15.5px}
+.legenda i{width:22px;height:14px;border:1px solid var(--grafit);flex:none}
+.plocha{display:flex;align-items:center;gap:14px;margin-top:18px}
+.plocha input{flex:1;accent-color:var(--deska)}
+.plocha output{font-family:'IBM Plex Mono';min-width:70px}
+.vykres .btn{margin-top:16px}
+/* JAK */
+.jak{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.jak div{background:#fff;border:1.5px solid var(--grafit);padding:22px}
+.jak h3{font-size:21px}
+.jak p{margin:0;color:#41474c}
+.jak .mono{display:block;color:var(--deska);margin-bottom:8px}
+/* GALERIE */
+.gal{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:12px}
+.ph{aspect-ratio:4/3;border:1.5px solid var(--grafit);background:#fff;position:relative;display:flex;align-items:flex-end;padding:12px;font-size:15px;overflow:hidden}
+.ph::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 48%,#c9ced2 48% 52%,transparent 52%) 0 0/60px 100%,linear-gradient(#e7e7e2 1px,transparent 1px) 0 0/100% 30px}
+.ph span{position:relative;background:#fff;padding:2px 6px}
+.ph:first-child{grid-row:span 2;aspect-ratio:auto}
+.gal-p{margin-top:12px;color:#5f666c}
+/* KONTAKT */
+.k-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+table{border-collapse:collapse;width:100%;margin-top:16px}
+td{padding:12px 0;border-bottom:1px dashed #9ea5ab;vertical-align:top}
+td:first-child{width:120px;font-family:'IBM Plex Mono';font-size:13.5px;color:#5f666c;padding-top:14px}
+td a{font-weight:700;text-decoration:none}
+form{background:#fff;border:1.5px solid var(--grafit);padding:26px}
+label{display:block;font-weight:600;font-size:15px;margin-bottom:5px}
+input[type=text],input[type=tel],textarea{width:100%;font:inherit;padding:11px 12px;border:1.5px solid #9ea5ab;margin-bottom:14px;background:var(--sadra)}
+input:focus,textarea:focus{outline:none;border-color:var(--grafit)}
+textarea{min-height:110px}
+.hlaska{display:none;background:var(--metr);padding:12px 14px;margin-top:12px;font-size:15px}
+footer{background:var(--grafit);color:#c9ced2;padding:24px 0;font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+@media (max-width:900px){
+  .menu{display:none}
+  .hl,.s-grid,.k-grid{grid-template-columns:1fr}
+  .karta{position:relative;left:auto;top:auto;transform:none;margin:-60px 16px 30px;max-width:none}
+  .jak{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr}
+  .ph:first-child{grid-column:span 2;grid-row:auto;aspect-ratio:16/9}
+  .rez{height:260px}
+}
+@media (max-width:520px){
+  .pol{grid-template-columns:1fr;gap:4px}
+  .logo .mono{display:none}
+  section{padding:56px 0}
+  .karta{padding:22px}
+}
+@media (prefers-reduced-motion:reduce){.rez .vrstva{animation:none;opacity:1}}
+</style>
+</head>
+<body>
+<div class="strip">Návrh nového webu pro <b>Bajer</b>, připravila Tereza Toufarová z Tereweb.cz</div>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" fill="#F2C230" stroke="#26292C" stroke-width="2"/><path d="M8 32V8h12a6 6 0 0 1 0 12H8m12 0a6 6 0 0 1 0 12H8" fill="none" stroke="#26292C" stroke-width="3"/></svg><span><b>Bajer</b><span class="mono">suchá výstavba · Bystré</span></span></a>
+    <nav class="menu" aria-label="Hlavní menu"><a href="#sluzby">Služby</a><a href="#skladba">Skladba konstrukce</a><a href="#kontakt">Kontakt</a></nav>
+    <a class="tel" href="tel:+420604156296">604 156 296</a>
+  </div>
+</header>
+<main id="top">
+<section class="hero" style="padding:0">
+  <svg class="rez" viewBox="0 0 1400 460" preserveAspectRatio="xMaxYMid slice" role="img" aria-label="Řez domem s podkrovím, ve kterém se postupně objevují vrstvy sádrokartonové vestavby">
+    <rect width="1400" height="460" fill="#e9e9e4"/>
+    <g stroke="#26292C" stroke-width="2" fill="none">
+      <path d="M640 400V250L960 60l320 190v150"/>
+      <path d="M600 260 960 40l360 220" stroke-width="6"/>
+      <path d="M640 400h640"/>
+    </g>
+    <g class="vrstva" style="animation-delay:.3s"><path d="M690 245 960 85l270 160" stroke="#E9D9A6" stroke-width="26" fill="none"/></g>
+    <g class="vrstva" style="animation-delay:.8s"><path d="M708 262 960 112l252 150" stroke="#8E99A3" stroke-width="5" fill="none" stroke-dasharray="14 8"/></g>
+    <g class="vrstva" style="animation-delay:1.3s"><path d="M716 270 960 124l244 146" stroke="#5E9A7E" stroke-width="9" fill="none"/></g>
+    <g class="vrstva" style="animation-delay:1.8s"><rect x="1080" y="170" width="60" height="44" fill="#cfe3f0" stroke="#26292C" stroke-width="2" transform="rotate(30 1110 192)"/></g>
+    <g class="vrstva" style="animation-delay:2.1s"><path d="M716 270v130M1204 270v130" stroke="#5E9A7E" stroke-width="9"/><path d="M716 388h488" stroke="#c9b89a" stroke-width="14"/></g>
+    <g font-family="IBM Plex Mono" font-size="15" fill="#26292C" class="vrstva" style="animation-delay:2.4s">
+      <path d="M1240 120h70M1205 195h105M1235 325h75" stroke="#26292C" stroke-width="1"/>
+      <text x="1316" y="125">vata</text><text x="1316" y="200">okno</text><text x="1316" y="330">SDK</text>
+    </g>
+  </svg>
+  <div class="karta">
+    <span class="mono" style="color:#5f666c">Bystré a okolí</span>
+    <h1>Půdní vestavby, podhledy a sádrokarton</h1>
+    <p>Dodávka a montáž sádrokartonových systémů, zateplení budov a anhydritové podlahy. Z půdy uděláme obytné podkroví.</p>
+    <div class="btns"><a class="btn pl" href="#skladba">Jak to bude poskládané</a><a class="btn" href="tel:+420604156296">Zavolat</a></div>
+  </div>
+</section>
+
+<section id="sluzby">
+  <div class="wrap hl">
+    <div><h2>Co dělám</h2><p class="mono">Dodávka materiálu i montáž</p></div>
+    <div class="polozky">
+      <div class="pol"><span class="mono">SDK</span><div><h3>Sádrokartonové systémy</h3><p>Příčky, předstěny a obklady stěn ze sádrokartonu.</p></div></div>
+      <div class="pol"><span class="mono">PODHLED</span><div><h3>Minerální podhledy</h3><p>Zavěšené stropy z minerálních desek, například do kanceláří a provozoven.</p></div></div>
+      <div class="pol"><span class="mono">PODKROVÍ</span><div><h3>Půdní vestavby</h3><p>Obytné podkroví od tepelné izolace po hotové stěny a stropy.</p></div></div>
+      <div class="pol"><span class="mono">JÁDRO</span><div><h3>Bytová jádra</h3><p>Výměna starých umakartových jader za nové konstrukce.</p></div></div>
+      <div class="pol"><span class="mono">OKNA</span><div><h3>Střešní okna</h3><p>Montáž střešních oken, aby bylo v podkroví světlo.</p></div></div>
+      <div class="pol"><span class="mono">ZATEPLENÍ</span><div><h3>Zateplení budov</h3><p>Zateplení, které sníží účty za topení.</p></div></div>
+      <div class="pol"><span class="mono">PODLAHA</span><div><h3>Anhydritové podlahy</h3><p>Pokládka lité anhydritové podlahy.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="skladba" id="skladba">
+  <div class="wrap">
+    <h2 style="font-size:clamp(32px,4vw,48px)">Z čeho bude vaše konstrukce</h2>
+    <p class="mono">Vyberte typ práce. Výkres ukáže obvyklou skladbu vrstev, přesné řešení navrhneme na místě.</p>
+    <div class="s-grid">
+      <div class="typy" id="typy">
+        <button type="button" aria-pressed="true" data-t="podkrovi">Půdní vestavba <span>šikmina</span></button>
+        <button type="button" aria-pressed="false" data-t="pricka">Příčka <span>stěna</span></button>
+        <button type="button" aria-pressed="false" data-t="podhled">Podhled <span>strop</span></button>
+        <button type="button" aria-pressed="false" data-t="jadro">Bytové jádro <span>koupelna</span></button>
+        <button type="button" aria-pressed="false" data-t="podlaha">Anhydritová podlaha <span>podlaha</span></button>
+      </div>
+      <div class="vykres">
+        <svg id="vykres" viewBox="0 0 440 230" role="img" aria-label="Řez zvolenou konstrukcí"></svg>
+        <ul class="legenda" id="legenda"></ul>
+        <div class="plocha"><label for="m2" class="mono" style="margin:0">Plocha</label><input type="range" id="m2" min="5" max="150" step="5" value="40"><output id="m2o">40 m²</output></div>
+        <a class="btn pl" href="#kontakt" id="poptat">Poptat tuto práci</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 style="font-size:clamp(32px,4vw,48px)">Jak spolupráce probíhá</h2>
+    <div class="jak">
+      <div><span class="mono">krok 1</span><h3>Prohlídka</h3><p>Podívám se na místo, změřím ho a probereme, co chcete.</p></div>
+      <div><span class="mono">krok 2</span><h3>Nabídka</h3><p>Dostanete nabídku na materiál i montáž.</p></div>
+      <div><span class="mono">krok 3</span><h3>Montáž</h3><p>Konstrukci postavím a předám připravenou k malování.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 style="font-size:clamp(32px,4vw,48px)">Hotové práce</h2>
+    <div class="gal"><div class="ph"><span>Podkroví</span></div><div class="ph"><span>Podhled</span></div><div class="ph"><span>Příčka</span></div><div class="ph"><span>Bytové jádro</span></div><div class="ph"><span>Anhydrit</span></div></div>
+    <p class="gal-p">Sem přijdou fotky vašich zakázek.</p>
+  </div>
+</section>
+
+<section id="kontakt" style="background:#fff;border-top:1.5px solid var(--grafit)">
+  <div class="wrap k-grid">
+    <div>
+      <h2 style="font-size:clamp(32px,4vw,48px)">Kontakt</h2>
+      <table>
+        <tr><td>telefon</td><td><a href="tel:+420604156296">+420 604 156 296</a></td></tr>
+        <tr><td>e-mail</td><td><a href="mailto:danielbajer@seznam.cz">danielbajer@seznam.cz</a></td></tr>
+        <tr><td>adresa</td><td>Bystré 138, 518 01</td></tr>
+        <tr><td>k zastižení</td><td>pondělí až neděle, 7:00 až 17:00</td></tr>
+      </table>
+    </div>
+    <form id="formular" novalidate>
+      <label for="jm">Jméno</label><input type="text" id="jm" autocomplete="name">
+      <label for="tl">Telefon</label><input type="tel" id="tl" autocomplete="tel">
+      <label for="zp">Co plánujete</label><textarea id="zp"></textarea>
+      <button class="btn pl" type="submit">Odeslat poptávku</button>
+      <p class="hlaska" id="hlaska" role="status">Toto je ukázka formuláře. V hotovém webu by zpráva přišla rovnou na váš e-mail.</p>
+    </form>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><span>© 2026 Bajer</span><span>Návrh připravila Tereweb.cz</span></div></footer>
+<script>
+var B={sdk:['#5E9A7E','sádrokartonová deska'],sdkb:['#F7F7F4','sádrokartonová deska'],prof:['#8E99A3','ocelový profil'],vata:['#E9D9A6','minerální vata'],par:['#4b7fb8','parozábrana'],kro:['#b98a58','krokev'],anh:['#d9d2c3','anhydritová podlaha'],izo:['#f0eee8','izolace a separační fólie'],str:['#a8a39a','stropní konstrukce'],obk:['#bcd3e0','obklad']};
+var T={
+ podkrovi:{n:'půdní vestavba',v:[['kro',40],['vata',50],['par',6],['prof',16],['sdk',18]]},
+ pricka:{n:'sádrokartonová příčka',v:[['sdkb',16],['prof',10],['vata',60],['prof',10],['sdkb',16]]},
+ podhled:{n:'minerální podhled',v:[['str',40],['prof',14],['vata',30],['sdkb',20]]},
+ jadro:{n:'bytové jádro',v:[['sdk',18],['prof',12],['vata',50],['prof',12],['sdk',18],['obk',14]]},
+ podlaha:{n:'anhydritová podlaha',v:[['str',44],['izo',40],['anh',50]]}
+};
+var t='podkrovi',m2=40,svg=document.getElementById('vykres');
+function kresli(){
+  var v=T[t].v,sum=v.reduce(function(a,b){return a+b[1]},0),y=20,o='',H=170,leg='',seen={};
+  var sikmo=t==='podkrovi';
+  v.forEach(function(l,i){var h=Math.round(l[1]/sum*H),c=B[l[0]][0];
+    if(l[0]==='prof'){o+='<rect x="40" y="'+y+'" width="360" height="'+h+'" fill="#fff" stroke="#26292C"/>';for(var x=50;x<400;x+=40)o+='<rect x="'+x+'" y="'+y+'" width="10" height="'+h+'" fill="'+c+'"/>';}
+    else if(l[0]==='kro'){o+='<rect x="40" y="'+y+'" width="360" height="'+h+'" fill="#fff" stroke="#26292C"/>';for(var k=60;k<400;k+=90)o+='<rect x="'+k+'" y="'+y+'" width="34" height="'+h+'" fill="'+c+'" stroke="#26292C"/>';}
+    else if(l[0]==='vata'){o+='<rect x="40" y="'+y+'" width="360" height="'+h+'" fill="'+c+'" stroke="#26292C"/>';var p='M40 '+(y+h/2);for(var w=40;w<400;w+=12)p+=' Q'+(w+3)+' '+(y+3)+' '+(w+6)+' '+(y+h/2)+' T'+(w+12)+' '+(y+h/2);o+='<path d="'+p+'" stroke="#b9a36a" fill="none"/>';}
+    else o+='<rect x="40" y="'+y+'" width="360" height="'+h+'" fill="'+c+'" stroke="#26292C"/>';
+    y+=h;
+    if(!seen[B[l[0]][1]]){seen[B[l[0]][1]]=1;leg+='<li><i style="background:'+c+'"></i>'+B[l[0]][1]+'</li>';}
+  });
+  o='<g'+(sikmo?' transform="skewY(-8) translate(0 30)"':'')+'>'+o+'</g>';
+  o+='<text x="40" y="225" font-family="IBM Plex Mono" font-size="13" fill="#26292C">'+(t==='podlaha'?'pohled: řez podlahou':'pohled: řez konstrukcí')+' · '+m2+' m²</text>';
+  svg.innerHTML=o;document.getElementById('legenda').innerHTML=leg;
+}
+document.getElementById('typy').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;this.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');t=b.dataset.t;kresli();});
+document.getElementById('m2').addEventListener('input',function(e){m2=+e.target.value;document.getElementById('m2o').textContent=m2+' m²';kresli();});
+document.getElementById('poptat').addEventListener('click',function(){document.getElementById('zp').value='Dobrý den, mám zájem o: '+T[t].n+', přibližně '+m2+' m².';});
+document.getElementById('formular').addEventListener('submit',function(e){e.preventDefault();document.getElementById('hlaska').style.display='block';});
+kresli();
+</script>
+</body>
+</html>
