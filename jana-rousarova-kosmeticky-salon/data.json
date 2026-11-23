@@ -1,0 +1,108 @@
+{
+ "firma": "Jana Roušarová - Kosmetický salon",
+ "mesto": "Bystré",
+ "telefon": "+420 723 503 743",
+ "email": "jana_rousarova@email.cz",
+ "adresa": "nám. Na podkově 84, Bystré",
+ "logo_url": "",
+ "theme": {
+  "bg": "#F4EFEE",
+  "dark": "#4A2433",
+  "dark2": "#5E3243",
+  "acc": "#C46A86",
+  "accl": "#F0C3D0",
+  "soft": "#D9BDC6"
+ },
+ "headline": "Kosmetika, nehty a řasy v Bystrém.",
+ "lead": "Kosmetické ošetření pleti, pedikúra, manikúra a modeláž nehtů. Objednáte se a my se o vás postaráme.",
+ "cta": "Objednat se",
+ "facts": [
+  {
+   "b": "Pleť, nehty, řasy",
+   "t": "vše na jednom místě"
+  },
+  {
+   "b": "Po objednání",
+   "t": "termín podle domluvy"
+  }
+ ],
+ "widget": {
+  "title": "Na co se chcete objednat?",
+  "sub": "Vyberte a pošlete žádost o termín.",
+  "questions": [
+   {
+    "label": "Služba",
+    "options": [
+     "Kosmetika",
+     "Pedikúra",
+     "Manikúra / nehty",
+     "Řasy"
+    ]
+   },
+   {
+    "label": "Jste u nás",
+    "options": [
+     "Poprvé",
+     "Pravidelně"
+    ]
+   },
+   {
+    "label": "Kdy",
+    "options": [
+     "Tento týden",
+     "Příští týden",
+     "Kdykoli"
+    ]
+   }
+  ]
+ },
+ "services_title": "Naše služby",
+ "services_sub": "Péče o pleť, ruce i nohy.",
+ "services": [
+  {
+   "t": "Kosmetika",
+   "d": "Ošetření pleti přístrojem, mikrodermabraze, ultrazvuk a radiofrekvence."
+  },
+  {
+   "t": "Pedikúra a manikúra",
+   "d": "Péče o ruce a nohy, P-shine a parafínové zábaly rukou."
+  },
+  {
+   "t": "Modeláž nehtů",
+   "d": "Nehty podle vašeho přání, na každý den i slavnostní příležitost."
+  },
+  {
+   "t": "Řasy",
+   "d": "Trvalá na řasy a lepení řas."
+  }
+ ],
+ "highlights": [],
+ "steps_sub": "Jak probíhá návštěva.",
+ "steps": [
+  {
+   "t": "Objednání",
+   "d": "Zavoláte nebo napíšete a domluvíme termín."
+  },
+  {
+   "t": "Konzultace",
+   "d": "Probereme, co si přejete a co vaší pleti či nehtům prospěje."
+  },
+  {
+   "t": "Ošetření",
+   "d": "V klidu se vám věnujeme a odpočinete si."
+  },
+  {
+   "t": "Doporučení",
+   "d": "Poradíme s domácí péčí a domluvíme další návštěvu."
+  }
+ ],
+ "gallery": [
+  "Kosmetika",
+  "Nehty",
+  "Řasy",
+  "Salon"
+ ],
+ "contact_title": "Dopřejte si péči",
+ "contact_sub": "Zavolejte nebo napište, ozveme se a domluvíme termín.",
+ "form_placeholder": "Např. pedikúra a manikúra, nejlépe v úterý"
+}

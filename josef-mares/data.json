@@ -1,0 +1,108 @@
+{
+ "firma": "Josef Mareš",
+ "mesto": "Bystré",
+ "telefon": "+420 732 225 464",
+ "email": "mares.73@seznam.cz",
+ "adresa": "Bystré 116, okres Rychnov nad Kněžnou",
+ "logo_url": "",
+ "theme": {
+  "bg": "#EEEEEC",
+  "dark": "#22252A",
+  "dark2": "#33373E",
+  "acc": "#E2A400",
+  "accl": "#F5D36B",
+  "soft": "#B8BCC4"
+ },
+ "headline": "Klempířské práce v Bystrém a okolí.",
+ "lead": "Okapy, oplechování, střešní a klempířské prvky. Přijedeme, poradíme a uděláme to pořádně.",
+ "cta": "Poslat poptávku",
+ "facts": [
+  {
+   "b": "Klempířství",
+   "t": "střechy, okapy, oplechování"
+  },
+  {
+   "b": "Bystré a okolí",
+   "t": "přijedeme k vám"
+  }
+ ],
+ "widget": {
+  "title": "Co potřebujete?",
+  "sub": "Vyberte a pošlete poptávku za pár vteřin.",
+  "questions": [
+   {
+    "label": "Typ práce",
+    "options": [
+     "Okapy a svody",
+     "Oplechování",
+     "Střecha",
+     "Oprava"
+    ]
+   },
+   {
+    "label": "Stavba",
+    "options": [
+     "Rodinný dům",
+     "Chata / garáž",
+     "Jiné"
+    ]
+   },
+   {
+    "label": "Kdy",
+    "options": [
+     "Co nejdřív",
+     "Do měsíce",
+     "Nespěchá"
+    ]
+   }
+  ]
+ },
+ "services_title": "Co pro vás uděláme",
+ "services_sub": "Klempířské práce od drobných oprav po celé střechy.",
+ "services": [
+  {
+   "t": "Okapy a svody",
+   "d": "Výroba, montáž i výměna okapových žlabů a svodů."
+  },
+  {
+   "t": "Oplechování",
+   "d": "Oplechování komínů, atik, parapetů a štítů."
+  },
+  {
+   "t": "Střešní prvky",
+   "d": "Klempířské prvky na střechu, lemování a úžlabí."
+  },
+  {
+   "t": "Opravy",
+   "d": "Opravy zatékání, uvolněných plechů a poškozených okapů."
+  }
+ ],
+ "highlights": [],
+ "steps_sub": "Jednoduše a bez zbytečného čekání.",
+ "steps": [
+  {
+   "t": "Zavoláte",
+   "d": "Popíšete, co potřebujete udělat nebo opravit."
+  },
+  {
+   "t": "Zaměření",
+   "d": "Přijedeme, vše změříme a domluvíme řešení i cenu."
+  },
+  {
+   "t": "Výroba a montáž",
+   "d": "Prvky připravíme a namontujeme v domluveném termínu."
+  },
+  {
+   "t": "Hotovo",
+   "d": "Vše zkontrolujeme a uklidíme po sobě."
+  }
+ ],
+ "gallery": [
+  "Okapy",
+  "Oplechování komínů",
+  "Střechy"
+ ],
+ "contact_title": "Potřebujete klempíře?",
+ "contact_sub": "Zavolejte nebo napište, ozveme se co nejdřív.",
+ "form_placeholder": "Např. výměna okapů na rodinném domě, Bystré"
+}

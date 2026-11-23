@@ -1,0 +1,109 @@
+{
+ "firma": "Veterinární ordinace MVDr. Barbora Rehová",
+ "mesto": "Buštěhrad",
+ "telefon": "+420 774 588 255",
+ "email": "Info@happypackclinic.com",
+ "adresa": "Lidická 334/2, Buštěhrad",
+ "logo_url": "",
+ "theme": {
+  "bg": "#EEF1EA",
+  "dark": "#24402A",
+  "dark2": "#33583B",
+  "acc": "#6FA35A",
+  "accl": "#CDE6B8",
+  "soft": "#BCD0BF"
+ },
+ "headline": "Veterinární péče pro psy, kočky i exoty.",
+ "lead": "Interní medicína, základní chirurgie a dentální hygiena v Buštěhradě. U plazů přijedeme i k vám domů.",
+ "cta": "Objednat se",
+ "facts": [
+  {
+   "b": "Parkování",
+   "t": "přímo v areálu"
+  },
+  {
+   "b": "Psi, kočky, hlodavci",
+   "t": "i základní péče o exoty"
+  }
+ ],
+ "widget": {
+  "title": "Objednání",
+  "sub": "Vyberte a pošlete žádost o termín.",
+  "questions": [
+   {
+    "label": "Zvíře",
+    "options": [
+     "Pes",
+     "Kočka",
+     "Hlodavec",
+     "Plaz / exot"
+    ]
+   },
+   {
+    "label": "Důvod návštěvy",
+    "options": [
+     "Vyšetření",
+     "Očkování",
+     "Zákrok",
+     "Konzultace"
+    ]
+   },
+   {
+    "label": "Kdy",
+    "options": [
+     "Co nejdřív",
+     "Tento týden",
+     "Nespěchá"
+    ]
+   }
+  ]
+ },
+ "services_title": "S čím vám pomůžeme",
+ "services_sub": "Péče o vaše zvířata s individuálním přístupem.",
+ "services": [
+  {
+   "t": "Interní medicína",
+   "d": "Vyšetření a léčba psů, koček a hlodavců."
+  },
+  {
+   "t": "Kožní potíže",
+   "d": "Svědění, záněty uší a tlapek, opakované infekce. Využíváme laboratorní testy."
+  },
+  {
+   "t": "Chirurgie a dentální hygiena",
+   "d": "Kastrace, základní chirurgické zákroky a čištění zubů ultrazvukem."
+  },
+  {
+   "t": "Péče o plazy",
+   "d": "Kontrola zdraví a poradenství k chovu přímo u vás doma nebo na dálku."
+  }
+ ],
+ "highlights": [],
+ "steps_sub": "Jednoduše od objednání po kontrolu.",
+ "steps": [
+  {
+   "t": "Objednání",
+   "d": "Zavoláte nebo napíšete, s čím potřebujete pomoct."
+  },
+  {
+   "t": "Vyšetření",
+   "d": "Zvíře v klidu prohlédneme a vysvětlíme další postup."
+  },
+  {
+   "t": "Léčba",
+   "d": "Navrhneme léčbu nebo zákrok a vše probereme."
+  },
+  {
+   "t": "Kontrola",
+   "d": "Domluvíme kontrolu a jsme vám k dispozici pro dotazy."
+  }
+ ],
+ "gallery": [
+  "Ordinace",
+  "Naši pacienti",
+  "Exotická zvířata"
+ ],
+ "contact_title": "Potřebujete veterináře?",
+ "contact_sub": "Zavolejte nebo napište, domluvíme termín.",
+ "form_placeholder": "Např. kočka, 3 roky, škrábe se na uších"
+}

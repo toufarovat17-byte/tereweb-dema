@@ -1,0 +1,108 @@
+{
+ "firma": "Hotel pro psy Bary",
+ "mesto": "Buštěhrad",
+ "telefon": "+420 603 436 177",
+ "email": "vojtechovsky.j@seznam.cz",
+ "adresa": "Vrapická 680/9, Buštěhrad",
+ "logo_url": "",
+ "theme": {
+  "bg": "#EEF1EA",
+  "dark": "#24402A",
+  "dark2": "#33583B",
+  "acc": "#6FA35A",
+  "accl": "#CDE6B8",
+  "soft": "#BCD0BF"
+ },
+ "headline": "Hotel pro psy v Buštěhradě, kousek od letiště.",
+ "lead": "Postaráme se o vašeho pejska, než se vrátíte z dovolené. Rodinné prostředí, procházky, hry a pestrá strava.",
+ "cta": "Poptat termín",
+ "facts": [
+  {
+   "b": "8 až 10 minut",
+   "t": "od letiště Václava Havla"
+  },
+  {
+   "b": "Odvoz a přivezení",
+   "t": "z letiště nebo od vás z domu"
+  }
+ ],
+ "widget": {
+  "title": "Rezervace pobytu",
+  "sub": "Vyberte, co potřebujete, a pošlete poptávku termínu.",
+  "questions": [
+   {
+    "label": "Typ pobytu",
+    "options": [
+     "Krátkodobý",
+     "Dlouhodobý",
+     "Psí školka na den"
+    ]
+   },
+   {
+    "label": "Velikost psa",
+    "options": [
+     "Malý",
+     "Střední",
+     "Velký"
+    ]
+   },
+   {
+    "label": "Odvoz",
+    "options": [
+     "Přivezu sám",
+     "Z letiště",
+     "Z domova"
+    ]
+   }
+  ]
+ },
+ "services_title": "Co pejskům nabízíme",
+ "services_sub": "Individuální přístup ke každému hostovi.",
+ "services": [
+  {
+   "t": "Ubytování psů",
+   "d": "Krátkodobé i dlouhodobé pobyty ve vytápěném objektu, každý pes má svůj pokoj či box."
+  },
+  {
+   "t": "Psí školka",
+   "d": "Den plný her, zábavy a nových kamarádů, zatímco jste v práci."
+  },
+  {
+   "t": "Procházky a pohyb",
+   "d": "Pravidelné procházky, běhání po zahradě a hry."
+  },
+  {
+   "t": "Odvoz a přivezení",
+   "d": "Pejska vyzvedneme a přivezeme na letiště Václava Havla nebo k vám domů."
+  }
+ ],
+ "highlights": [],
+ "steps_sub": "Jak to u nás chodí.",
+ "steps": [
+  {
+   "t": "Rezervace",
+   "d": "Zavoláte nebo napíšete a domluvíme termín pobytu."
+  },
+  {
+   "t": "Seznámení",
+   "d": "Pejska postupně seznámíme s prostředím a ostatními psy."
+  },
+  {
+   "t": "Pobyt",
+   "d": "Postaráme se o stravu, procházky, hry i pohodlí."
+  },
+  {
+   "t": "Návrat domů",
+   "d": "Pejska si vyzvednete, nebo vám ho přivezeme."
+  }
+ ],
+ "gallery": [
+  "Naši hosté",
+  "Zahrada",
+  "Ubytování",
+  "Procházky"
+ ],
+ "contact_title": "Plánujete dovolenou?",
+ "contact_sub": "Zavolejte nebo napište, domluvíme termín pro vašeho pejska.",
+ "form_placeholder": "Např. labrador, 10 dní v červenci, odvoz z letiště"
+}

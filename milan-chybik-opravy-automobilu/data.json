@@ -1,0 +1,109 @@
+{
+ "firma": "Milan Chybík - Opravy automobilů",
+ "mesto": "Bystré",
+ "telefon": "+420 604 683 124",
+ "email": "chybik.milan@seznam.cz",
+ "adresa": "nám. Na podkově 35, Bystré",
+ "logo_url": "",
+ "theme": {
+  "bg": "#EEEEEC",
+  "dark": "#22252A",
+  "dark2": "#33373E",
+  "acc": "#E2A400",
+  "accl": "#F5D36B",
+  "soft": "#B8BCC4"
+ },
+ "headline": "Autoservis a pneuservis v Bystrém.",
+ "lead": "Opravy osobních aut všech značek, diagnostika, pneuservis a příprava na STK. Pomůžeme i s poruchou na cestě.",
+ "cta": "Objednat auto",
+ "facts": [
+  {
+   "b": "Všechny značky",
+   "t": "osobní automobily"
+  },
+  {
+   "b": "STK a emise",
+   "t": "kompletní příprava"
+  }
+ ],
+ "widget": {
+  "title": "Co potřebuje vaše auto?",
+  "sub": "Vyberte a pošlete poptávku za pár vteřin.",
+  "questions": [
+   {
+    "label": "Služba",
+    "options": [
+     "Oprava",
+     "Diagnostika",
+     "Pneuservis",
+     "Příprava na STK"
+    ]
+   },
+   {
+    "label": "Auto",
+    "options": [
+     "Škoda",
+     "VW / Audi / Seat",
+     "Jiná značka"
+    ]
+   },
+   {
+    "label": "Kdy",
+    "options": [
+     "Co nejdřív",
+     "Tento týden",
+     "Nespěchá"
+    ]
+   }
+  ]
+ },
+ "services_title": "Co pro vás uděláme",
+ "services_sub": "Kompletní péče o vaše auto na jednom místě.",
+ "services": [
+  {
+   "t": "Mechanické opravy",
+   "d": "Opravy osobních vozidel všech značek včetně oprav motorů."
+  },
+  {
+   "t": "Diagnostika",
+   "d": "Diagnostika řídicích jednotek pomocí počítače."
+  },
+  {
+   "t": "Pneuservis",
+   "d": "Přezutí, vyvážení a opravy pneumatik na plechových i hliníkových discích."
+  },
+  {
+   "t": "STK a emise",
+   "d": "Kompletní příprava a vyřízení STK a emisí."
+  }
+ ],
+ "highlights": [],
+ "steps_sub": "Jednoduše a bez zbytečného čekání.",
+ "steps": [
+  {
+   "t": "Objednání",
+   "d": "Zavoláte nebo napíšete, co se s autem děje."
+  },
+  {
+   "t": "Diagnostika",
+   "d": "Auto prohlédneme a domluvíme opravu i cenu."
+  },
+  {
+   "t": "Oprava",
+   "d": "Opravu uděláme v domluveném termínu."
+  },
+  {
+   "t": "Předání",
+   "d": "Auto vám předáme a vysvětlíme, co jsme dělali."
+  }
+ ],
+ "gallery": [
+  "Autoservis",
+  "Pneuservis",
+  "Motory",
+  "STK"
+ ],
+ "contact_title": "Potřebujete opravit auto?",
+ "contact_sub": "Zavolejte nebo napište, ozveme se co nejdřív.",
+ "form_placeholder": "Např. Octavia 2012, svítí kontrolka motoru"
+}
