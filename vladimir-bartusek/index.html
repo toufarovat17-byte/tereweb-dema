@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Bartel Vladimír Bartůšek – Bystřice (návrh webu)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&family=Unbounded:wght@500;700;800&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+:root{--ink:#0F1E3A;--led:#2A6FDB;--termo:#F2551F;--zar:#FFC93C;--snih:#F7F9FC;--sed:#556178;--linka:#DCE3EE}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Rubik,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.6;font-size:17px}
+h1,h2,h3,.uni{font-family:Unbounded,Rubik,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--led);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+.pruh{background:var(--ink);color:#e7ecf6;font-size:14px;text-align:center;padding:8px 16px}
+.pruh b{color:#fff}
+nav{border-bottom:1px solid var(--linka);background:#fff;position:sticky;top:0;z-index:10}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:72px;gap:16px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo b{font-family:Unbounded;font-weight:800;font-size:20px;letter-spacing:.02em}
+.logo small{display:block;font-size:12px;color:var(--sed);font-weight:400;font-family:Rubik}
+.menu{display:flex;gap:28px;list-style:none;font-size:15px}
+.menu a{text-decoration:none}
+.menu a:hover{color:var(--termo)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 16px Rubik,sans-serif;text-decoration:none;border:0;cursor:pointer;padding:13px 22px;border-radius:40px;background:var(--ink);color:#fff}
+.btn:hover{background:#1d3361}
+.btn.hor{background:var(--termo)}
+.btn.hor:hover{background:#d84612}
+.btn.obrys{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+
+/* HERO */
+.hero{padding:70px 0 0;overflow:hidden}
+.hero h1{font-size:clamp(40px,7.4vw,104px);line-height:.98;font-weight:800;letter-spacing:-.03em}
+.hero h1 .s{display:block;color:var(--led)}
+.hero h1 .t{display:block;color:var(--termo)}
+.hero-spod{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;margin-top:36px;align-items:end}
+.hero-spod p{font-size:19px;color:var(--sed);max-width:32em}
+.hero-spod .akce{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+.pas{margin-top:56px;height:150px;position:relative;background:linear-gradient(90deg,#1b3f99 0%,#2A6FDB 22%,#7a5ad8 44%,#e24b7a 62%,#F2551F 80%,#FFC93C 100%);overflow:hidden}
+.pas::after{content:"";position:absolute;inset:0;background:var(--snih);transform-origin:right;animation:ohrej 1.8s cubic-bezier(.6,.1,.2,1) .2s forwards}
+@keyframes ohrej{to{transform:scaleX(0)}}
+.pas .st{position:absolute;bottom:14px;font:500 13px Unbounded;color:#fff;z-index:1;opacity:.95}
+.pas .st:nth-child(1){left:28px}.pas .st:nth-child(2){left:50%;transform:translateX(-50%)}.pas .st:nth-child(3){right:28px}
+.pas svg{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+@media (prefers-reduced-motion:reduce){.pas::after{display:none}html{scroll-behavior:auto}}
+
+section{padding:100px 0}
+h2{font-size:clamp(28px,3.6vw,46px);line-height:1.1;font-weight:700;letter-spacing:-.02em}
+.uvod{color:var(--sed);max-width:38em;margin-top:14px}
+
+/* SLUZBY */
+.sl{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:48px;border-top:1px solid var(--linka)}
+.sl article{padding:30px 28px 34px 0;border-bottom:1px solid var(--linka)}
+.sl article+article{padding-left:28px;border-left:1px solid var(--linka)}
+.sl article:nth-child(4){padding-left:0;border-left:0}
+.sl .tep{height:6px;width:64px;border-radius:3px;margin-bottom:22px}
+.sl h3{font-size:19px;font-weight:700;line-height:1.3;margin-bottom:10px}
+.sl p{color:var(--sed);font-size:16px}
+
+/* VYBER */
+.vyber{background:var(--snih)}
+.v-grid{display:grid;grid-template-columns:400px 1fr;gap:48px;margin-top:44px;align-items:start}
+fieldset{border:0;margin-bottom:24px}
+legend{font:600 14px Rubik;margin-bottom:10px;color:var(--ink)}
+.volby{display:flex;flex-wrap:wrap;gap:8px}
+.volby input{position:absolute;opacity:0;pointer-events:none}
+.volby label{cursor:pointer;padding:10px 16px;border-radius:40px;background:#fff;border:1px solid var(--linka);font-size:15px;transition:all .15s}
+.volby label:hover{border-color:var(--led)}
+.volby input:checked+label{background:var(--ink);color:#fff;border-color:var(--ink)}
+.volby input:focus-visible+label{outline:3px solid var(--led);outline-offset:2px}
+.schema{background:#fff;border-radius:18px;padding:26px;border:1px solid var(--linka)}
+.schema svg{width:100%;height:auto;display:block}
+.schema h3{font-size:20px;margin:18px 0 8px}
+.schema ul{list-style:none;display:grid;gap:8px;margin-top:10px}
+.schema li{padding-left:22px;position:relative;font-size:16px;color:#2c3a55}
+.schema li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;border-radius:50%;background:var(--termo)}
+.schema .spodek{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:22px;padding-top:18px;border-top:1px dashed var(--linka);font-size:14px;color:var(--sed)}
+.tok{stroke-dasharray:10 8;animation:tec 1.2s linear infinite}
+@keyframes tec{to{stroke-dashoffset:-36}}
+@media (prefers-reduced-motion:reduce){.tok{animation:none}}
+
+/* PROC */
+.proc{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:start}
+.fakta{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.fakt{border-radius:16px;padding:26px;background:var(--snih)}
+.fakt .uni{font-size:30px;font-weight:800;display:block;line-height:1.1;margin-bottom:8px}
+.fakt:nth-child(1) .uni{color:var(--led)}
+.fakt:nth-child(2) .uni{color:var(--termo)}
+.fakt p{font-size:15.5px;color:var(--sed)}
+
+/* GALERIE */
+.gal{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px;margin-top:40px}
+.gal div{border-radius:16px;min-height:240px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:18px;color:#fff;font-size:14px}
+.gal div span{position:relative;background:rgba(15,30,58,.55);padding:6px 12px;border-radius:30px}
+.g1{background:radial-gradient(circle at 30% 60%,#FFC93C 0,#F2551F 18%,#7a5ad8 40%,#1b3f99 70%)}
+.g2{background:radial-gradient(circle at 60% 40%,#F2551F 0,#e24b7a 20%,#2A6FDB 55%,#1b3f99 85%)}
+.g3{background:radial-gradient(circle at 50% 70%,#FFC93C 0,#e24b7a 25%,#2A6FDB 60%)}
+
+/* KONTAKT */
+.kontakt{background:var(--ink);color:#fff}
+.kontakt .uvod{color:#b9c4da}
+.k-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;margin-top:44px}
+.k-tel{font:800 clamp(26px,3.4vw,40px) Unbounded;text-decoration:none;display:block;margin-bottom:24px;color:var(--zar)}
+.k-info p{margin-bottom:14px;color:#dce3f0}
+.k-info b{display:block;font-size:13px;color:#8ea0c2;font-weight:500;text-transform:none}
+form{background:#fff;color:var(--ink);border-radius:18px;padding:30px;display:grid;gap:14px}
+form label{display:grid;gap:6px;font-size:14px;font-weight:500}
+input,textarea,select{font:16px Rubik,sans-serif;padding:12px 14px;border:1px solid var(--linka);border-radius:10px;color:var(--ink);background:#fff}
+textarea{min-height:130px;resize:vertical}
+.dva{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ok{display:none;background:#e9f1ff;color:var(--ink);padding:14px;border-radius:10px;font-size:15px}
+.ok.vid{display:block}
+footer{background:#0a1529;color:#9fb0cf;font-size:14px;padding:30px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer a{color:#fff}
+
+@media (max-width:980px){
+  .menu{display:none}
+  .hero-spod,.v-grid,.proc,.k-grid{grid-template-columns:1fr}
+  .hero-spod .akce{justify-content:flex-start}
+  .sl{grid-template-columns:1fr 1fr}
+  .sl article,.sl article+article{padding:26px 20px 28px 0;border-left:0}
+  .sl article:nth-child(even){padding-left:20px;border-left:1px solid var(--linka)}
+  .gal{grid-template-columns:1fr 1fr}
+  .g1{grid-column:1/-1}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  section{padding:70px 0}
+  .hero{padding-top:44px}
+  .hero-spod p{font-size:17px}
+  .pas{height:110px;margin-top:40px}
+  .pas .st{font-size:11px}
+  .logo small{display:none}
+  .sl{grid-template-columns:1fr}
+  .sl article:nth-child(even){padding-left:0;border-left:0}
+  .fakta{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr}
+  .dva{grid-template-columns:1fr}
+  form{padding:20px}
+  .schema{padding:16px}
+}
+</style>
+</head>
+<body>
+<div class="pruh">Návrh nového webu pro <b>Bartel Vladimír Bartůšek</b>, připravila Tereza Toufarová z Tereweb.cz</div>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Bartel, úvod">
+      <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#2A6FDB"/><stop offset="1" stop-color="#F2551F"/></linearGradient></defs><circle cx="21" cy="21" r="21" fill="url(#lg)"/><path d="M14 11h8.5a5 5 0 0 1 0 10H14zM14 21h9.5a5 5 0 0 1 0 10H14z" fill="none" stroke="#fff" stroke-width="3.2" stroke-linejoin="round"/></svg>
+      <span><b>BARTEL</b><small>Vladimír Bartůšek, Bystřice</small></span>
+    </a>
+    <ul class="menu">
+      <li><a href="#sluzby">Služby</a></li>
+      <li><a href="#vyber">Výběr čerpadla</a></li>
+      <li><a href="#o-nas">O firmě</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <a class="btn hor" href="tel:+420604230215">Zavolat</a>
+  </div>
+</nav>
+
+<main id="top">
+<section class="hero" style="padding-bottom:0">
+  <div class="wrap">
+    <h1><span class="s">Venku zima.</span><span class="t">Doma teplo.</span></h1>
+    <div class="hero-spod">
+      <p>Montujeme a servisujeme tepelná čerpadla Stiebel Eltron, ventilační jednotky a solární systémy. K tomu elektroinstalace do 1 kV a měření a regulace. Bystřice a Benešovsko.</p>
+      <div class="akce"><a class="btn" href="#vyber">Jaké čerpadlo k domu?</a><a class="btn obrys" href="tel:+420604230215">604 230 215</a></div>
+    </div>
+  </div>
+  <div class="pas" aria-hidden="true">
+    <span class="st">vzduch, země</span><span class="st">tepelné čerpadlo</span><span class="st">teplý domov</span>
+  </div>
+</section>
+
+<section id="sluzby">
+  <div class="wrap">
+    <h2>Co děláme</h2>
+    <p class="uvod">Topení, větrání i elektřinu řešíme jednou firmou, takže se nemusíte domlouvat s několika řemeslníky zvlášť.</p>
+    <div class="sl">
+      <article><div class="tep" style="background:#2A6FDB"></div><h3>Tepelná čerpadla Stiebel Eltron</h3><p>Montáž, servis a uvedení do provozu čerpadel vzduch/voda i země/voda.</p></article>
+      <article><div class="tep" style="background:#7a5ad8"></div><h3>Ventilační jednotky a solární systémy</h3><p>Větrání s rekuperací a solární ohřev od stejného výrobce, napojené na topení.</p></article>
+      <article><div class="tep" style="background:#e24b7a"></div><h3>Měření a regulace</h3><p>Montáž a projektování M+R, aby topný systém běžel tak, jak má.</p></article>
+      <article><div class="tep" style="background:#F2551F"></div><h3>Elektroinstalace do 1 kV</h3><p>Projekty, dodávky, montáž a rekonstrukce rozvodů v bytech, domech, kancelářích i výrobních prostorách.</p></article>
+      <article><div class="tep" style="background:#f78a2b"></div><h3>Elektrokotle a podlahové topení</h3><p>Montáž a servis elektrických kotlů a elektrického podlahového vytápění.</p></article>
+      <article><div class="tep" style="background:#FFC93C"></div><h3>Elektrorevize a vyřízení sazby</h3><p>Revize elektroinstalací a vyřízení formalit s ČEZ, E.ON nebo PRE při přechodu na sazbu pro tepelné čerpadlo.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="vyber" id="vyber">
+  <div class="wrap">
+    <h2>Jaké tepelné čerpadlo k vašemu domu?</h2>
+    <p class="uvod">Vyberte, co platí pro váš dům. Ukážeme, jak by systém fungoval a na co se při prohlídce zaměříme. Přesný návrh uděláme vždy až na místě.</p>
+    <div class="v-grid">
+      <div id="volby">
+        <fieldset><legend>Odkud brát teplo</legend><div class="volby">
+          <input type="radio" name="zdroj" id="z1" value="vzduch" checked><label for="z1">Ze vzduchu</label>
+          <input type="radio" name="zdroj" id="z2" value="zeme"><label for="z2">Ze země (vrt)</label>
+          <input type="radio" name="zdroj" id="z3" value="nevim"><label for="z3">Nevím, poraďte</label>
+        </div></fieldset>
+        <fieldset><legend>Dům</legend><div class="volby">
+          <input type="radio" name="dum" id="d1" value="novostavba" checked><label for="d1">Novostavba</label>
+          <input type="radio" name="dum" id="d2" value="starsi"><label for="d2">Starší dům</label>
+        </div></fieldset>
+        <fieldset><legend>Jak topíte</legend><div class="volby">
+          <input type="radio" name="soustava" id="s1" value="podlaha" checked><label for="s1">Podlahové topení</label>
+          <input type="radio" name="soustava" id="s2" value="radiatory"><label for="s2">Radiátory</label>
+        </div></fieldset>
+        <fieldset><legend>Navíc chci</legend><div class="volby">
+          <input type="checkbox" name="extra" id="e1" value="voda" checked><label for="e1">Ohřev teplé vody</label>
+          <input type="checkbox" name="extra" id="e2" value="vetrani"><label for="e2">Větrání s rekuperací</label>
+          <input type="checkbox" name="extra" id="e3" value="sazba"><label for="e3">Vyřízení sazby</label>
+        </div></fieldset>
+      </div>
+      <div class="schema" aria-live="polite">
+        <svg viewBox="0 0 640 300" role="img" aria-labelledby="schTitle"><title id="schTitle">Schéma zvoleného systému</title>
+          <rect width="640" height="300" fill="#fff"/>
+          <line x1="0" y1="230" x2="640" y2="230" stroke="#DCE3EE" stroke-width="2"/>
+          <g id="srcVzduch">
+            <rect x="30" y="160" width="120" height="70" rx="8" fill="#E8EEF9" stroke="#2A6FDB" stroke-width="2"/>
+            <circle cx="72" cy="195" r="22" fill="none" stroke="#2A6FDB" stroke-width="3"/>
+            <path d="M72 175v40M52 195h40" stroke="#2A6FDB" stroke-width="2"/>
+            <text x="90" y="150" text-anchor="middle" font-family="Rubik" font-size="13" fill="#556178">venkovní jednotka</text>
+          </g>
+          <g id="srcZeme" style="display:none">
+            <rect x="0" y="230" width="190" height="70" fill="#EEF0F4"/>
+            <path d="M80 230v62M100 230v62M80 292h20" stroke="#2A6FDB" stroke-width="4" fill="none"/>
+            <text x="90" y="215" text-anchor="middle" font-family="Rubik" font-size="13" fill="#556178">hlubinný vrt</text>
+          </g>
+          <path class="tok" id="tokZdroj" d="M150 195H250" stroke="#2A6FDB" stroke-width="4" fill="none"/>
+          <!-- dum -->
+          <path d="M240 230V110l150-80 150 80v120z" fill="#F7F9FC" stroke="#0F1E3A" stroke-width="3"/>
+          <rect x="262" y="150" width="56" height="70" rx="6" fill="#0F1E3A"/>
+          <text x="290" y="190" text-anchor="middle" font-family="Unbounded" font-size="11" fill="#fff">TČ</text>
+          <g id="bojler"><rect x="330" y="150" width="40" height="70" rx="18" fill="#fff" stroke="#F2551F" stroke-width="3"/><text x="350" y="242" text-anchor="middle" font-family="Rubik" font-size="11" fill="#556178">voda</text></g>
+          <path class="tok" d="M318 170H330" stroke="#F2551F" stroke-width="4"/>
+          <g id="podlaha"><path class="tok" d="M390 222h130M390 214h130" stroke="#F2551F" stroke-width="4" fill="none"/><text x="455" y="205" text-anchor="middle" font-family="Rubik" font-size="12" fill="#556178">podlahové topení</text></g>
+          <g id="radiator" style="display:none"><rect x="430" y="160" width="70" height="44" rx="4" fill="#fff" stroke="#F2551F" stroke-width="3"/><path d="M445 164v36M460 164v36M475 164v36M490 164v36" stroke="#F2551F" stroke-width="2"/><path class="tok" d="M370 190h60" stroke="#F2551F" stroke-width="4"/><text x="465" y="150" text-anchor="middle" font-family="Rubik" font-size="12" fill="#556178">radiátory</text></g>
+          <g id="vetrani" style="display:none"><rect x="400" y="90" width="80" height="34" rx="6" fill="#E8EEF9" stroke="#7a5ad8" stroke-width="2"/><text x="440" y="112" text-anchor="middle" font-family="Rubik" font-size="11" fill="#0F1E3A">rekuperace</text><path class="tok" d="M480 107h80" stroke="#7a5ad8" stroke-width="3"/></g>
+          <g id="sazba" style="display:none"><rect x="560" y="150" width="54" height="80" rx="6" fill="#fff" stroke="#FFC93C" stroke-width="3"/><path d="M590 165l-10 22h12l-8 22" stroke="#0F1E3A" stroke-width="3" fill="none"/><text x="587" y="248" text-anchor="middle" font-family="Rubik" font-size="11" fill="#556178">sazba</text></g>
+        </svg>
+        <h3 id="vNadpis">Vzduch/voda do novostavby</h3>
+        <ul id="vBody"></ul>
+        <div class="spodek"><span>Bez cen a výkonů: ty určíme po prohlídce domu.</span><button class="btn hor" type="button" id="vPoslat">Chci prohlídku</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="o-nas">
+  <div class="wrap proc">
+    <div>
+      <h2>Jedna firma pro teplo i elektřinu</h2>
+      <p class="uvod">Firmu Bartel založil Vladimír Bartůšek v roce 1998. Tepelná čerpadla montujeme a servisujeme, elektroinstalaci a regulaci k nim děláme sami.</p>
+    </div>
+    <div class="fakta">
+      <div class="fakt"><span class="uni">1998</span><p>Rok založení firmy.</p></div>
+      <div class="fakt"><span class="uni">od 2006</span><p>Montujeme tepelná čerpadla, ventilační jednotky a solární systémy Stiebel Eltron.</p></div>
+      <div class="fakt"><span class="uni" style="font-size:22px">Elektro + M+R</span><p>Projekt, rozvody i regulaci připravíme sami, včetně revize.</p></div>
+      <div class="fakt"><span class="uni" style="font-size:22px">ČEZ, E.ON, PRE</span><p>Vyřídíme za vás přechod na sazbu a formality s distributorem.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Realizace</h2>
+    <div class="gal">
+      <div class="g1"><span>Sem přijdou fotky vašich zakázek</span></div>
+      <div class="g2"><span>Sem přijdou fotky vašich zakázek</span></div>
+      <div class="g3"><span>Sem přijdou fotky vašich zakázek</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="wrap">
+    <h2>Pojďme spočítat váš dům</h2>
+    <p class="uvod">Zavolejte nebo napište. Domluvíme prohlídku a navrhneme systém přímo pro vás.</p>
+    <div class="k-grid">
+      <div class="k-info">
+        <a class="k-tel" href="tel:+420604230215">+420 604 230 215</a>
+        <p><b>E-mail</b><a href="mailto:info@bartel.cz">info@bartel.cz</a></p>
+        <p><b>Adresa</b>U Stadionu 376, 257 51 Bystřice</p>
+        <p><b>Kdo vám odpoví</b>Vladimír Bartůšek</p>
+      </div>
+      <form id="form" novalidate>
+        <div class="dva"><label>Jméno<input name="jmeno" autocomplete="name"></label><label>Telefon<input name="tel" type="tel" autocomplete="tel"></label></div>
+        <label>E-mail<input name="email" type="email" autocomplete="email"></label>
+        <label>Obec, kde je dům<input name="obec"></label>
+        <label>Zpráva<textarea id="zprava" name="zprava"></textarea></label>
+        <button class="btn hor" type="submit">Odeslat</button>
+        <p class="ok" id="ok" role="status">Toto je ukázka formuláře. V hotovém webu by zpráva přišla rovnou na váš e-mail.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><span>© 2026 Bartel Vladimír Bartůšek</span><span>Návrh připravila <a href="https://tereweb.cz">Tereweb.cz</a></span></div></footer>
+
+<script>
+(function(){
+  var f=document.getElementById('volby');
+  function v(n){var x=f.querySelector('input[name="'+n+'"]:checked');return x?x.value:'';}
+  function ex(n){return f.querySelector('input[name="extra"][value="'+n+'"]').checked;}
+  function show(id,on){document.getElementById(id).style.display=on?'':'none';}
+  function render(){
+    var z=v('zdroj'),d=v('dum'),s=v('soustava');
+    show('srcVzduch',z!=='zeme'); show('srcZeme',z==='zeme');
+    show('podlaha',s==='podlaha'); show('radiator',s==='radiatory');
+    show('bojler',ex('voda')); show('vetrani',ex('vetrani')); show('sazba',ex('sazba'));
+    var nz={vzduch:'Vzduch/voda',zeme:'Země/voda',nevim:'Tepelné čerpadlo'}[z];
+    document.getElementById('vNadpis').textContent=nz+(d==='novostavba'?' do novostavby':' do staršího domu');
+    var b=[];
+    if(z==='vzduch')b.push('Najdeme místo pro venkovní jednotku s ohledem na hluk a sousedy.');
+    if(z==='zeme')b.push('Probereme vrt: pozemek, přístup pro vrtnou soupravu a povolení.');
+    if(z==='nevim')b.push('Porovnáme vzduch a zemi pro váš pozemek a provoz.');
+    if(d==='starsi')b.push('U staršího domu projdeme zateplení, okna a stávající zdroj tepla.');
+    else b.push('V novostavbě navrhneme čerpadlo podle projektu a tepelných ztrát.');
+    if(s==='radiatory')b.push('Zkontrolujeme radiátory, zda stačí pro nižší teplotu vody.');
+    else b.push('Podlahové topení je pro tepelné čerpadlo ideální partner.');
+    if(ex('voda'))b.push('Navrhneme zásobník na teplou vodu.');
+    if(ex('vetrani'))b.push('Přidáme ventilační jednotku s rekuperací.');
+    if(ex('sazba'))b.push('Vyřídíme přechod na sazbu u ČEZ, E.ON nebo PRE.');
+    b.push('Elektroinstalaci a regulaci uděláme sami.');
+    document.getElementById('vBody').innerHTML=b.map(function(t){return '<li>'+t+'</li>';}).join('');
+  }
+  f.addEventListener('change',render); render();
+  document.getElementById('vPoslat').addEventListener('click',function(){
+    var t=document.getElementById('vNadpis').textContent;
+    var extra=[].filter.call(f.querySelectorAll('input[name="extra"]:checked'),function(){return 1;}).map(function(i){return i.nextElementSibling.textContent;});
+    document.getElementById('zprava').value='Zajímá mě: '+t+', '+(v('soustava')==='podlaha'?'podlahové topení':'radiátory')+(extra.length?'\nNavíc: '+extra.join(', '):'')+'\nProsím o prohlídku.\n';
+    document.getElementById('kontakt').scrollIntoView({behavior:'smooth'});
+    setTimeout(function(){document.getElementById('zprava').focus({preventScroll:true});},500);
+  });
+  document.getElementById('form').addEventListener('submit',function(e){e.preventDefault();document.getElementById('ok').classList.add('vid');});
+})();
+</script>
+</body>
+</html>

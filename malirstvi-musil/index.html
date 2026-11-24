@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Malířství Musil – Bystřice (návrh webu)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Outfit:wght@400;500;600&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+:root{--ultra:#2B3A9A;--ultra2:#22307F;--slunce:#F7C948;--ink:#15172B;--stena:#F3F3EF;--sed:#575B70;--linka:#DEDED8}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Outfit,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.6;font-size:17.5px}
+h1,h2,h3,.br{font-family:"Bricolage Grotesque",sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--slunce);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.pruh{background:var(--slunce);text-align:center;font-size:14px;padding:8px 16px}
+header{background:var(--ultra);color:#fff;position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(255,255,255,.12)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:70px;gap:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 21px "Bricolage Grotesque"}
+.logo small{display:block;font:400 12px Outfit;opacity:.8}
+header nav{display:flex;gap:26px;font-size:15.5px}
+header nav a{text-decoration:none;opacity:.9}
+header nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:5px;text-decoration-color:var(--slunce)}
+.btn{display:inline-flex;align-items:center;justify-content:center;font:600 16.5px Outfit;padding:13px 24px;border-radius:999px;border:0;cursor:pointer;text-decoration:none;background:var(--slunce);color:var(--ink)}
+.btn:hover{background:#ffd866}
+.btn.bila{background:#fff}
+.btn.modra{background:var(--ultra);color:#fff}
+.btn.modra:hover{background:var(--ultra2)}
+
+/* HERO */
+.hero{background:var(--ultra);color:#fff;position:relative;overflow:hidden;padding:80px 0 210px}
+.hero h1{font-size:clamp(44px,7.6vw,110px);line-height:.95;font-weight:800;letter-spacing:-.035em;position:relative;z-index:2;max-width:9em}
+.hero p{position:relative;z-index:2;max-width:31em;font-size:19.5px;margin-top:26px;color:#e3e6f7}
+.hero .akce{position:relative;z-index:2;display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.tah{position:absolute;left:-2%;bottom:52px;height:120px;width:104%;z-index:1}
+.tah rect.barva{transform-origin:left;transform:scaleX(0);animation:tah 1.6s cubic-bezier(.7,0,.2,1) .3s forwards}
+.tah .valecek{animation:jed 1.6s cubic-bezier(.7,0,.2,1) .3s forwards;transform:translateX(0)}
+@keyframes tah{to{transform:scaleX(1)}}
+@keyframes jed{to{transform:translateX(1280px)}}
+@media (prefers-reduced-motion:reduce){.tah rect.barva{animation:none;transform:none}.tah .valecek{display:none}html{scroll-behavior:auto}}
+
+section{padding:96px 0}
+h2{font-size:clamp(32px,4vw,52px);line-height:1.05;font-weight:800;letter-spacing:-.025em}
+.uvod{color:var(--sed);max-width:38em;margin-top:12px}
+
+/* VZORNIK SLUZEB */
+.vzornik{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:46px}
+.vz{background:#fff;border:1px solid var(--linka);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+.vz .odstin{height:110px;position:relative}
+.vz .odstin i{position:absolute;right:10px;bottom:8px;font:500 12px Outfit;font-style:normal;color:rgba(0,0,0,.55);background:rgba(255,255,255,.7);padding:2px 7px;border-radius:3px}
+.vz div.t{padding:18px 18px 22px}
+.vz h3{font-size:19px;font-weight:700;line-height:1.25;margin-bottom:6px}
+.vz p{font-size:15.5px;color:var(--sed)}
+.skupina{font:700 15px Outfit;margin:48px 0 0;display:flex;align-items:center;gap:12px}
+.skupina::after{content:"";flex:1;height:1px;background:var(--linka)}
+.skupina+.vzornik{margin-top:18px}
+
+/* MALIRNA */
+.zkus{background:var(--stena)}
+.zk-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:44px;margin-top:40px;align-items:start}
+.pokoj{border-radius:14px;overflow:hidden;box-shadow:0 1px 0 var(--linka)}
+.pokoj svg{display:block;width:100%;height:auto}
+#zed{transition:fill .5s}
+.ovl h3{font-size:16px;font-family:Outfit;font-weight:600;margin:0 0 10px}
+.ovl .blok{margin-bottom:26px}
+.odstiny{display:flex;flex-wrap:wrap;gap:10px}
+.odstiny button{width:46px;height:46px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 1px var(--linka);cursor:pointer}
+.odstiny button[aria-pressed=true]{box-shadow:0 0 0 3px var(--ink)}
+.typy{display:flex;flex-wrap:wrap;gap:8px}
+.typy button{font:500 15px Outfit;padding:9px 15px;border-radius:999px;border:1px solid #c9c9c2;background:#fff;cursor:pointer;color:var(--ink)}
+.typy button[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.pocet{display:flex;align-items:center;gap:14px}
+.pocet button{width:42px;height:42px;border-radius:50%;border:1px solid #c9c9c2;background:#fff;font:600 22px Outfit;cursor:pointer;color:var(--ink)}
+.pocet output{font:800 30px "Bricolage Grotesque";min-width:30px;text-align:center}
+.vysledek{background:#fff;border-radius:12px;padding:20px;border:1px solid var(--linka)}
+.vysledek p{font-size:16px}
+.vysledek .nazev{font:700 20px "Bricolage Grotesque";margin-bottom:4px}
+.vysledek .btn{width:100%;margin-top:16px}
+
+/* JAK */
+.jak{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.jak ul{list-style:none;display:grid;gap:0}
+.jak li{display:grid;grid-template-columns:56px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid var(--linka)}
+.jak li:first-child{border-top:1px solid var(--linka)}
+.jak .kap{width:44px;height:52px}
+.jak b{display:block;font-size:19px;font-family:"Bricolage Grotesque";margin-bottom:2px}
+.jak span{color:var(--sed);font-size:16px}
+.zdarma{background:var(--slunce);border-radius:16px;padding:40px;position:relative;overflow:hidden}
+.zdarma .br{font-size:clamp(30px,3.6vw,46px);font-weight:800;line-height:1.05;letter-spacing:-.02em}
+.zdarma p{margin-top:12px;font-size:18px}
+
+/* GALERIE */
+.gal{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:150px;gap:14px;margin-top:38px}
+.gal div{border-radius:10px;display:flex;align-items:flex-end;padding:14px;font-size:14px;font-weight:500}
+.gal div span{background:rgba(255,255,255,.88);padding:5px 11px;border-radius:999px}
+.gal .a{grid-column:span 3;grid-row:span 2;background:linear-gradient(100deg,#2B3A9A 0 55%,#3E4FB8 55% 100%)}
+.gal .b{grid-column:span 3;background:linear-gradient(100deg,#F7C948 0 60%,#f2d77b 60%)}
+.gal .c{grid-column:span 2;background:linear-gradient(100deg,#9DC3B0 0 50%,#b5d4c4 50%)}
+.gal .d{grid-column:span 1;background:#E9A8A0}
+
+/* KONTAKT */
+.kontakt{background:var(--ultra);color:#fff}
+.k-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;margin-top:40px}
+.k-tel{font:800 clamp(30px,3.6vw,44px) "Bricolage Grotesque";text-decoration:none;color:var(--slunce);display:block;margin-bottom:18px}
+.k-udaje p{margin-bottom:10px;color:#e3e6f7}
+.doba{margin-top:24px;border-top:1px solid rgba(255,255,255,.25);padding-top:18px;display:grid;grid-template-columns:auto 1fr;gap:6px 24px;font-size:16px}
+.doba dt{opacity:.8}
+form{background:#fff;color:var(--ink);border-radius:16px;padding:28px;display:grid;gap:14px}
+form label{display:grid;gap:6px;font-size:14.5px;font-weight:500}
+input,textarea{font:16px Outfit;padding:12px 14px;border:1px solid #cfcfc8;border-radius:10px;color:var(--ink);background:#fff}
+textarea{min-height:130px;resize:vertical}
+.dva{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ok{display:none;background:var(--stena);padding:14px;border-radius:10px;font-size:15px}
+.ok.vid{display:block}
+footer{background:var(--ink);color:#b9bccc;padding:30px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer a{color:var(--slunce)}
+
+@media (max-width:980px){
+  header nav{display:none}
+  .vzornik{grid-template-columns:1fr 1fr}
+  .zk-grid,.jak,.k-grid{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr;grid-auto-rows:140px}
+  .gal .a{grid-column:span 2;grid-row:span 2}.gal .b{grid-column:span 2}.gal .c,.gal .d{grid-column:span 1}
+}
+@media (max-width:560px){
+  body{font-size:16.5px}
+  .wrap{padding:0 16px}
+  section{padding:68px 0}
+  .hero{padding:52px 0 140px}
+  .hero p{font-size:17.5px}
+  .tah{bottom:30px;height:90px}
+  .logo small{display:none}
+  .vzornik{grid-template-columns:1fr}
+  .vz{flex-direction:row}
+  .vz .odstin{height:auto;width:84px;flex:none}
+  .vz .odstin i{display:none}
+  .zdarma{padding:28px}
+  .dva{grid-template-columns:1fr}
+  form{padding:20px}
+}
+</style>
+</head>
+<body>
+<div class="pruh">Návrh nového webu pro <b>Malířství Musil</b>, připravila Tereza Toufarová z Tereweb.cz</div>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Malířství Musil, úvod">
+      <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="6" width="26" height="12" rx="3" fill="#F7C948"/><path d="M30 12h4v10H18v6" fill="none" stroke="#fff" stroke-width="3"/><rect x="15" y="27" width="6" height="11" rx="2" fill="#fff"/></svg>
+      <span>Malířství Musil<small>Bystřice u Benešova</small></span>
+    </a>
+    <nav aria-label="Hlavní menu"><a href="#sluzby">Služby</a><a href="#vyzkousejte">Vyzkoušejte barvu</a><a href="#postup">Jak to probíhá</a><a href="#kontakt">Kontakt</a></nav>
+    <a class="btn" href="tel:+420728576132">Zavolat</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <h1>Vymalujeme. Uvnitř i venku.</h1>
+    <p>Malby bílé, barevné i protiplísňové, dekorativní techniky a nátěry fasád, střech, podbití a plotů. Bystřice a okolí. Zaměření a cenovou nabídku máte zdarma.</p>
+    <div class="akce"><a class="btn" href="#kontakt">Chci zaměření zdarma</a><a class="btn bila" href="#vyzkousejte">Vyzkoušet barvu</a></div>
+  </div>
+  <svg class="tah" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+    <rect class="barva" x="0" y="28" width="1200" height="64" fill="#F7C948"/>
+    <g class="valecek"><rect x="-16" y="18" width="22" height="84" rx="8" fill="#fff"/><path d="M6 60h18v-50h-60" stroke="#fff" stroke-width="5" fill="none"/></g>
+  </svg>
+</section>
+
+<section id="sluzby">
+  <div class="wrap">
+    <h2>Vzorník našich prací</h2>
+    <p class="uvod">Malujeme byty, domy i haly. Vyberte si, co potřebujete, a my přijedeme zaměřit.</p>
+    <p class="skupina">Interiér</p>
+    <div class="vzornik">
+      <article class="vz"><div class="odstin" style="background:#FFFFFF;box-shadow:inset 0 -1px 0 var(--linka)"><i>bílá</i></div><div class="t"><h3>Bílé malby</h3><p>Klasické vymalování pokojů, chodeb i celých bytů.</p></div></article>
+      <article class="vz"><div class="odstin" style="background:#9DC3B0"><i>barva</i></div><div class="t"><h3>Barevné malby</h3><p>Barevné stěny podle vašeho výběru.</p></div></article>
+      <article class="vz"><div class="odstin" style="background:#D9E4EC"><i>protiplísňová</i></div><div class="t"><h3>Protiplísňové malby</h3><p>Pro koupelny, sklepy a místa, kde se drží vlhkost.</p></div></article>
+      <article class="vz"><div class="odstin" style="background:repeating-linear-gradient(45deg,#E9A8A0 0 10px,#e2968d 10px 20px)"><i>dekor</i></div><div class="t"><h3>Dekorativní techniky</h3><p>Různé dekorativní techniky pro výraznou stěnu.</p></div></article>
+    </div>
+    <p class="skupina">Exteriér a firmy</p>
+    <div class="vzornik">
+      <article class="vz"><div class="odstin" style="background:#E8D9B5"><i>fasáda</i></div><div class="t"><h3>Nátěry fasád</h3><p>Obnova barvy domu.</p></div></article>
+      <article class="vz"><div class="odstin" style="background:#7A3B32"><i style="color:#fff;background:rgba(0,0,0,.3)">střecha</i></div><div class="t"><h3>Nátěry střech</h3><p>Nátěry střešní krytiny.</p></div></article>
+      <article class="vz"><div class="odstin" style="background:#5C7A5A"><i style="color:#fff;background:rgba(0,0,0,.3)">dřevo</i></div><div class="t"><h3>Podbití a ploty</h3><p>Natřeme podbití, ploty a další venkovní prvky.</p></div></article>
+      <article class="vz"><div class="odstin" style="background:#C93C2E"><i style="color:#fff;background:rgba(0,0,0,.3)">ochrana</i></div><div class="t"><h3>Protipožární nátěry a haly</h3><p>Protipožární nátěry a stříkání hal pro firmy.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="zkus" id="vyzkousejte">
+  <div class="wrap">
+    <h2>Vyzkoušejte barvu na stěně</h2>
+    <p class="uvod">Vyberte odstín a druh malby, nastavte počet místností a pošlete nám to. Při zaměření pak barvu doladíme naživo.</p>
+    <div class="zk-grid">
+      <div class="pokoj">
+        <svg viewBox="0 0 640 420" role="img" aria-label="Ilustrace pokoje s vybranou barvou stěny">
+          <defs>
+            <pattern id="dekor" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><rect width="26" height="26" fill="transparent"/><path d="M0 13h26" stroke="#000" stroke-opacity=".08" stroke-width="6"/></pattern>
+          </defs>
+          <rect width="640" height="420" fill="#fff"/>
+          <rect id="zed" x="0" y="0" width="640" height="320" fill="#9DC3B0"/>
+          <rect id="dekorVrstva" x="0" y="0" width="640" height="320" fill="url(#dekor)" style="display:none"/>
+          <rect x="0" y="320" width="640" height="100" fill="#C9A77C"/>
+          <path d="M0 340h640M0 365h640M0 392h640" stroke="#b8956a" stroke-width="2"/>
+          <rect x="0" y="312" width="640" height="10" fill="#fff"/>
+          <!-- okno -->
+          <rect x="70" y="60" width="150" height="170" fill="#DCEEFB" stroke="#fff" stroke-width="10"/>
+          <path d="M145 60v170M70 145h150" stroke="#fff" stroke-width="6"/>
+          <!-- obraz -->
+          <rect x="390" y="70" width="130" height="90" fill="#fff" stroke="#15172B" stroke-width="4"/>
+          <path d="M398 150l36-40 26 26 18-16 34 30z" fill="#2B3A9A"/><circle cx="490" cy="95" r="10" fill="#F7C948"/>
+          <!-- pohovka -->
+          <rect x="330" y="230" width="250" height="70" rx="14" fill="#15172B"/>
+          <rect x="350" y="200" width="210" height="50" rx="14" fill="#2a2d4a"/>
+          <rect x="340" y="296" width="12" height="24" fill="#15172B"/><rect x="558" y="296" width="12" height="24" fill="#15172B"/>
+          <!-- kytka -->
+          <rect x="250" y="270" width="40" height="50" rx="4" fill="#fff" stroke="#15172B" stroke-width="3"/>
+          <path d="M270 270c-20-30-10-60 0-70 10 10 20 40 0 70M270 270c-30-10-40-30-36-44 14 0 30 20 36 44M270 270c30-10 40-30 36-44-14 0-30 20-36 44" fill="#5C7A5A"/>
+          <g id="plisen" style="display:none"><rect x="20" y="20" width="160" height="34" rx="17" fill="#fff"/><text x="100" y="42" text-anchor="middle" font-family="Outfit" font-size="14" fill="#15172B">protiplísňová</text></g>
+        </svg>
+      </div>
+      <div class="ovl">
+        <div class="blok">
+          <h3 id="hOd">Odstín</h3>
+          <div class="odstiny" role="group" aria-labelledby="hOd">
+            <button type="button" style="background:#FFFFFF" data-c="#FFFFFF" data-n="Čistě bílá" aria-label="Čistě bílá" aria-pressed="false"></button>
+            <button type="button" style="background:#F1E6CF" data-c="#F1E6CF" data-n="Teplá bílá" aria-label="Teplá bílá" aria-pressed="false"></button>
+            <button type="button" style="background:#9DC3B0" data-c="#9DC3B0" data-n="Šalvějová" aria-label="Šalvějová" aria-pressed="true"></button>
+            <button type="button" style="background:#A9C4E2" data-c="#A9C4E2" data-n="Nebeská modrá" aria-label="Nebeská modrá" aria-pressed="false"></button>
+            <button type="button" style="background:#F7C948" data-c="#F7C948" data-n="Slunečná žlutá" aria-label="Slunečná žlutá" aria-pressed="false"></button>
+            <button type="button" style="background:#E9A8A0" data-c="#E9A8A0" data-n="Pudrová růžová" aria-label="Pudrová růžová" aria-pressed="false"></button>
+            <button type="button" style="background:#B9B4AA" data-c="#B9B4AA" data-n="Kamenná šedá" aria-label="Kamenná šedá" aria-pressed="false"></button>
+            <button type="button" style="background:#2B3A9A" data-c="#2B3A9A" data-n="Ultramarín" aria-label="Ultramarín" aria-pressed="false"></button>
+          </div>
+        </div>
+        <div class="blok">
+          <h3 id="hTyp">Druh malby</h3>
+          <div class="typy" role="group" aria-labelledby="hTyp">
+            <button type="button" data-t="Barevná malba" aria-pressed="true">Barevná</button>
+            <button type="button" data-t="Protiplísňová malba" aria-pressed="false">Protiplísňová</button>
+            <button type="button" data-t="Dekorativní technika" aria-pressed="false">Dekorativní technika</button>
+          </div>
+        </div>
+        <div class="blok">
+          <h3 id="hPoc">Počet místností</h3>
+          <div class="pocet"><button type="button" id="minus" aria-label="Méně místností">−</button><output id="pocet" aria-labelledby="hPoc">2</output><button type="button" id="plus" aria-label="Více místností">+</button></div>
+        </div>
+        <div class="vysledek" aria-live="polite">
+          <p class="nazev" id="vNazev">Šalvějová, barevná malba</p>
+          <p id="vText">2 místnosti. Přijedeme zaměřit a pošleme nezávaznou cenovou nabídku.</p>
+          <button class="btn modra" type="button" id="vPoslat">Objednat zaměření zdarma</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="postup">
+  <div class="wrap jak">
+    <div>
+      <h2>Jak to probíhá</h2>
+      <ul style="margin-top:30px">
+        <li><svg class="kap" viewBox="0 0 44 52" aria-hidden="true"><path d="M22 2C14 16 6 24 6 34a16 16 0 0 0 32 0C38 24 30 16 22 2z" fill="#2B3A9A"/><text x="22" y="40" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="16" fill="#fff">1</text></svg><div><b>Zavoláte nebo napíšete</b><span>Popíšete, co potřebujete vymalovat nebo natřít.</span></div></li>
+        <li><svg class="kap" viewBox="0 0 44 52" aria-hidden="true"><path d="M22 2C14 16 6 24 6 34a16 16 0 0 0 32 0C38 24 30 16 22 2z" fill="#9DC3B0"/><text x="22" y="40" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="16" fill="#15172B">2</text></svg><div><b>Zaměříme zdarma</b><span>Přijedeme, vše změříme a připravíme nezávaznou cenovou nabídku.</span></div></li>
+        <li><svg class="kap" viewBox="0 0 44 52" aria-hidden="true"><path d="M22 2C14 16 6 24 6 34a16 16 0 0 0 32 0C38 24 30 16 22 2z" fill="#F7C948"/><text x="22" y="40" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="16" fill="#15172B">3</text></svg><div><b>Domluvíme termín a malujeme</b><span>Pracujeme ve všední dny i v sobotu.</span></div></li>
+      </ul>
+    </div>
+    <div class="zdarma">
+      <p class="br">Zaměření a cenová nabídka zdarma.</p>
+      <p>Nezávazně a bez starostí. Stačí zavolat nebo napsat.</p>
+      <a class="btn modra" style="margin-top:22px" href="tel:+420728576132">728 576 132</a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Naše práce</h2>
+    <div class="gal">
+      <div class="a"><span>Sem přijdou fotky vašich zakázek</span></div>
+      <div class="b"><span>Sem přijdou fotky vašich zakázek</span></div>
+      <div class="c"><span>Sem přijdou fotky vašich zakázek</span></div>
+      <div class="d"><span>Fotky</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="wrap">
+    <h2>Domluvme zaměření</h2>
+    <div class="k-grid">
+      <div class="k-udaje">
+        <a class="k-tel" href="tel:+420728576132">+420 728 576 132</a>
+        <p><a href="mailto:malirstvi.musil@seznam.cz">malirstvi.musil@seznam.cz</a></p>
+        <p>K Líšnu 546, 257 51 Bystřice</p>
+        <dl class="doba">
+          <dt>Po až Pá</dt><dd>7:00 až 18:00</dd>
+          <dt>Sobota</dt><dd>7:00 až 14:00</dd>
+          <dt>Neděle</dt><dd>zavřeno</dd>
+        </dl>
+      </div>
+      <form id="form" novalidate>
+        <div class="dva"><label>Jméno<input name="jmeno" autocomplete="name"></label><label>Telefon<input name="tel" type="tel" autocomplete="tel"></label></div>
+        <label>Obec<input name="obec"></label>
+        <label>Co malujeme<textarea id="zprava" name="zprava" placeholder="Např. 3 pokoje bíle, kuchyň barevně"></textarea></label>
+        <button class="btn modra" type="submit">Odeslat</button>
+        <p class="ok" id="ok" role="status">Toto je ukázka formuláře. V hotovém webu by zpráva přišla rovnou na váš e-mail.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><span>© 2026 Malířství Musil</span><span>Návrh připravila <a href="https://tereweb.cz">Tereweb.cz</a></span></div></footer>
+
+<script>
+(function(){
+  var barva='Šalvějová',typ='Barevná malba',pocet=2;
+  var ods=[].slice.call(document.querySelectorAll('.odstiny button')),typy=[].slice.call(document.querySelectorAll('.typy button'));
+  function sklon(n){return n===1?'místnost':(n<5?'místnosti':'místností');}
+  function render(){
+    var t=typ.toLowerCase();
+    document.getElementById('vNazev').textContent=barva+', '+t;
+    document.getElementById('vText').textContent=pocet+' '+sklon(pocet)+'. Přijedeme zaměřit a pošleme nezávaznou cenovou nabídku.';
+    document.getElementById('pocet').textContent=pocet;
+    document.getElementById('dekorVrstva').style.display=typ==='Dekorativní technika'?'':'none';
+    document.getElementById('plisen').style.display=typ==='Protiplísňová malba'?'':'none';
+  }
+  ods.forEach(function(b){b.addEventListener('click',function(){ods.forEach(function(x){x.setAttribute('aria-pressed','false');});b.setAttribute('aria-pressed','true');barva=b.dataset.n;document.getElementById('zed').setAttribute('fill',b.dataset.c);render();});});
+  typy.forEach(function(b){b.addEventListener('click',function(){typy.forEach(function(x){x.setAttribute('aria-pressed','false');});b.setAttribute('aria-pressed','true');typ=b.dataset.t;render();});});
+  document.getElementById('plus').addEventListener('click',function(){if(pocet<12){pocet++;render();}});
+  document.getElementById('minus').addEventListener('click',function(){if(pocet>1){pocet--;render();}});
+  document.getElementById('vPoslat').addEventListener('click',function(){
+    document.getElementById('zprava').value='Prosím o zaměření: '+pocet+' '+sklon(pocet)+', '+typ.toLowerCase()+', odstín '+barva.toLowerCase()+'.\n';
+    document.getElementById('kontakt').scrollIntoView({behavior:'smooth'});
+    setTimeout(function(){document.getElementById('zprava').focus({preventScroll:true});},500);
+  });
+  render();
+  document.getElementById('form').addEventListener('submit',function(e){e.preventDefault();document.getElementById('ok').classList.add('vid');});
+})();
+</script>
+</body>
+</html>

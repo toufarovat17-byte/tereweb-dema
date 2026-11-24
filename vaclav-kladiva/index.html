@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Václav Kladiva – Bystřice (návrh webu)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+:root{--petrol:#16404D;--petrol2:#0F2F39;--briza:#E8D3AE;--dub:#A8743F;--papir:#F7F6F2;--ink:#1E2326;--sed:#5B6266;--linka:#DAD8D0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Figtree,system-ui,sans-serif;color:var(--ink);background:var(--papir);line-height:1.6;font-size:17px}
+h1,h2,h3,.fr{font-family:Fraunces,Georgia,serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--dub);outline-offset:3px;border-radius:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.pruh{background:var(--petrol);color:#e6eef0;font-size:14px;text-align:center;padding:8px 16px}
+.pruh b{color:#fff}
+header{background:var(--papir);border-bottom:1px solid var(--linka);position:sticky;top:0;z-index:10}
+header .wrap{height:72px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo .fr{font-size:21px;font-weight:600;line-height:1.1}
+.logo small{display:block;font:500 12px Figtree;color:var(--sed)}
+header nav{display:flex;gap:28px;font-size:15.5px}
+header nav a{text-decoration:none}
+header nav a:hover{color:var(--dub)}
+.btn{display:inline-flex;justify-content:center;align-items:center;font:600 16px Figtree;padding:13px 22px;border-radius:4px;border:0;cursor:pointer;text-decoration:none;background:var(--petrol);color:#fff}
+.btn:hover{background:var(--petrol2)}
+.btn.dub{background:var(--dub)}
+.btn.dub:hover{background:#8f6233}
+.btn.linka{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+
+/* HERO */
+.hero{padding:70px 0 90px}
+.h-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.hero .pod{font:600 14px Figtree;color:var(--dub);margin-bottom:18px}
+.hero h1{font-size:clamp(40px,5.6vw,76px);line-height:1.02;font-weight:600;letter-spacing:-.02em}
+.hero p{margin-top:22px;font-size:19px;color:var(--sed);max-width:30em}
+.hero .akce{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.desky svg{width:100%;height:auto;display:block}
+.vrstva{transform:translateX(60px);opacity:0;animation:vjed .7s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes vjed{to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.vrstva{animation:none;transform:none;opacity:1}html{scroll-behavior:auto}}
+
+section{padding:96px 0}
+h2{font-size:clamp(30px,3.8vw,48px);line-height:1.08;font-weight:600;letter-spacing:-.015em}
+.uvod{color:var(--sed);max-width:38em;margin-top:12px}
+
+/* KATALOG */
+.katalog{display:grid;grid-template-columns:1fr 2fr;gap:56px;margin-top:10px}
+.kat-skup h3{font-size:24px;font-weight:600;margin-bottom:6px}
+.kat-skup p{color:var(--sed);font-size:16px}
+.polozky{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink)}
+.polozky div{padding:18px 12px 18px 0;border-bottom:1px solid var(--linka);display:flex;gap:12px;align-items:center;font-weight:500}
+.polozky svg{flex:none}
+.katalog+.katalog{margin-top:56px}
+
+/* KONFIGURATOR */
+.konf{background:var(--petrol);color:#fff}
+.konf .uvod{color:#c5d6db}
+.k-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:44px;margin-top:40px;align-items:start}
+.nakres{background:var(--petrol2);border-radius:6px;padding:20px}
+.nakres svg{width:100%;height:auto;display:block}
+.rozmer{font:600 14px Figtree;fill:#E8D3AE}
+.ovl .r{margin-bottom:24px}
+.ovl .l{display:flex;justify-content:space-between;font-size:15px;margin-bottom:8px;color:#c5d6db}
+.ovl .l output{color:#fff;font-weight:700}
+.ovl input[type=range]{width:100%;accent-color:var(--briza)}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg button{font:500 15px Figtree;padding:9px 14px;border-radius:4px;border:1px solid #3f6a77;background:transparent;color:#fff;cursor:pointer;display:flex;align-items:center;gap:8px}
+.seg button[aria-pressed=true]{background:#fff;color:var(--ink);border-color:#fff}
+.seg i{width:16px;height:16px;border-radius:3px;display:inline-block;border:1px solid rgba(0,0,0,.2)}
+.prep{display:flex;align-items:center;gap:10px;font-size:15px;cursor:pointer}
+.prep input{width:20px;height:20px;accent-color:var(--briza)}
+.souhrn{border-top:1px solid #3f6a77;padding-top:18px;margin-top:6px}
+.souhrn p{font-size:16px}
+.souhrn .btn{margin-top:14px;width:100%}
+
+/* PROC */
+.proc{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:40px}
+.proc .fr{font-size:22px;font-weight:600;margin-bottom:8px;display:block}
+.proc p{color:var(--sed)}
+.proc svg{margin-bottom:16px}
+
+/* GALERIE */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.gal div{height:260px;border-radius:4px;display:flex;align-items:flex-end;padding:16px;font-size:14px}
+.gal div:nth-child(1){background:repeating-linear-gradient(92deg,#E8D3AE 0 3px,#e2caa1 3px 9px,#ecd9b8 9px 14px)}
+.gal div:nth-child(2){background:repeating-linear-gradient(88deg,#A8743F 0 4px,#9c6a37 4px 10px,#b07d48 10px 16px);height:auto}
+.gal div:nth-child(3){background:repeating-linear-gradient(91deg,#5b3e2a 0 3px,#664632 3px 8px,#523726 8px 13px)}
+.gal span{background:var(--papir);padding:6px 12px;border-radius:3px}
+
+/* KONTAKT */
+.kontakt{background:#fff;border-top:1px solid var(--linka)}
+.ko{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;margin-top:40px}
+.ko-tel{font:600 clamp(30px,3.6vw,44px) Fraunces;text-decoration:none;display:block;margin-bottom:20px}
+.ko-tel:hover{color:var(--dub)}
+.ko dl{display:grid;grid-template-columns:90px 1fr;gap:10px 16px}
+.ko dt{color:var(--sed);font-size:15px}
+form{display:grid;gap:14px;background:var(--papir);padding:28px;border-radius:6px;border:1px solid var(--linka)}
+form label{display:grid;gap:6px;font-size:14.5px;font-weight:600}
+input[type=text],input[type=tel],input[type=email],textarea{font:16px Figtree;padding:12px 14px;border:1px solid #c9c6bc;border-radius:4px;background:#fff;color:var(--ink)}
+textarea{min-height:130px;resize:vertical}
+.dva{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ok{display:none;background:var(--petrol);color:#fff;padding:14px;border-radius:4px;font-size:15px}
+.ok.vid{display:block}
+footer{background:var(--petrol2);color:#b6c8cd;padding:30px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer a{color:var(--briza)}
+
+@media (max-width:980px){
+  header nav{display:none}
+  .h-grid,.k-grid,.ko,.katalog{grid-template-columns:1fr;gap:30px}
+  .polozky{grid-template-columns:1fr 1fr}
+  .proc{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr}
+  .gal div:nth-child(3){grid-column:1/-1}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  section{padding:68px 0}
+  .hero{padding:44px 0 64px}
+  .hero p{font-size:17px}
+  .logo small{display:none}
+  .gal{grid-template-columns:1fr}
+  .gal div{height:180px}
+  .gal div:nth-child(2){height:180px}
+  .dva{grid-template-columns:1fr}
+  form{padding:20px}
+  .ko dl{grid-template-columns:1fr;gap:2px}
+  .ko dd{margin-bottom:10px}
+  .nakres{padding:10px}
+}
+</style>
+</head>
+<body>
+<div class="pruh">Návrh nového webu pro <b>Václav Kladiva</b>, připravila Tereza Toufarová z Tereweb.cz</div>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Václav Kladiva, úvod">
+      <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect x="2" y="6" width="36" height="6" fill="#16404D"/><rect x="2" y="14" width="36" height="6" fill="#A8743F"/><rect x="2" y="22" width="36" height="6" fill="#E8D3AE"/><rect x="2" y="30" width="36" height="6" fill="#16404D"/></svg>
+      <span class="fr">Václav Kladiva<small>Nábytek na míru, Ouběnice</small></span>
+    </a>
+    <nav aria-label="Hlavní menu"><a href="#nabytek">Co vyrábím</a><a href="#stul">Stůl na míru</a><a href="#kontakt">Kontakt</a></nav>
+    <a class="btn" href="tel:+420603159838">Zavolat</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap h-grid">
+    <div>
+      <p class="pod">Truhlářství · Ouběnice u Bystřice</p>
+      <h1>Nábytek do pracovny, kanceláře i domova. Přesně na váš rozměr.</h1>
+      <p>Vyrábím kancelářský a studijní nábytek a zakázky na míru: skříně, psací stoly, police, kuchyňské linky i obývací stěny. A když nic z katalogu nesedí, udělám to atypicky.</p>
+      <div class="akce"><a class="btn dub" href="#stul">Navrhnout psací stůl</a><a class="btn linka" href="tel:+420603159838">603 159 838</a></div>
+    </div>
+    <div class="desky" aria-hidden="true">
+      <svg viewBox="0 0 460 420">
+        <g class="vrstva" style="animation-delay:.05s"><rect x="40" y="40" width="380" height="44" fill="#16404D"/></g>
+        <g class="vrstva" style="animation-delay:.15s"><rect x="20" y="92" width="380" height="44" fill="#E8D3AE"/><path d="M40 106h340M60 120h300" stroke="#d6bc8f" stroke-width="2"/></g>
+        <g class="vrstva" style="animation-delay:.25s"><rect x="60" y="144" width="380" height="44" fill="#A8743F"/><path d="M80 158h330M70 172h350" stroke="#94632f" stroke-width="2"/></g>
+        <g class="vrstva" style="animation-delay:.35s"><rect x="30" y="196" width="380" height="44" fill="#E8D3AE"/><path d="M50 212h320" stroke="#d6bc8f" stroke-width="2"/></g>
+        <g class="vrstva" style="animation-delay:.45s"><rect x="50" y="248" width="380" height="44" fill="#5b3e2a"/><path d="M70 262h330M60 276h340" stroke="#4a3221" stroke-width="2"/></g>
+        <g class="vrstva" style="animation-delay:.55s"><rect x="40" y="300" width="380" height="44" fill="#fff" stroke="#DAD8D0"/></g>
+        <g class="vrstva" style="animation-delay:.65s"><path d="M40 370h380" stroke="#1E2326" stroke-width="1.5"/><path d="M40 362v16M420 362v16" stroke="#1E2326" stroke-width="1.5"/><text x="230" y="398" text-anchor="middle" font-family="Figtree" font-size="14" fill="#5B6266">rozměr podle vás</text></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="nabytek" style="padding-top:20px">
+  <div class="wrap">
+    <h2 style="margin-bottom:40px">Co vyrábím</h2>
+    <div class="katalog">
+      <div class="kat-skup"><h3>Pracovna a kancelář</h3><p>Hlavní obor: kancelářský a studijní nábytek.</p></div>
+      <div class="polozky">
+        <div><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#A8743F" stroke-width="2"><path d="M2 10h24M5 10v14M23 10v14M15 10v8h8"/></svg>Psací stoly</div>
+        <div><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#A8743F" stroke-width="2"><path d="M4 3h20v22H4zM4 10h20M4 17h20"/></svg>Regály a police</div>
+        <div><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#A8743F" stroke-width="2"><path d="M5 3h18v20H5zM14 3v20M5 25v1M23 25v1"/></svg>Skříně</div>
+        <div><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#A8743F" stroke-width="2"><path d="M8 3v12h12M8 15v10M20 15v10M8 9h12"/></svg>Židle</div>
+        <div><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#A8743F" stroke-width="2"><path d="M5 4h18v18H5zM5 10h18M5 16h18M12 7h4M12 13h4M12 19h4"/></svg>Komody</div>
+        <div><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#A8743F" stroke-width="2"><path d="M3 14h22M14 3v22" stroke-dasharray="3 3"/><rect x="3" y="3" width="22" height="22"/></svg>Atypická výroba</div>
+      </div>
+    </div>
+    <div class="katalog">
+      <div class="kat-skup"><h3>Domov</h3><p>Kuchyně, obývák i ložnice.</p></div>
+      <div class="polozky">
+        <div><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#16404D" stroke-width="2"><path d="M2 12h24v12H2zM2 5h24v4H2zM14 12v12"/></svg>Kuchyňské linky</div>
+        <div><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#16404D" stroke-width="2"><path d="M2 4h8v20H2zM18 4h8v20h-8zM10 14h8v10h-8z"/></svg>Obývací stěny</div>
+        <div><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#16404D" stroke-width="2"><path d="M3 20h22M3 14h22v6M5 14V8h8v6M3 20v4M25 20v4"/></svg>Postele</div>
+        <div><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#16404D" stroke-width="2"><path d="M7 8h14v10H7zM7 13h14M9 18v6M19 18v6"/></svg>Noční stolky</div>
+        <div><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#16404D" stroke-width="2"><path d="M2 10h24M6 10v12M22 10v12"/></svg>Jídelní stoly</div>
+        <div><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#16404D" stroke-width="2"><path d="M3 14h22M6 14v8M22 14v8M3 8h22v6"/></svg>Konferenční a TV stolky</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="konf" id="stul">
+  <div class="wrap">
+    <h2>Navrhněte si psací stůl</h2>
+    <p class="uvod">Nastavte rozměr, šuplíky a dekor. Nákres se mění s vámi. Hotový návrh mi pošlete a domluvíme se na detailech i ceně.</p>
+    <div class="k-grid">
+      <div class="nakres">
+        <svg id="svg" viewBox="0 0 600 380" role="img" aria-label="Nákres psacího stolu podle zvolených rozměrů"></svg>
+      </div>
+      <div class="ovl">
+        <div class="r"><div class="l"><label for="sirka">Šířka desky</label><output id="sirkaO">140 cm</output></div><input type="range" id="sirka" min="80" max="220" step="10" value="140"></div>
+        <div class="r"><div class="l"><span id="lHl">Hloubka</span></div><div class="seg" id="hloubka" role="group" aria-labelledby="lHl"><button type="button" data-v="60" aria-pressed="false">60 cm</button><button type="button" data-v="70" aria-pressed="true">70 cm</button><button type="button" data-v="80" aria-pressed="false">80 cm</button></div></div>
+        <div class="r"><div class="l"><span id="lSu">Šuplíky (kontejner)</span></div><div class="seg" id="supliky" role="group" aria-labelledby="lSu"><button type="button" data-v="0" aria-pressed="false">bez</button><button type="button" data-v="2" aria-pressed="false">2</button><button type="button" data-v="3" aria-pressed="true">3</button><button type="button" data-v="4" aria-pressed="false">4</button></div></div>
+        <div class="r"><div class="l"><span id="lDe">Dekor</span></div><div class="seg" id="dekor" role="group" aria-labelledby="lDe">
+          <button type="button" data-v="buk" data-c="#E3BE8A" aria-pressed="false"><i style="background:#E3BE8A"></i>buk</button>
+          <button type="button" data-v="dub" data-c="#C79A62" aria-pressed="true"><i style="background:#C79A62"></i>dub</button>
+          <button type="button" data-v="ořech" data-c="#6B4A33" aria-pressed="false"><i style="background:#6B4A33"></i>ořech</button>
+          <button type="button" data-v="bílá" data-c="#F4F3EF" aria-pressed="false"><i style="background:#F4F3EF"></i>bílá</button>
+        </div></div>
+        <div class="r"><label class="prep"><input type="checkbox" id="nastavec"> Přidat nástavec s policí</label></div>
+        <div class="souhrn" aria-live="polite"><p id="sText"></p><button class="btn dub" type="button" id="sPoslat">Poslat návrh</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Proč nábytek na míru</h2>
+    <div class="proc">
+      <div><svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#A8743F" stroke-width="2.5"><path d="M4 30h36M4 24v12M40 24v12M10 30v-4M16 30v-6M22 30v-4M28 30v-6M34 30v-4"/></svg><span class="fr">Využije každý centimetr</span><p>Stůl do niky, skříň pod šikmou střechu, regál přes celou stěnu. Rozměr určujete vy.</p></div>
+      <div><svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#A8743F" stroke-width="2.5"><circle cx="22" cy="22" r="16"/><path d="M22 10v12l8 5"/></svg><span class="fr">Pro práci i studium</span><p>Kancelářský a studijní nábytek je moje hlavní práce, takže vím, co má pracovní místo umět.</p></div>
+      <div><svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#A8743F" stroke-width="2.5"><path d="M8 36 36 8M28 8h8v8M8 28v8h8"/></svg><span class="fr">Atyp není problém</span><p>Když běžný kus nesedí tvarem ani rozměrem, vyrobím ho atypicky.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Z dílny</h2>
+    <div class="gal">
+      <div><span>Sem přijdou fotky vašich zakázek</span></div>
+      <div><span>Sem přijdou fotky vašich zakázek</span></div>
+      <div><span>Sem přijdou fotky vašich zakázek</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="wrap">
+    <h2>Ozvěte se mi</h2>
+    <div class="ko">
+      <div>
+        <a class="ko-tel" href="tel:+420603159838">+420 603 159 838</a>
+        <dl>
+          <dt>E-mail</dt><dd><a href="mailto:v.kladiva@seznam.cz">v.kladiva@seznam.cz</a></dd>
+          <dt>Dílna</dt><dd>Ouběnice 33<br>257 51 Bystřice</dd>
+        </dl>
+      </div>
+      <form id="form" novalidate>
+        <div class="dva"><label>Jméno<input type="text" name="jmeno" autocomplete="name"></label><label>Telefon<input type="tel" name="tel" autocomplete="tel"></label></div>
+        <label>E-mail<input type="email" name="email" autocomplete="email"></label>
+        <label>Co potřebujete vyrobit<textarea id="zprava" name="zprava" placeholder="Kus nábytku, přibližné rozměry, materiál"></textarea></label>
+        <button class="btn" type="submit">Odeslat</button>
+        <p class="ok" id="ok" role="status">Toto je ukázka formuláře. V hotovém webu by zpráva přišla rovnou na váš e-mail.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><span>© 2026 Václav Kladiva</span><span>Návrh připravila <a href="https://tereweb.cz">Tereweb.cz</a></span></div></footer>
+
+<script>
+(function(){
+  var s={sirka:140,hloubka:70,supliky:3,dekor:'dub',barva:'#C79A62',nastavec:false};
+  var svg=document.getElementById('svg');
+  function tmavsi(hex){var n=parseInt(hex.slice(1),16),r=(n>>16)*.8|0,g=(n>>8&255)*.8|0,b=(n&255)*.8|0;return 'rgb('+r+','+g+','+b+')';}
+  function draw(){
+    var maxW=520,scale=maxW/220,w=s.sirka*scale,x=(600-w)/2,top=150,deskaH=8+s.hloubka/10,noha=150,c=s.barva,d=tmavsi(c),h='';
+    h+='<line x1="20" y1="'+(top+deskaH+noha)+'" x2="580" y2="'+(top+deskaH+noha)+'" stroke="#3f6a77" stroke-width="2"/>';
+    if(s.nastavec){h+='<rect x="'+(x+10)+'" y="'+(top-90)+'" width="'+(w-20)+'" height="10" fill="'+c+'" stroke="'+d+'"/>';
+      h+='<rect x="'+(x+10)+'" y="'+(top-90)+'" width="10" height="90" fill="'+d+'"/><rect x="'+(x+w-20)+'" y="'+(top-90)+'" width="10" height="90" fill="'+d+'"/>';
+      h+='<rect x="'+(x+10)+'" y="'+(top-45)+'" width="'+(w-20)+'" height="8" fill="'+c+'" stroke="'+d+'"/>';}
+    h+='<rect x="'+x+'" y="'+top+'" width="'+w+'" height="'+deskaH+'" fill="'+c+'" stroke="'+d+'" stroke-width="1.5"/>';
+    h+='<rect x="'+(x+8)+'" y="'+(top+deskaH)+'" width="12" height="'+noha+'" fill="'+d+'"/>';
+    if(s.supliky>0){var kw=Math.min(110,w*.38),kx=x+w-kw-8,kh=noha-4,sh=kh/s.supliky;
+      h+='<rect x="'+kx+'" y="'+(top+deskaH)+'" width="'+kw+'" height="'+kh+'" fill="'+c+'" stroke="'+d+'" stroke-width="1.5"/>';
+      for(var i=0;i<s.supliky;i++){var yy=top+deskaH+i*sh;h+='<rect x="'+(kx+5)+'" y="'+(yy+4)+'" width="'+(kw-10)+'" height="'+(sh-8)+'" fill="none" stroke="'+d+'"/><rect x="'+(kx+kw/2-14)+'" y="'+(yy+sh/2-2)+'" width="28" height="4" rx="2" fill="#1E2326"/>';}
+    } else { h+='<rect x="'+(x+w-20)+'" y="'+(top+deskaH)+'" width="12" height="'+noha+'" fill="'+d+'"/>'; }
+    var ky=top-(s.nastavec?110:24);
+    h+='<line x1="'+x+'" y1="'+ky+'" x2="'+(x+w)+'" y2="'+ky+'" stroke="#E8D3AE" stroke-width="1.5"/><line x1="'+x+'" y1="'+(ky-7)+'" x2="'+x+'" y2="'+(ky+7)+'" stroke="#E8D3AE" stroke-width="1.5"/><line x1="'+(x+w)+'" y1="'+(ky-7)+'" x2="'+(x+w)+'" y2="'+(ky+7)+'" stroke="#E8D3AE" stroke-width="1.5"/>';
+    h+='<rect x="'+(300-34)+'" y="'+(ky-12)+'" width="68" height="24" fill="#0F2F39"/><text class="rozmer" x="300" y="'+(ky+5)+'" text-anchor="middle">'+s.sirka+' cm</text>';
+    h+='<text class="rozmer" x="590" y="'+(top+deskaH+noha-8)+'" text-anchor="end" style="font-weight:400;opacity:.8">hloubka '+s.hloubka+' cm</text>';
+    svg.innerHTML=h;
+    document.getElementById('sirkaO').textContent=s.sirka+' cm';
+    var su=s.supliky?('kontejner se '+s.supliky+' šuplíky'):'bez šuplíků';
+    document.getElementById('sText').textContent='Psací stůl '+s.sirka+' × '+s.hloubka+' cm, '+su+', dekor '+s.dekor+(s.nastavec?', s nástavcem':'')+'.';
+  }
+  function seg(id,fn){var b=[].slice.call(document.querySelectorAll('#'+id+' button'));b.forEach(function(x){x.addEventListener('click',function(){b.forEach(function(y){y.setAttribute('aria-pressed','false');});x.setAttribute('aria-pressed','true');fn(x);draw();});});}
+  seg('hloubka',function(b){s.hloubka=+b.dataset.v;});
+  seg('supliky',function(b){s.supliky=+b.dataset.v;});
+  seg('dekor',function(b){s.dekor=b.dataset.v;s.barva=b.dataset.c;});
+  document.getElementById('sirka').addEventListener('input',function(e){s.sirka=+e.target.value;draw();});
+  document.getElementById('nastavec').addEventListener('change',function(e){s.nastavec=e.target.checked;draw();});
+  draw();
+  document.getElementById('sPoslat').addEventListener('click',function(){
+    document.getElementById('zprava').value=document.getElementById('sText').textContent+'\n';
+    document.getElementById('kontakt').scrollIntoView({behavior:'smooth'});
+    setTimeout(function(){document.getElementById('zprava').focus({preventScroll:true});},500);
+  });
+  document.getElementById('form').addEventListener('submit',function(e){e.preventDefault();document.getElementById('ok').classList.add('vid');});
+})();
+</script>
+</body>
+</html>

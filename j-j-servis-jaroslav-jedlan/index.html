@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>J&amp;J SERVIS Jaroslav Jedlan – Bystřice (návrh webu)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400;500;600&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+:root{
+  --noc:#141A33; --noc2:#1F2850; --jantar:#FFB547; --obloha:#7FA7FF; --mlha:#AEB6D6; --papir:#F4F5F9; --ink:#141A33; --sed:#55607F;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Schibsted Grotesk",system-ui,sans-serif;color:var(--ink);background:var(--papir);line-height:1.6;font-size:17px}
+.mono{font-family:"Red Hat Mono",ui-monospace,monospace}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--jantar);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.pruh{background:var(--jantar);color:var(--noc);font-size:14px;text-align:center;padding:8px 16px}
+header.nav{position:sticky;top:0;z-index:20;background:rgba(20,26,51,.96);backdrop-filter:blur(6px);color:#fff}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.znak{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;letter-spacing:.02em}
+.znak svg{flex:none}
+.znak small{display:block;font-weight:500;font-size:12px;color:var(--mlha);letter-spacing:0}
+.nav ul{display:flex;gap:26px;list-style:none;font-size:15px}
+.nav ul a{text-decoration:none;color:#dfe3f3}
+.nav ul a:hover{color:var(--jantar)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--jantar);color:var(--noc);font-weight:700;text-decoration:none;border:0;border-radius:6px;padding:12px 20px;font-size:16px;cursor:pointer;font-family:inherit}
+.btn:hover{background:#ffc66e}
+.btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.4)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 2px var(--jantar)}
+
+/* HERO */
+.hero{position:relative;background:#10152b;color:#fff;overflow:hidden}
+.hero svg.scena{position:absolute;inset:0;width:100%;height:100%}
+.hero .wrap{position:relative;min-height:620px;display:flex;flex-direction:column;justify-content:center;padding-top:60px;padding-bottom:80px}
+.hero h1{font-size:clamp(38px,5.6vw,68px);line-height:1.03;font-weight:800;max-width:11.5em;letter-spacing:-.015em}
+.hero p.lead{max-width:30em;margin-top:22px;font-size:19px;color:#d7dcf0}
+.hero .akce{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.hero .stav{margin-top:44px;display:flex;gap:22px;flex-wrap:wrap;font-size:13px;color:var(--mlha)}
+.hero .stav span{display:flex;align-items:center;gap:8px}
+.hero .stav i{width:8px;height:8px;border-radius:50%;background:#5FD08A;display:inline-block}
+.kuzel{transform-origin:1003px 268px;animation:otoc 7s ease-in-out infinite alternate}
+@keyframes otoc{from{transform:rotate(-14deg)}to{transform:rotate(22deg)}}
+.blik{animation:blik 2.2s steps(2) infinite}
+@keyframes blik{50%{opacity:.15}}
+@media (prefers-reduced-motion:reduce){.kuzel,.blik{animation:none}html{scroll-behavior:auto}}
+
+/* SLUZBY */
+section{padding:96px 0}
+h2{font-size:clamp(30px,3.6vw,44px);line-height:1.1;font-weight:800;letter-spacing:-.01em}
+.uvod{max-width:40em;color:var(--sed);margin-top:14px}
+.sluzby{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start}
+.sl-seznam{list-style:none;border-top:2px solid var(--ink)}
+.sl-seznam li{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid #d3d7e5}
+.sl-seznam h3{font-size:19px;font-weight:700;line-height:1.3}
+.sl-seznam p{color:var(--sed);font-size:15.5px;margin-top:4px}
+.ikona{width:44px;height:44px;border-radius:50%;background:var(--noc);display:grid;place-items:center}
+.dalsi{background:#fff;border:1px solid #dde1ee;border-radius:10px;padding:28px}
+.dalsi h3{font-size:18px;margin-bottom:12px}
+.stitky{display:flex;flex-wrap:wrap;gap:8px}
+.stitky span{font-size:14px;padding:6px 12px;border-radius:30px;background:var(--papir);border:1px solid #d3d7e5}
+.dalsi .znacky{margin-top:24px;padding-top:20px;border-top:1px dashed #c9cede;font-size:15px;color:var(--sed)}
+.dalsi .znacky b{color:var(--ink)}
+
+/* PLANOVAC */
+.planovac{background:var(--noc2);color:#fff}
+.planovac .uvod{color:#c6cce6}
+.pl-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;margin-top:44px;align-items:start}
+.pudorys{background:#18203f;border-radius:12px;padding:18px;border:1px solid #33406f}
+.pudorys svg{width:100%;height:auto;display:block}
+.zona{cursor:pointer}
+.zona rect.plocha,.zona path.plocha{fill:#222c56;stroke:#4a5891;stroke-width:2;transition:fill .2s}
+.zona:hover rect.plocha,.zona:hover path.plocha{fill:#2b3770}
+.zona.on rect.plocha,.zona.on path.plocha{fill:rgba(255,181,71,.13);stroke:var(--jantar)}
+.zona text{fill:#c9d0ee;font:500 13px "Red Hat Mono",monospace;pointer-events:none}
+.zona.on text{fill:#fff}
+.zona .cid{opacity:0;transition:opacity .2s}
+.zona.on .cid{opacity:1}
+.zona:focus{outline:none}
+.zona:focus-visible rect.plocha,.zona:focus-visible path.plocha{stroke:#fff;stroke-width:3}
+.ovl label.t{display:block;font-size:13px;color:var(--mlha);margin-bottom:8px;font-family:"Red Hat Mono",monospace}
+.objekty{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.objekty button,.zony button{font:inherit;font-size:15px;background:transparent;color:#fff;border:1px solid #4a5891;border-radius:6px;padding:8px 14px;cursor:pointer}
+.objekty button[aria-pressed="true"]{background:#fff;color:var(--noc);border-color:#fff}
+.zony{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:26px}
+.zony button{text-align:left;display:flex;justify-content:space-between;align-items:center}
+.zony button[aria-pressed="true"]{border-color:var(--jantar);background:rgba(255,181,71,.14)}
+.zony button[aria-pressed="true"]::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--jantar)}
+.souhrn{background:#141a33;border-radius:10px;padding:20px;border:1px solid #33406f}
+.souhrn h3{font-size:16px;margin-bottom:10px}
+.souhrn ul{list-style:none;font-size:15px;color:#d7dcf0;min-height:48px}
+.souhrn li{padding:5px 0;border-bottom:1px dashed #2f3a66;display:flex;justify-content:space-between;gap:12px}
+.souhrn li b{color:var(--jantar);font-family:"Red Hat Mono",monospace;font-weight:500}
+.souhrn .prazdne{color:var(--mlha);font-style:italic;border:0}
+.souhrn .btn{margin-top:16px;width:100%;justify-content:center}
+
+/* PROC */
+.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:44px;border:2px solid var(--ink);border-radius:10px;overflow:hidden}
+.proc div{padding:28px 24px;border-right:1px solid #cfd4e3;background:#fff}
+.proc div:last-child{border-right:0}
+.proc b{display:block;font-size:18px;margin-bottom:8px;line-height:1.3}
+.proc p{font-size:15.5px;color:var(--sed)}
+.proc .mono{font-size:12px;color:var(--sed);display:block;margin-bottom:16px}
+
+/* GALERIE */
+.galerie{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.foto{position:relative;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:var(--noc);color:#fff;display:flex;align-items:flex-end;padding:16px}
+.foto svg{position:absolute;inset:0;width:100%;height:100%}
+.foto span{position:relative;font-size:14px;background:rgba(20,26,51,.8);padding:6px 10px;border-radius:4px}
+.foto .rec{position:absolute;top:14px;left:16px;font:500 12px "Red Hat Mono",monospace;color:#ff6b6b;display:flex;align-items:center;gap:6px}
+.foto .rec::before{content:"";width:8px;height:8px;border-radius:50%;background:#ff6b6b}
+.foto .cas{position:absolute;top:14px;right:16px;font:500 12px "Red Hat Mono",monospace;color:#c9d0ee}
+.pozn{margin-top:18px;color:var(--sed);font-size:15px}
+
+/* KONTAKT */
+.kontakt{background:#fff}
+.k-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;margin-top:40px}
+.k-udaje{display:flex;flex-direction:column;gap:22px}
+.k-udaje a.velky{font-size:clamp(28px,3.4vw,40px);font-weight:800;text-decoration:none;letter-spacing:-.01em}
+.k-udaje a.velky:hover{color:#3a4ea8}
+.k-udaje dl{display:grid;grid-template-columns:110px 1fr;gap:10px 16px;font-size:16px}
+.k-udaje dt{color:var(--sed);font-family:"Red Hat Mono",monospace;font-size:14px;padding-top:2px}
+form{display:grid;gap:14px;background:var(--papir);padding:28px;border-radius:12px}
+form label{font-size:14px;font-weight:600;display:grid;gap:6px}
+input,select,textarea{font:inherit;font-size:16px;padding:12px 14px;border:1px solid #c3c9dc;border-radius:6px;background:#fff;color:var(--ink)}
+textarea{min-height:130px;resize:vertical}
+.dva{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.zprava{display:none;background:var(--noc);color:#fff;padding:14px 16px;border-radius:6px;font-size:15px}
+.zprava.vid{display:block}
+footer{background:var(--noc);color:#c6cce6;padding:34px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--jantar)}
+
+@media (max-width:920px){
+  .nav ul{display:none}
+  .sluzby,.pl-grid,.k-grid{grid-template-columns:1fr;gap:36px}
+  .proc{grid-template-columns:1fr 1fr}
+  .proc div:nth-child(2){border-right:0}
+  .proc div:nth-child(-n+2){border-bottom:1px solid #cfd4e3}
+  .galerie{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  section{padding:68px 0}
+  .hero .wrap{min-height:0;justify-content:flex-start;padding-top:44px;padding-bottom:300px}
+  .hero svg.scena{top:auto;height:340px}
+  .hero .stav{display:none}
+  .hero p.lead{font-size:17px}
+  .znak small{display:none}
+  .nav .btn{padding:10px 14px;font-size:15px}
+  .proc{grid-template-columns:1fr}
+  .proc div{border-right:0;border-bottom:1px solid #cfd4e3}
+  .galerie{grid-template-columns:1fr}
+  .zony{grid-template-columns:1fr}
+  .dva{grid-template-columns:1fr}
+  .k-udaje dl{grid-template-columns:1fr;gap:2px}
+  .k-udaje dd{margin-bottom:10px}
+}
+</style>
+</head>
+<body>
+<div class="pruh">Návrh nového webu pro <b>J&amp;J SERVIS Jaroslav Jedlan</b>, připravila Tereza Toufarová z Tereweb.cz</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="znak" href="#top" aria-label="J&amp;J SERVIS, úvod">
+      <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="8" fill="#FFB547"/><path d="M20 7 9 12v8c0 7 4.6 11.4 11 13 6.4-1.6 11-6 11-13v-8z" fill="#141A33"/><text x="20" y="25" text-anchor="middle" font-family="Schibsted Grotesk,sans-serif" font-weight="800" font-size="11" fill="#FFB547">J&amp;J</text></svg>
+      <span>J&amp;J SERVIS<small>Jaroslav Jedlan, Bystřice</small></span>
+    </a>
+    <ul>
+      <li><a href="#sluzby">Služby</a></li>
+      <li><a href="#planovac">Plánovač zabezpečení</a></li>
+      <li><a href="#proc">Jak pracujeme</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <a class="btn" href="tel:+420721121128">Zavolat</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" style="padding:0">
+  <svg class="scena" viewBox="0 0 1200 620" preserveAspectRatio="xMaxYMax slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="nebe" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#10152b"/><stop offset="1" stop-color="#1F2850"/></linearGradient>
+      <linearGradient id="svetlo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFB547" stop-opacity=".55"/><stop offset="1" stop-color="#FFB547" stop-opacity="0"/></linearGradient>
+    </defs>
+    <rect width="1200" height="620" fill="url(#nebe)"/>
+    <g fill="#AEB6D6" opacity=".55"><circle cx="640" cy="60" r="1.5"/><circle cx="720" cy="120" r="1"/><circle cx="860" cy="48" r="1.4"/><circle cx="1010" cy="90" r="1"/><circle cx="1120" cy="40" r="1.6"/><circle cx="560" cy="150" r="1"/><circle cx="930" cy="160" r="1.2"/><circle cx="1160" cy="170" r="1"/></g>
+    <circle cx="1080" cy="110" r="30" fill="#E8EBF7" opacity=".9"/><circle cx="1094" cy="100" r="28" fill="#141A33" opacity=".9"/>
+    <rect x="0" y="540" width="1200" height="80" fill="#0e1328"/>
+    <!-- dum -->
+    <g>
+      <path d="M760 330 920 230 1080 330V540H760Z" fill="#232d5a"/>
+      <path d="M740 340 920 222 1100 340" fill="none" stroke="#3a4783" stroke-width="10" stroke-linejoin="round"/>
+      <rect x="800" y="380" width="70" height="60" fill="#FFB547" opacity=".85"/>
+      <rect x="800" y="380" width="70" height="60" fill="none" stroke="#141A33" stroke-width="4"/><path d="M835 380v60M800 410h70" stroke="#141A33" stroke-width="3"/>
+      <rect x="960" y="380" width="70" height="60" fill="#2b3770"/><path d="M995 380v60M960 410h70" stroke="#141A33" stroke-width="3"/>
+      <rect x="895" y="450" width="50" height="90" fill="#141A33"/><circle cx="935" cy="497" r="3" fill="#FFB547"/>
+      <rect x="1100" y="440" width="100" height="100" fill="#1b2349"/><path d="M1100 460h100M1100 480h100M1100 500h100M1100 520h100" stroke="#2b3770" stroke-width="3"/>
+    </g>
+    <!-- kamera -->
+    <path class="kuzel" d="M1003 268 1180 420 1040 520Z" fill="url(#svetlo)"/>
+    <g><rect x="990" y="258" width="34" height="18" rx="4" fill="#E8EBF7"/><rect x="1018" y="262" width="10" height="10" rx="2" fill="#141A33"/><circle class="blik" cx="996" cy="264" r="2.4" fill="#ff5c5c"/><path d="M1000 258v-14h-8" stroke="#E8EBF7" stroke-width="4" fill="none"/></g>
+    <!-- plot a strom -->
+    <g stroke="#2b3770" stroke-width="5"><path d="M600 500v40M630 500v40M660 500v40M690 500v40M720 500v40M590 512h140"/></g>
+    <circle cx="660" cy="430" r="52" fill="#1b2349"/><rect x="655" y="470" width="10" height="70" fill="#1b2349"/>
+  </svg>
+  <div class="wrap">
+    <h1>Bezpečný domov i firma. Kamery, alarmy a chytrý dům z Bystřice.</h1>
+    <p class="lead">Navrhneme, namontujeme a dlouhodobě servisujeme zabezpečení rodinných domů, bytů, chat i firemních objektů na Benešovsku a v okolí Prahy.</p>
+    <div class="akce">
+      <a class="btn" href="#planovac">Naplánovat zabezpečení</a>
+      <a class="btn ghost" href="tel:+420721121128">+420 721 121 128</a>
+    </div>
+    <div class="stav mono" aria-hidden="true"><span><i></i>EZS · kamery · přístup</span><span><i></i>Loxone chytrý dům</span><span><i></i>antény a rozvody</span></div>
+  </div>
+</section>
+
+<section id="sluzby">
+  <div class="wrap">
+    <div class="sluzby">
+      <div>
+        <h2>Co pro vás zapojíme</h2>
+        <p class="uvod">Slaboproud řešíme komplexně: od návrhu a projektu přes montáž až po školení, jak systém ovládat.</p>
+        <ul class="sl-seznam" style="margin-top:32px">
+          <li><span class="ikona"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFB547" stroke-width="2"><path d="M12 3 4 6v6c0 5 3.4 8.3 8 9.5 4.6-1.2 8-4.5 8-9.5V6z"/></svg></span><div><h3>Elektronické zabezpečovací systémy (EZS)</h3><p>Alarmy pro domy, byty, chaty i průmyslové objekty. Dodáváme a instalujeme systémy JABLOTRON a PARADOX.</p></div></li>
+          <li><span class="ikona"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFB547" stroke-width="2"><rect x="3" y="7" width="13" height="9" rx="2"/><path d="m16 10 5-3v10l-5-3"/></svg></span><div><h3>Kamerové systémy</h3><p>Kamery na dům, vjezd, zahradu nebo do provozovny, se záznamem a vzdáleným přístupem.</p></div></li>
+          <li><span class="ikona"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFB547" stroke-width="2"><path d="M3 11 12 4l9 7v9H3z"/><circle cx="12" cy="14" r="2.5"/></svg></span><div><h3>Chytrý dům LOXONE</h3><p>Automatizace domácnosti a budov: světla, stínění, topení a zabezpečení v jedné aplikaci.</p></div></li>
+          <li><span class="ikona"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFB547" stroke-width="2"><rect x="6" y="3" width="12" height="18" rx="2"/><circle cx="12" cy="9" r="2.5"/><path d="M9 15h6"/></svg></span><div><h3>Přístupové systémy a domovní telefony</h3><p>Čtečky, docházkové systémy, domovní telefony a videotelefony.</p></div></li>
+          <li><span class="ikona"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFB547" stroke-width="2"><path d="M12 21V10M5 4l7 6 7-6M8 21h8"/></svg></span><div><h3>Antény, satelity a TV rozvody</h3><p>Prodej, montáž, opravy a servis TV antén a satelitů včetně rozvodů po domě.</p></div></li>
+        </ul>
+      </div>
+      <aside class="dalsi">
+        <h3>A dále</h3>
+        <div class="stitky">
+          <span>WiFi a strukturovaná kabeláž</span><span>Správa sítě LAN a WLAN</span><span>Elektrická požární signalizace (EPS)</span><span>Ozvučovací technika</span><span>Vratové pohony</span><span>Rekuperační jednotky FUTURA</span><span>Fotovoltaický ohřev vody Jablotron Solar</span><span>Termografické měření</span>
+        </div>
+        <p class="znacky">Pracujeme se systémy <b>JABLOTRON</b>, <b>PARADOX</b> a <b>LOXONE</b>. Jsme držiteli platných certifikátů a koncesované licence, což pojišťovny vyžadují pro plné plnění při pojistné události.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="planovac" id="planovac">
+  <div class="wrap">
+    <h2>Plánovač zabezpečení</h2>
+    <p class="uvod">Klikněte na místa, která chcete hlídat. Ukážeme, co se do nich obvykle montuje, a souhrn nám můžete rovnou poslat. Konkrétní řešení pak navrhneme na místě.</p>
+    <div class="pl-grid">
+      <div class="pudorys">
+        <svg viewBox="0 0 560 400" role="group" aria-label="Půdorys domu se zónami k zabezpečení">
+          <rect x="0" y="0" width="560" height="400" fill="#18203f"/>
+          <g class="zona" data-z="zahrada" tabindex="0" role="button" aria-label="Zahrada a okolí domu">
+            <path class="plocha" d="M8 8h544v384H8z M60 60v250h340V60z" fill-rule="evenodd"/>
+            <text x="22" y="32">ZAHRADA</text>
+            <g class="cid"><circle cx="40" cy="352" r="9" fill="#FFB547"/><circle cx="520" cy="40" r="9" fill="#FFB547"/></g>
+          </g>
+          <g class="zona" data-z="obyvak" tabindex="0" role="button" aria-label="Obývací pokoj">
+            <rect class="plocha" x="60" y="60" width="200" height="150"/>
+            <text x="76" y="86">OBÝVÁK</text>
+            <g class="cid"><circle cx="240" cy="80" r="9" fill="#FFB547"/></g>
+          </g>
+          <g class="zona" data-z="okna" tabindex="0" role="button" aria-label="Okna v přízemí">
+            <rect class="plocha" x="260" y="60" width="140" height="150"/>
+            <text x="276" y="86">LOŽNICE</text>
+            <text x="276" y="104">+ OKNA</text>
+            <g class="cid"><rect x="300" y="54" width="60" height="12" fill="#FFB547"/><rect x="394" y="120" width="12" height="50" fill="#FFB547"/></g>
+          </g>
+          <g class="zona" data-z="vstup" tabindex="0" role="button" aria-label="Vstupní dveře a chodba">
+            <rect class="plocha" x="60" y="210" width="200" height="100"/>
+            <text x="76" y="236">VSTUP</text>
+            <g class="cid"><rect x="140" y="304" width="44" height="12" fill="#FFB547"/></g>
+          </g>
+          <g class="zona" data-z="garaz" tabindex="0" role="button" aria-label="Garáž">
+            <rect class="plocha" x="260" y="210" width="140" height="100"/>
+            <text x="276" y="236">GARÁŽ</text>
+            <g class="cid"><circle cx="380" cy="230" r="9" fill="#FFB547"/></g>
+          </g>
+          <g class="zona" data-z="brana" tabindex="0" role="button" aria-label="Brána a vjezd">
+            <rect class="plocha" x="410" y="300" width="130" height="80"/>
+            <text x="424" y="326">BRÁNA</text>
+            <text x="424" y="344">VJEZD</text>
+            <g class="cid"><circle cx="520" cy="360" r="9" fill="#FFB547"/></g>
+          </g>
+          <path d="M400 310h10M140 310v0" stroke="#4a5891" stroke-width="2"/>
+        </svg>
+      </div>
+      <div class="ovl">
+        <label class="t" id="lobj">TYP OBJEKTU</label>
+        <div class="objekty" role="group" aria-labelledby="lobj">
+          <button type="button" aria-pressed="true" data-o="Rodinný dům">Rodinný dům</button>
+          <button type="button" aria-pressed="false" data-o="Byt">Byt</button>
+          <button type="button" aria-pressed="false" data-o="Chata / chalupa">Chata, chalupa</button>
+          <button type="button" aria-pressed="false" data-o="Firma / provozovna">Firma</button>
+        </div>
+        <label class="t" id="lzon">CO CHCETE HLÍDAT</label>
+        <div class="zony" role="group" aria-labelledby="lzon">
+          <button type="button" aria-pressed="false" data-z="vstup">Vstupní dveře</button>
+          <button type="button" aria-pressed="false" data-z="okna">Okna</button>
+          <button type="button" aria-pressed="false" data-z="obyvak">Obytné místnosti</button>
+          <button type="button" aria-pressed="false" data-z="garaz">Garáž</button>
+          <button type="button" aria-pressed="false" data-z="zahrada">Zahrada, okolí</button>
+          <button type="button" aria-pressed="false" data-z="brana">Brána, vjezd</button>
+        </div>
+        <div class="souhrn" aria-live="polite">
+          <h3>Obvyklé prvky: <span id="sObj">Rodinný dům</span></h3>
+          <ul id="sList"><li class="prazdne">Vyberte aspoň jedno místo.</li></ul>
+          <button class="btn" type="button" id="sPoslat">Poslat jako poptávku</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proc">
+  <div class="wrap">
+    <h2>Jak to u nás probíhá</h2>
+    <p class="uvod">Zabezpečení nekončí montáží. Postaráme se o celý systém, i když jste ho od nás původně neměli.</p>
+    <div class="proc">
+      <div><span class="mono">krok 1</span><b>Prohlídka a návrh</b><p>Projdeme objekt, poradíme s výběrem a připravíme projekt k realizaci.</p></div>
+      <div><span class="mono">krok 2</span><b>Montáž a registrace</b><p>Systém namontujeme, nastavíme a zajistíme registraci podle legislativy.</p></div>
+      <div><span class="mono">krok 3</span><b>Školení obsluhy</b><p>Ukážeme vám, jak systém ovládat, a jsme k dispozici na telefonu.</p></div>
+      <div><span class="mono">krok 4</span><b>Prohlídky a revize</b><p>Pravidelné prohlídky a revize. Převezmeme do servisu i stávající systém.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Naše realizace</h2>
+    <div class="galerie">
+      <div class="foto"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#1F2850"/><path d="M80 230 200 140l120 90v70H80z" fill="#2b3770"/><rect x="170" y="230" width="60" height="70" fill="#141A33"/></svg><b class="rec">REC</b><b class="cas">CAM 01</b><span>Sem přijdou fotky vašich zakázek</span></div>
+      <div class="foto"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#232d5a"/><rect x="60" y="80" width="280" height="160" rx="6" fill="#2b3770"/><circle cx="200" cy="160" r="40" fill="none" stroke="#FFB547" stroke-width="3" opacity=".6"/></svg><b class="rec">REC</b><b class="cas">CAM 02</b><span>Sem přijdou fotky vašich zakázek</span></div>
+      <div class="foto"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#1b2349"/><path d="M0 240h400M60 240v-60h80v60M260 240v-90l40-30 40 30v90" stroke="#3a4783" stroke-width="6" fill="none"/></svg><b class="rec">REC</b><b class="cas">CAM 03</b><span>Sem přijdou fotky vašich zakázek</span></div>
+    </div>
+    <p class="pozn">V hotovém webu tu budou fotky montáží kamer, ústředen, antén a chytrých domácností.</p>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="wrap">
+    <h2>Domluvme si prohlídku</h2>
+    <div class="k-grid">
+      <div class="k-udaje">
+        <a class="velky" href="tel:+420721121128">+420 721 121 128</a>
+        <dl>
+          <dt>E-mail</dt><dd><a href="mailto:info@jjservis.eu">info@jjservis.eu</a></dd>
+          <dt>Adresa</dt><dd>Dr. E. Beneše 42<br>257 51 Bystřice</dd>
+          <dt>Působíme</dt><dd>Benešovsko, okolí Prahy</dd>
+          <dt>Majitel</dt><dd>Jaroslav Jedlan</dd>
+        </dl>
+      </div>
+      <form id="formular" novalidate>
+        <div class="dva">
+          <label>Jméno<input name="jmeno" autocomplete="name"></label>
+          <label>Telefon<input name="tel" type="tel" autocomplete="tel"></label>
+        </div>
+        <label>E-mail<input name="email" type="email" autocomplete="email"></label>
+        <label>Co potřebujete
+          <select name="typ"><option>Zabezpečení (alarm)</option><option>Kamerový systém</option><option>Chytrý dům Loxone</option><option>Domovní telefon, přístup</option><option>Anténa, satelit</option><option>Jiné</option></select>
+        </label>
+        <label>Zpráva<textarea name="zprava" id="zprava" placeholder="Popište objekt a co chcete hlídat"></textarea></label>
+        <button class="btn" type="submit">Odeslat poptávku</button>
+        <p class="zprava" id="ok" role="status">Toto je ukázka formuláře. V hotovém webu by zpráva přišla rovnou na váš e-mail.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 J&amp;J SERVIS Jaroslav Jedlan</span>
+    <span>Návrh připravila <a href="https://tereweb.cz">Tereweb.cz</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var PRVKY={
+    vstup:[["Magnetický kontakt na dveře","1×"],["Klávesnice ústředny","1×"],["Videotelefon u vchodu","volitelně"]],
+    okna:[["Magnetické kontakty na okna","dle počtu"],["Detektor rozbití skla","volitelně"]],
+    obyvak:[["Pohybový detektor (PIR)","1× / místnost"],["Detektor kouře","volitelně"]],
+    garaz:[["Pohybový detektor","1×"],["Ovládání vrat z aplikace","volitelně"]],
+    zahrada:[["Venkovní kamera se záznamem","2× a více"],["Venkovní siréna","1×"]],
+    brana:[["Kamera na vjezd","1×"],["Vratový pohon","volitelně"],["Přístupová čtečka","volitelně"]]
+  };
+  var vybrane={}, objekt="Rodinný dům";
+  var zonySvg=document.querySelectorAll('.zona'), zonyBtn=document.querySelectorAll('.zony button');
+  var seznam=document.getElementById('sList');
+  function prepni(z){ vybrane[z]=!vybrane[z]; vykresli(); }
+  function vykresli(){
+    zonySvg.forEach(function(g){ var on=!!vybrane[g.dataset.z]; g.classList.toggle('on',on); g.setAttribute('aria-pressed',on); });
+    zonyBtn.forEach(function(b){ b.setAttribute('aria-pressed',!!vybrane[b.dataset.z]); });
+    var radky=[];
+    Object.keys(PRVKY).forEach(function(z){ if(vybrane[z]) PRVKY[z].forEach(function(p){ radky.push(p); }); });
+    if(radky.length && objekt!=="Byt") radky.push(["Ústředna s mobilní aplikací","1×"]);
+    if(radky.length && objekt==="Byt") radky.push(["Bezdrátová ústředna","1×"]);
+    seznam.innerHTML = radky.length ? radky.map(function(r){ return '<li><span>'+r[0]+'</span><b>'+r[1]+'</b></li>'; }).join('') : '<li class="prazdne">Vyberte aspoň jedno místo.</li>';
+  }
+  zonySvg.forEach(function(g){
+    g.addEventListener('click',function(){ prepni(g.dataset.z); });
+    g.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); prepni(g.dataset.z); } });
+  });
+  zonyBtn.forEach(function(b){ b.addEventListener('click',function(){ prepni(b.dataset.z); }); });
+  document.querySelectorAll('.objekty button').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.objekty button').forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+      b.setAttribute('aria-pressed','true'); objekt=b.dataset.o; document.getElementById('sObj').textContent=objekt; vykresli();
+    });
+  });
+  document.getElementById('sPoslat').addEventListener('click',function(){
+    var polozky=[].map.call(seznam.querySelectorAll('li:not(.prazdne) span'),function(s){ return s.textContent; });
+    var mista=[].filter.call(zonyBtn,function(b){ return vybrane[b.dataset.z]; }).map(function(b){ return b.textContent; });
+    document.getElementById('zprava').value='Objekt: '+objekt+'\nChci hlídat: '+(mista.join(', ')||'zatím nevím')+(polozky.length?'\nPředběžně: '+polozky.join(', '):'')+'\n';
+    document.getElementById('kontakt').scrollIntoView({behavior:'smooth'});
+    setTimeout(function(){ document.getElementById('zprava').focus({preventScroll:true}); },500);
+  });
+  document.getElementById('formular').addEventListener('submit',function(e){ e.preventDefault(); document.getElementById('ok').classList.add('vid'); });
+})();
+</script>
+</body>
+</html>

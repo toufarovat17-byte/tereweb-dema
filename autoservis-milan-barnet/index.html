@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Autoservis Milan Barnet – Bystřice (návrh webu)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+:root{--grafit:#1F262E;--grafit2:#2B343E;--led:#1E7FD8;--ice:#A9DCF7;--hot:#D93A2F;--hlinik:#EEF2F5;--sed:#5A6672;--linka:#D5DCE3}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Plus Jakarta Sans",system-ui,sans-serif;color:var(--grafit);background:var(--hlinik);line-height:1.6;font-size:17px}
+h1,h2,h3,.ep{font-family:Epilogue,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--led);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.pruh{background:#fff;font-size:14px;text-align:center;padding:8px 16px;border-bottom:1px solid var(--linka)}
+.nav{background:var(--grafit);color:#fff;position:sticky;top:0;z-index:10}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:14px}
+.logo{display:flex;gap:12px;align-items:center;text-decoration:none}
+.logo .ep{font-weight:900;font-size:19px;letter-spacing:.01em;line-height:1.1}
+.logo small{display:block;font-family:"Plus Jakarta Sans";font-weight:500;font-size:12px;color:#aeb8c3}
+.nav ul{display:flex;gap:26px;list-style:none;font-size:15px}
+.nav ul a{text-decoration:none;color:#d8dee5}
+.nav ul a:hover{color:var(--ice)}
+.btn{display:inline-flex;align-items:center;justify-content:center;font:700 16px "Plus Jakarta Sans",sans-serif;padding:13px 22px;border-radius:8px;border:0;cursor:pointer;text-decoration:none;background:var(--led);color:#fff}
+.btn:hover{background:#166bb9}
+.btn.cerv{background:var(--hot)}
+.btn.cerv:hover{background:#bb2e24}
+.btn.svetly{background:#fff;color:var(--grafit)}
+
+/* HERO palubni deska */
+.hero{background:var(--grafit);color:#fff;padding:50px 0 70px;overflow:hidden;position:relative}
+.hero::before{content:"";position:absolute;left:0;right:0;bottom:0;height:120px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.25))}
+.deska{display:grid;grid-template-columns:1fr minmax(0,1.5fr) 1fr;align-items:center;gap:20px;position:relative}
+.budik{text-align:center}
+.budik svg{width:100%;max-width:280px;height:auto}
+.budik .pop{font:600 13px "Plus Jakarta Sans";color:#aeb8c3;margin-top:6px;letter-spacing:.04em}
+.rucka{transform-origin:150px 150px;transition:transform 1.6s cubic-bezier(.3,1.4,.5,1)}
+.stred{text-align:center}
+.stred .stit{display:inline-block;font:700 13px "Plus Jakarta Sans";background:var(--grafit2);border:1px solid #3c4753;padding:6px 14px;border-radius:30px;color:var(--ice);margin-bottom:22px}
+.hero h1{font-size:clamp(36px,4.8vw,64px);line-height:1.02;font-weight:900;letter-spacing:-.02em}
+.hero p{color:#c3ccd5;margin:20px auto 0;max-width:30em;font-size:18px}
+.hero .akce{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+@media (prefers-reduced-motion:reduce){.rucka{transition:none}html{scroll-behavior:auto}}
+
+section{padding:96px 0}
+h2{font-size:clamp(30px,3.8vw,46px);line-height:1.08;font-weight:800;letter-spacing:-.02em}
+.uvod{color:var(--sed);max-width:40em;margin-top:12px}
+
+/* SLUZBY dva sloupce */
+.sl{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:44px}
+.sl .sloupec{border-radius:14px;padding:34px}
+.sl .klima{background:#fff;border-top:8px solid var(--led)}
+.sl .mech{background:#fff;border-top:8px solid var(--grafit)}
+.sl h3{font-size:24px;font-weight:800;margin-bottom:6px}
+.sl .pod{color:var(--sed);font-size:15px;margin-bottom:18px}
+.sl ul{list-style:none}
+.sl li{display:flex;gap:14px;padding:13px 0;border-top:1px solid var(--linka);align-items:flex-start}
+.sl li svg{flex:none;margin-top:3px}
+.sl li b{display:block;font-weight:700}
+.sl li span{color:var(--sed);font-size:15.5px}
+
+/* ZAKAZKOVY LIST */
+.zakazka{background:var(--grafit2);color:#fff}
+.zakazka .uvod{color:#c3ccd5}
+.z-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:40px;align-items:start}
+.panel{background:var(--grafit);border-radius:14px;padding:28px;border:1px solid #3c4753}
+.panel h3{font-size:17px;margin-bottom:14px;font-weight:700}
+.panel label.lbl{display:block;font-size:14px;color:#c3ccd5;margin:18px 0 8px}
+.panel input[type=text]{width:100%;font:16px "Plus Jakarta Sans";padding:11px 13px;border-radius:8px;border:1px solid #4a5663;background:#2B343E;color:#fff}
+.rok{display:flex;align-items:center;gap:14px}
+.rok input[type=range]{flex:1;accent-color:var(--ice)}
+.rok output{font:800 22px Epilogue;min-width:62px;text-align:right}
+.chladivo{margin-top:12px;padding:12px 14px;border-radius:8px;background:rgba(169,220,247,.1);border:1px dashed var(--ice);font-size:15px}
+.chladivo b{color:var(--ice)}
+.ukony{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ukony label{display:flex;gap:10px;align-items:center;padding:10px 12px;border:1px solid #4a5663;border-radius:8px;cursor:pointer;font-size:15px}
+.ukony label:hover{border-color:var(--ice)}
+.ukony input{accent-color:var(--led);width:18px;height:18px;flex:none}
+.ukony label:has(input:checked){border-color:var(--ice);background:rgba(169,220,247,.08)}
+.dny{display:flex;gap:6px;flex-wrap:wrap}
+.dny button{font:600 15px "Plus Jakarta Sans";background:transparent;color:#fff;border:1px solid #4a5663;border-radius:8px;padding:8px 14px;cursor:pointer}
+.dny button[aria-pressed=true]{background:var(--ice);color:var(--grafit);border-color:var(--ice)}
+/* list */
+.list{background:#fff;color:var(--grafit);border-radius:6px;padding:30px 30px 26px;position:relative;box-shadow:0 18px 40px rgba(0,0,0,.25)}
+.list::before{content:"";position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:110px;height:22px;background:#c9d1d9;border-radius:4px}
+.list .hl{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--grafit);padding-bottom:10px;margin-bottom:14px;gap:10px}
+.list .hl b{font:900 20px Epilogue}
+.list .hl span{font-size:13px;color:var(--sed)}
+.list dl{display:grid;grid-template-columns:120px 1fr;gap:6px 12px;font-size:15px;margin-bottom:14px}
+.list dt{color:var(--sed)}
+.list dd{font-weight:600;border-bottom:1px dotted #b8c2cc;min-height:24px}
+.list ol{list-style:none;counter-reset:u;min-height:70px}
+.list ol li{counter-increment:u;padding:7px 0;border-bottom:1px solid #edf0f3;font-size:15px;display:flex;gap:10px}
+.list ol li::before{content:counter(u)".";font-weight:700;color:var(--led);width:22px}
+.list .nic{color:var(--sed);font-style:italic}
+.list .nic::before{content:none}
+.list .btn{width:100%;margin-top:18px}
+
+/* PROC */
+.proc{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.proc div{padding-top:22px;border-top:3px solid var(--grafit)}
+.proc div:nth-child(2){border-color:var(--led)}
+.proc div:nth-child(3){border-color:var(--hot)}
+.proc h3{font-size:20px;font-weight:800;margin-bottom:8px}
+.proc p{color:var(--sed)}
+
+/* GALERIE */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px}
+.gal div{aspect-ratio:1;border-radius:12px;background:repeating-linear-gradient(135deg,#dfe5ea 0 14px,#e8edf1 14px 28px);display:flex;align-items:center;justify-content:center;padding:16px}
+.gal span{background:#fff;border:2px solid var(--grafit);border-radius:6px;padding:8px 10px;font:700 13px "Plus Jakarta Sans";text-align:center;position:relative;padding-left:30px}
+.gal span::before{content:"CZ";position:absolute;left:0;top:0;bottom:0;width:22px;background:#1f4fb0;color:#fff;font-size:9px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px}
+
+/* KONTAKT */
+.kontakt{background:#fff}
+.k-grid{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:40px;margin-top:40px}
+.k-grid h3{font-size:16px;font-weight:700;margin-bottom:10px}
+.k-tel{font:900 30px Epilogue;text-decoration:none;display:block;margin-bottom:8px}
+.k-tel:hover{color:var(--led)}
+.hod{width:100%;border-collapse:collapse;font-size:15px}
+.hod td{padding:7px 0;border-bottom:1px solid var(--linka)}
+.hod td:last-child{text-align:right;font-weight:600}
+.hod tr.dnes td{color:var(--led)}
+form{display:grid;gap:12px}
+form label{display:grid;gap:5px;font-size:14px;font-weight:600}
+input,textarea{font:16px "Plus Jakarta Sans";padding:11px 13px;border:1px solid var(--linka);border-radius:8px;background:var(--hlinik);color:var(--grafit)}
+textarea{min-height:120px;resize:vertical}
+.ok{display:none;background:var(--grafit);color:#fff;padding:13px 15px;border-radius:8px;font-size:15px}
+.ok.vid{display:block}
+footer{background:var(--grafit);color:#aeb8c3;padding:30px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer a{color:#fff}
+
+@media (max-width:980px){
+  .nav ul{display:none}
+  .deska{grid-template-columns:1fr 1fr}
+  .stred{grid-column:1/-1;order:-1}
+  .sl,.z-grid{grid-template-columns:1fr}
+  .k-grid{grid-template-columns:1fr 1fr}
+  .k-grid form{grid-column:1/-1}
+  .gal{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  section{padding:68px 0}
+  .hero{padding:36px 0 50px}
+  .hero p{font-size:16.5px}
+  .budik svg{max-width:160px}
+  .logo small{display:none}
+  .sl .sloupec,.panel{padding:22px}
+  .list{padding:24px 18px}
+  .list dl{grid-template-columns:96px 1fr}
+  .ukony{grid-template-columns:1fr}
+  .proc{grid-template-columns:1fr}
+  .k-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="pruh">Návrh nového webu pro <b>Autoservis Milan Barnet</b>, připravila Tereza Toufarová z Tereweb.cz</div>
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Autoservis Milan Barnet, úvod">
+      <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="19" fill="none" stroke="#A9DCF7" stroke-width="3"/><path d="M9 27a13 13 0 0 1 24 0" fill="none" stroke="#fff" stroke-width="3"/><path d="M21 22l7-8" stroke="#D93A2F" stroke-width="3" stroke-linecap="round"/><circle cx="21" cy="22" r="3" fill="#fff"/></svg>
+      <span class="ep">AUTOSERVIS BARNET<small>Líšno, Bystřice</small></span>
+    </a>
+    <ul>
+      <li><a href="#sluzby">Služby</a></li>
+      <li><a href="#zakazka">Objednat servis</a></li>
+      <li><a href="#kontakt">Kontakt a otevírací doba</a></li>
+    </ul>
+    <a class="btn" href="tel:+420608958694">Zavolat</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap deska">
+    <div class="budik" aria-hidden="true">
+      <svg viewBox="0 0 300 300">
+        <circle cx="150" cy="150" r="138" fill="#2B343E" stroke="#1E7FD8" stroke-width="8"/>
+        <circle cx="150" cy="150" r="118" fill="#fff"/>
+        <path d="M66 234A118 118 0 1 1 234 234" fill="none" stroke="#1E7FD8" stroke-width="10" opacity=".25"/>
+        <g stroke="#1F262E" stroke-width="3">
+          <path d="M80 220l10-10M60 150h14M80 80l10 10M150 50v14M220 80l-10 10M240 150h-14M220 220l-10-10"/>
+        </g>
+        <text x="150" y="205" text-anchor="middle" font-family="Epilogue" font-weight="800" font-size="20" fill="#1E7FD8">LOW</text>
+        <text x="150" y="226" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="13" fill="#5A6672">bar</text>
+        <g class="rucka" id="r1" style="transform:rotate(-130deg)"><path d="M150 150V64" stroke="#1E7FD8" stroke-width="6" stroke-linecap="round"/></g>
+        <circle cx="150" cy="150" r="12" fill="#1F262E"/>
+      </svg>
+      <div class="pop">NÍZKÝ TLAK</div>
+    </div>
+    <div class="stred">
+      <span class="stit">Klimatizace · mechanika · STK</span>
+      <h1>Klimatizace zase pořádně chladí.</h1>
+      <p>Plníme stará i nová chladiva, hledáme úniky vodíkem a dezinfikujeme ozonem. K tomu běžný servis, brzdy, podvozky a příprava na STK. Líšno u Bystřice.</p>
+      <div class="akce"><a class="btn" href="#zakazka">Objednat servis</a><a class="btn svetly" href="tel:+420608958694">608 958 694</a></div>
+    </div>
+    <div class="budik" aria-hidden="true">
+      <svg viewBox="0 0 300 300">
+        <circle cx="150" cy="150" r="138" fill="#2B343E" stroke="#D93A2F" stroke-width="8"/>
+        <circle cx="150" cy="150" r="118" fill="#fff"/>
+        <path d="M66 234A118 118 0 1 1 234 234" fill="none" stroke="#D93A2F" stroke-width="10" opacity=".25"/>
+        <g stroke="#1F262E" stroke-width="3">
+          <path d="M80 220l10-10M60 150h14M80 80l10 10M150 50v14M220 80l-10 10M240 150h-14M220 220l-10-10"/>
+        </g>
+        <text x="150" y="205" text-anchor="middle" font-family="Epilogue" font-weight="800" font-size="20" fill="#D93A2F">HIGH</text>
+        <text x="150" y="226" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="13" fill="#5A6672">bar</text>
+        <g class="rucka" id="r2" style="transform:rotate(-130deg)"><path d="M150 150V64" stroke="#D93A2F" stroke-width="6" stroke-linecap="round"/></g>
+        <circle cx="150" cy="150" r="12" fill="#1F262E"/>
+      </svg>
+      <div class="pop">VYSOKÝ TLAK</div>
+    </div>
+  </div>
+</section>
+
+<section id="sluzby">
+  <div class="wrap">
+    <h2>Co u nás uděláme</h2>
+    <p class="uvod">Specializujeme se na autoklimatizace, ale postaráme se o celé auto.</p>
+    <div class="sl">
+      <div class="sloupec klima">
+        <h3>Klimatizace</h3>
+        <p class="pod">Kompletní servis autoklimatizací</p>
+        <ul>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E7FD8" stroke-width="2"><path d="M12 2v20M4 6l16 12M20 6 4 18"/></svg><div><b>Plnění chladiva R134a i R1234yf</b><span>Starší auta i nové vozy s novým typem chladiva.</span></div></li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E7FD8" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><div><b>Hledání úniků vodíkem</b><span>Přesně najdeme, kudy chladivo uniká.</span></div></li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E7FD8" stroke-width="2"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="8" r="2"/><circle cx="15" cy="16" r="4"/></svg><div><b>Dezinfekce ozonem</b><span>Pryč se zápachem z větráků.</span></div></li>
+        </ul>
+      </div>
+      <div class="sloupec mech">
+        <h3>Mechanika</h3>
+        <p class="pod">Veškeré mechanické opravy</p>
+        <ul>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F262E" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg><div><b>Brzdy a podvozky</b><span>Servis brzd, opravy podvozku.</span></div></li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F262E" stroke-width="2"><path d="M7 3h10l-2 6H9zM9 9v12h6V9"/></svg><div><b>Výměny olejů a filtrů</b><span>Pravidelný servis podle plánu výrobce.</span></div></li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F262E" stroke-width="2"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="m8 12 3 3 5-6"/></svg><div><b>Příprava na STK a emise</b><span>Auto prohlédneme a připravíme na kontrolu.</span></div></li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F262E" stroke-width="2"><path d="M3 14h10a4 4 0 0 0 4-4V6"/><circle cx="19" cy="17" r="2.5"/><path d="M13 14l4 1.5"/></svg><div><b>Montáž tažných zařízení</b><span>Certifikovaná montáž.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="zakazka" id="zakazka">
+  <div class="wrap">
+    <h2>Vyplňte si zakázkový list</h2>
+    <p class="uvod">Zaškrtněte, co autu chybí, a my se vám ozveme s termínem. Podle roku výroby vám rovnou napovíme, jaké chladivo vaše klimatizace nejspíš má.</p>
+    <div class="z-grid">
+      <div class="panel">
+        <h3>Vaše auto</h3>
+        <label class="lbl" for="znacka">Značka a model</label>
+        <input type="text" id="znacka" placeholder="např. Škoda Octavia" autocomplete="off">
+        <label class="lbl" for="rok">Rok výroby</label>
+        <div class="rok"><input type="range" id="rok" min="1995" max="2026" value="2014"><output id="rokOut" for="rok">2014</output></div>
+        <p class="chladivo" id="chladivo" aria-live="polite"></p>
+        <label class="lbl" id="lUk">Co potřebujete</label>
+        <div class="ukony" role="group" aria-labelledby="lUk">
+          <label><input type="checkbox" value="Plnění klimatizace">Plnění klimatizace</label>
+          <label><input type="checkbox" value="Dezinfekce ozonem">Dezinfekce ozonem</label>
+          <label><input type="checkbox" value="Hledání úniku vodíkem">Hledání úniku</label>
+          <label><input type="checkbox" value="Výměna oleje a filtrů">Olej a filtry</label>
+          <label><input type="checkbox" value="Servis brzd">Brzdy</label>
+          <label><input type="checkbox" value="Oprava podvozku">Podvozek</label>
+          <label><input type="checkbox" value="Příprava na STK a emise">Příprava na STK</label>
+          <label><input type="checkbox" value="Montáž tažného zařízení">Tažné zařízení</label>
+        </div>
+        <label class="lbl" id="lDen">Kdy se vám to hodí</label>
+        <div class="dny" role="group" aria-labelledby="lDen">
+          <button type="button" aria-pressed="false">Po</button><button type="button" aria-pressed="false">Út</button><button type="button" aria-pressed="false">St</button><button type="button" aria-pressed="false">Čt</button><button type="button" aria-pressed="false">Pá</button>
+        </div>
+      </div>
+      <div class="list" aria-live="polite">
+        <div class="hl"><b>Zakázkový list</b><span>Autoservis Barnet, Líšno 88</span></div>
+        <dl>
+          <dt>Vozidlo</dt><dd id="lAuto">&nbsp;</dd>
+          <dt>Rok výroby</dt><dd id="lRok">2014</dd>
+          <dt>Chladivo</dt><dd id="lChl"></dd>
+          <dt>Termín</dt><dd id="lDny">&nbsp;</dd>
+        </dl>
+        <ol id="lUkony"><li class="nic">Zatím nic nevybráno</li></ol>
+        <button class="btn cerv" type="button" id="odeslatList">Odeslat zakázkový list</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Proč za námi do Líšna</h2>
+    <div class="proc">
+      <div><h3>Obě chladiva</h3><p>Naplníme starší R134a i nové R1234yf, takže poradíme s autem z devadesátek i s novým vozem.</p></div>
+      <div><h3>Únik najdeme přesně</h3><p>Místo opakovaného doplňování hledáme příčinu. Na úniky používáme vodík.</p></div>
+      <div><h3>Celé auto na jednom místě</h3><p>Klimatizaci, olej, brzdy i přípravu na STK vyřídíte v jednom servisu.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Z dílny</h2>
+    <div class="gal">
+      <div><span>Sem přijdou fotky vašich zakázek</span></div>
+      <div><span>Sem přijdou fotky vašich zakázek</span></div>
+      <div><span>Sem přijdou fotky vašich zakázek</span></div>
+      <div><span>Sem přijdou fotky vašich zakázek</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="wrap">
+    <h2>Kontakt</h2>
+    <div class="k-grid">
+      <div>
+        <h3>Zavolejte</h3>
+        <a class="k-tel" href="tel:+420608958694">608 958 694</a>
+        <p><a href="mailto:autobarnet@seznam.cz">autobarnet@seznam.cz</a></p>
+        <p style="margin-top:14px">Líšno 88<br>257 51 Bystřice</p>
+      </div>
+      <div>
+        <h3>Otevírací doba</h3>
+        <table class="hod" id="hod">
+          <tr data-d="1"><td>Pondělí</td><td>8:00 až 12:30, 13:30 až 17:00</td></tr>
+          <tr data-d="2"><td>Úterý</td><td>8:00 až 12:30, 13:30 až 17:00</td></tr>
+          <tr data-d="3"><td>Středa</td><td>8:00 až 12:30, 13:30 až 17:00</td></tr>
+          <tr data-d="4"><td>Čtvrtek</td><td>8:00 až 12:30, 13:30 až 17:00</td></tr>
+          <tr data-d="5"><td>Pátek</td><td>8:00 až 12:30, 13:30 až 17:00</td></tr>
+          <tr data-d="6"><td>Sobota</td><td>zavřeno</td></tr>
+          <tr data-d="0"><td>Neděle</td><td>zavřeno</td></tr>
+        </table>
+      </div>
+      <form id="form" novalidate>
+        <label>Jméno<input name="jmeno" autocomplete="name"></label>
+        <label>Telefon<input name="tel" type="tel" autocomplete="tel"></label>
+        <label>Zpráva<textarea id="zprava" name="zprava" placeholder="Auto, rok výroby a co potřebujete"></textarea></label>
+        <button class="btn" type="submit">Odeslat</button>
+        <p class="ok" id="ok" role="status">Toto je ukázka formuláře. V hotovém webu by zpráva přišla rovnou na váš e-mail.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><span>© 2026 Autoservis Milan Barnet</span><span>Návrh připravila <a href="https://tereweb.cz">Tereweb.cz</a></span></div></footer>
+
+<script>
+(function(){
+  var red=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  setTimeout(function(){document.getElementById('r1').style.transform='rotate(-35deg)';document.getElementById('r2').style.transform='rotate(55deg)';},red?0:300);
+  var rok=document.getElementById('rok'),out=document.getElementById('rokOut'),chl=document.getElementById('chladivo');
+  var dny=[].slice.call(document.querySelectorAll('.dny button')),ukony=[].slice.call(document.querySelectorAll('.ukony input'));
+  function chladivo(r){
+    if(r>=2017)return['R1234yf','Nová auta prodaná v EU od roku 2017 mají nové chladivo R1234yf.'];
+    if(r>=2011)return['R134a nebo R1234yf','V tomto období přecházeli výrobci na nové chladivo. Ověříme podle štítku pod kapotou.'];
+    return['R134a','Auta z této doby mají většinou starší chladivo R134a.'];
+  }
+  function render(){
+    var r=+rok.value,c=chladivo(r);out.textContent=r;
+    chl.innerHTML='Vaše auto má pravděpodobně <b>'+c[0]+'</b>. '+c[1];
+    document.getElementById('lRok').textContent=r;document.getElementById('lChl').textContent=c[0];
+    document.getElementById('lAuto').textContent=document.getElementById('znacka').value||' ';
+    var d=dny.filter(function(b){return b.getAttribute('aria-pressed')==='true';}).map(function(b){return b.textContent;});
+    document.getElementById('lDny').textContent=d.length?d.join(', '):' ';
+    var u=ukony.filter(function(i){return i.checked;}).map(function(i){return i.value;});
+    document.getElementById('lUkony').innerHTML=u.length?u.map(function(t){return '<li>'+t+'</li>';}).join(''):'<li class="nic">Zatím nic nevybráno</li>';
+  }
+  rok.addEventListener('input',render);document.getElementById('znacka').addEventListener('input',render);
+  ukony.forEach(function(i){i.addEventListener('change',render);});
+  dny.forEach(function(b){b.addEventListener('click',function(){b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true');render();});});
+  render();
+  document.getElementById('odeslatList').addEventListener('click',function(){
+    var u=ukony.filter(function(i){return i.checked;}).map(function(i){return i.value;});
+    document.getElementById('zprava').value='Auto: '+(document.getElementById('znacka').value||'neuvedeno')+', rok '+rok.value+'\nPotřebuji: '+(u.join(', ')||'poradit')+'\nTermín: '+(document.getElementById('lDny').textContent.trim()||'kdykoli')+'\n';
+    document.getElementById('kontakt').scrollIntoView({behavior:'smooth'});
+    setTimeout(function(){document.getElementById('zprava').focus({preventScroll:true});},500);
+  });
+  var dnes=new Date().getDay();var tr=document.querySelector('#hod tr[data-d="'+dnes+'"]');if(tr)tr.classList.add('dnes');
+  document.getElementById('form').addEventListener('submit',function(e){e.preventDefault();document.getElementById('ok').classList.add('vid');});
+})();
+</script>
+</body>
+</html>

@@ -1,8 +1,209 @@
 [
- {"slug": "sablona-2026-11", "datum": "2026-11-23", "obor": "všechna dema před 23. 11.", "pisma": ["Archivo", "Source Sans 3"], "paleta": ["#ECEAE4", "#1F3A2E", "#C08A55"], "hero": "levý sloupec s velkým nadpisem a pravý tmavý panel s poptávkou", "interakce": "výběr možností (chips) se souhrnem poptávky", "layout": "hero split, řádky služeb s linkou, tmavá sekce postupu 4 kroky, galerie s filtrem, bílý kontaktní box"},
- {"slug": "truhlarstvi-macek", "datum": "2026-11-23", "obor": "truhlářství, stavební truhlářství", "pisma": ["Young Serif", "Instrument Sans"], "paleta": ["#1F3A32", "#B07A43", "#3B2A1F", "#F1EDE6", "#DCD3C4"], "hero": "asymetrická mřížka: velký patkový nadpis vlevo, vpravo SVG průřez kmene s letokruhy, které se vykreslí při načtení", "interakce": "konfigurátor výrobku (kuchyně, skříň, schody, dveře, okno, pergola) + materiál + posuvník rozměru s živým technickým nákresem a kótou na čtverečkovaném papíru", "layout": "služby v mřížce 3x2 oddělené linkami, tmavě zelený konfigurátor, postup 4 kroky na čárkované lince, galerie s velkou dlaždicí, kontakt seznam + formulář"},
- {"slug": "autoopravy-vaclav-tichy", "datum": "2026-11-23", "obor": "autoservis", "pisma": ["Big Shoulders Display", "Onest"], "paleta": ["#FFC531", "#1E2227", "#F5F4F0", "#C8202F", "#5E6770"], "hero": "plná žlutá barevná plocha s obří kondenzovanou typografií, silueta dodávky a animovaná silnice s přerušovanou čárou", "interakce": "hlídač STK: typ vozidla + měsíc a rok poslední STK, výpočet konce platnosti, odpočet a objednání přípravy na STK", "layout": "servisní list jako tabulka s rámečkem, tmavá sekce s hlídačem rozdělená na vstup a kruhovou nálepku, 3 důvody s žlutou linkou, galerie s výstražnou páskou, obří telefon v kontaktu"},
- {"slug": "milan-fajmon-elektroservis", "datum": "2026-11-23", "obor": "opravy chlazení a klimatizací", "pisma": ["Sora", "Lexend"], "paleta": ["#EAF4FA", "#0F2A44", "#8CCBEB", "#E8622C", "#4F5F6E"], "hero": "split s SVG ilustrací lednice a teploměru, rtuť při načtení klesá, padají vločky", "interakce": "diagnostika: zařízení + projev závady, výsledek s tipem co zkontrolovat a tlačítkem objednat opravu (předvyplní formulář)", "layout": "4 zaoblené karty služeb (jedna tmavá), tmavá sekce diagnostiky s bílou výsledkovou lištou, 3 kroky s horní linkou, 3 ledové dlaždice galerie, světle modrý kontakt s ikonami"},
- {"slug": "bajer", "datum": "2026-11-23", "obor": "sádrokartony, půdní vestavby, anhydrit", "pisma": ["Familjen Grotesk", "IBM Plex Mono"], "paleta": ["#F4F4F1", "#26292C", "#5E9A7E", "#8E99A3", "#F2C230"], "hero": "bílá karta se žlutým stínem přes celošířkový SVG řez domem, ve kterém postupně přibývají vrstvy podkroví", "interakce": "skladba konstrukce: výběr typu práce (podkroví, příčka, podhled, jádro, anhydrit) ukáže řez vrstvami s legendou, posuvník plochy a poptávka", "layout": "služby jako technický seznam se zkratkami v monospace vlevo, tmavá sekce skladby (seznam tlačítek + výkres), 3 rámečkové kroky, galerie s mřížkou profilů, kontakt jako tabulka"},
- {"slug": "martin-romancak", "datum": "2026-11-23", "obor": "nerezová zábradlí, brány, schodiště, svařování", "pisma": ["Anybody", "Manrope"], "paleta": ["#15191D", "#DDE2E6", "#AEB7BE", "#D9A441", "#3D5BC0"], "hero": "interakce přímo v hero: grafitová plocha s nadpisem a pod ním konfigurátor na panelu z broušené nerezi", "interakce": "konfigurátor zábradlí/brány/schodiště: výplň (příčle, tyče, sklo, děrovaný plech), materiál, délka, živý SVG nákres", "layout": "služby jako horizontální pás 4 polí s duhovou linkou náběhových barev svaru, vzorník materiálů, postup se svislými linkami, vodorovně posuvná galerie, tmavý kontakt"}
+ {
+  "slug": "sablona-2026-11",
+  "datum": "2026-11-23",
+  "obor": "všechna dema před 23. 11.",
+  "pisma": [
+   "Archivo",
+   "Source Sans 3"
+  ],
+  "paleta": [
+   "#ECEAE4",
+   "#1F3A2E",
+   "#C08A55"
+  ],
+  "hero": "levý sloupec s velkým nadpisem a pravý tmavý panel s poptávkou",
+  "interakce": "výběr možností (chips) se souhrnem poptávky",
+  "layout": "hero split, řádky služeb s linkou, tmavá sekce postupu 4 kroky, galerie s filtrem, bílý kontaktní box"
+ },
+ {
+  "slug": "truhlarstvi-macek",
+  "datum": "2026-11-23",
+  "obor": "truhlářství, stavební truhlářství",
+  "pisma": [
+   "Young Serif",
+   "Instrument Sans"
+  ],
+  "paleta": [
+   "#1F3A32",
+   "#B07A43",
+   "#3B2A1F",
+   "#F1EDE6",
+   "#DCD3C4"
+  ],
+  "hero": "asymetrická mřížka: velký patkový nadpis vlevo, vpravo SVG průřez kmene s letokruhy, které se vykreslí při načtení",
+  "interakce": "konfigurátor výrobku (kuchyně, skříň, schody, dveře, okno, pergola) + materiál + posuvník rozměru s živým technickým nákresem a kótou na čtverečkovaném papíru",
+  "layout": "služby v mřížce 3x2 oddělené linkami, tmavě zelený konfigurátor, postup 4 kroky na čárkované lince, galerie s velkou dlaždicí, kontakt seznam + formulář"
+ },
+ {
+  "slug": "autoopravy-vaclav-tichy",
+  "datum": "2026-11-23",
+  "obor": "autoservis",
+  "pisma": [
+   "Big Shoulders Display",
+   "Onest"
+  ],
+  "paleta": [
+   "#FFC531",
+   "#1E2227",
+   "#F5F4F0",
+   "#C8202F",
+   "#5E6770"
+  ],
+  "hero": "plná žlutá barevná plocha s obří kondenzovanou typografií, silueta dodávky a animovaná silnice s přerušovanou čárou",
+  "interakce": "hlídač STK: typ vozidla + měsíc a rok poslední STK, výpočet konce platnosti, odpočet a objednání přípravy na STK",
+  "layout": "servisní list jako tabulka s rámečkem, tmavá sekce s hlídačem rozdělená na vstup a kruhovou nálepku, 3 důvody s žlutou linkou, galerie s výstražnou páskou, obří telefon v kontaktu"
+ },
+ {
+  "slug": "milan-fajmon-elektroservis",
+  "datum": "2026-11-23",
+  "obor": "opravy chlazení a klimatizací",
+  "pisma": [
+   "Sora",
+   "Lexend"
+  ],
+  "paleta": [
+   "#EAF4FA",
+   "#0F2A44",
+   "#8CCBEB",
+   "#E8622C",
+   "#4F5F6E"
+  ],
+  "hero": "split s SVG ilustrací lednice a teploměru, rtuť při načtení klesá, padají vločky",
+  "interakce": "diagnostika: zařízení + projev závady, výsledek s tipem co zkontrolovat a tlačítkem objednat opravu (předvyplní formulář)",
+  "layout": "4 zaoblené karty služeb (jedna tmavá), tmavá sekce diagnostiky s bílou výsledkovou lištou, 3 kroky s horní linkou, 3 ledové dlaždice galerie, světle modrý kontakt s ikonami"
+ },
+ {
+  "slug": "bajer",
+  "datum": "2026-11-23",
+  "obor": "sádrokartony, půdní vestavby, anhydrit",
+  "pisma": [
+   "Familjen Grotesk",
+   "IBM Plex Mono"
+  ],
+  "paleta": [
+   "#F4F4F1",
+   "#26292C",
+   "#5E9A7E",
+   "#8E99A3",
+   "#F2C230"
+  ],
+  "hero": "bílá karta se žlutým stínem přes celošířkový SVG řez domem, ve kterém postupně přibývají vrstvy podkroví",
+  "interakce": "skladba konstrukce: výběr typu práce (podkroví, příčka, podhled, jádro, anhydrit) ukáže řez vrstvami s legendou, posuvník plochy a poptávka",
+  "layout": "služby jako technický seznam se zkratkami v monospace vlevo, tmavá sekce skladby (seznam tlačítek + výkres), 3 rámečkové kroky, galerie s mřížkou profilů, kontakt jako tabulka"
+ },
+ {
+  "slug": "martin-romancak",
+  "datum": "2026-11-23",
+  "obor": "nerezová zábradlí, brány, schodiště, svařování",
+  "pisma": [
+   "Anybody",
+   "Manrope"
+  ],
+  "paleta": [
+   "#15191D",
+   "#DDE2E6",
+   "#AEB7BE",
+   "#D9A441",
+   "#3D5BC0"
+  ],
+  "hero": "interakce přímo v hero: grafitová plocha s nadpisem a pod ním konfigurátor na panelu z broušené nerezi",
+  "interakce": "konfigurátor zábradlí/brány/schodiště: výplň (příčle, tyče, sklo, děrovaný plech), materiál, délka, živý SVG nákres",
+  "layout": "služby jako horizontální pás 4 polí s duhovou linkou náběhových barev svaru, vzorník materiálů, postup se svislými linkami, vodorovně posuvná galerie, tmavý kontakt"
+ },
+ {
+  "slug": "j-j-servis-jaroslav-jedlan",
+  "datum": "2026-11-24",
+  "obor": "zabezpečovací a kamerové systémy, chytrý dům, antény",
+  "pisma": [
+   "Schibsted Grotesk",
+   "Red Hat Mono"
+  ],
+  "paleta": [
+   "#141A33",
+   "#1F2850",
+   "#FFB547",
+   "#7FA7FF",
+   "#F4F5F9"
+  ],
+  "hero": "celoplošná noční SVG scéna (dům, měsíc, kamera s otáčejícím se světelným kuželem), text vlevo nahoře",
+  "interakce": "plánovač zabezpečení: klikací půdorys domu se zónami (vstup, okna, obývák, garáž, zahrada, brána) + typ objektu, souhrn obvyklých prvků a odeslání do formuláře",
+  "layout": "služby jako seznam s kruhovými ikonami + boční karta se štítky, tmavě modrý plánovač 2 sloupce, 4 kroky v orámovaném pásu, galerie jako záběry kamer s REC, kontakt velký telefon + formulář"
+ },
+ {
+  "slug": "vladimir-bartusek",
+  "datum": "2026-11-24",
+  "obor": "tepelná čerpadla, M+R, elektroinstalace",
+  "pisma": [
+   "Unbounded",
+   "Rubik"
+  ],
+  "paleta": [
+   "#0F1E3A",
+   "#2A6FDB",
+   "#F2551F",
+   "#FFC93C",
+   "#F7F9FC"
+  ],
+  "hero": "obří dvoubarevná typografie (modrá zima / oranžová teplo) na bílé a pod ní celošířkový termogramový pás, který se při načtení „ohřeje“ zprava doleva",
+  "interakce": "výběr tepelného čerpadla: zdroj (vzduch/země), typ domu, otopná soustava, doplňky; živé SVG schéma s tekoucími trubkami a seznam bodů k prohlídce, odeslání do formuláře",
+  "layout": "služby v mřížce 3x2 s barevnou teplotní čárkou, světlá sekce výběru (volby vlevo, schéma vpravo), O firmě text + 4 faktové dlaždice, galerie jako termosnímky, tmavý kontakt s bílým formulářem"
+ },
+ {
+  "slug": "autoservis-milan-barnet",
+  "datum": "2026-11-24",
+  "obor": "autoservis, autoklimatizace",
+  "pisma": [
+   "Epilogue",
+   "Plus Jakarta Sans"
+  ],
+  "paleta": [
+   "#1F262E",
+   "#1E7FD8",
+   "#D93A2F",
+   "#A9DCF7",
+   "#EEF2F5"
+  ],
+  "hero": "palubní deska: grafitová plocha, uprostřed vycentrovaný nadpis, po stranách dva manometry (nízký/vysoký tlak), ručičky se při načtení vyhoupnou",
+  "interakce": "zakázkový list: značka, posuvník roku výroby s odhadem chladiva (R134a/R1234yf), zaškrtávací úkony a dny, živý náhled papírového listu a odeslání do formuláře",
+  "layout": "služby ve dvou sloupcích Klimatizace/Mechanika s barevným horním okrajem, tmavá sekce panel + papírový list, 3 důvody s barevnými linkami, galerie 4 čtverce s SPZ štítky, kontakt ve 3 sloupcích s tabulkou otevírací doby"
+ },
+ {
+  "slug": "malirstvi-musil",
+  "datum": "2026-11-24",
+  "obor": "malířské a natěračské práce",
+  "pisma": [
+   "Bricolage Grotesque",
+   "Outfit"
+  ],
+  "paleta": [
+   "#2B3A9A",
+   "#F7C948",
+   "#15172B",
+   "#F3F3EF",
+   "#9DC3B0"
+  ],
+  "hero": "plná ultramarínová plocha s obří typografií, přes spodek přejede váleček a natře široký žlutý pruh",
+  "interakce": "vyzkoušejte barvu: SVG pokoj, výběr odstínu stěny, druh malby (barevná, protiplísňová, dekorativní se vzorem), počet místností, objednání zaměření",
+  "layout": "služby jako vzorník barevných kartiček ve dvou skupinách (interiér, exteriér), šedá sekce s pokojem a ovládáním, postup 3 kroky s kapkami barvy + žlutá karta zaměření zdarma, mozaiková galerie barevných ploch, ultramarínový kontakt s otevírací dobou"
+ },
+ {
+  "slug": "vaclav-kladiva",
+  "datum": "2026-11-24",
+  "obor": "truhlářství, kancelářský a studijní nábytek na míru",
+  "pisma": [
+   "Fraunces",
+   "Figtree"
+  ],
+  "paleta": [
+   "#16404D",
+   "#E8D3AE",
+   "#A8743F",
+   "#F7F6F2",
+   "#1E2326"
+  ],
+  "hero": "dvousloupcový: velký patkový nadpis vlevo, vpravo stoh barevných desek (petrol, bříza, dub, ořech), které postupně přijíždějí zprava",
+  "interakce": "konfigurátor psacího stolu: posuvník šířky, hloubka, počet šuplíků v kontejneru, dekor, nástavec s policí; živý čelní nákres s kótou a souhrn do formuláře",
+  "layout": "katalog výrobků jako dvě skupiny (pracovna, domov) s mřížkou položek s ikonami a linkami, petrolejový konfigurátor, 3 důvody s ikonami, galerie jako dřevěné textury, kontakt velký telefon + formulář"
+ }
 ]
