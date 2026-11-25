@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Ota Sláma – Bystřice (návrh webu)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter+Tight:wght@400;500;600&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+:root{
+  --lilek:#2B1E3F; --lilek2:#3B2C55; --svetlo:#F6F5F9; --cervena:#E5383B; --zar:#FFCF56; --ocel:#7D8197; --text:#1F1830;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Inter Tight",system-ui,sans-serif;color:var(--text);background:var(--svetlo);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:"Syne",sans-serif;line-height:1.08;letter-spacing:-.01em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--zar);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+.pruh{background:#120C1C;color:#E9E5F2;font-size:14px;text-align:center;padding:8px 16px}
+.pruh b{color:var(--zar)}
+nav{background:var(--lilek);color:#fff}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.znak{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:Syne;font-weight:800;font-size:20px}
+.znak svg{flex:none}
+.menu{display:flex;gap:26px;font-size:15px}
+.menu a{text-decoration:none;opacity:.85}
+.menu a:hover{opacity:1;text-decoration:underline}
+.volat{background:var(--zar);color:var(--lilek);text-decoration:none;font-weight:600;padding:10px 18px;border-radius:4px;white-space:nowrap}
+.volat:hover{background:#ffe08f}
+/* hero */
+.hero{background:var(--lilek);color:#fff;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;padding-top:56px;padding-bottom:0}
+.hero h1{font-size:clamp(40px,6vw,76px);font-weight:800}
+.hero p{font-size:19px;color:#DCD6E8;margin:22px 0 30px;max-width:500px}
+.tl{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:56px}
+.btn{display:inline-block;padding:14px 22px;border-radius:4px;font-weight:600;text-decoration:none;border:2px solid transparent;cursor:pointer;font:inherit;font-weight:600}
+.btn.z{background:var(--zar);color:var(--lilek)}
+.btn.o{border-color:#8E80AD;color:#fff;background:transparent}
+.btn.o:hover{border-color:#fff}
+.fasada{align-self:end}
+.fasada svg{display:block;width:100%;height:auto}
+#cedule rect.box{transition:fill .2s}
+.blik #ceduleText{animation:blik 1.6s steps(1) forwards}
+.blik #zare{animation:zare 1.6s steps(1) forwards}
+@keyframes blik{0%{fill:#4a3d60}12%{fill:#fff6d8}18%{fill:#4a3d60}30%{fill:#fff6d8}36%{fill:#4a3d60}50%,100%{fill:#fff6d8}}
+@keyframes zare{0%{opacity:0}12%{opacity:.8}18%{opacity:0}30%{opacity:.8}36%{opacity:0}50%,100%{opacity:.9}}
+@media (prefers-reduced-motion:reduce){.blik #ceduleText,.blik #zare{animation:none}}
+/* sluzby */
+section{padding:84px 0}
+.nad{font-size:clamp(30px,4vw,46px);font-weight:700;margin-bottom:14px}
+.uvod{max-width:640px;color:#4A4360;margin-bottom:42px}
+.dva{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:2px solid var(--lilek)}
+.sl{padding:30px 34px 34px 0}
+.sl+.sl{padding-left:34px;padding-right:0;border-left:2px solid var(--lilek)}
+.sl h3{font-size:26px;display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.sl ul{list-style:none}
+.sl li{padding:14px 0;border-bottom:1px solid #D9D5E3;display:grid;grid-template-columns:28px 1fr;gap:10px}
+.sl li svg{margin-top:3px}
+.sl li b{display:block}
+.sl li span{color:#585170;font-size:15.5px}
+/* navrh */
+.navrh{background:var(--lilek2);color:#fff}
+.navrh .uvod{color:#D5CFE3}
+.nv{display:grid;grid-template-columns:360px 1fr;gap:36px;align-items:start}
+.ovl{background:var(--lilek);border:1px solid #574878;border-radius:8px;padding:24px}
+.ovl label.t{display:block;font-weight:600;margin:0 0 8px;font-size:15px}
+.ovl input[type=text]{width:100%;padding:12px 14px;border-radius:4px;border:1px solid #6E5F92;background:#1E1530;color:#fff;font:inherit;margin-bottom:20px}
+fieldset{border:0;margin-bottom:20px}
+legend{font-weight:600;font-size:15px;margin-bottom:8px}
+.volby{display:flex;flex-wrap:wrap;gap:8px}
+.volby input{position:absolute;opacity:0;width:1px;height:1px}
+.volby label{padding:8px 12px;border:1px solid #6E5F92;border-radius:4px;cursor:pointer;font-size:14.5px}
+.volby input:checked+label{background:var(--zar);color:var(--lilek);border-color:var(--zar);font-weight:600}
+.volby input:focus-visible+label{outline:3px solid var(--zar);outline-offset:2px}
+.barvy label{width:38px;height:38px;padding:0;border-radius:50%;border:3px solid transparent}
+.barvy input:checked+label{border-color:#fff;background:inherit}
+.prepinac{display:flex;align-items:center;gap:10px;margin-bottom:22px;font-size:15px;cursor:pointer}
+.prepinac input{width:20px;height:20px;accent-color:var(--zar)}
+.nahled{background:#1E1530;border-radius:8px;overflow:hidden;border:1px solid #574878}
+.nahled svg{display:block;width:100%;height:auto}
+.popis{padding:16px 20px;font-size:15px;color:#E3DEEE;border-top:1px solid #574878}
+/* proc */
+.proc{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:center}
+.kabel{position:relative;padding-left:34px}
+.kabel::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:3px;background:var(--cervena)}
+.kabel div{position:relative;margin-bottom:26px}
+.kabel div::before{content:"";position:absolute;left:-31px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--svetlo);border:3px solid var(--cervena)}
+.kabel b{font-family:Syne;font-size:20px;display:block;margin-bottom:4px}
+.kabel p{color:#4A4360}
+/* galerie */
+.gal{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
+.ram{aspect-ratio:4/3;background:var(--lilek);border-radius:6px;position:relative;display:flex;align-items:flex-end;padding:18px;color:#E8E3F2;font-size:15px;overflow:hidden}
+.ram:first-child{grid-row:span 2;aspect-ratio:auto}
+.ram::before{content:"";position:absolute;inset:14px;border:2px solid rgba(255,207,86,.55);border-radius:3px}
+.ram svg{position:absolute;top:28px;left:28px;opacity:.8}
+.ram span{position:relative}
+/* kontakt */
+.kontakt{background:#fff}
+.kg{display:grid;grid-template-columns:1fr 1.15fr;gap:50px}
+.tel{font-family:Syne;font-size:clamp(30px,4vw,44px);font-weight:800;text-decoration:none;display:inline-block;margin:6px 0 20px;color:var(--lilek)}
+.kk p{margin-bottom:10px}
+.kk a{color:#4B2E83}
+form{display:grid;gap:14px}
+form label{font-weight:600;font-size:15px;display:grid;gap:6px}
+form input,form textarea,form select{font:inherit;padding:12px 14px;border:1px solid #BDB6CC;border-radius:4px;background:var(--svetlo)}
+form textarea{min-height:120px;resize:vertical}
+.ok{display:none;background:#EFE9FB;border-left:4px solid var(--lilek);padding:12px 14px;font-size:15px}
+.btn.l{background:var(--lilek);color:#fff;justify-self:start}
+.btn.l:hover{background:#3d2b5c}
+footer{background:#120C1C;color:#C9C2D9;font-size:14.5px;padding:26px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:900px){
+  .menu{display:none}
+  .hero .wrap,.nv,.proc,.kg{grid-template-columns:1fr}
+  .dva{grid-template-columns:1fr}
+  .sl,.sl+.sl{padding:26px 0;border-left:0}
+  .sl+.sl{border-top:2px solid var(--lilek)}
+  .gal{grid-template-columns:1fr 1fr}
+  .ram:first-child{grid-column:span 2;grid-row:auto;aspect-ratio:16/9}
+}
+@media (max-width:480px){
+  body{font-size:16px}
+  .znak span{font-size:17px}
+  .volat{padding:9px 12px;font-size:14px}
+  section{padding:60px 0}
+  .tl{margin-bottom:36px}
+}
+</style>
+</head>
+<body>
+<div class="pruh">Návrh nového webu pro <b>Ota Sláma</b>, připravila Tereza Toufarová z Tereweb.cz</div>
+<nav>
+  <div class="wrap">
+    <a class="znak" href="#">
+      <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="4" fill="none" stroke="#FFCF56" stroke-width="2"/><path d="M22 6 12 22h8l-3 12 11-17h-8z" fill="#FFCF56"/></svg>
+      <span>Ota Sláma</span>
+    </a>
+    <div class="menu"><a href="#sluzby">Služby</a><a href="#navrh">Návrh nápisu</a><a href="#ukazky">Ukázky</a><a href="#kontakt">Kontakt</a></div>
+    <a class="volat" href="tel:+420737443296">Zavolat</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Elektřina v domě i světlo na fasádě.</h1>
+      <p>Elektromontáže, hromosvody, zabezpečení a požární signalizace, revize a projekce. A k tomu světelné reklamy, fóliové písmo a firemní štíty. Z Bystřice u Benešova.</p>
+      <div class="tl">
+        <a class="btn z" href="#kontakt">Poptat práci</a>
+        <a class="btn o" href="#navrh">Navrhnout nápis</a>
+      </div>
+    </div>
+    <div class="fasada" id="fasada">
+      <svg viewBox="0 0 520 400" role="img" aria-label="Fasáda provozovny s rozsvícenou světelnou reklamou">
+        <defs>
+          <pattern id="omitka" width="26" height="26" patternUnits="userSpaceOnUse"><rect width="26" height="26" fill="#45375F"/><circle cx="5" cy="7" r="1" fill="#52436E"/><circle cx="18" cy="19" r="1" fill="#52436E"/></pattern>
+          <radialGradient id="zarG"><stop offset="0" stop-color="#FFCF56" stop-opacity=".55"/><stop offset="1" stop-color="#FFCF56" stop-opacity="0"/></radialGradient>
+        </defs>
+        <rect x="30" y="20" width="460" height="380" fill="url(#omitka)"/>
+        <ellipse id="zare" cx="260" cy="92" rx="250" ry="90" fill="url(#zarG)" opacity="0"/>
+        <g id="cedule">
+          <line x1="110" y1="20" x2="110" y2="52" stroke="#9A93AE" stroke-width="2"/>
+          <line x1="410" y1="20" x2="410" y2="52" stroke="#9A93AE" stroke-width="2"/>
+          <rect class="box" x="70" y="52" width="380" height="84" rx="6" fill="#2B1E3F" stroke="#9A93AE" stroke-width="3"/>
+          <text id="ceduleText" x="260" y="108" text-anchor="middle" font-family="Syne" font-weight="800" font-size="40" fill="#4a3d60" textLength="320" lengthAdjust="spacingAndGlyphs">OTA SLÁMA</text>
+        </g>
+        <path d="M450 96 H476 V250 H462" fill="none" stroke="#E5383B" stroke-width="3"/>
+        <rect x="446" y="240" width="32" height="40" rx="3" fill="#2B1E3F" stroke="#9A93AE" stroke-width="2"/>
+        <path d="M462 248 457 260h5l-2 10 8-13h-5l2-9z" fill="#FFCF56"/>
+        <rect x="70" y="180" width="170" height="220" fill="#1E1530" stroke="#9A93AE" stroke-width="3"/>
+        <rect x="84" y="194" width="142" height="206" fill="#2E2246"/>
+        <rect x="274" y="180" width="160" height="150" fill="#1E1530" stroke="#9A93AE" stroke-width="3"/>
+        <line x1="354" y1="180" x2="354" y2="330" stroke="#9A93AE" stroke-width="3"/>
+        <text x="314" y="268" text-anchor="middle" font-family="Inter Tight" font-weight="600" font-size="15" fill="#FFCF56" opacity=".9">EZS</text>
+        <text x="394" y="268" text-anchor="middle" font-family="Inter Tight" font-weight="600" font-size="15" fill="#FFCF56" opacity=".9">EPS</text>
+        <circle cx="404" cy="200" r="7" fill="#E5383B"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section id="sluzby">
+  <div class="wrap">
+    <h2 class="nad">Co pro vás uděláme</h2>
+    <p class="uvod">Jeden řemeslník na dvě věci, které k sobě patří: elektroinstalaci a reklamu, která potřebuje proud. Cedule vyrobíme i zapojíme.</p>
+    <div class="dva">
+      <div class="sl">
+        <h3><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M15 2 5 15h7l-2 9 10-13h-7z" fill="#E5383B"/></svg>Elektro</h3>
+        <ul>
+          <li><svg width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="#2B1E3F" stroke-width="2"/></svg><div><b>Elektromontáže</b><span>Rozvody a montáže v bytech, domech i provozovnách.</span></div></li>
+          <li><svg width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="#2B1E3F" stroke-width="2"/></svg><div><b>Montáže hromosvodů</b><span>Ochrana budovy před bleskem.</span></div></li>
+          <li><svg width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="#2B1E3F" stroke-width="2"/></svg><div><b>EZS a EPS</b><span>Elektronické zabezpečovací systémy a elektrická požární signalizace.</span></div></li>
+          <li><svg width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="#2B1E3F" stroke-width="2"/></svg><div><b>Projekce a revize</b><span>Projekt elektroinstalace a revize hotového díla.</span></div></li>
+        </ul>
+      </div>
+      <div class="sl">
+        <h3><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><rect x="2" y="6" width="22" height="13" rx="2" fill="none" stroke="#E5383B" stroke-width="2.5"/><line x1="7" y1="12.5" x2="19" y2="12.5" stroke="#E5383B" stroke-width="2.5"/></svg>Reklama</h3>
+        <ul>
+          <li><svg width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="12" height="12" fill="none" stroke="#2B1E3F" stroke-width="2"/></svg><div><b>Světelná reklama</b><span>Výroba svítících cedulí a boxů na fasádu.</span></div></li>
+          <li><svg width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="12" height="12" fill="none" stroke="#2B1E3F" stroke-width="2"/></svg><div><b>Fóliové písmo</b><span>Nápisy na výlohy, dveře a vozidla.</span></div></li>
+          <li><svg width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="12" height="12" fill="none" stroke="#2B1E3F" stroke-width="2"/></svg><div><b>Firemní štíty</b><span>Štíty a tabule s názvem firmy k vchodu.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="navrh" id="navrh">
+  <div class="wrap">
+    <h2 class="nad">Zkuste si, jak bude vypadat váš nápis</h2>
+    <p class="uvod">Napište název, vyberte druh a barvu. Náhled je orientační, přesný návrh připravíme podle vaší fasády.</p>
+    <div class="nv">
+      <div class="ovl">
+        <label class="t" for="napis">Text nápisu</label>
+        <input type="text" id="napis" maxlength="16" value="KAVÁRNA U MOSTU">
+        <fieldset>
+          <legend>Druh</legend>
+          <div class="volby">
+            <input type="radio" name="druh" id="d1" value="box" checked><label for="d1">Světelný box</label>
+            <input type="radio" name="druh" id="d2" value="folie"><label for="d2">Fóliové písmo na výlohu</label>
+            <input type="radio" name="druh" id="d3" value="stit"><label for="d3">Firemní štít</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Barva písma</legend>
+          <div class="volby barvy">
+            <input type="radio" name="barva" id="b1" value="#FFF6D8" checked><label for="b1" style="background:#FFF6D8" title="Teplá bílá"><span class="sr" style="position:absolute;left:-999px">Teplá bílá</span></label>
+            <input type="radio" name="barva" id="b2" value="#FFCF56"><label for="b2" style="background:#FFCF56" title="Žlutá"><span style="position:absolute;left:-999px">Žlutá</span></label>
+            <input type="radio" name="barva" id="b3" value="#E5383B"><label for="b3" style="background:#E5383B" title="Červená"><span style="position:absolute;left:-999px">Červená</span></label>
+            <input type="radio" name="barva" id="b4" value="#7FD1FF"><label for="b4" style="background:#7FD1FF" title="Modrá"><span style="position:absolute;left:-999px">Modrá</span></label>
+          </div>
+        </fieldset>
+        <label class="prepinac"><input type="checkbox" id="noc" checked> Zobrazit večer</label>
+        <button class="btn z" type="button" id="doPoptavky">Poslat do poptávky</button>
+      </div>
+      <div class="nahled">
+        <svg id="nahled" viewBox="0 0 600 340" role="img" aria-label="Náhled nápisu na fasádě">
+          <rect id="nZed" width="600" height="340" fill="#3B2C55"/>
+          <rect id="nOkno" x="150" y="150" width="300" height="190" fill="#1E1530" stroke="#9A93AE" stroke-width="4"/>
+          <g id="nBox"><rect id="nBoxR" x="60" y="40" width="480" height="80" rx="6" fill="#2B1E3F" stroke="#9A93AE" stroke-width="3"/></g>
+          <text id="nText" x="300" y="94" text-anchor="middle" font-family="Syne" font-weight="800" font-size="38" fill="#FFF6D8">KAVÁRNA U MOSTU</text>
+        </svg>
+        <div class="popis" id="popis">Světelný box s teplou bílou, večer svítí.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proc">
+  <div class="wrap proc">
+    <div>
+      <h2 class="nad">Proč to svěřit jednomu člověku</h2>
+      <p class="uvod" style="margin-bottom:0">Světelná reklama je z poloviny elektroinstalace. Když ji vyrábí i zapojuje stejný řemeslník, nikdo si nepřehazuje odpovědnost a vy řešíte všechno jedním telefonátem.</p>
+    </div>
+    <div class="kabel">
+      <div><b>Zavoláte nebo napíšete</b><p>Popíšete, co potřebujete: nová elektroinstalace, hromosvod, alarm nebo cedule nad vchod.</p></div>
+      <div><b>Domluvíme prohlídku</b><p>Podíváme se na místo, navrhneme řešení a připravíme nabídku.</p></div>
+      <div><b>Montáž a zapojení</b><p>Práci provedeme a u elektra dodáme i revizi.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="ukazky" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="nad">Ukázky práce</h2>
+    <p class="uvod">Sem přijdou fotky vašich zakázek: rozvaděče, hromosvody, hotové cedule a polepy.</p>
+    <div class="gal">
+      <div class="ram"><svg width="60" height="60" viewBox="0 0 60 60" aria-hidden="true"><path d="M34 6 16 34h12l-4 20 20-30H32z" fill="none" stroke="#FFCF56" stroke-width="3"/></svg><span>Sem přijdou fotky vašich zakázek</span></div>
+      <div class="ram"><span>Světelná reklama</span></div>
+      <div class="ram"><span>Hromosvod</span></div>
+      <div class="ram"><span>Fóliové písmo</span></div>
+      <div class="ram"><span>Rozvaděč</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="wrap kg">
+    <div class="kk">
+      <h2 class="nad">Kontakt</h2>
+      <a class="tel" href="tel:+420737443296">737 443 296</a>
+      <p><b>Ota Sláma</b><br>Družstevní 430<br>257 51 Bystřice</p>
+      <p><a href="mailto:elektropro@atlas.cz">elektropro@atlas.cz</a></p>
+    </div>
+    <form id="form">
+      <label>Jméno<input name="jmeno" required autocomplete="name"></label>
+      <label>Telefon nebo e-mail<input name="kontakt" required></label>
+      <label>Co potřebujete<select name="typ"><option>Elektromontáž</option><option>Hromosvod</option><option>EZS nebo EPS</option><option>Projekt nebo revize</option><option>Světelná reklama, písmo, štít</option></select></label>
+      <label>Zpráva<textarea name="zprava" id="zprava"></textarea></label>
+      <button class="btn l" type="submit">Odeslat poptávku</button>
+      <p class="ok" id="ok">Toto je ukázka formuláře. V hotovém webu by zpráva přišla rovnou na váš e-mail.</p>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 Ota Sláma</span><span>Návrh připravila Tereweb.cz</span></div></footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var f = document.getElementById('fasada');
+  if (reduce) { document.getElementById('ceduleText').setAttribute('fill','#fff6d8'); document.getElementById('zare').setAttribute('opacity','.9'); }
+  else { setTimeout(function(){ f.classList.add('blik'); }, 400); }
+
+  var napis = document.getElementById('napis'), noc = document.getElementById('noc');
+  var t = document.getElementById('nText'), box = document.getElementById('nBox'), boxR = document.getElementById('nBoxR');
+  var zed = document.getElementById('nZed'), okno = document.getElementById('nOkno'), popis = document.getElementById('popis');
+  var nazvy = {box:'Světelný box', folie:'Fóliové písmo na výlohu', stit:'Firemní štít'};
+  var barvy = {'#FFF6D8':'teplou bílou','#FFCF56':'žlutou','#E5383B':'červenou','#7FD1FF':'modrou'};
+  function val(n){ return document.querySelector('input[name="'+n+'"]:checked').value; }
+  function kresli(){
+    var d = val('druh'), b = val('barva'), vecer = noc.checked;
+    var txt = (napis.value || 'VÁŠ NÁZEV').toUpperCase();
+    t.textContent = txt;
+    zed.setAttribute('fill', vecer ? '#2E2246' : '#B9B4C6');
+    okno.setAttribute('fill', vecer ? '#3E3060' : '#5D6B85');
+    t.removeAttribute('filter'); t.style.filter = ''; t.removeAttribute('textLength');
+    if (d === 'box') {
+      box.style.display = ''; boxR.setAttribute('x',60); boxR.setAttribute('y',40); boxR.setAttribute('width',480); boxR.setAttribute('height',80);
+      boxR.setAttribute('fill', vecer ? '#2B1E3F' : '#2B1E3F');
+      t.setAttribute('x',300); t.setAttribute('y',94); t.setAttribute('font-size', Math.min(38, 820/Math.max(txt.length,1)));
+      t.setAttribute('fill', b);
+      t.style.filter = vecer ? 'drop-shadow(0 0 8px '+b+')' : '';
+    } else if (d === 'folie') {
+      box.style.display = 'none';
+      t.setAttribute('x',300); t.setAttribute('y',236); t.setAttribute('font-size', Math.min(26, 520/Math.max(txt.length,1)));
+      t.setAttribute('fill', b);
+    } else {
+      box.style.display = ''; boxR.setAttribute('x',470); boxR.setAttribute('y',170); boxR.setAttribute('width',110); boxR.setAttribute('height',70);
+      boxR.setAttribute('fill','#E9E7EE');
+      t.setAttribute('x',525); t.setAttribute('y',212); t.setAttribute('font-size', Math.min(16, 200/Math.max(txt.length,1)));
+      t.setAttribute('fill', b === '#FFF6D8' ? '#2B1E3F' : b);
+    }
+    var lim = d === 'box' ? 440 : (d === 'folie' ? 270 : 96);
+    var est = parseFloat(t.getAttribute('font-size')) * 0.78 * txt.length;
+    if (est > lim) { t.setAttribute('textLength', lim); t.setAttribute('lengthAdjust','spacingAndGlyphs'); }
+    var s = nazvy[d] + ' s nápisem „' + txt + '“, barva písma ' + barvy[b] + (d === 'box' ? (vecer ? ', večer svítí.' : ', ve dne.') : '.');
+    popis.textContent = s;
+    return s;
+  }
+  document.querySelectorAll('#navrh input').forEach(function(i){ i.addEventListener('input', kresli); i.addEventListener('change', kresli); });
+  kresli();
+  document.getElementById('doPoptavky').addEventListener('click', function(){
+    document.querySelector('select[name="typ"]').value = 'Světelná reklama, písmo, štít';
+    document.getElementById('zprava').value = 'Dobrý den, mám zájem o: ' + kresli();
+    document.getElementById('kontakt').scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+    setTimeout(function(){ document.querySelector('#form input').focus({preventScroll:true}); }, 500);
+  });
+  document.getElementById('form').addEventListener('submit', function(e){ e.preventDefault(); document.getElementById('ok').style.display = 'block'; });
+})();
+</script>
+</body>
+</html>

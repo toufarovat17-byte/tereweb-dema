@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Petr Stejskal – Bystřice (návrh webu)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;1,6..72,500&family=Urbanist:wght@400;500;600;700&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+:root{--inkoust:#172036;--sklo:#CDEBE6;--hrana:#5FB3A3;--hranaT:#2B7466;--bila:#F7FAFA;--slunce:#F6C453;--txt:#1C2333;--seda:#56607A}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Urbanist",system-ui,sans-serif;color:var(--txt);background:var(--bila);line-height:1.6;font-size:17.5px}
+h1,h2,h3{font-family:"Newsreader",Georgia,serif;font-weight:500;line-height:1.05}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--hranaT);outline-offset:3px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+.pruh{background:var(--inkoust);color:#DDE7F0;text-align:center;font-size:14px;padding:8px 16px}
+.pruh b{color:var(--sklo)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:14px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:700;font-size:19px}
+.logo small{display:block;font-weight:500;font-size:13px;color:var(--seda);line-height:1}
+.menu{display:flex;gap:28px;font-weight:500;font-size:15.5px}
+.menu a{text-decoration:none}
+.menu a:hover{color:var(--hranaT)}
+.volat{border:2px solid var(--inkoust);padding:9px 16px;border-radius:40px;text-decoration:none;font-weight:600;white-space:nowrap}
+.volat:hover{background:var(--inkoust);color:#fff}
+/* hero */
+.hero{position:relative;margin:0 22px;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,#BFD9EE 0%,#E4F0F5 60%,#F3EBD8 100%);min-height:540px;display:flex;align-items:center}
+.hero .txt{position:relative;z-index:1;padding:60px 6vw;max-width:780px}
+.hero h1{font-size:clamp(44px,7vw,92px);color:var(--inkoust)}
+.hero h1 em{font-style:italic;color:var(--hranaT)}
+.hero p{font-size:19px;max-width:520px;margin:22px 0 30px;color:#2D3750}
+.btn{display:inline-block;font:inherit;font-weight:600;padding:13px 24px;border-radius:40px;border:2px solid transparent;text-decoration:none;cursor:pointer}
+.btn.t{background:var(--inkoust);color:#fff}
+.btn.t:hover{background:#26324f}
+.btn.s{border-color:var(--inkoust);background:transparent;margin-left:8px}
+.slunce{position:absolute;right:9%;top:60px;width:120px;height:120px;border-radius:50%;background:var(--slunce);opacity:.75}
+.tabule{position:absolute;inset:0;display:flex;z-index:2;pointer-events:none}
+.tabule i{flex:1;border-right:3px solid rgba(95,179,163,.55);background:linear-gradient(115deg,rgba(255,255,255,.28) 0 18%,rgba(255,255,255,.04) 18% 30%,rgba(255,255,255,.18) 30% 34%,rgba(205,235,230,.10) 34%);transition:transform 1.4s cubic-bezier(.6,.05,.2,1)}
+.otevreno .tabule i{transform:translateX(calc(var(--k) * 100%))}
+.ram{position:absolute;left:0;right:0;bottom:0;height:16px;background:#8FA3B4;z-index:3}
+.ram.h{top:0;bottom:auto;height:10px}
+@media (prefers-reduced-motion:reduce){.tabule i{transition:none}}
+section{padding:90px 0}
+.h2{font-size:clamp(34px,4.6vw,56px);color:var(--inkoust);margin-bottom:14px}
+.lead{color:var(--seda);max-width:600px;margin-bottom:44px}
+/* sluzby */
+.pas{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.pas article{border-top:4px solid var(--hrana);padding-top:22px}
+.pas svg{margin-bottom:16px}
+.pas h3{font-size:26px;margin-bottom:8px;color:var(--inkoust)}
+.pas p{color:var(--seda);font-size:16.5px}
+/* konfigurator */
+.konf{background:var(--inkoust);color:#fff}
+.konf .h2{color:#fff}
+.konf .lead{color:#B9C6D8}
+.kg{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:start}
+.scena{background:#0F1627;border-radius:14px;padding:18px;border:1px solid #2B3654}
+.scena svg{width:100%;height:auto;display:block}
+.scena .pod{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:12px;font-size:15px;color:#C7D3E3;flex-wrap:wrap}
+.ovl{display:grid;gap:22px}
+fieldset{border:0}
+legend{font-weight:600;margin-bottom:10px}
+.vol{display:flex;flex-wrap:wrap;gap:8px}
+.vol input{position:absolute;opacity:0;width:1px;height:1px}
+.vol label{border:1.5px solid #42507A;border-radius:40px;padding:8px 16px;cursor:pointer;font-size:15.5px}
+.vol input:checked+label{background:var(--sklo);border-color:var(--sklo);color:var(--inkoust);font-weight:600}
+.vol input:focus-visible+label{outline:3px solid var(--slunce);outline-offset:2px}
+.rozsah label{display:flex;justify-content:space-between;font-weight:600;margin-bottom:6px}
+.rozsah output{color:var(--slunce)}
+input[type=range]{width:100%;accent-color:var(--hrana)}
+.btn.sk{background:var(--sklo);color:var(--inkoust)}
+.btn.ob{background:transparent;color:#fff;border-color:#42507A;padding:8px 16px;font-size:15px}
+.souhrn{font-size:16px;color:#DCE5F0;border-left:3px solid var(--hrana);padding-left:14px}
+/* proc */
+.proc{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.vyhody{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.vyhody div{background:#fff;border:1px solid #D7E5E6;border-radius:12px;padding:22px}
+.vyhody b{display:block;font-family:Newsreader;font-size:22px;font-weight:500;color:var(--inkoust);margin-bottom:4px}
+.vyhody p{color:var(--seda);font-size:16px}
+/* galerie */
+.gal{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:18px;align-items:end}
+.pane{border-radius:12px;background:linear-gradient(120deg,#E3F2EF 0 30%,#D2E9E4 30% 36%,#E3F2EF 36% 100%);border:2px solid var(--hrana);display:flex;align-items:flex-end;padding:18px;color:var(--hranaT);font-weight:600;font-size:15.5px}
+.pane:nth-child(1){height:260px}.pane:nth-child(2){height:340px}.pane:nth-child(3){height:220px}
+/* kontakt */
+.kontakt{padding-top:20px}
+.karta{background:#fff;border:1px solid #D7E5E6;border-radius:18px;display:grid;grid-template-columns:1fr 1.1fr;overflow:hidden}
+.karta .k{padding:44px;background:linear-gradient(160deg,#E7F4F1,#F7FAFA)}
+.tel{font-family:Newsreader;font-size:clamp(34px,4vw,48px);text-decoration:none;color:var(--inkoust);display:block;margin:6px 0 18px}
+.k p{margin-bottom:10px;color:#2D3750}
+form{padding:44px;display:grid;gap:14px}
+form label{display:grid;gap:6px;font-weight:600;font-size:15px}
+form input,form textarea{font:inherit;padding:12px 14px;border:1.5px solid #C9D6DA;border-radius:10px;background:var(--bila)}
+form textarea{min-height:120px;resize:vertical}
+form .btn{justify-self:start}
+.ok{display:none;background:#E7F4F1;border-radius:10px;padding:12px 14px;font-size:15px;color:var(--hranaT)}
+footer{padding:34px 0;color:var(--seda);font-size:14.5px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;border-top:1px solid #D7E5E6;padding-top:24px}
+@media (max-width:920px){
+  .menu{display:none}
+  .pas{grid-template-columns:1fr 1fr}
+  .kg,.proc,.karta{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr}
+  .pane:nth-child(2){grid-column:span 2;order:-1;height:220px}
+  .pane:nth-child(1),.pane:nth-child(3){height:170px}
+}
+@media (max-width:520px){
+  body{font-size:16.5px}
+  .hero{margin:0 10px;min-height:0}
+  .hero .txt{padding:48px 22px 56px}
+  .btn.s{margin:10px 0 0}
+  .pas,.vyhody{grid-template-columns:1fr}
+  section{padding:64px 0}
+  .karta .k,form{padding:26px}
+  .logo small{display:none}
+  .tabule i{transition:transform 1.4s cubic-bezier(.6,.05,.2,1),opacity .8s 1.2s}
+  .otevreno .tabule i{opacity:0}
+  .slunce{right:-34px;top:-34px;width:100px;height:100px;opacity:.55}
+  .volat{padding:8px 12px;font-size:15px}
+}
+</style>
+</head>
+<body>
+<div class="pruh">Návrh nového webu pro <b>Petr Stejskal</b>, připravila Tereza Toufarová z Tereweb.cz</div>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#">
+      <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true"><rect x="3" y="3" width="36" height="36" rx="6" fill="#CDEBE6" stroke="#2B7466" stroke-width="2.5"/><path d="M10 30 30 10M17 32 32 17" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>
+      <span>Petr Stejskal<small>sklenářské práce</small></span>
+    </a>
+    <div class="menu"><a href="#sluzby">Služby</a><a href="#zaskleni">Navrhnout zasklení</a><a href="#ukazky">Ukázky</a><a href="#kontakt">Kontakt</a></div>
+    <a class="volat" href="tel:+420774280251">774 280 251</a>
+  </div>
+</nav>
+
+<header class="hero" id="hero">
+  <div class="ram h"></div>
+  <div class="slunce" aria-hidden="true"></div>
+  <div class="txt">
+    <h1>Balkon, který <em>zůstane venku,</em> ale bez větru.</h1>
+    <p>Zasklíváme balkony a lodžie, montujeme zrcadlové stěny a skleněné příčky. Sklenářské práce z Jarkovic u Bystřice.</p>
+    <a class="btn t" href="#zaskleni">Navrhnout zasklení</a><a class="btn s" href="#kontakt">Napsat</a>
+  </div>
+  <div class="tabule" aria-hidden="true"><i style="--k:2.6"></i><i style="--k:1.75"></i><i style="--k:.9"></i><i style="--k:0"></i></div>
+  <div class="ram"></div>
+</header>
+
+<section id="sluzby">
+  <div class="wrap">
+    <h2 class="h2">Co pro vás uděláme</h2>
+    <p class="lead">Sklo v bytě i na domě. Zaměříme, vyrobíme na míru a namontujeme.</p>
+    <div class="pas">
+      <article><svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><rect x="4" y="8" width="36" height="28" fill="#CDEBE6" stroke="#2B7466" stroke-width="2"/><path d="M16 8v28M28 8v28" stroke="#2B7466" stroke-width="2"/><path d="M4 36h36" stroke="#172036" stroke-width="4"/></svg><h3>Zasklení balkonu</h3><p>Uzavřený balkon chrání před větrem, deštěm a prachem.</p></article>
+      <article><svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><rect x="8" y="4" width="28" height="36" fill="none" stroke="#172036" stroke-width="2"/><rect x="12" y="12" width="20" height="24" fill="#CDEBE6" stroke="#2B7466" stroke-width="2"/></svg><h3>Zasklení lodžie</h3><p>Lodžie se promění v další místnost, která slouží celý rok.</p></article>
+      <article><svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><rect x="6" y="4" width="32" height="36" rx="2" fill="#E9F0F6" stroke="#172036" stroke-width="2"/><path d="M12 30 30 12M18 34 34 18" stroke="#fff" stroke-width="3"/></svg><h3>Zrcadlové stěny</h3><p>Zrcadla přes celou stěnu do bytu, předsíně nebo cvičebny.</p></article>
+      <article><svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><path d="M4 40h36" stroke="#172036" stroke-width="3"/><rect x="14" y="4" width="16" height="36" fill="#CDEBE6" stroke="#2B7466" stroke-width="2"/></svg><h3>Skleněné příčky</h3><p>Dělicí příčky, které rozdělí prostor a nevezmou mu světlo.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="konf" id="zaskleni">
+  <div class="wrap">
+    <h2 class="h2">Navrhněte si zasklení</h2>
+    <p class="lead">Vyberte, co chcete zasklít, nastavte šířku a druh skla. Na nákresu uvidíte, kolik dílů zhruba vyjde. Přesné rozměry změříme na místě.</p>
+    <div class="kg">
+      <div class="scena">
+        <svg id="nakres" viewBox="0 0 640 380" role="img" aria-label="Nákres zasklení">
+          <rect width="640" height="380" fill="#16203A"/>
+          <g id="obsah"></g>
+        </svg>
+        <div class="pod"><span id="pocet"></span><button class="btn ob" type="button" id="posun">Posunout tabule</button></div>
+      </div>
+      <div class="ovl">
+        <fieldset><legend>Co zasklíváme</legend><div class="vol">
+          <input type="radio" name="typ" id="t1" value="balkon" checked><label for="t1">Balkon</label>
+          <input type="radio" name="typ" id="t2" value="lodzie"><label for="t2">Lodžie</label>
+          <input type="radio" name="typ" id="t3" value="pricka"><label for="t3">Skleněná příčka</label>
+          <input type="radio" name="typ" id="t4" value="zrcadlo"><label for="t4">Zrcadlová stěna</label>
+        </div></fieldset>
+        <div class="rozsah"><label for="sirka">Šířka <output id="oS">3,0 m</output></label><input type="range" id="sirka" min="1.5" max="6" step="0.1" value="3"></div>
+        <fieldset id="fsSklo"><legend>Sklo</legend><div class="vol">
+          <input type="radio" name="sklo" id="s1" value="čiré" checked><label for="s1">Čiré</label>
+          <input type="radio" name="sklo" id="s2" value="matné"><label for="s2">Matné</label>
+          <input type="radio" name="sklo" id="s3" value="kouřové"><label for="s3">Kouřové</label>
+        </div></fieldset>
+        <p class="souhrn" id="souhrn"></p>
+        <button class="btn sk" type="button" id="poslat" style="justify-self:start">Poslat k nacenění</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proc">
+  <div class="wrap proc">
+    <div>
+      <h2 class="h2">Co vám zasklení dá</h2>
+      <p class="lead" style="margin-bottom:0">Zasklený balkon nebo lodžie není jen o vzhledu domu. Prostor, který jinak slouží hlavně v létě, můžete využívat po celý rok.</p>
+    </div>
+    <div class="vyhody">
+      <div><b>Méně prachu</b><p>Na balkon nefouká a nenapadá listí ani špína.</p></div>
+      <div><b>Klid</b><p>Sklo ztlumí hluk z ulice.</p></div>
+      <div><b>Místo navíc</b><p>Na sušení prádla, pro květiny nebo na posezení.</p></div>
+      <div><b>Světlo zůstane</b><p>Byt neztratí denní světlo ani výhled.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="ukazky" style="padding-top:20px">
+  <div class="wrap">
+    <h2 class="h2">Ukázky</h2>
+    <p class="lead">Sem přijdou fotky vašich zakázek: zasklené balkony, zrcadla a příčky.</p>
+    <div class="gal">
+      <div class="pane">Zasklený balkon</div>
+      <div class="pane">Sem přijdou fotky vašich zakázek</div>
+      <div class="pane">Skleněná příčka</div>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="wrap">
+    <div class="karta">
+      <div class="k">
+        <h2 class="h2">Kontakt</h2>
+        <a class="tel" href="tel:+420774280251">774 280 251</a>
+        <p><b>Petr Stejskal</b><br>Jarkovice, 256 01 Bystřice</p>
+        <p><a href="mailto:sklo-zaskleni@seznam.cz">sklo-zaskleni@seznam.cz</a></p>
+      </div>
+      <form id="form">
+        <label>Jméno<input required autocomplete="name"></label>
+        <label>Telefon nebo e-mail<input required></label>
+        <label>Zpráva<textarea id="zprava" placeholder="Co potřebujete zasklít a kde"></textarea></label>
+        <button class="btn t" type="submit">Odeslat</button>
+        <p class="ok" id="ok">Toto je ukázka formuláře. V hotovém webu by zpráva přišla rovnou na váš e-mail.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 Petr Stejskal</span><span>Návrh připravila Tereweb.cz</span></div></footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hero = document.getElementById('hero');
+  setTimeout(function(){ hero.classList.add('otevreno'); }, reduce ? 0 : 500);
+
+  var $ = function(id){ return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var posunuto = false;
+  var nazvy = {balkon:'zasklení balkonu', lodzie:'zasklení lodžie', pricka:'skleněná příčka', zrcadlo:'zrcadlová stěna'};
+  var barvaSkla = {'čiré':'rgba(205,235,230,.35)','matné':'rgba(230,240,245,.85)','kouřové':'rgba(80,90,105,.6)'};
+  function el(n, a){ var e = document.createElementNS(NS, n); for (var k in a) e.setAttribute(k, a[k]); return e; }
+  function val(n){ return document.querySelector('input[name="'+n+'"]:checked').value; }
+  function kresli(){
+    var typ = val('typ'), sklo = val('sklo'), w = parseFloat($('sirka').value);
+    $('oS').textContent = w.toFixed(1).replace('.', ',') + ' m';
+    $('fsSklo').style.display = typ === 'zrcadlo' ? 'none' : '';
+    var g = $('obsah'); while (g.firstChild) g.removeChild(g.firstChild);
+    var sirPx = 140 + (w - 1.5) / 4.5 * 420, x0 = (640 - sirPx) / 2;
+    var dily = typ === 'zrcadlo' ? Math.max(1, Math.ceil(w / 1.2)) : Math.max(2, Math.round(w / 0.7));
+    var y0, h;
+    if (typ === 'balkon' || typ === 'lodzie') {
+      g.appendChild(el('rect', {x:0, y:0, width:640, height:380, fill:'#1C2843'}));
+      if (typ === 'lodzie') { g.appendChild(el('rect', {x:x0-26, y:40, width:26, height:300, fill:'#A9B6C6'})); g.appendChild(el('rect', {x:x0+sirPx, y:40, width:26, height:300, fill:'#A9B6C6'})); }
+      g.appendChild(el('rect', {x:x0-30, y:40, width:sirPx+60, height:16, fill:'#A9B6C6'}));
+      g.appendChild(el('rect', {x:x0-30, y:330, width:sirPx+60, height:18, fill:'#A9B6C6'}));
+      g.appendChild(el('rect', {x:x0, y:230, width:sirPx, height:100, fill:'#56627A'}));
+      for (var r = 0; r < 12; r++) g.appendChild(el('line', {x1:x0 + r * sirPx / 12, y1:230, x2:x0 + r * sirPx / 12, y2:330, stroke:'#6C7891', 'stroke-width':2}));
+      y0 = 56; h = 274;
+    } else if (typ === 'pricka') {
+      g.appendChild(el('rect', {x:0, y:330, width:640, height:50, fill:'#3A4767'}));
+      g.appendChild(el('rect', {x:0, y:0, width:640, height:30, fill:'#2A3658'}));
+      y0 = 30; h = 300;
+    } else {
+      g.appendChild(el('rect', {x:0, y:330, width:640, height:50, fill:'#3A4767'}));
+      y0 = 40; h = 290;
+    }
+    var dw = sirPx / dily;
+    for (var i = 0; i < dily; i++) {
+      var x = x0 + i * dw;
+      if (posunuto && (typ === 'balkon' || typ === 'lodzie')) x = x0 + sirPx - dw - (dily - 1 - i) * dw * 0.14;
+      var fill = typ === 'zrcadlo' ? '#C9D6E2' : barvaSkla[sklo];
+      var p = el('g', {});
+      p.appendChild(el('rect', {x:x+2, y:y0, width:dw-4, height:h, fill:fill, stroke:'#5FB3A3', 'stroke-width':2}));
+      p.appendChild(el('path', {d:'M'+(x+dw*0.2)+' '+(y0+h*0.7)+' L'+(x+dw*0.75)+' '+(y0+h*0.15), stroke:'rgba(255,255,255,.55)', 'stroke-width':4, 'stroke-linecap':'round'}));
+      p.style.transition = reduce ? 'none' : 'transform .6s';
+      g.appendChild(p);
+    }
+    g.appendChild(el('line', {x1:x0, y1:366, x2:x0+sirPx, y2:366, stroke:'#F6C453', 'stroke-width':2}));
+    var kota = el('text', {x:320, y:360, 'text-anchor':'middle', fill:'#F6C453', 'font-family':'Urbanist', 'font-size':16, 'font-weight':600});
+    kota.textContent = w.toFixed(1).replace('.', ',') + ' m'; g.appendChild(kota);
+    $('posun').style.display = (typ === 'balkon' || typ === 'lodzie') ? '' : 'none';
+    $('pocet').textContent = 'Orientačně ' + dily + ' ' + (dily < 5 ? 'díly' : 'dílů') + (typ === 'zrcadlo' ? ' zrcadla' : ' skla');
+    var s = nazvy[typ].charAt(0).toUpperCase() + nazvy[typ].slice(1) + ', šířka zhruba ' + w.toFixed(1).replace('.', ',') + ' m' + (typ === 'zrcadlo' ? '.' : ', sklo ' + sklo + '.');
+    $('souhrn').textContent = s; return s;
+  }
+  document.querySelectorAll('#zaskleni input').forEach(function(i){ i.addEventListener('input', kresli); i.addEventListener('change', kresli); });
+  $('posun').addEventListener('click', function(){ posunuto = !posunuto; this.textContent = posunuto ? 'Zavřít tabule' : 'Posunout tabule'; kresli(); });
+  kresli();
+  $('poslat').addEventListener('click', function(){
+    $('zprava').value = 'Dobrý den, prosím o nacenění. ' + kresli();
+    $('kontakt').scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+  });
+  $('form').addEventListener('submit', function(e){ e.preventDefault(); $('ok').style.display = 'block'; });
+})();
+</script>
+</body>
+</html>

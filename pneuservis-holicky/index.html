@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Pneuservis Holický – Bystřice (návrh webu)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+:root{--asfalt:#22252A;--guma:#121417;--sedá:#ECEEF0;--oranz:#FF6B1A;--tyrkys:#2A9D8F;--bila:#FFFFFF;--txt:#1B1D21;--mlha:#9AA1AB}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Work Sans",system-ui,sans-serif;color:var(--txt);background:var(--sedá);line-height:1.6;font-size:17px}
+h1,h2,h3,.cond{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;line-height:1}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--oranz);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.pruh{background:var(--oranz);color:var(--guma);font-size:14px;text-align:center;padding:8px 16px}
+nav{background:var(--guma);color:#fff;position:sticky;top:0;z-index:5}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo b{font-family:"Barlow Condensed";font-size:26px;font-weight:800;letter-spacing:.02em;text-transform:uppercase}
+.logo b i{font-style:normal;color:var(--oranz)}
+.menu{display:flex;gap:26px;font-size:15px}
+.menu a{text-decoration:none;color:#D5D9DF}
+.menu a:hover{color:#fff}
+.volat{background:var(--oranz);color:var(--guma);text-decoration:none;font-weight:600;padding:10px 16px;border-radius:3px;white-space:nowrap}
+.hero{background:var(--asfalt);color:#fff;position:relative;overflow:hidden}
+.hero .wrap{position:relative;z-index:2;padding-top:70px;padding-bottom:150px;min-height:560px}
+.hero h1{font-size:clamp(56px,9vw,124px);font-weight:800;max-width:720px}
+.hero h1 span{display:block;color:var(--oranz)}
+.hero p{max-width:470px;color:#D0D4DA;font-size:18.5px;margin:22px 0 28px}
+.btn{display:inline-block;font:inherit;font-weight:600;padding:14px 22px;border-radius:3px;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn.o{background:var(--oranz);color:var(--guma)}
+.btn.o:hover{background:#ff8a47}
+.btn.l{border-color:#5B616B;color:#fff;background:none;margin-left:8px}
+.kolo{position:absolute;right:-140px;top:30px;width:620px;height:620px;z-index:1}
+.kolo svg{width:100%;height:100%}
+#pneu{transform-origin:310px 310px;transform-box:view-box}
+.behoun{position:absolute;left:0;right:0;bottom:0;height:70px;background:var(--guma);z-index:3}
+.behoun svg{width:100%;height:100%;display:block}
+section{padding:86px 0}
+.h2{font-size:clamp(40px,5.4vw,66px);font-weight:800;margin-bottom:12px}
+.lead{max-width:620px;color:#454B55;margin-bottom:40px}
+.sluzby{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:var(--bila);border:1px solid #D3D7DC}
+.s{padding:30px 28px 30px 44px;position:relative;border-right:1px solid #D3D7DC;border-bottom:1px solid #D3D7DC}
+.s:nth-child(3n){border-right:0}
+.s:nth-child(n+4){border-bottom:0}
+.s::before{content:"";position:absolute;left:18px;top:30px;bottom:30px;width:8px;background:repeating-linear-gradient(180deg,var(--asfalt) 0 8px,transparent 8px 13px)}
+.s h3{font-size:30px;font-weight:700;margin-bottom:8px}
+.s p{color:#4B515B;font-size:16px}
+/* bok */
+.bok{background:var(--guma);color:#fff}
+.bok .lead{color:#B8BEC7}
+.bg{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.ovl{display:grid;gap:22px}
+.radek label{display:flex;justify-content:space-between;font-weight:600;margin-bottom:6px}
+.radek label output{font-family:"Barlow Condensed";font-size:26px;color:var(--oranz);line-height:1}
+input[type=range]{width:100%;accent-color:var(--oranz);height:28px}
+fieldset{border:0}
+legend{font-weight:600;margin-bottom:8px}
+.vol{display:flex;flex-wrap:wrap;gap:8px}
+.vol input{position:absolute;opacity:0;width:1px;height:1px}
+.vol label{border:1px solid #4A505A;padding:8px 14px;border-radius:3px;cursor:pointer;font-size:15px}
+.vol input:checked+label{background:#fff;color:var(--guma);border-color:#fff;font-weight:600}
+.vol input:focus-visible+label{outline:3px solid var(--oranz);outline-offset:2px}
+.bokSvg svg{width:100%;height:auto;display:block;max-width:520px;margin:0 auto}
+.souhrn{background:#1E2126;border-left:4px solid var(--oranz);padding:16px 18px;font-size:15.5px;color:#DDE1E6}
+/* hodiny */
+.hod{display:grid;grid-template-columns:1fr 1.3fr;gap:50px;align-items:center}
+.tyden{background:var(--bila);border:1px solid #D3D7DC;padding:24px}
+.den{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:center;margin:8px 0}
+.den b{font-family:"Barlow Condensed";font-size:22px}
+.osa{position:relative;height:22px;background:#E1E4E8;border-radius:2px}
+.osa span{position:absolute;top:0;bottom:0;background:var(--tyrkys);border-radius:2px}
+.osa.zav{background:repeating-linear-gradient(45deg,#E1E4E8 0 6px,#F3F4F6 6px 12px)}
+.popisky{display:flex;justify-content:space-between;margin-left:56px;font-size:13px;color:#6A717B}
+.hodtxt{font-size:15.5px;color:#454B55;margin-top:14px}
+/* galerie */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.g{aspect-ratio:3/4;background:var(--asfalt);position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:16px;color:#E6E8EB;font-size:15px}
+.g:nth-child(even){background:#2E333A}
+.g svg{position:absolute;inset:0;width:100%;height:100%;opacity:.35}
+.g span{position:relative}
+/* kontakt */
+.kontakt{background:var(--asfalt);color:#fff}
+.kg{display:grid;grid-template-columns:1fr 1.1fr;gap:50px}
+.velky{font-family:"Barlow Condensed";font-size:clamp(44px,6vw,72px);font-weight:800;color:var(--oranz);text-decoration:none;display:block;margin:8px 0 18px}
+.kg p{color:#D0D4DA;margin-bottom:10px}
+form{background:var(--bila);color:var(--txt);padding:28px;display:grid;gap:14px;border-radius:3px}
+form label{display:grid;gap:6px;font-weight:600;font-size:15px}
+form input,form textarea{font:inherit;padding:12px;border:1px solid #BFC4CB;border-radius:3px}
+form textarea{min-height:110px;resize:vertical}
+.ok{display:none;background:#E5F4F2;border-left:4px solid var(--tyrkys);padding:12px;font-size:15px}
+form .btn{justify-self:start;background:var(--guma);color:#fff}
+footer{background:var(--guma);color:#A9AFB8;padding:24px 0;font-size:14.5px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media (max-width:900px){
+  .menu{display:none}
+  .kolo{width:420px;height:420px;right:-170px;top:auto;bottom:40px;opacity:.55}
+  .bg,.hod,.kg{grid-template-columns:1fr}
+  .sluzby{grid-template-columns:1fr}
+  .s{border-right:0!important;border-bottom:1px solid #D3D7DC!important}
+  .s:last-child{border-bottom:0!important}
+  .gal{grid-template-columns:1fr 1fr}
+}
+@media (max-width:480px){
+  .hero .wrap{padding-top:46px;padding-bottom:120px;min-height:0}
+  .btn.l{margin:10px 0 0}
+  section{padding:62px 0}
+  .logo b{font-size:22px}
+  .volat{padding:9px 12px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="pruh">Návrh nového webu pro <b>Pneuservis Holický</b>, připravila Tereza Toufarová z Tereweb.cz</div>
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="none" stroke="#FF6B1A" stroke-width="5" stroke-dasharray="5 2.6"/><circle cx="17" cy="17" r="6" fill="#fff"/></svg>
+      <b>Pneuservis <i>Holický</i></b>
+    </a>
+    <div class="menu"><a href="#sluzby">Služby</a><a href="#bok">Objednat přezutí</a><a href="#hodiny">Otevírací doba</a><a href="#kontakt">Kontakt</a></div>
+    <a class="volat" href="tel:+420608886986">608 886 986</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="kolo" aria-hidden="true">
+    <svg viewBox="0 0 620 620">
+      <g id="pneu">
+        <circle cx="310" cy="310" r="300" fill="#121417"/>
+        <circle cx="310" cy="310" r="300" fill="none" stroke="#2C3036" stroke-width="34" stroke-dasharray="22 14"/>
+        <circle cx="310" cy="310" r="250" fill="none" stroke="#1D2024" stroke-width="4"/>
+        <circle cx="310" cy="310" r="185" fill="#8E959F"/>
+        <circle cx="310" cy="310" r="170" fill="#B7BDC5"/>
+        <g fill="#8E959F">
+          <path d="M310 150 335 270 285 270z"/><path d="M310 150 335 270 285 270z" transform="rotate(72 310 310)"/><path d="M310 150 335 270 285 270z" transform="rotate(144 310 310)"/><path d="M310 150 335 270 285 270z" transform="rotate(216 310 310)"/><path d="M310 150 335 270 285 270z" transform="rotate(288 310 310)"/>
+        </g>
+        <circle cx="310" cy="310" r="44" fill="#5E656F"/>
+        <circle cx="310" cy="310" r="16" fill="#2C3036"/>
+        <path id="obl" d="M310 90 a220 220 0 0 1 0 440 a220 220 0 0 1 0 -440" fill="none"/>
+        <text font-family="Barlow Condensed" font-weight="700" font-size="30" fill="#5A606A" letter-spacing="6"><textPath href="#obl">PNEUSERVIS HOLICKÝ · BYSTŘICE · PNEUSERVIS HOLICKÝ · BYSTŘICE ·</textPath></text>
+      </g>
+    </svg>
+  </div>
+  <div class="wrap">
+    <h1>Přezujeme, opravíme <span>a pošleme vás dál.</span></h1>
+    <p>Prodej a montáž pneumatik, opravy defektů, servis klimatizace a drobné mechanické i karosářské práce. U Potoka v Bystřici.</p>
+    <a class="btn o" href="#bok">Objednat přezutí</a><a class="btn l" href="tel:+420608886986">Zavolat</a>
+  </div>
+  <div class="behoun" aria-hidden="true">
+    <svg preserveAspectRatio="none" viewBox="0 0 1200 70"><defs><pattern id="vzor" width="60" height="70" patternUnits="userSpaceOnUse"><path d="M0 10h26l12 25-12 25H0l12-25z" fill="#2C3036"/><path d="M30 10h26l12 25-12 25H30l12-25z" fill="#24282D"/></pattern></defs><rect width="1200" height="70" fill="url(#vzor)"/></svg>
+  </div>
+</header>
+
+<section id="sluzby">
+  <div class="wrap">
+    <h2 class="h2">Co u nás uděláte</h2>
+    <p class="lead">Nejen kola. Když už stojíte na zvedáku, podíváme se i na klimatizaci nebo drobnou závadu.</p>
+    <div class="sluzby">
+      <div class="s"><h3>Prodej pneumatik</h3><p>Letní, zimní i celoroční pneumatiky podle rozměru vašeho auta.</p></div>
+      <div class="s"><h3>Montáž a přezutí</h3><p>Demontáž a montáž pneumatik, sezónní přezutí.</p></div>
+      <div class="s"><h3>Opravy pneumatik</h3><p>Oprava defektu, abyste nemuseli kupovat novou pneumatiku.</p></div>
+      <div class="s"><h3>Servis klimatizace</h3><p>Kontrola a servis autoklimatizace.</p></div>
+      <div class="s"><h3>Karosářské práce</h3><p>Karosářské opravy osobních aut.</p></div>
+      <div class="s"><h3>Drobná mechanika</h3><p>Drobné mechanické opravy vašeho auta.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="bok" id="bok">
+  <div class="wrap">
+    <h2 class="h2">Objednejte přezutí podle boku pneumatiky</h2>
+    <p class="lead">Rozměr najdete na boku vaší pneumatiky. Nastavte ho, vyberte sezónu a co potřebujete, my se ozveme s termínem.</p>
+    <div class="bg">
+      <div class="ovl">
+        <div class="radek"><label for="sirka">Šířka <output id="oS">205</output></label><input type="range" id="sirka" min="145" max="275" step="10" value="205"></div>
+        <div class="radek"><label for="profil">Profil <output id="oP">55</output></label><input type="range" id="profil" min="35" max="80" step="5" value="55"></div>
+        <div class="radek"><label for="prumer">Průměr ráfku <output id="oR">R16</output></label><input type="range" id="prumer" min="13" max="20" step="1" value="16"></div>
+        <fieldset><legend>Sezóna</legend><div class="vol">
+          <input type="radio" name="sez" id="z1" value="zimní" checked><label for="z1">Zimní</label>
+          <input type="radio" name="sez" id="z2" value="letní"><label for="z2">Letní</label>
+          <input type="radio" name="sez" id="z3" value="celoroční"><label for="z3">Celoroční</label>
+        </div></fieldset>
+        <fieldset><legend>Co potřebujete</legend><div class="vol">
+          <input type="checkbox" name="co" id="c1" value="přezutí" checked><label for="c1">Přezutí</label>
+          <input type="checkbox" name="co" id="c2" value="nové pneumatiky"><label for="c2">Nové pneumatiky</label>
+          <input type="checkbox" name="co" id="c3" value="oprava defektu"><label for="c3">Oprava defektu</label>
+          <input type="checkbox" name="co" id="c4" value="servis klimatizace"><label for="c4">Klimatizace</label>
+        </div></fieldset>
+        <div class="souhrn" id="souhrn"></div>
+        <button class="btn o" type="button" id="objednat" style="justify-self:start">Chci termín</button>
+      </div>
+      <div class="bokSvg">
+        <svg viewBox="0 0 500 500" role="img" aria-label="Bok pneumatiky s vybraným rozměrem">
+          <circle cx="250" cy="250" r="240" fill="#2C3036"/>
+          <circle cx="250" cy="250" r="240" fill="none" stroke="#3A3F46" stroke-width="22" stroke-dasharray="16 10"/>
+          <circle id="rafek" cx="250" cy="250" r="130" fill="#B7BDC5"/>
+          <circle cx="250" cy="250" r="40" fill="#5E656F"/>
+          <path id="obl2" d="M250 58 a192 192 0 0 1 0 384 a192 192 0 0 1 0 -384" fill="none"/>
+          <text font-family="Barlow Condensed" font-weight="800" font-size="46" fill="#ECEEF0" letter-spacing="2"><textPath href="#obl2" startOffset="4%" id="rozmer">205/55 R16</textPath></text>
+          <text font-family="Barlow Condensed" font-weight="700" font-size="26" fill="#FF6B1A" letter-spacing="3"><textPath href="#obl2" startOffset="78%" id="sezTxt">ZIMNÍ ❄</textPath></text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hodiny">
+  <div class="wrap hod">
+    <div>
+      <h2 class="h2">Kdy u nás otevřeno</h2>
+      <p class="lead" style="margin-bottom:0">Ve všední dny od 8 do 16 hodin, mezi 11. a 12. hodinou máme polední pauzu..</p>
+    </div>
+    <div class="tyden" aria-label="Otevírací doba po týdnech">
+      <div class="den"><b>Po</b><div class="osa"><span style="left:0;width:30%"></span><span style="left:40%;width:40%"></span></div></div>
+      <div class="den"><b>Út</b><div class="osa"><span style="left:0;width:30%"></span><span style="left:40%;width:40%"></span></div></div>
+      <div class="den"><b>St</b><div class="osa"><span style="left:0;width:30%"></span><span style="left:40%;width:40%"></span></div></div>
+      <div class="den"><b>Čt</b><div class="osa"><span style="left:0;width:30%"></span><span style="left:40%;width:40%"></span></div></div>
+      <div class="den"><b>Pá</b><div class="osa"><span style="left:0;width:30%"></span><span style="left:40%;width:40%"></span></div></div>
+      <div class="den"><b>So</b><div class="osa zav"></div></div>
+      <div class="den"><b>Ne</b><div class="osa zav"></div></div>
+      <div class="popisky"><span>8:00</span><span>11:00</span><span>12:00</span><span>16:00</span><span>18:00</span></div>
+      <p class="hodtxt">Po až Pá 8:00 až 11:00 a 12:00 až 16:00</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 class="h2">Z dílny</h2>
+    <p class="lead">Sem přijdou fotky vašich zakázek: dílna, přezouvání, opravy karoserie.</p>
+    <div class="gal">
+      <div class="g"><svg viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true"><path d="M20 0v130M40 0v130" stroke="#000" stroke-width="10" stroke-dasharray="8 5"/></svg><span>Sem přijdou fotky vašich zakázek</span></div>
+      <div class="g"><svg viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true"><path d="M60 0v130M80 0v130" stroke="#000" stroke-width="10" stroke-dasharray="8 5"/></svg><span>Dílna</span></div>
+      <div class="g"><svg viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true"><path d="M30 0v130M50 0v130" stroke="#000" stroke-width="10" stroke-dasharray="8 5"/></svg><span>Přezutí</span></div>
+      <div class="g"><svg viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true"><path d="M10 0v130M70 0v130" stroke="#000" stroke-width="10" stroke-dasharray="8 5"/></svg><span>Karosářské práce</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="wrap kg">
+    <div>
+      <h2 class="h2">Kontakt</h2>
+      <a class="velky" href="tel:+420608886986">608 886 986</a>
+      <p><b>Pneuservis Holický</b><br>U Potoka 67<br>257 51 Bystřice</p>
+      <p><a href="mailto:karelholicky@seznam.cz">karelholicky@seznam.cz</a></p>
+      <p>Po až Pá 8:00 až 11:00 a 12:00 až 16:00</p>
+    </div>
+    <form id="form">
+      <label>Jméno<input required autocomplete="name"></label>
+      <label>Telefon<input required type="tel" autocomplete="tel"></label>
+      <label>Zpráva<textarea id="zprava"></textarea></label>
+      <button class="btn" type="submit">Odeslat</button>
+      <p class="ok" id="ok">Toto je ukázka formuláře. V hotovém webu by zpráva přišla rovnou na váš e-mail.</p>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 Pneuservis Holický</span><span>Návrh připravila Tereweb.cz</span></div></footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var pneu = document.getElementById('pneu');
+  if (!reduce) {
+    var tick = false;
+    window.addEventListener('scroll', function(){ if (tick) return; tick = true; requestAnimationFrame(function(){ pneu.style.transform = 'rotate(' + (window.scrollY * 0.25) + 'deg)'; tick = false; }); }, {passive:true});
+  }
+  var $ = function(id){ return document.getElementById(id); };
+  function txt(){
+    var s = $('sirka').value, p = $('profil').value, r = $('prumer').value;
+    var sez = document.querySelector('input[name=sez]:checked').value;
+    var co = [].slice.call(document.querySelectorAll('input[name=co]:checked')).map(function(i){ return i.value; });
+    $('oS').textContent = s; $('oP').textContent = p; $('oR').textContent = 'R' + r;
+    $('rozmer').textContent = s + '/' + p + ' R' + r;
+    $('sezTxt').textContent = sez.toUpperCase() + (sez === 'zimní' ? ' ❄' : sez === 'letní' ? ' ☀' : '');
+    $('rafek').setAttribute('r', 90 + (r - 13) * 9 - (p - 35) * 0.5);
+    var t = 'Rozměr ' + s + '/' + p + ' R' + r + ', ' + sez + ' pneumatiky. ' + (co.length ? 'Potřebuji: ' + co.join(', ') + '.' : 'Vyberte, co potřebujete.');
+    $('souhrn').textContent = t; return t;
+  }
+  document.querySelectorAll('#bok input').forEach(function(i){ i.addEventListener('input', txt); i.addEventListener('change', txt); });
+  txt();
+  $('objednat').addEventListener('click', function(){
+    $('zprava').value = 'Dobrý den, prosím o termín. ' + txt();
+    $('kontakt').scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+  });
+  $('form').addEventListener('submit', function(e){ e.preventDefault(); $('ok').style.display = 'block'; });
+})();
+</script>
+</body>
+</html>

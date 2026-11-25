@@ -205,5 +205,101 @@
   "hero": "dvousloupcový: velký patkový nadpis vlevo, vpravo stoh barevných desek (petrol, bříza, dub, ořech), které postupně přijíždějí zprava",
   "interakce": "konfigurátor psacího stolu: posuvník šířky, hloubka, počet šuplíků v kontejneru, dekor, nástavec s policí; živý čelní nákres s kótou a souhrn do formuláře",
   "layout": "katalog výrobků jako dvě skupiny (pracovna, domov) s mřížkou položek s ikonami a linkami, petrolejový konfigurátor, 3 důvody s ikonami, galerie jako dřevěné textury, kontakt velký telefon + formulář"
+ },
+ {
+  "slug": "ota-slama",
+  "datum": "2026-11-25",
+  "obor": "elektromontáže, hromosvody, EZS/EPS, světelná reklama a fóliové písmo",
+  "pisma": [
+   "Syne",
+   "Inter Tight"
+  ],
+  "paleta": [
+   "#2B1E3F",
+   "#F6F5F9",
+   "#E5383B",
+   "#FFCF56",
+   "#7D8197"
+  ],
+  "hero": "split na lilkové ploše: obří široký nadpis vlevo, vpravo SVG fasáda provozovny se světelnou cedulí, která při načtení problikne a rozsvítí se",
+  "interakce": "navrhněte si nápis: text, druh (světelný box, fóliové písmo na výlohu, firemní štít), barva písma, přepínač den/večer, živý náhled na fasádě a odeslání do formuláře",
+  "layout": "služby ve dvou sloupcích Elektro/Reklama oddělených svislou linkou, lilková sekce návrhu (ovládání vlevo, náhled vpravo), proč jeden člověk s červeným kabelem jako osou kroků, galerie 1 velký + 4 malé rámečky ve stylu světelných boxů, bílý kontakt"
+ },
+ {
+  "slug": "pneuservis-holicky",
+  "datum": "2026-11-25",
+  "obor": "pneuservis, servis klimatizace, karosářské a drobné mechanické práce",
+  "pisma": [
+   "Barlow Condensed",
+   "Work Sans"
+  ],
+  "paleta": [
+   "#22252A",
+   "#121417",
+   "#ECEEF0",
+   "#FF6B1A",
+   "#2A9D8F"
+  ],
+  "hero": "asfaltová plocha s obří kondenzovanou typografií, vpravo z okraje vyčnívá velké SVG kolo s nápisem na boku, které se otáčí při scrollu, dole pás vzorku běhounu",
+  "interakce": "objednání podle boku pneumatiky: posuvníky šířka/profil/průměr přepisují nápis na SVG boku pneu, sezóna a služby, souhrn do formuláře",
+  "layout": "služby v mřížce 3x2 s přerušovanou linkou běhounu, černá sekce s konfigurátorem a bokem pneu, otevírací doba jako týdenní časová osa s pauzou, galerie 4 vysoké dlaždice se stopami pneu, asfaltový kontakt s velkým oranžovým telefonem"
+ },
+ {
+  "slug": "petr-stejskal",
+  "datum": "2026-11-25",
+  "obor": "sklenářství, zasklívání balkonů a lodžií, zrcadlové stěny, skleněné příčky",
+  "pisma": [
+   "Newsreader",
+   "Urbanist"
+  ],
+  "paleta": [
+   "#172036",
+   "#CDEBE6",
+   "#5FB3A3",
+   "#F7FAFA",
+   "#F6C453"
+  ],
+  "hero": "zaoblený panel s oblohou a sluncem, přes nadpis jsou skleněné tabule, které se při načtení posunou stranou jako posuvné zasklení balkonu",
+  "interakce": "konfigurátor zasklení: typ (balkon, lodžie, příčka, zrcadlová stěna), posuvník šířky, druh skla, živý SVG nákres s počtem dílů, kótou a tlačítkem na posunutí tabulí",
+  "layout": "služby jako vodorovný pás 4 položek s horní linkou barvy hrany skla, tmavomodrá sekce konfigurátoru, výhody v mřížce 2x2 bílých karet, galerie 3 skleněné tabule různé výšky, kontakt jako dělená karta"
+ },
+ {
+  "slug": "daniel-macek-obklady-dlazby",
+  "datum": "2026-11-25",
+  "obor": "obklady, dlažby, rekonstrukce bytů",
+  "pisma": [
+   "Montserrat Alternates",
+   "Karla"
+  ],
+  "paleta": [
+   "#D5D8D3",
+   "#F2F3F1",
+   "#222831",
+   "#8FB9A8",
+   "#00798C",
+   "#E9A6A6"
+  ],
+  "hero": "mozaiková mřížka dlaždic se spárami: velká bílá dlaždice s nadpisem a kolem barevné, vzorované a rastrové dlaždice, které se postupně pokládají",
+  "interakce": "vzor pokládky: formát dlaždic, pokládka rovně/na vazbu/na koso, barva spáry, posuvník plochy, živý SVG vzor a orientační výpočet nákupu s rezervou na prořez",
+  "layout": "služby jako 3 dlaždice ve spárovací mřížce se seznamy, tmavá sekce vzoru pokládky s výsledkovými dlaždicemi, velký letopočet 1994 vedle textu, galerie jako obkladová mřížka, kontakt se dvěma adresami a formulářem"
+ },
+ {
+  "slug": "petr-liska-liska-servis",
+  "datum": "2026-11-25",
+  "obor": "automatické kotle, krbová kamna s výměníkem, tepelná čerpadla, regulace",
+  "pisma": [
+   "Zilla Slab",
+   "Hanken Grotesk"
+  ],
+  "paleta": [
+   "#23382B",
+   "#C9A36B",
+   "#E2572B",
+   "#ECEBE7",
+   "#1B1B1B"
+  ],
+  "hero": "plná lesně zelená plocha, vlevo patkový nadpis, vpravo SVG řez automatickým kotlem se zásobníkem, ze kterého padají pelety a v topeništi se rozhoří plamen",
+  "interakce": "průvodce výběrem topení ve 3 krocích (palivo, umístění, doplňky), výsledek s doporučeným typem zdroje, SVG zásobníkem podle paliva a body ke konzultaci, odeslání do formuláře",
+  "layout": "služby jako seznam s ikonami a vedle bílý panel se štítky dalších služeb a značek, černá sekce průvodce, 4 kroky spolupráce v bílém pásu, galerie 3 zelenohnědé dlaždice, zelený kontakt"
  }
 ]

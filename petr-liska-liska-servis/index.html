@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Liška Servis, Petr Liška – Bystřice (návrh webu)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;700&family=Hanken+Grotesk:wght@400;500;600&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+:root{--les:#23382B;--les2:#2E4838;--pelet:#C9A36B;--zhava:#E2572B;--popel:#ECEBE7;--saze:#1B1B1B;--txt:#1F241F;--sed:#566057}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Hanken Grotesk",system-ui,sans-serif;color:var(--txt);background:var(--popel);font-size:17.5px;line-height:1.6}
+h1,h2,h3{font-family:"Zilla Slab",Georgia,serif;font-weight:700;line-height:1.05}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--zhava);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+.pruh{background:var(--saze);color:#DCDDD6;text-align:center;font-size:14px;padding:8px 16px}
+.pruh b{color:var(--pelet)}
+nav{background:var(--les);color:#fff;border-bottom:1px solid #3C5848}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:14px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo b{font-family:"Zilla Slab";font-size:24px;line-height:1;display:block}
+.logo small{font-size:13px;color:#BFCBBF}
+.menu{display:flex;gap:26px;font-weight:500;font-size:15.5px}
+.menu a{text-decoration:none;color:#DCE4DC}
+.menu a:hover{color:#fff}
+.volat{background:var(--zhava);color:#fff;text-decoration:none;font-weight:600;padding:10px 16px;border-radius:2px;white-space:nowrap}
+.volat:hover{background:#C9471F}
+.hero{background:var(--les);color:#fff;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr 1fr;gap:30px;align-items:center;padding-top:60px;padding-bottom:60px}
+.hero h1{font-size:clamp(42px,6.2vw,80px)}
+.hero p{color:#D3DDD3;font-size:19px;max-width:520px;margin:22px 0 30px}
+.fakta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:34px;font-size:15px;color:#BFCBBF}
+.fakta span::before{content:"";display:inline-block;width:8px;height:8px;background:var(--pelet);margin-right:8px;vertical-align:middle}
+.btn{display:inline-block;font:inherit;font-weight:600;padding:14px 22px;border-radius:2px;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn.z{background:var(--zhava);color:#fff}
+.btn.z:hover{background:#C9471F}
+.btn.p{border-color:var(--pelet);color:#fff;margin-left:8px;background:none}
+.kotel svg{width:100%;max-width:440px;height:auto;display:block;margin:0 auto}
+.plamen{transform-origin:50% 100%;transform-box:fill-box;transform:scaleY(.15);transition:transform 1.6s ease-out}
+.zap .plamen{transform:scaleY(1)}
+.zap .plamen.b{animation:mih 1.8s ease-in-out 1.6s infinite alternate}
+@keyframes mih{to{transform:scaleY(.86) scaleX(1.05)}}
+.pel{opacity:0}
+.zap .pel{animation:pad 2.2s linear infinite}
+@keyframes pad{0%{opacity:0;transform:translateY(0)}10%{opacity:1}80%{opacity:1}100%{opacity:0;transform:translateY(70px)}}
+@media (prefers-reduced-motion:reduce){.plamen{transition:none;transform:none}.zap .plamen.b,.zap .pel{animation:none}.pel{opacity:0}}
+section{padding:88px 0}
+.h2{font-size:clamp(34px,4.6vw,54px);margin-bottom:14px;color:var(--les)}
+.lead{color:var(--sed);max-width:640px;margin-bottom:42px}
+/* sluzby */
+.sg{display:grid;grid-template-columns:1.2fr 1fr;gap:48px}
+.hlavni article{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:22px 0;border-bottom:2px solid #D3D2CB}
+.hlavni article:first-child{border-top:2px solid var(--les)}
+.hlavni h3{font-size:25px;margin-bottom:4px;color:var(--les)}
+.hlavni p{color:var(--sed)}
+.dalsi{background:#fff;padding:30px;border-top:6px solid var(--pelet);align-self:start}
+.dalsi h3{font-size:24px;margin-bottom:12px}
+.stitky{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.stitky span{background:var(--popel);padding:6px 12px;font-size:15px;border-radius:2px}
+.znacky{font-size:15.5px;color:var(--sed)}
+.znacky b{color:var(--txt)}
+/* pruvodce */
+.pr{background:var(--saze);color:#fff}
+.pr .h2{color:#fff}
+.pr .lead{color:#BDBDB5}
+.pg{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.krok{margin-bottom:26px}
+.krok h3{font-size:22px;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.krok h3 i{font-style:normal;width:30px;height:30px;border-radius:50%;background:var(--zhava);display:grid;place-items:center;font-size:15px;font-family:"Hanken Grotesk"}
+.vol{display:flex;flex-wrap:wrap;gap:8px}
+.vol input{position:absolute;opacity:0;width:1px;height:1px}
+.vol label{border:1.5px solid #4A4A44;padding:9px 14px;cursor:pointer;font-size:15.5px;border-radius:2px}
+.vol input:checked+label{background:var(--pelet);border-color:var(--pelet);color:var(--saze);font-weight:600}
+.vol input:focus-visible+label{outline:3px solid var(--zhava);outline-offset:2px}
+.vysledek{background:#262624;border:1px solid #3B3B36;padding:26px}
+.vysledek svg{display:block;width:100%;max-width:300px;height:auto;margin:0 auto 18px}
+.vysledek h3{font-size:28px;color:var(--pelet);margin-bottom:8px}
+.vysledek ul{list-style:none;margin:12px 0 20px;color:#DCDCD4}
+.vysledek li{padding:6px 0 6px 22px;position:relative;border-bottom:1px solid #3B3B36}
+.vysledek li::before{content:"";position:absolute;left:0;top:15px;width:10px;height:3px;background:var(--zhava)}
+/* jak */
+.jak{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:#fff}
+.jak div{padding:28px 24px;border-right:1px solid #DCDBD4}
+.jak div:last-child{border-right:0}
+.jak b{font-family:"Zilla Slab";font-size:22px;display:block;margin-bottom:6px;color:var(--les)}
+.jak p{font-size:16px;color:var(--sed)}
+/* galerie */
+.gal{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.gal div{height:230px;background:var(--les2);color:#DCE4DC;display:flex;align-items:flex-end;padding:18px;font-size:15.5px;position:relative;overflow:hidden}
+.gal div::after{content:"";position:absolute;right:-30px;top:-30px;width:140px;height:140px;border-radius:50%;border:18px solid rgba(201,163,107,.25)}
+.gal div:nth-child(2){background:#3A2F25}
+/* kontakt */
+.kontakt{background:var(--les);color:#fff}
+.kontakt .h2{color:#fff}
+.kg{display:grid;grid-template-columns:1fr 1.1fr;gap:50px}
+.tel{font-family:"Zilla Slab";font-size:clamp(36px,4.5vw,54px);color:var(--pelet);text-decoration:none;display:block;margin:6px 0 18px}
+.kg p{color:#D3DDD3;margin-bottom:10px}
+form{background:var(--popel);color:var(--txt);padding:30px;display:grid;gap:14px}
+form label{display:grid;gap:6px;font-weight:600;font-size:15px}
+form input,form textarea{font:inherit;padding:12px 14px;border:1.5px solid #C5C4BB;border-radius:2px;background:#fff}
+form textarea{min-height:120px;resize:vertical}
+form .btn{justify-self:start}
+.ok{display:none;background:#fff;border-left:4px solid var(--zhava);padding:12px;font-size:15px}
+footer{background:var(--saze);color:#AFAFA7;padding:24px 0;font-size:14.5px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media (max-width:920px){
+  .menu{display:none}
+  .hero .wrap,.sg,.pg,.kg{grid-template-columns:1fr}
+  .kotel svg{max-width:320px}
+  .jak{grid-template-columns:1fr 1fr}
+  .jak div:nth-child(2){border-right:0}
+  .jak div:nth-child(-n+2){border-bottom:1px solid #DCDBD4}
+  .gal{grid-template-columns:1fr 1fr}
+  .gal div:first-child{grid-column:span 2}
+}
+@media (max-width:480px){
+  section{padding:62px 0}
+  .btn.p{margin:10px 0 0}
+  .logo small{display:none}
+  .jak{grid-template-columns:1fr}
+  .jak div{border-right:0;border-bottom:1px solid #DCDBD4}
+  .gal div{height:170px}
+  form{padding:22px}
+}
+</style>
+</head>
+<body>
+<div class="pruh">Návrh nového webu pro <b>Liška Servis</b>, připravila Tereza Toufarová z Tereweb.cz</div>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#">
+      <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true"><rect width="42" height="42" fill="#E2572B"/><path d="M21 7c3 6 9 9 9 17a9 9 0 0 1-18 0c0-5 3-7 4-11 1 3 2 4 4 5 1-4 0-7 1-11z" fill="#fff"/></svg>
+      <span><b>Liška Servis</b><small>Petr Liška, kotle a topení</small></span>
+    </a>
+    <div class="menu"><a href="#sluzby">Služby</a><a href="#pruvodce">Výběr kotle</a><a href="#ukazky">Ukázky</a><a href="#kontakt">Kontakt</a></div>
+    <a class="volat" href="tel:+420603781746">603 781 746</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Teplo z uhlí, dřeva, pelet i štěpky. Bez starostí s přikládáním.</h1>
+      <p>Prodej, montáž a servis automatických kotlů, krbových kamen s teplovodním výměníkem a tepelných čerpadel. Regulace topení a záložní zdroje pro případ výpadku proudu.</p>
+      <a class="btn z" href="#pruvodce">Najít vhodný kotel</a><a class="btn p" href="#kontakt">Poptat servis</a>
+      <div class="fakta"><span>Nesvačily u Bystřice</span><span>Po až Pá 7 až 15 h</span><span>Konzultace zdarma</span></div>
+    </div>
+    <div class="kotel" id="kotel">
+      <svg viewBox="0 0 440 460" role="img" aria-label="Řez automatickým kotlem se zásobníkem paliva">
+        <rect x="250" y="40" width="150" height="230" fill="#2E4838" stroke="#C9A36B" stroke-width="3"/>
+        <g fill="#C9A36B">
+          <circle cx="280" cy="230" r="7"/><circle cx="298" cy="240" r="7"/><circle cx="316" cy="228" r="7"/><circle cx="334" cy="242" r="7"/><circle cx="352" cy="230" r="7"/><circle cx="370" cy="240" r="7"/><circle cx="288" cy="252" r="7"/><circle cx="306" cy="258" r="7"/><circle cx="324" cy="254" r="7"/><circle cx="342" cy="260" r="7"/><circle cx="360" cy="256" r="7"/><circle cx="378" cy="258" r="7"/>
+          <circle class="pel" cx="300" cy="120" r="6"/><circle class="pel" cx="330" cy="100" r="6" style="animation-delay:.7s"/><circle class="pel" cx="360" cy="130" r="6" style="animation-delay:1.4s"/>
+        </g>
+        <rect x="250" y="270" width="150" height="26" fill="#1B1B1B"/>
+        <path d="M250 283 H170" stroke="#C9A36B" stroke-width="16"/>
+        <path d="M250 283 H170" stroke="#1B1B1B" stroke-width="16" stroke-dasharray="6 8"/>
+        <rect x="30" y="120" width="160" height="300" rx="4" fill="#ECEBE7"/>
+        <rect x="44" y="134" width="132" height="190" fill="#1B1B1B"/>
+        <path class="plamen" d="M70 318c-6-40 20-50 18-90 16 22 22 30 22 52 8-14 6-30 4-44 26 26 34 52 30 82z" fill="#E2572B"/>
+        <path class="plamen b" d="M88 318c-4-24 12-34 12-58 10 14 14 22 14 36 6-8 6-18 4-26 14 16 18 30 16 48z" fill="#F5B041"/>
+        <rect x="44" y="318" width="132" height="6" fill="#555"/>
+        <rect x="44" y="340" width="132" height="64" fill="#D8D6CF"/>
+        <circle cx="70" cy="372" r="12" fill="#23382B"/><text x="70" y="377" text-anchor="middle" font-size="12" fill="#fff" font-family="Hanken Grotesk" font-weight="600">72°</text>
+        <rect x="96" y="362" width="66" height="20" rx="2" fill="#23382B"/>
+        <path d="M110 120V60h-40" stroke="#ECEBE7" stroke-width="10" fill="none"/>
+        <path d="M150 120V80h40" stroke="#E2572B" stroke-width="10" fill="none"/>
+        <text x="325" y="30" text-anchor="middle" font-family="Hanken Grotesk" font-size="14" fill="#BFCBBF" font-weight="600">zásobník paliva</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section id="sluzby">
+  <div class="wrap">
+    <h2 class="h2">Čím topíte, tím se zabýváme</h2>
+    <p class="lead">Kotel prodáme, namontujeme, nastavíme regulaci a postaráme se o servis a revize. Po celé republice.</p>
+    <div class="sg">
+      <div class="hlavni">
+        <article><svg width="56" height="56" viewBox="0 0 56 56" aria-hidden="true"><rect x="8" y="10" width="30" height="40" fill="#23382B"/><rect x="38" y="16" width="12" height="20" fill="#C9A36B"/><path d="M18 44c-2-8 4-10 4-16 4 4 6 8 6 16z" fill="#E2572B"/></svg><div><h3>Automatické kotle</h3><p>Automaticky řízené kotle na uhlí, dřevo, pelety, obilí, štěpku a biomasu. Montáž, servis a prodej.</p></div></article>
+        <article><svg width="56" height="56" viewBox="0 0 56 56" aria-hidden="true"><rect x="12" y="6" width="32" height="44" rx="3" fill="#23382B"/><rect x="18" y="18" width="20" height="18" fill="#1B1B1B"/><path d="M22 36c0-6 4-7 4-12 3 3 5 6 5 12z" fill="#E2572B"/></svg><div><h3>Krbová kamna s výměníkem</h3><p>Krb v obýváku, který zároveň ohřívá vodu v radiátorech.</p></div></article>
+        <article><svg width="56" height="56" viewBox="0 0 56 56" aria-hidden="true"><rect x="6" y="14" width="44" height="30" rx="3" fill="#23382B"/><circle cx="22" cy="29" r="10" fill="none" stroke="#C9A36B" stroke-width="3"/><path d="M22 19v20M12 29h20" stroke="#C9A36B" stroke-width="2"/></svg><div><h3>Tepelná čerpadla</h3><p>Dodávka a montáž tepelných čerpadel vzduch voda i země voda.</p></div></article>
+        <article><svg width="56" height="56" viewBox="0 0 56 56" aria-hidden="true"><rect x="14" y="8" width="28" height="40" rx="3" fill="#23382B"/><rect x="19" y="14" width="18" height="10" fill="#C9A36B"/><circle cx="28" cy="36" r="6" fill="none" stroke="#E2572B" stroke-width="3"/></svg><div><h3>Regulace a záložní zdroje</h3><p>Regulace topných systémů a záložní zdroje k čerpadlům, aby topení běželo i při výpadku proudu.</p></div></article>
+      </div>
+      <aside class="dalsi">
+        <h3>Dále nabízíme</h3>
+        <div class="stitky"><span>podlahové topení</span><span>elektrokotle</span><span>akumulační kotelny</span><span>sluneční kolektory</span><span>bazénové výměníky</span><span>domácí vodárny</span><span>revize</span></div>
+        <p class="znacky"><b>Značky, se kterými pracujeme:</b> Verner, Ponast, Thermorossi, Pyros, Varimatik, Romotop, Hapero, Regulus, CTC.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="pr" id="pruvodce">
+  <div class="wrap">
+    <h2 class="h2">Jaké topení se k vám hodí?</h2>
+    <p class="lead">Tři rychlé otázky. Na konci uvidíte, co má smysl probrat při konzultaci, a můžete nám to rovnou poslat.</p>
+    <div class="pg">
+      <div>
+        <div class="krok"><h3><i>1</i>Čím chcete topit?</h3><div class="vol">
+          <input type="radio" name="pal" id="a1" value="pelety" checked><label for="a1">Pelety</label>
+          <input type="radio" name="pal" id="a2" value="uhli"><label for="a2">Uhlí</label>
+          <input type="radio" name="pal" id="a3" value="drevo"><label for="a3">Dřevo</label>
+          <input type="radio" name="pal" id="a4" value="biomasa"><label for="a4">Obilí, štěpka, biomasa</label>
+          <input type="radio" name="pal" id="a5" value="cerpadlo"><label for="a5">Bez paliva, tepelné čerpadlo</label>
+        </div></div>
+        <div class="krok"><h3><i>2</i>Kde má zdroj tepla stát?</h3><div class="vol">
+          <input type="radio" name="kde" id="k1" value="kotelna" checked><label for="k1">V kotelně</label>
+          <input type="radio" name="kde" id="k2" value="obyvak"><label for="k2">V obývacím pokoji</label>
+        </div></div>
+        <div class="krok"><h3><i>3</i>Co ještě řešíte?</h3><div class="vol">
+          <input type="checkbox" name="dal" id="d1" value="regulace topení"><label for="d1">Regulace</label>
+          <input type="checkbox" name="dal" id="d2" value="záložní zdroj při výpadku proudu"><label for="d2">Výpadky proudu</label>
+          <input type="checkbox" name="dal" id="d3" value="podlahové topení"><label for="d3">Podlahové topení</label>
+          <input type="checkbox" name="dal" id="d4" value="servis stávajícího kotle"><label for="d4">Servis stávajícího kotle</label>
+        </div></div>
+      </div>
+      <div class="vysledek" aria-live="polite">
+        <svg viewBox="0 0 300 150" aria-hidden="true">
+          <rect x="20" y="20" width="110" height="120" fill="#ECEBE7"/>
+          <rect x="30" y="30" width="90" height="70" fill="#1B1B1B"/>
+          <path id="vPlamen" d="M48 98c-4-20 10-26 10-44 8 10 12 16 12 26 4-8 4-14 2-22 14 14 18 26 16 40z" fill="#E2572B"/>
+          <rect id="vZas" x="150" y="30" width="80" height="110" fill="#2E4838" stroke="#C9A36B" stroke-width="2"/>
+          <rect id="vPal" x="156" y="90" width="68" height="44" fill="#C9A36B"/>
+          <text id="vPalTxt" x="190" y="120" text-anchor="middle" font-family="Hanken Grotesk" font-size="13" font-weight="600" fill="#1B1B1B">pelety</text>
+        </svg>
+        <h3 id="vNazev"></h3>
+        <p id="vPopis" style="color:#DCDCD4"></p>
+        <ul id="vBody"></ul>
+        <button class="btn z" type="button" id="poslat">Poslat a domluvit konzultaci</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="h2">Jak to probíhá</h2>
+    <p class="lead">Od první otázky až po pravidelný servis máte jednoho člověka, kterému zavoláte.</p>
+    <div class="jak">
+      <div><b>Konzultace</b><p>Probereme dům, palivo a vaše zvyky. Odborná konzultace je zdarma.</p></div>
+      <div><b>Návrh a nabídka</b><p>Doporučíme kotel nebo čerpadlo a připravíme nabídku.</p></div>
+      <div><b>Montáž</b><p>Zdroj tepla namontujeme, zapojíme a nastavíme regulaci.</p></div>
+      <div><b>Servis a revize</b><p>Postaráme se o pravidelný servis i revize.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="ukazky" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="h2">Kotelny, které jsme postavili</h2>
+    <p class="lead">Sem přijdou fotky vašich zakázek: kotelny, krby a tepelná čerpadla.</p>
+    <div class="gal"><div>Sem přijdou fotky vašich zakázek</div><div>Krbová kamna</div><div>Tepelné čerpadlo</div></div>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="wrap kg">
+    <div>
+      <h2 class="h2">Kontakt</h2>
+      <a class="tel" href="tel:+420603781746">603 781 746</a>
+      <p><b>Liška Servis, Petr Liška</b><br>Nesvačily, 257 51 Bystřice</p>
+      <p><a href="mailto:liska.servis@seznam.cz">liska.servis@seznam.cz</a></p>
+      <p>Po až Pá 7:00 až 15:00</p>
+    </div>
+    <form id="form">
+      <label>Jméno<input required autocomplete="name"></label>
+      <label>Telefon nebo e-mail<input required></label>
+      <label>Zpráva<textarea id="zprava" placeholder="Čím topíte a co potřebujete"></textarea></label>
+      <button class="btn z" type="submit">Odeslat</button>
+      <p class="ok" id="ok">Toto je ukázka formuláře. V hotovém webu by zpráva přišla rovnou na váš e-mail.</p>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 Liška Servis</span><span>Návrh připravila Tereweb.cz</span></div></footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var k = document.getElementById('kotel');
+  setTimeout(function(){ k.classList.add('zap'); }, reduce ? 0 : 300);
+  var $ = function(id){ return document.getElementById(id); };
+  var P = {
+    pelety:{n:'Automatický kotel na pelety', p:'Pelety se samy dávkují ze zásobníku, kotel hlídá teplotu a vy jen občas doplníte palivo.', b:'#C9A36B', t:'pelety'},
+    uhli:{n:'Automatický kotel na uhlí', p:'Uhlí se podává ze zásobníku šnekem, kotel topí rovnoměrně bez častého přikládání.', b:'#3A3A36', t:'uhlí'},
+    drevo:{n:'Kotel na dřevo', p:'Pro ty, kdo mají vlastní dřevo. Probereme velikost kotle a akumulaci tepla.', b:'#8A5A35', t:'dřevo'},
+    biomasa:{n:'Automatický kotel na biomasu', p:'Obilí, štěpka nebo jiná biomasa. Vhodné tam, kde máte palivo po ruce.', b:'#B5A04E', t:'štěpka'},
+    cerpadlo:{n:'Tepelné čerpadlo', p:'Topení bez paliva, teplo se bere ze vzduchu nebo ze země.', b:'#5C8FA8', t:'vzduch'}
+  };
+  function kresli(){
+    var pal = document.querySelector('input[name=pal]:checked').value;
+    var kde = document.querySelector('input[name=kde]:checked').value;
+    var dal = [].slice.call(document.querySelectorAll('input[name=dal]:checked')).map(function(i){ return i.value; });
+    var d = P[pal], nazev = d.n, popis = d.p;
+    if (kde === 'obyvak' && pal !== 'cerpadlo') { nazev = 'Krbová kamna s teplovodním výměníkem'; popis = 'Krb v obýváku, který zároveň ohřívá vodu pro radiátory. Na ' + d.t + ' i v kombinaci s dalším zdrojem.'; }
+    $('vNazev').textContent = nazev; $('vPopis').textContent = popis;
+    $('vPal').setAttribute('fill', d.b); $('vPalTxt').textContent = d.t;
+    $('vPalTxt').setAttribute('fill', pal === 'uhli' || pal === 'drevo' || pal === 'cerpadlo' ? '#fff' : '#1B1B1B');
+    $('vPlamen').style.display = pal === 'cerpadlo' ? 'none' : '';
+    var body = ['prohlídka místa a výpočet potřebného výkonu'].concat(dal);
+    var ul = $('vBody'); ul.innerHTML = '';
+    body.forEach(function(t){ var li = document.createElement('li'); li.textContent = t.charAt(0).toUpperCase() + t.slice(1); ul.appendChild(li); });
+    return nazev + '. K probrání: ' + body.join(', ') + '.';
+  }
+  document.querySelectorAll('#pruvodce input').forEach(function(i){ i.addEventListener('change', kresli); });
+  kresli();
+  $('poslat').addEventListener('click', function(){
+    $('zprava').value = 'Dobrý den, mám zájem o konzultaci. ' + kresli();
+    $('kontakt').scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+  });
+  $('form').addEventListener('submit', function(e){ e.preventDefault(); $('ok').style.display = 'block'; });
+})();
+</script>
+</body>
+</html>

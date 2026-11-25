@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Daniel Macek, obklady a dlažby – Bystřice (návrh webu)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600;700&family=Karla:wght@400;500;700&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+:root{--spara:#D5D8D3;--zed:#F2F3F1;--uhel:#222831;--salvej:#8FB9A8;--modr:#00798C;--ruz:#E9A6A6;--txt:#20252C;--sed:#5A616B}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Karla",system-ui,sans-serif;color:var(--txt);background:var(--zed);font-size:17.5px;line-height:1.6}
+h1,h2,h3{font-family:"Montserrat Alternates",sans-serif;font-weight:700;line-height:1.1;letter-spacing:-.01em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--modr);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.pruh{background:var(--uhel);color:#E3E6E9;text-align:center;font-size:14px;padding:8px 16px}
+.pruh b{color:var(--ruz)}
+nav{background:#fff;border-bottom:4px solid var(--spara)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:14px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo b{font-family:"Montserrat Alternates";font-size:19px;display:block;line-height:1.1}
+.logo small{color:var(--sed);font-size:13.5px}
+.menu{display:flex;gap:26px;font-weight:500}
+.menu a{text-decoration:none}
+.menu a:hover{color:var(--modr)}
+.volat{background:var(--modr);color:#fff;text-decoration:none;padding:10px 16px;border-radius:6px;font-weight:700;white-space:nowrap}
+.volat:hover{background:#00606F}
+/* hero */
+.hero{background:var(--spara);padding:6px 0}
+.mriz{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:minmax(96px,auto);gap:6px;max-width:1400px;margin:0 auto}
+.dl{background:#fff;opacity:0;transform:scale(.94);animation:poloz .5s ease-out forwards}
+@keyframes poloz{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.dl{animation:none;opacity:1;transform:none}}
+.dl.a{grid-column:1/5;grid-row:1/4;padding:48px 52px;display:flex;flex-direction:column;justify-content:center}
+.dl.a h1{font-size:clamp(36px,5vw,64px)}
+.dl.a p{font-size:19px;color:var(--sed);margin:20px 0 28px;max-width:560px}
+.dl.s1{background:var(--salvej)}
+.dl.s2{background:var(--modr)}
+.dl.s3{background:var(--ruz)}
+.dl.s4{background:var(--uhel)}
+.dl.vz{background:repeating-linear-gradient(45deg,#fff 0 14px,#EEF0EC 14px 28px)}
+.dl.mz{background-color:#fff;background-image:linear-gradient(var(--spara) 2px,transparent 2px),linear-gradient(90deg,var(--spara) 2px,transparent 2px);background-size:22px 22px}
+.dl.rok{background:var(--uhel);color:#fff;grid-column:5/7;padding:22px 24px;display:flex;flex-direction:column;justify-content:flex-end}
+.dl.rok b{font-family:"Montserrat Alternates";font-size:40px;color:var(--ruz);line-height:1}
+.btn{display:inline-block;font:inherit;font-weight:700;padding:13px 22px;border-radius:6px;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn.m{background:var(--modr);color:#fff}
+.btn.m:hover{background:#00606F}
+.btn.u{border-color:var(--uhel);margin-left:8px}
+section{padding:88px 0}
+.h2{font-size:clamp(30px,4vw,48px);margin-bottom:14px}
+.lead{color:var(--sed);max-width:640px;margin-bottom:42px}
+/* sluzby */
+.sl{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:var(--spara);padding:6px}
+.sl article{background:#fff;padding:32px 30px}
+.sl .ik{width:52px;height:52px;display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-bottom:18px}
+.sl .ik i{display:block}
+.sl h3{font-size:23px;margin-bottom:10px}
+.sl p{color:var(--sed);font-size:16.5px;margin-bottom:10px}
+.sl ul{list-style:none;font-size:16px}
+.sl li{padding:6px 0;border-top:1px dashed var(--spara)}
+/* vzor */
+.vzor{background:var(--uhel);color:#fff}
+.vzor .lead{color:#BFC5CC}
+.vg{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:start}
+.ovl{display:grid;gap:22px}
+fieldset{border:0}
+legend{font-weight:700;margin-bottom:10px}
+.vol{display:flex;flex-wrap:wrap;gap:8px}
+.vol input{position:absolute;opacity:0;width:1px;height:1px}
+.vol label{border:1.5px solid #4A525E;border-radius:6px;padding:8px 14px;cursor:pointer;font-size:15.5px}
+.vol input:checked+label{background:#fff;color:var(--uhel);border-color:#fff;font-weight:700}
+.vol input:focus-visible+label{outline:3px solid var(--ruz);outline-offset:2px}
+.spary label{display:flex;align-items:center;gap:8px}
+.spary label i{width:16px;height:16px;border-radius:3px;border:1px solid #888}
+.rozsah label{display:flex;justify-content:space-between;font-weight:700;margin-bottom:6px}
+.rozsah output{color:var(--ruz)}
+input[type=range]{width:100%;accent-color:var(--salvej)}
+.plocha{background:#fff;border-radius:8px;overflow:hidden}
+.plocha svg{display:block;width:100%;height:auto}
+.vysl{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:6px}
+.vysl div{background:#2D343E;padding:14px 16px;border-radius:6px}
+.vysl b{display:block;font-family:"Montserrat Alternates";font-size:24px;color:#fff}
+.vysl span{font-size:14px;color:#BFC5CC}
+.pozn{font-size:14.5px;color:#9EA6B0;margin-top:10px}
+/* rok */
+.pribeh{display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:center}
+.velky{font-family:"Montserrat Alternates";font-weight:700;font-size:clamp(80px,13vw,170px);line-height:.9;color:var(--modr)}
+.velky small{display:block;font-size:20px;color:var(--sed);font-family:Karla;font-weight:500;margin-top:8px}
+.pribeh p{color:var(--sed);margin-bottom:14px;max-width:560px}
+.pribeh h2{margin-bottom:16px}
+/* galerie */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:6px;background:var(--spara);padding:6px}
+.gal div{background:#fff;display:flex;align-items:flex-end;padding:14px;font-size:15px;font-weight:500;color:var(--sed)}
+.gal div:nth-child(1){grid-column:span 2;grid-row:span 2;background:#E4EEEA;color:var(--uhel)}
+.gal div:nth-child(2){background:#F7E5E5}
+.gal div:nth-child(5){background:#DDEBEE}
+/* kontakt */
+.kontakt{background:#fff}
+.kg{display:grid;grid-template-columns:1fr 1.1fr;gap:50px}
+.tel{font-family:"Montserrat Alternates";font-weight:700;font-size:clamp(32px,4vw,46px);color:var(--modr);text-decoration:none;display:block;margin:6px 0 20px}
+.adr{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:16px}
+.adr div{border-left:4px solid var(--salvej);padding-left:14px}
+.adr b{display:block}
+form{display:grid;gap:14px;background:var(--zed);padding:30px;border-radius:8px}
+form label{display:grid;gap:6px;font-weight:700;font-size:15px}
+form input,form textarea{font:inherit;padding:12px 14px;border:1.5px solid #C6CAC4;border-radius:6px;background:#fff}
+form textarea{min-height:120px;resize:vertical}
+form .btn{justify-self:start}
+.ok{display:none;background:#E4EEEA;border-left:4px solid var(--modr);padding:12px;font-size:15px}
+footer{background:var(--uhel);color:#BFC5CC;padding:24px 0;font-size:14.5px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media (max-width:920px){
+  .menu{display:none}
+  .mriz{grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(70px,auto)}
+  .dl.a{grid-column:1/5;grid-row:auto;padding:36px 26px}
+  .dl.rok{grid-column:span 2;grid-row:span 2}
+  .mriz{grid-auto-flow:dense}
+  .dl.x2{display:none}
+  .sl{grid-template-columns:1fr}
+  .vg,.kg,.pribeh{grid-template-columns:1fr}
+  .pribeh{gap:20px}
+  .gal{grid-template-columns:1fr 1fr}
+}
+@media (max-width:480px){
+  section{padding:62px 0}
+  .btn.u{margin:10px 0 0}
+  .logo small{display:none}
+  .adr{grid-template-columns:1fr}
+  .vysl{grid-template-columns:1fr}
+  form{padding:22px}
+}
+</style>
+</head>
+<body>
+<div class="pruh">Návrh nového webu pro <b>Daniel Macek, obklady a dlažby</b>, připravila Tereza Toufarová z Tereweb.cz</div>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#">
+      <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" fill="#D5D8D3"/><rect x="2" y="2" width="17" height="17" fill="#00798C"/><rect x="21" y="2" width="17" height="17" fill="#fff"/><rect x="2" y="21" width="17" height="17" fill="#fff"/><rect x="21" y="21" width="17" height="17" fill="#E9A6A6"/></svg>
+      <span><b>Daniel Macek</b><small>obklady, dlažby, rekonstrukce</small></span>
+    </a>
+    <div class="menu"><a href="#sluzby">Služby</a><a href="#vzor">Vzor pokládky</a><a href="#ukazky">Ukázky</a><a href="#kontakt">Kontakt</a></div>
+    <a class="volat" href="tel:+420605254461">605 254 461</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="mriz">
+    <div class="dl a" style="animation-delay:.05s">
+      <h1>Obklady a dlažby, které sedí na milimetr.</h1>
+      <p>Koupelny, kuchyně, terasy i celé rekonstrukce bytů. Keramika, sklo, umělý i pravý kámen. Praha a okolí, Bystřice u Benešova.</p>
+      <div><a class="btn m" href="#vzor">Vyzkoušet vzor pokládky</a><a class="btn u" href="#kontakt">Poptat</a></div>
+    </div>
+    <div class="dl s1" style="animation-delay:.15s"></div>
+    <div class="dl mz" style="animation-delay:.25s"></div>
+    <div class="dl rok" style="animation-delay:.35s"><b>od 1994</b><span>v oboru obkladů a dlažeb</span></div>
+    <div class="dl vz" style="animation-delay:.45s"></div>
+    <div class="dl s3 extra" style="animation-delay:.55s"></div>
+    <div class="dl s2 extra" style="animation-delay:.6s;grid-column:span 2"></div>
+    <div class="dl extra" style="animation-delay:.65s"></div>
+    <div class="dl s4 extra" style="animation-delay:.7s"></div>
+    <div class="dl mz extra x2" style="animation-delay:.75s"></div>
+    <div class="dl s1 extra x2" style="animation-delay:.8s"></div>
+  </div>
+</header>
+
+<section id="sluzby">
+  <div class="wrap">
+    <h2 class="h2">Co děláme</h2>
+    <p class="lead">Pracujeme s tuzemskými i zahraničními materiály. Na přání obklady a dlažby také dodáme.</p>
+    <div class="sl">
+      <article>
+        <div class="ik" aria-hidden="true"><i style="background:#00798C"></i><i style="background:#D5D8D3"></i><i style="background:#D5D8D3"></i><i style="background:#00798C"></i></div>
+        <h3>Obklady</h3>
+        <p>Obkládáme rovně i na koso, prostě i zdobně s listelami a bordurami.</p>
+        <ul><li>koupelny, kuchyně, sauny, bazény</li><li>koupelnová studia, prodejny, hotely, showroomy</li><li>venku zídky, sokly, terasy, zimní zahrady</li><li>lícové pásky a klinkery</li></ul>
+      </article>
+      <article>
+        <div class="ik" aria-hidden="true"><i style="background:#8FB9A8"></i><i style="background:#8FB9A8"></i><i style="background:#D5D8D3"></i><i style="background:#8FB9A8"></i></div>
+        <h3>Dlažby</h3>
+        <p>Interiérové i exteriérové dlažby z keramiky, pravého i umělého kamene.</p>
+        <ul><li>velkoformátové dlaždice</li><li>byty a rodinné domy</li><li>terasy a balkony</li><li>haly, obchody, dílny, kanceláře</li></ul>
+      </article>
+      <article>
+        <div class="ik" aria-hidden="true"><i style="background:#E9A6A6"></i><i style="background:#222831"></i><i style="background:#222831"></i><i style="background:#E9A6A6"></i></div>
+        <h3>Rekonstrukce bytů</h3>
+        <p>Koupelna na klíč, bytové jádro nebo celý byt. Hlídáme harmonogram a návaznost řemesel.</p>
+        <ul><li>koupelny a bytová jádra</li><li>zednické práce</li><li>instalatérské a elektrikářské práce</li><li>modernizace celého bytu</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="vzor" id="vzor">
+  <div class="wrap">
+    <h2 class="h2">Vyzkoušejte vzor pokládky</h2>
+    <p class="lead">Vyberte formát dlaždic, způsob pokládky a barvu spáry. Spočítáme orientačně, kolik materiálu nakoupit i s rezervou na prořez.</p>
+    <div class="vg">
+      <div class="ovl">
+        <fieldset><legend>Formát dlaždice</legend><div class="vol">
+          <input type="radio" name="fmt" id="f1" value="30x60" checked><label for="f1">30 × 60 cm</label>
+          <input type="radio" name="fmt" id="f2" value="60x60"><label for="f2">60 × 60 cm</label>
+          <input type="radio" name="fmt" id="f3" value="60x120"><label for="f3">60 × 120 cm</label>
+          <input type="radio" name="fmt" id="f4" value="10x10"><label for="f4">Mozaika 10 × 10</label>
+        </div></fieldset>
+        <fieldset><legend>Pokládka</legend><div class="vol">
+          <input type="radio" name="pok" id="p1" value="rovne" checked><label for="p1">Rovně</label>
+          <input type="radio" name="pok" id="p2" value="vazba"><label for="p2">Na vazbu</label>
+          <input type="radio" name="pok" id="p3" value="kosa"><label for="p3">Na koso</label>
+        </div></fieldset>
+        <fieldset><legend>Barva spáry</legend><div class="vol spary">
+          <input type="radio" name="spara" id="s1" value="#F4F4F2" checked><label for="s1"><i style="background:#F4F4F2"></i>Bílá</label>
+          <input type="radio" name="spara" id="s2" value="#9EA3A8"><label for="s2"><i style="background:#9EA3A8"></i>Šedá</label>
+          <input type="radio" name="spara" id="s3" value="#3A4048"><label for="s3"><i style="background:#3A4048"></i>Antracit</label>
+        </div></fieldset>
+        <div class="rozsah"><label for="m2">Plocha <output id="oM">6 m²</output></label><input type="range" id="m2" min="1" max="60" step="1" value="6"></div>
+        <button class="btn m" type="button" id="poslat" style="justify-self:start;background:#E9A6A6;color:#222831">Poslat do poptávky</button>
+      </div>
+      <div>
+        <div class="plocha"><svg id="nahled" viewBox="0 0 600 400" role="img" aria-label="Náhled vzoru pokládky"><defs id="defs"></defs><rect id="podklad" width="600" height="400"/></svg></div>
+        <div class="vysl">
+          <div><b id="vPlocha">6 m²</b><span>plocha</span></div>
+          <div><b id="vRez">+10 %</b><span>rezerva na prořez</span></div>
+          <div><b id="vNakup">6,6 m²</b><span>orientační nákup</span></div>
+        </div>
+        <p class="pozn">Výpočet je orientační. Přesné množství určíme po zaměření.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap pribeh">
+    <div class="velky">1994<small>v oboru od roku</small></div>
+    <div>
+      <h2 class="h2">Řemeslo, které se nedá uspěchat</h2>
+      <p>Obklady a dlažby děláme od roku 1994. Za tu dobu jsme pokládali keramiku, sklo, kámen i velké formáty v bytech, domech, obchodech i showroomech.</p>
+      <p>U rekonstrukcí se postaráme o celý průběh, aby na sebe jednotlivá řemesla navazovala a vy nemuseli nic koordinovat.</p>
+    </div>
+  </div>
+</section>
+
+<section id="ukazky" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="h2">Realizace</h2>
+    <p class="lead">Sem přijdou fotky vašich zakázek: koupelny, kuchyně, terasy a rekonstrukce.</p>
+    <div class="gal">
+      <div>Sem přijdou fotky vašich zakázek</div>
+      <div>Koupelna</div><div>Kuchyně</div><div>Terasa</div><div>Velký formát</div>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="wrap kg">
+    <div>
+      <h2 class="h2">Kontakt</h2>
+      <a class="tel" href="tel:+420605254461">605 254 461</a>
+      <div class="adr">
+        <div><b>Bystřice</b>Drachkov 36<br>257 51 Bystřice</div>
+        <div><b>Praha</b>Pod Dálnicí 1238/11<br>141 00 Praha, Michle</div>
+      </div>
+      <p><a href="mailto:macek.da@seznam.cz">macek.da@seznam.cz</a></p>
+    </div>
+    <form id="form">
+      <label>Jméno<input required autocomplete="name"></label>
+      <label>Telefon nebo e-mail<input required></label>
+      <label>Zpráva<textarea id="zprava" placeholder="Co chcete obložit nebo vydláždit"></textarea></label>
+      <button class="btn m" type="submit">Odeslat</button>
+      <p class="ok" id="ok">Toto je ukázka formuláře. V hotovém webu by zpráva přišla rovnou na váš e-mail.</p>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 Daniel Macek</span><span>Návrh připravila Tereweb.cz</span></div></footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $ = function(id){ return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var rozm = {'30x60':[60,30],'60x60':[60,60],'60x120':[120,60],'10x10':[10,10]};
+  var nazPok = {rovne:'rovně', vazba:'na vazbu', kosa:'na koso'};
+  var barvy = ['#FFFFFF','#F3F5F3','#EDF1EF'];
+  function val(n){ return document.querySelector('input[name="'+n+'"]:checked').value; }
+  function el(n, a){ var e = document.createElementNS(NS, n); for (var k in a) e.setAttribute(k, a[k]); return e; }
+  function kresli(){
+    var f = val('fmt'), pok = val('pok'), sp = val('spara'), m2 = +$('m2').value;
+    var s = 2.6, w = rozm[f][0] * s, h = rozm[f][1] * s, g = f === '10x10' ? 2 : 4;
+    if (f === '10x10' && pok === 'vazba') pok = 'rovne';
+    var defs = $('defs'); while (defs.firstChild) defs.removeChild(defs.firstChild);
+    var pw = w, ph = pok === 'vazba' ? h * 2 : h;
+    var pat = el('pattern', {id:'vz', width:pw, height:ph, patternUnits:'userSpaceOnUse'});
+    if (pok === 'kosa') pat.setAttribute('patternTransform', 'rotate(45 300 200)');
+    pat.appendChild(el('rect', {width:pw, height:ph, fill:sp}));
+    pat.appendChild(el('rect', {x:g/2, y:g/2, width:w-g, height:h-g, fill:barvy[0]}));
+    if (pok === 'vazba') {
+      pat.appendChild(el('rect', {x:-w/2+g/2, y:h+g/2, width:w-g, height:h-g, fill:barvy[1]}));
+      pat.appendChild(el('rect', {x:w/2+g/2, y:h+g/2, width:w-g, height:h-g, fill:barvy[1]}));
+    }
+    defs.appendChild(pat);
+    $('podklad').setAttribute('fill', 'url(#vz)');
+    var rez = pok === 'kosa' ? 15 : 10;
+    var nak = Math.ceil(m2 * (1 + rez / 100) * 10) / 10;
+    $('oM').textContent = m2 + ' m²'; $('vPlocha').textContent = m2 + ' m²';
+    $('vRez').textContent = '+' + rez + ' %'; $('vNakup').textContent = String(nak).replace('.', ',') + ' m²';
+    document.getElementById('p2').disabled = f === '10x10';
+    return 'Dlaždice ' + f.replace('x', ' × ') + ' cm, pokládka ' + nazPok[pok] + ', plocha ' + m2 + ' m², orientační nákup ' + String(nak).replace('.', ',') + ' m².';
+  }
+  document.querySelectorAll('#vzor input').forEach(function(i){ i.addEventListener('input', kresli); i.addEventListener('change', kresli); });
+  kresli();
+  $('poslat').addEventListener('click', function(){
+    $('zprava').value = 'Dobrý den, mám zájem o pokládku. ' + kresli();
+    $('kontakt').scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+  });
+  $('form').addEventListener('submit', function(e){ e.preventDefault(); $('ok').style.display = 'block'; });
+})();
+</script>
+</body>
+</html>
