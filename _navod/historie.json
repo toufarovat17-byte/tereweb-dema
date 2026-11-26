@@ -301,5 +301,101 @@
   "hero": "plná lesně zelená plocha, vlevo patkový nadpis, vpravo SVG řez automatickým kotlem se zásobníkem, ze kterého padají pelety a v topeništi se rozhoří plamen",
   "interakce": "průvodce výběrem topení ve 3 krocích (palivo, umístění, doplňky), výsledek s doporučeným typem zdroje, SVG zásobníkem podle paliva a body ke konzultaci, odeslání do formuláře",
   "layout": "služby jako seznam s ikonami a vedle bílý panel se štítky dalších služeb a značek, černá sekce průvodce, 4 kroky spolupráce v bílém pásu, galerie 3 zelenohnědé dlaždice, zelený kontakt"
+ },
+ {
+  "slug": "rostislav-martynek",
+  "datum": "2026-11-26",
+  "obor": "truhlářství, nábytek na míru, vestavěné skříně",
+  "pisma": [
+   "Literata",
+   "DM Sans"
+  ],
+  "paleta": [
+   "#24211F",
+   "#F3F2EE",
+   "#2F5D62",
+   "#D9B47C",
+   "#B8432F"
+  ],
+  "hero": "velká patková typografie nahoře a pod ní horizontální posuvný pás šesti bílých karet místností se SVG nábytkem a hranou překližky, karty postupně vyjedou",
+  "interakce": "konfigurátor vestavěné skříně: posuvníky šířky a výšky, posuvné/otočné dveře, vnitřní vybavení, odstín dvířek, živý čelní nákres s kótami a přenos do formuláře",
+  "layout": "služby jako tabulkový seznam s nadpisy vlevo + zelený panel s pilulkami, tmavá sekce konfigurátoru (ovládání vlevo, světlý výkres vpravo), 4 kroky ve sloupcích se svislými linkami, galerie 1 velká + 4 malé s texturami letokruhů, kontakt velký telefon + bílý formulář"
+ },
+ {
+  "slug": "tomas-brejla",
+  "datum": "2026-11-26",
+  "obor": "elektroinstalace, hromosvody, veřejné osvětlení, vjezdové brány",
+  "pisma": [
+   "Archivo (expanded 125)",
+   "Atkinson Hyperlegible"
+  ],
+  "paleta": [
+   "#E4E8EB",
+   "#1C2126",
+   "#B8622B",
+   "#2E9A4B",
+   "#F0C419"
+  ],
+  "hero": "světlá zinková plocha, vlevo široký verzálkový nadpis, vpravo SVG dům s hromosvodem pod bouřkovým mrakem; blesk udeří do jímače a žlutý proud proběhne svodem do uzemnění",
+  "interakce": "rozvaděč: výběr objektu a klikací jističe (páčka + LED) pro jednotlivé práce, živý poptávkový lístek se zelenožlutým okrajem a přenos do formuláře",
+  "layout": "služby jako vodiče (barevná linka + verzálkový název + popis v řádku), grafitová sekce rozvaděče a lístku, 3 důvody v orámované trojici, galerie 4 vysoké barevné dlaždice se SVG, kontakt velký telefon + orámovaný formulář"
+ },
+ {
+  "slug": "tomas-pech",
+  "datum": "2026-11-26",
+  "obor": "zemní a výkopové práce minibagrem, odvoz zeminy",
+  "pisma": [
+   "Chivo",
+   "Chivo Mono"
+  ],
+  "paleta": [
+   "#3B2B20",
+   "#B9853F",
+   "#E3CFA0",
+   "#5C9A3A",
+   "#F07D1A",
+   "#D6E7EC"
+  ],
+  "hero": "obří dvouřádkový verzálkový slogan Vyhrabeme. Zahrabeme. na světlé ploše a pod ním celošířkový řez terénem, kde minibagr vyhrabe rýhu (vrstvy zeminy zmizí) a vedle vyroste hromada",
+  "interakce": "kalkulačka výkopu: typ (rýha, základy, bazén, jímka) s předvolbami, posuvníky délka/šířka/hloubka, živý SVG řez s kótami, orientační objem v m³, vhodná lžíce z jejich sortimentu, odvoz zeminy, přenos do formuláře",
+  "layout": "služby jako barevné vrstvy půdního profilu nad sebou v zaoblené kartě, 2 karty strojů se SVG a šířkami lžic, hnědá sekce kalkulačky, 3 kroky s barevnými pruhy, galerie 3 krajinné dlaždice, kontakt v bílé zaoblené kartě"
+ },
+ {
+  "slug": "rene-szturc",
+  "datum": "2026-11-26",
+  "obor": "pokrývačské a klempířské práce, prodej střešních krytin",
+  "pisma": [
+   "Red Hat Display",
+   "Red Hat Text"
+  ],
+  "paleta": [
+   "#F5F7F8",
+   "#383E42",
+   "#2F5D47",
+   "#3F86BD",
+   "#C7CED3"
+  ],
+  "hero": "šikmá antracitová plocha falcované střechy (clip-path) přes většinu hero, která se při načtení položí, vpravo světlá obloha a dole silueta Beskyd, bílý nadpis na plechu",
+  "interakce": "poskládejte si střechu: tvar (sedlová, valbová, pultová, mansardová), krytina se vzorem, barevné kroužky RAL, klempířské prvky (okapy, komín, střešní okno), živý SVG dům a přenos do formuláře",
+  "layout": "3 služby ve sloupcích pod silnou antracitovou linkou s krátkými seznamy, bílá sekce konfigurátoru (náhled vlevo, volby vpravo), smrkově zelená sekce 3 důvodů s horními linkami, galerie 6 dlaždic ve vzorech krytin, antracitový kontakt"
+ },
+ {
+  "slug": "jerabnicke-prace-robert-marek",
+  "datum": "2026-11-26",
+  "obor": "jeřábnické práce autojeřáby AD20 a AD16",
+  "pisma": [
+   "Saira Condensed",
+   "Public Sans"
+  ],
+  "paleta": [
+   "#E3E5E6",
+   "#14213D",
+   "#D62828",
+   "#FCA311",
+   "#8D99A6"
+  ],
+  "hero": "betonově šedá plocha mezi dvěma červenobílými výstražnými pásy, obří kondenzovaný verzálkový nadpis vlevo, zprava do hero zasahuje SVG autojeřáb, jehož výložník se při načtení zvedne a spustí hák",
+  "interakce": "plánovač zvedání: typ břemene (materiál, vazníky, bazén, hala, vozidlo), posuvníky výšky, vzdálenosti a hmotnosti, živý SVG bokorys s jeřábem, výložníkem, břemenem a kótami, přenos do formuláře",
+  "layout": "služby jako mřížka 3x2 tenkých buněk v tmavém rámu, tmavá sekce dvou vozů s SVG, světlý plánovač (volby vlevo, nákres + tmavý souhrnný pás vpravo), mapka oblasti + tabulka kde a kdy, galerie 3 dlaždice s výstražným pruhem, šedý kontakt s obřím červeným telefonem"
  }
 ]

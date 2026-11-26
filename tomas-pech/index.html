@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Tomáš Pech – Bystřice (návrh webu)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700;900&family=Chivo+Mono:wght@400;600&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+:root{
+  --zem:#3B2B20;     /* ornice */
+  --jil:#B9853F;     /* jílové podloží */
+  --pisek:#E3CFA0;   /* písek */
+  --trava:#5C9A3A;
+  --stroj:#F07D1A;   /* oranžová strojů */
+  --nebe:#D6E7EC;
+  --bg:#F6F7F3;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Chivo",system-ui,sans-serif;background:var(--bg);color:var(--zem);line-height:1.6;font-size:17px}
+h1,h2,h3{font-weight:900;line-height:1.02}
+.mono{font-family:"Chivo Mono",monospace}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--stroj);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.strip{background:var(--zem);color:#EADFC8;font-size:14px;text-align:center;padding:8px 16px}
+.strip b{color:var(--stroj)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:72px;gap:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:900;font-size:19px;line-height:1.1}
+.logo small{display:block;font-family:"Chivo Mono";font-weight:400;font-size:12px}
+.nl{display:flex;gap:26px;font-size:15px;font-weight:700}
+.nl a{text-decoration:none}
+.nl a:hover{color:#b55c0f}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--stroj);color:#1d140e;font:inherit;font-weight:900;padding:12px 20px;border:0;border-radius:40px;text-decoration:none;cursor:pointer}
+.btn:hover{background:#d96c0d}
+.btn.line{background:transparent;box-shadow:inset 0 0 0 2px var(--zem)}
+@media(max-width:860px){.nl{display:none}}
+@media(max-width:560px){.hidem{display:none}.logo small{display:none}}
+
+/* HERO */
+.hero{padding:40px 0 0}
+.hero h1{font-size:clamp(52px,10vw,138px);letter-spacing:-.03em;text-transform:uppercase}
+.hero h1 .z{color:var(--jil)}
+.hl{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-top:20px}
+.hl p{font-size:19px;max-width:48ch}
+.hl .acts{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+.cut{margin-top:40px;display:block;width:100%;height:auto}
+.dirt{animation:dig 3.2s .4s cubic-bezier(.5,0,.3,1) forwards;transform-origin:50% 0;transform:scaleY(1)}
+@keyframes dig{to{transform:scaleY(0)}}
+.arm{transform-origin:742px 182px;animation:arm 3.2s .4s ease-in-out forwards}
+@keyframes arm{0%{transform:rotate(0)}30%{transform:rotate(14deg)}55%{transform:rotate(-6deg)}80%{transform:rotate(12deg)}100%{transform:rotate(-4deg)}}
+.pile{transform:scale(.2);transform-origin:1040px 200px;animation:pile 3.2s .4s forwards}
+@keyframes pile{to{transform:scale(1)}}
+@media(max-width:760px){.hl{grid-template-columns:1fr}.hl .acts{justify-content:flex-start}}
+
+section{padding:88px 0}
+.h2{font-size:clamp(30px,4.4vw,52px);text-transform:uppercase;letter-spacing:-.02em;margin-bottom:14px}
+.sub{max-width:60ch;margin-bottom:40px;color:#5a4a3e}
+
+/* SLUŽBY jako vrstvy */
+.layers{border-radius:18px;overflow:hidden}
+.layer{display:grid;grid-template-columns:260px 1fr;gap:24px;padding:26px 32px;align-items:baseline}
+.layer h3{font-size:22px}
+.layer:nth-child(1){background:var(--trava);color:#fff}
+.layer:nth-child(2){background:#7A5638;color:#fff}
+.layer:nth-child(3){background:var(--jil);color:#22180f}
+.layer:nth-child(4){background:var(--pisek);color:#22180f}
+.layer:nth-child(5){background:#CBC6BA;color:#22180f}
+@media(max-width:760px){.layer{grid-template-columns:1fr;gap:4px;padding:22px}}
+
+/* STROJE */
+.mach{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.card{background:#fff;border-radius:18px;padding:28px;display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:center}
+.card h3{font-size:24px}
+.card .mono{font-size:14px;color:#7a6a5c}
+.buckets{display:flex;gap:6px;align-items:flex-end;margin-top:14px}
+.buckets span{background:var(--zem);color:#fff;font-family:"Chivo Mono";font-size:12px;text-align:center;padding:4px 0;border-radius:0 0 8px 8px}
+@media(max-width:860px){.mach{grid-template-columns:1fr}.card{grid-template-columns:1fr}}
+
+/* KALKULAČKA */
+.calc{background:var(--zem);color:#F2EADB}
+.calc .sub{color:#CDBFA9}
+.cg{display:grid;grid-template-columns:360px 1fr;gap:40px}
+.types{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.types button{background:#4C392B;color:#F2EADB;border:0;border-radius:30px;padding:9px 15px;font:inherit;font-size:15px;cursor:pointer}
+.types button[aria-pressed="true"]{background:var(--stroj);color:#1d140e;font-weight:700}
+.sl{margin-bottom:20px}
+.sl label{display:flex;justify-content:space-between;font-weight:700;font-size:15px;margin-bottom:6px}
+.sl output{font-family:"Chivo Mono";color:var(--pisek)}
+input[type=range]{width:100%;accent-color:var(--stroj)}
+.chk{display:flex;gap:10px;align-items:center;font-size:15px;margin-top:6px}
+.chk input{width:20px;height:20px;accent-color:var(--stroj)}
+.view{background:var(--nebe);border-radius:18px;padding:20px;color:var(--zem)}
+.view svg{width:100%;height:auto;display:block}
+.res{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.res div{background:#fff;border-radius:12px;padding:12px 14px}
+.res b{display:block;font-size:26px;font-weight:900}
+.res span{font-size:13px;color:#6a5a4c}
+.calc .foot{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:14px;font-size:14px}
+@media(max-width:900px){.cg{grid-template-columns:1fr}.res{grid-template-columns:1fr 1fr}}
+
+/* POSTUP */
+.steps{display:flex;gap:0;position:relative}
+.steps div{flex:1;padding:0 20px 0 0;position:relative}
+.steps div::before{content:"";display:block;height:14px;border-radius:7px;background:var(--pisek);margin-bottom:22px}
+.steps div:nth-child(2)::before{background:var(--jil)}
+.steps div:nth-child(3)::before{background:#7A5638}
+.steps h3{font-size:21px;margin-bottom:6px}
+@media(max-width:760px){.steps{flex-direction:column;gap:28px}}
+
+/* GALERIE */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ph{height:230px;border-radius:18px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:16px;font-weight:700}
+.ph:nth-child(1){background:linear-gradient(180deg,var(--nebe) 0 40%,var(--trava) 40% 46%,#7A5638 46% 70%,var(--jil) 70%)}
+.ph:nth-child(2){background:linear-gradient(180deg,var(--nebe) 0 30%,var(--trava) 30% 35%,var(--jil) 35%)}
+.ph:nth-child(3){background:linear-gradient(180deg,var(--nebe) 0 55%,var(--trava) 55% 60%,#7A5638 60% 80%,var(--pisek) 80%)}
+
+.ph span{background:#fff;padding:6px 12px;border-radius:20px;font-size:14px;position:relative}
+@media(max-width:760px){.gal{grid-template-columns:1fr}}
+
+/* KONTAKT */
+.kg{display:grid;grid-template-columns:1fr 1fr;gap:48px;background:#fff;border-radius:24px;padding:44px}
+.tel{font-size:clamp(32px,4.4vw,54px);font-weight:900;text-decoration:none;display:block;margin:10px 0 20px;color:#b55c0f}
+.kg dl{display:grid;grid-template-columns:80px 1fr;gap:10px}
+.kg dt{font-family:"Chivo Mono";font-size:14px;padding-top:2px}
+form{display:grid;gap:14px}
+label.f{display:grid;gap:6px;font-weight:700;font-size:15px}
+.f input,.f textarea{font:inherit;padding:12px 14px;border:2px solid #D8D0C2;border-radius:12px;width:100%;background:var(--bg)}
+textarea{min-height:120px;resize:vertical}
+.msg{display:none;background:#FCE9D6;border-radius:12px;padding:12px 14px;font-size:15px}
+@media(max-width:860px){.kg{grid-template-columns:1fr;padding:26px}}
+footer{padding:30px 0;font-size:14px;color:#6a5a4c}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;border-top:2px solid var(--zem);padding-top:20px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.dirt{transform:scaleY(0)}.pile{transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="strip">Návrh nového webu pro <b>Tomáš Pech</b>, připravila Tereza Toufarová z Tereweb.cz</div>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="Tomáš Pech, zemní práce">
+      <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="22" fill="#F07D1A"/><path d="M8 30h28v6H8z" fill="#3B2B20"/><path d="M14 28l6-14 10 4-3 6h-5" fill="none" stroke="#3B2B20" stroke-width="3" stroke-linejoin="round"/></svg>
+      <span>Tomáš Pech<small>zemní práce minibagrem</small></span>
+    </a>
+    <div class="nl"><a href="#sluzby">Služby</a><a href="#stroje">Stroje</a><a href="#vykop">Spočítat výkop</a><a href="#kontakt">Kontakt</a></div>
+    <a class="btn" href="tel:+420777137458">Zavolat<span class="hidem"> 777 137 458</span></a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Vyhrabeme.<br><span class="z">Zahrabeme.</span></h1>
+    <div class="hl">
+      <p>Výkopové a zemní práce minibagrem v Bystřici u Benešova a okolí. Přípojky, základy, bazény, jímky i drobné terénní úpravy zahrad. Zeminu na přání odvezeme.</p>
+      <div class="acts"><a class="btn" href="#vykop">Spočítat výkop</a><a class="btn line" href="#kontakt">Poptat termín</a></div>
+    </div>
+  </div>
+  <svg class="cut" viewBox="0 0 1366 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <rect width="1366" height="300" fill="#D6E7EC"/>
+    <rect y="200" width="1366" height="12" fill="#5C9A3A"/>
+    <rect y="212" width="1366" height="40" fill="#7A5638"/>
+    <rect y="252" width="1366" height="48" fill="#B9853F"/>
+    <rect x="430" y="200" width="260" height="78" fill="#2B1F17"/>
+    <g class="dirt"><rect x="430" y="200" width="260" height="12" fill="#5C9A3A"/><rect x="430" y="212" width="260" height="40" fill="#7A5638"/><rect x="430" y="252" width="260" height="26" fill="#B9853F"/></g>
+    <path class="pile" d="M960 200q80-70 160 0z" fill="#7A5638"/>
+    <g>
+      <rect x="720" y="160" width="40" height="30" rx="4" fill="#3B2B20"/>
+      <rect x="712" y="186" width="120" height="16" rx="8" fill="#3B2B20"/>
+      <circle cx="728" cy="194" r="6" fill="#6b5a4c"/><circle cx="816" cy="194" r="6" fill="#6b5a4c"/>
+      <rect x="742" y="118" width="74" height="52" rx="6" fill="#F07D1A"/>
+      <rect x="776" y="96" width="44" height="56" rx="4" fill="#fff" stroke="#3B2B20" stroke-width="3"/>
+      <rect x="784" y="104" width="28" height="22" fill="#D6E7EC"/>
+      <g class="arm">
+        <path d="M742 140L660 110L610 190" fill="none" stroke="#F07D1A" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M600 182l22 4-6 26-26-4z" fill="#3B2B20"/>
+      </g>
+    </g>
+    <text x="440" y="296" font-family="Chivo Mono" font-size="14" fill="#fff">hloubka dle projektu</text>
+  </svg>
+</header>
+
+<section id="sluzby">
+  <div class="wrap">
+    <h2 class="h2">Co vykopeme</h2>
+    <p class="sub">Kompaktní minibagr se dostane i na zahradu s úzkým vjezdem.</p>
+    <div class="layers">
+      <div class="layer"><h3>Zahrada a terén</h3><p>Drobné zahradní a terénní úpravy, srovnání pozemku, svahování hydraulickou svahovkou.</p></div>
+      <div class="layer"><h3>Přípojky a drenáže</h3><p>Výkopy pro inženýrské sítě, kanalizační přípojky a drenážní rýhy.</p></div>
+      <div class="layer"><h3>Základy</h3><p>Výkopy základů pro menší stavby, garáže, ploty a přístavky.</p></div>
+      <div class="layer"><h3>Bazény a jímky</h3><p>Výkop pro bazén, septik, žumpu nebo přípravu pro čističku odpadních vod.</p></div>
+      <div class="layer"><h3>Odvoz a doprava</h3><p>Odvoz vykopané zeminy, přesun materiálu dumperem a odvoz odpadu kontejnerem po telefonické domluvě.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="stroje" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="h2">Naše stroje</h2>
+    <p class="sub">Malé stroje s velkým výkonem. Projedou tam, kam se velký bagr nevejde.</p>
+    <div class="mach">
+      <div class="card">
+        <svg viewBox="0 0 150 110" aria-hidden="true"><rect x="20" y="86" width="90" height="14" rx="7" fill="#3B2B20"/><rect x="40" y="46" width="56" height="40" rx="5" fill="#F07D1A"/><rect x="66" y="28" width="32" height="40" rx="3" fill="#fff" stroke="#3B2B20" stroke-width="3"/><path d="M40 60L14 40L6 78" fill="none" stroke="#F07D1A" stroke-width="7" stroke-linecap="round"/><path d="M0 74l14 2-4 16-14-2z" fill="#3B2B20"/></svg>
+        <div><h3>Minibagr Bobcat E16</h3><p class="mono">kompaktní pásový minibagr</p><p>Výkopy, rýhy i úpravy terénu. K dispozici je hydraulická svahovka a lžíce v šířkách:</p>
+          <div class="buckets" aria-label="Šířky lžic v centimetrech"><span style="width:26px">20</span><span style="width:32px">30</span><span style="width:44px">50</span><span style="width:50px">60</span><span style="width:76px">100</span></div></div>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 150 110" aria-hidden="true"><circle cx="40" cy="88" r="14" fill="#3B2B20"/><circle cx="110" cy="88" r="14" fill="#3B2B20"/><rect x="28" y="56" width="96" height="22" rx="4" fill="#F07D1A"/><path d="M20 56l20-26h40l10 26z" fill="#B9853F"/><rect x="104" y="30" width="20" height="26" fill="#3B2B20"/></svg>
+        <div><h3>Kolový dumper Neuson 2001</h3><p class="mono">přeprava materiálu v terénu</p><p>Převeze zeminu i materiál po měkkém terénu, ve svahu a úzkými průjezdy.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="vykop" class="calc">
+  <div class="wrap">
+    <h2 class="h2">Spočítejte si výkop</h2>
+    <p class="sub">Zvolte typ práce a rozměry. Uvidíte řez výkopem, orientační objem zeminy a vhodnou šířku lžíce. Údaje pak pošlete jako podklad k poptávce.</p>
+    <div class="cg">
+      <div>
+        <div class="types" id="types" role="group" aria-label="Typ výkopu">
+          <button aria-pressed="true" data-t="rýha">Přípojka / rýha</button><button aria-pressed="false" data-t="základy">Základy</button><button aria-pressed="false" data-t="bazén">Bazén</button><button aria-pressed="false" data-t="jímka">Jímka / septik</button>
+        </div>
+        <div class="sl"><label for="L">Délka <output id="Lo">15 m</output></label><input type="range" id="L" min="1" max="60" step="0.5" value="15"></div>
+        <div class="sl"><label for="S">Šířka <output id="So">0,5 m</output></label><input type="range" id="S" min="0.2" max="8" step="0.1" value="0.5"></div>
+        <div class="sl"><label for="H">Hloubka <output id="Ho">1,2 m</output></label><input type="range" id="H" min="0.3" max="3" step="0.1" value="1.2"></div>
+        <label class="chk"><input type="checkbox" id="odvoz" checked> Chci odvézt vykopanou zeminu</label>
+      </div>
+      <div class="view">
+        <svg id="pr" viewBox="0 0 600 300" role="img" aria-label="Řez výkopem"></svg>
+        <div class="res">
+          <div><b id="vol">9,0 m³</b><span>orientační objem zeminy</span></div>
+          <div><b id="lz">50 cm</b><span>vhodná lžíce</span></div>
+          <div><b id="od">ano</b><span>odvoz zeminy</span></div>
+        </div>
+        <div class="foot"><span class="mono">Výpočet je jen orientační, přesný rozsah určíme na místě.</span><button class="btn" id="poslat">Poslat do poptávky</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="h2">Jak to proběhne</h2>
+    <p class="sub">Domluva je jednoduchá a termíny řešíme po telefonu.</p>
+    <div class="steps">
+      <div><h3>Zavoláte</h3><p>Popíšete, co potřebujete vykopat a kde. Můžete poslat i podklady z formuláře.</p></div>
+      <div><h3>Prohlídka</h3><p>Podíváme se na příjezd a terén a domluvíme postup i odvoz zeminy.</p></div>
+      <div><h3>Výkop</h3><p>Přijedeme se strojem a uděláme výkop podle domluvy.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 class="h2">Hotové výkopy</h2>
+    <p class="sub">Sem přijdou fotky vašich zakázek.</p>
+    <div class="gal">
+      <div class="ph"><span>Sem přijdou fotky vašich zakázek</span></div>
+      <div class="ph"><span>Bazén</span></div>
+      <div class="ph"><span>Přípojka</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" style="padding-top:0">
+  <div class="wrap">
+    <div class="kg">
+      <div>
+        <h2 class="h2">Kontakt</h2>
+        <p>Termín domluvíme nejrychleji po telefonu.</p>
+        <a class="tel" href="tel:+420777137458">777 137 458</a>
+        <dl>
+          <dt>e-mail</dt><dd><a href="mailto:vyhrabeme-zahrabeme@seznam.cz">vyhrabeme-zahrabeme@seznam.cz</a></dd>
+          <dt>adresa</dt><dd>Semovice 6, 257 51 Bystřice</dd>
+        </dl>
+      </div>
+      <form id="form">
+        <label class="f">Jméno<input required autocomplete="name"></label>
+        <label class="f">Telefon<input required type="tel" autocomplete="tel"></label>
+        <label class="f">Místo a popis práce<textarea id="zprava" placeholder="Obec, co je potřeba vykopat, příjezd na pozemek"></textarea></label>
+        <button class="btn" type="submit">Odeslat poptávku</button>
+        <p class="msg" id="msg" role="status">Toto je ukázka formuláře. V hotovém webu by zpráva přišla rovnou na váš e-mail.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 Tomáš Pech</span><span>Návrh připravila Tereweb.cz</span></div></footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const presets={"rýha":[15,0.5,1.2],"základy":[30,0.6,0.9],"bazén":[6,3.5,1.5],"jímka":[3,3,2.5]};
+let typ="rýha";
+const f=n=>n.toLocaleString('cs-CZ',{minimumFractionDigits:1,maximumFractionDigits:1});
+$('types').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+  document.querySelectorAll('#types button').forEach(x=>x.setAttribute('aria-pressed',x===b));typ=b.dataset.t;
+  const p=presets[typ];$('L').value=p[0];$('S').value=p[1];$('H').value=p[2];calc();});
+['L','S','H','odvoz'].forEach(i=>$(i).addEventListener('input',calc));
+function calc(){
+  const L=+$('L').value,S=+$('S').value,H=+$('H').value;
+  $('Lo').textContent=f(L)+' m';$('So').textContent=f(S)+' m';$('Ho').textContent=f(H)+' m';
+  const v=L*S*H;$('vol').textContent=f(v)+' m³';
+  const b=[20,30,50,60,100].filter(x=>x<=S*100+0.1);const lz=b.length?b[b.length-1]:20;
+  $('lz').textContent=lz+' cm';$('od').textContent=$('odvoz').checked?'ano':'ne';
+  // řez
+  const sc=Math.min(400/Math.max(S,1),180/3);const w=Math.max(S*sc,14),h=H*sc,x=300-w/2,y0=80;
+  let s=`<rect width="600" height="${y0}" fill="#D6E7EC"/><rect y="${y0}" width="600" height="10" fill="#5C9A3A"/><rect y="${y0+10}" width="600" height="60" fill="#7A5638"/><rect y="${y0+70}" width="600" height="${300-y0-70}" fill="#B9853F"/>`;
+  s+=`<rect x="${x}" y="${y0}" width="${w}" height="${h}" fill="#2B1F17"/>`;
+  if(typ==='bazén')s+=`<rect x="${x+6}" y="${y0+h-16}" width="${w-12}" height="10" fill="#7FB8D6" opacity=".7"/>`;
+  if(typ==='rýha')s+=`<circle cx="300" cy="${y0+h-10}" r="7" fill="none" stroke="#F07D1A" stroke-width="4"/>`;
+  s+=`<g stroke="#fff" fill="#fff" font-family="Chivo Mono" font-size="14"><line x1="${x}" y1="${y0-18}" x2="${x+w}" y2="${y0-18}" stroke="#3B2B20"/><text x="300" y="${y0-26}" text-anchor="middle" fill="#3B2B20" stroke="none">šířka ${f(S)} m</text>
+  <line x1="${x+w+14}" y1="${y0}" x2="${x+w+14}" y2="${y0+h}"/><text x="${x+w+22}" y="${y0+h/2+5}" stroke="none">${f(H)} m</text></g>`;
+  if($('odvoz').checked)s+=`<path d="M40 ${y0}q50-${Math.min(60,10+v)} 100 0z" fill="#7A5638"/><text x="90" y="${y0-8-Math.min(30,5+v/2)}" text-anchor="middle" font-family="Chivo Mono" font-size="13" fill="#3B2B20">odvoz</text>`;
+  $('pr').innerHTML=s;
+}
+calc();
+$('poslat').addEventListener('click',()=>{
+  const z=$('zprava');
+  z.value=`Typ práce: ${typ}. Rozměry: délka ${f(+$('L').value)} m, šířka ${f(+$('S').value)} m, hloubka ${f(+$('H').value)} m (orientačně ${$('vol').textContent}). Odvoz zeminy: ${$('od').textContent}.`;
+  $('kontakt').scrollIntoView({behavior:'smooth'});z.focus({preventScroll:true});
+});
+$('form').addEventListener('submit',e=>{e.preventDefault();$('msg').style.display='block'});
+</script>
+</body>
+</html>

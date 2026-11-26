@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>René Szturc – Bystřice (návrh webu)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&family=Red+Hat+Text:wght@400;500;700&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+:root{
+  --snih:#F5F7F8;
+  --antracit:#383E42;  /* RAL 7016 */
+  --smrk:#2F5D47;      /* beskydské smrky */
+  --dest:#3F86BD;      /* voda v okapu */
+  --zinek:#C7CED3;
+  --tma:#202427;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Red Hat Text",system-ui,sans-serif;background:var(--snih);color:var(--tma);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:"Red Hat Display",sans-serif;font-weight:900;line-height:1.05}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--dest);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.strip{background:var(--tma);color:#D5DADD;text-align:center;font-size:14px;padding:8px 16px}
+.strip b{color:#9CCBEE}
+nav{position:absolute;left:0;right:0;z-index:5}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:76px;gap:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Red Hat Display";font-weight:900;font-size:20px;color:#fff}
+.nl{display:flex;gap:26px;font-weight:500;font-size:15px;color:#E7ECEF}
+.nl a{text-decoration:none}
+.nl a:hover{color:#9CCBEE}
+.btn{display:inline-flex;align-items:center;gap:6px;background:var(--dest);color:#fff;font:inherit;font-weight:700;padding:12px 20px;border:0;border-radius:2px;text-decoration:none;cursor:pointer}
+.btn:hover{background:#2f6f9f}
+.btn.w{background:#fff;color:var(--tma)}
+@media(max-width:860px){.nl{display:none}}
+@media(max-width:560px){.hidem{display:none}}
+
+/* HERO: šikmá střešní plocha */
+.hero{position:relative;background:linear-gradient(180deg,#B9CCD8,#E2EAEF 70%);overflow:hidden;min-height:800px}
+.hero .hills{position:absolute;left:0;right:0;bottom:0;width:100%;height:200px}
+.roof{position:absolute;inset:0 0 auto 0;height:100%;background:repeating-linear-gradient(90deg,var(--antracit) 0 56px,#2F3438 56px 60px,#4A5156 60px 62px);clip-path:polygon(0 0,100% 0,100% 22%,62% 100%,0 100%);animation:lay 1.3s cubic-bezier(.2,.7,.2,1) both}
+@keyframes lay{from{clip-path:polygon(0 0,100% 0,100% 0,0 0)}}
+
+.hero .txt{position:relative;z-index:2;padding:130px 0 0;color:#fff;max-width:700px}
+.hero h1{font-size:clamp(40px,6.2vw,82px);letter-spacing:-.02em}
+.hero p{font-size:19px;margin:22px 0 28px;max-width:48ch;color:#E3E8EB}
+.hero .acts{display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:760px){.hero{min-height:760px}.roof{clip-path:polygon(0 0,100% 0,100% 62%,0 82%)}@keyframes lay{from{clip-path:polygon(0 0,100% 0,100% 0,0 0)}}.hero .txt{padding-top:110px}}
+
+section{padding:90px 0}
+.h2{font-size:clamp(30px,4vw,48px);letter-spacing:-.01em;margin-bottom:14px}
+.sub{max-width:60ch;color:#4c555b;margin-bottom:40px}
+
+/* SLUŽBY */
+.sv{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:4px solid var(--antracit)}
+.sv article{padding:30px 28px 30px 0;margin-right:28px;border-bottom:1px solid var(--zinek)}
+.sv svg{display:block;margin-bottom:16px}
+.sv h3{font-size:23px;margin-bottom:8px}
+.sv ul{list-style:none;margin-top:10px;color:#4c555b}
+.sv li::before{content:"";display:inline-block;width:12px;height:3px;background:var(--dest);margin-right:10px;vertical-align:middle}
+@media(max-width:860px){.sv{grid-template-columns:1fr}.sv article{margin-right:0;padding-right:0}}
+
+/* KONFIGURÁTOR */
+.kf{background:#fff}
+.kgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:44px;align-items:start}
+.stage{background:linear-gradient(180deg,#DDE7ED,#F5F7F8);border-radius:4px;padding:20px 20px 0;position:sticky;top:20px}
+.stage svg{width:100%;height:auto;display:block}
+.opts h3{font-size:17px;margin:0 0 10px;text-transform:uppercase;letter-spacing:.06em;color:#59636a}
+.grp{margin-bottom:26px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{background:var(--snih);border:2px solid var(--zinek);padding:9px 14px;font:inherit;font-size:15px;cursor:pointer;border-radius:2px;color:var(--tma)}
+.chips button[aria-pressed="true"]{border-color:var(--antracit);background:var(--antracit);color:#fff;font-weight:700}
+.sw{display:flex;gap:10px;flex-wrap:wrap}
+.sw button{width:46px;height:46px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--zinek);cursor:pointer}
+.sw button[aria-pressed="true"]{box-shadow:0 0 0 3px var(--dest)}
+.ck{display:grid;gap:8px}
+.ck label{display:flex;gap:10px;align-items:center;font-size:15px}
+.ck input{width:20px;height:20px;accent-color:var(--dest)}
+.out{background:var(--snih);border-left:4px solid var(--dest);padding:14px 16px;margin:6px 0 16px;font-size:15px}
+@media(max-width:900px){.kgrid{grid-template-columns:1fr}.stage{position:static}}
+
+/* PROČ */
+.why{background:var(--smrk);color:#E9F0EC}
+.why .sub{color:#BFD3C8}
+.wg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px}
+.wg div{border-top:2px solid rgba(255,255,255,.35);padding-top:18px}
+.wg h3{font-size:22px;margin-bottom:8px;color:#fff}
+@media(max-width:800px){.wg{grid-template-columns:1fr}}
+
+/* GALERIE */
+.gal{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px}
+.ph{height:220px;position:relative;display:flex;align-items:flex-end;padding:14px;font-size:14px;font-weight:700;overflow:hidden}
+.ph:nth-child(1){grid-column:span 2;background:repeating-linear-gradient(90deg,#383E42 0 40px,#2F3438 40px 43px)}
+.ph:nth-child(2){background:repeating-linear-gradient(0deg,#8E4B34 0 18px,#7A3F2B 18px 20px)}
+.ph:nth-child(3){background:repeating-linear-gradient(90deg,#2F5D47 0 30px,#264D3A 30px 33px)}
+.ph:nth-child(4){background:linear-gradient(180deg,#C7CED3,#9BA7AF)}
+.ph:nth-child(5){grid-column:span 2;background:repeating-linear-gradient(-30deg,#5A6166 0 26px,#4C5357 26px 28px)}
+.ph:nth-child(6){background:repeating-linear-gradient(90deg,#B87333 0 20px,#A5652B 20px 22px)}
+.ph span{background:#fff;padding:5px 10px}
+@media(max-width:760px){.gal{grid-template-columns:1fr 1fr}.ph{height:160px}}
+
+/* KONTAKT */
+.kontakt{background:var(--antracit);color:#EEF1F3}
+.kg{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.tel{font-family:"Red Hat Display";font-weight:900;font-size:clamp(32px,4.4vw,52px);text-decoration:none;display:block;margin:10px 0 20px;color:#fff}
+.kg dl{display:grid;grid-template-columns:80px 1fr;gap:10px}
+.kg dt{color:#AEB7BD}
+form{background:var(--snih);color:var(--tma);padding:30px;display:grid;gap:14px}
+label.f{display:grid;gap:6px;font-weight:700;font-size:15px}
+.f input,.f textarea{font:inherit;padding:11px 12px;border:1px solid #AEB7BD;width:100%;background:#fff}
+textarea{min-height:120px;resize:vertical}
+.msg{display:none;background:#E2EFF8;border-left:4px solid var(--dest);padding:12px 14px;font-size:15px}
+@media(max-width:860px){.kg{grid-template-columns:1fr}}
+footer{background:var(--tma);color:#A0A9AF;font-size:14px;padding:26px 0}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="strip">Návrh nového webu pro <b>René Szturc</b>, připravila Tereza Toufarová z Tereweb.cz</div>
+<div style="position:relative">
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="René Szturc, střechy">
+      <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><rect width="44" height="44" fill="#fff"/><path d="M4 26L22 10l18 16" fill="none" stroke="#383E42" stroke-width="5" stroke-linejoin="round"/><path d="M8 34h28" stroke="#3F86BD" stroke-width="4"/><text x="22" y="31" text-anchor="middle" font-family="Red Hat Display" font-weight="900" font-size="10" fill="#383E42">RS</text></svg>
+      <span>René Szturc</span>
+    </a>
+    <div class="nl"><a href="#sluzby">Služby</a><a href="#strecha">Vaše střecha</a><a href="#proc">Proč my</a><a href="#kontakt">Kontakt</a></div>
+    <a class="btn" href="tel:+420733556207">Zavolat<span class="hidem"> 733 556 207</span></a>
+  </div>
+</nav>
+<header class="hero">
+  <div class="roof" aria-hidden="true"></div>
+  <svg class="hills" viewBox="0 0 1366 220" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 140L160 70L300 120L470 40L640 110L800 60L980 120L1150 50L1366 110V220H0z" fill="#9FB3BF"/>
+    <path d="M0 180L200 120L380 170L560 110L760 170L950 120L1140 170L1366 130V220H0z" fill="#2F5D47"/>
+  </svg>
+  <div class="wrap">
+    <div class="txt">
+      <h1>Střechy, klempířina a krytiny pod Beskydy</h1>
+      <p>Pokrýváme a oplechováváme střechy rodinných domů i dalších staveb v Bystřici a okolí. Střešní materiál u nás rovnou i koupíte.</p>
+      <div class="acts"><a class="btn" href="#strecha">Navrhnout střechu</a><a class="btn w" href="#kontakt">Poptat práci</a></div>
+    </div>
+  </div>
+</header>
+</div>
+
+<section id="sluzby">
+  <div class="wrap">
+    <h2 class="h2">Co pro vás uděláme</h2>
+    <p class="sub">Od nové krytiny přes okapy až po materiál. Jedna firma, jeden kontakt.</p>
+    <div class="sv">
+      <article>
+        <svg width="54" height="40" viewBox="0 0 54 40" aria-hidden="true"><path d="M2 34L27 6l25 28" fill="none" stroke="#383E42" stroke-width="5" stroke-linejoin="round"/><path d="M14 22v12M27 10v24M40 22v12" stroke="#3F86BD" stroke-width="2"/></svg>
+        <h3>Pokrývačské práce</h3>
+        <p>Pokládka nových střešních krytin a výměna starých.</p>
+        <ul><li>novostavby</li><li>rekonstrukce střech</li></ul>
+      </article>
+      <article>
+        <svg width="54" height="40" viewBox="0 0 54 40" aria-hidden="true"><path d="M4 8h40v8H4z" fill="none" stroke="#383E42" stroke-width="4"/><path d="M38 16v20" stroke="#383E42" stroke-width="5"/><path d="M38 36q-4 3-8 0" fill="none" stroke="#3F86BD" stroke-width="3"/></svg>
+        <h3>Klempířské práce</h3>
+        <p>Plechové prvky, které chrání střechu i fasádu před vodou.</p>
+        <ul><li>okapy a svody</li><li>oplechování a lemování</li></ul>
+      </article>
+      <article>
+        <svg width="54" height="40" viewBox="0 0 54 40" aria-hidden="true"><rect x="4" y="22" width="46" height="6" fill="#383E42"/><rect x="8" y="14" width="38" height="6" fill="#2F5D47"/><rect x="12" y="6" width="30" height="6" fill="#3F86BD"/><path d="M4 34h46" stroke="#383E42" stroke-width="3"/></svg>
+        <h3>Prodej krytin</h3>
+        <p>Prodáváme střešní materiál. Poradíme, co se k vaší střeše hodí.</p>
+        <ul><li>střešní krytiny</li><li>materiál k pokládce</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="strecha" class="kf">
+  <div class="wrap">
+    <h2 class="h2">Poskládejte si střechu</h2>
+    <p class="sub">Vyberte tvar střechy, typ krytiny a barvu. Náhled se hned překreslí a výběr nám pošlete jako podklad pro nabídku.</p>
+    <div class="kgrid">
+      <div class="stage"><svg id="dum" viewBox="0 0 560 380" role="img" aria-label="Náhled domu se zvolenou střechou"></svg></div>
+      <div class="opts">
+        <div class="grp"><h3>Tvar střechy</h3><div class="chips" data-k="tvar"><button aria-pressed="true" data-v="sedlová">Sedlová</button><button aria-pressed="false" data-v="valbová">Valbová</button><button aria-pressed="false" data-v="pultová">Pultová</button><button aria-pressed="false" data-v="mansardová">Mansardová</button></div></div>
+        <div class="grp"><h3>Krytina</h3><div class="chips" data-k="kryt"><button aria-pressed="true" data-v="plechová taška">Plechová taška</button><button aria-pressed="false" data-v="falcovaný plech">Falcovaný plech</button><button aria-pressed="false" data-v="trapézový plech">Trapézový plech</button><button aria-pressed="false" data-v="taška">Pálená / betonová taška</button></div></div>
+        <div class="grp"><h3>Barva</h3><div class="sw" data-k="barva">
+          <button aria-pressed="true" data-v="antracit" data-c="#383E42" style="background:#383E42" aria-label="Antracit"></button>
+          <button aria-pressed="false" data-v="cihlová" data-c="#8E4B34" style="background:#8E4B34" aria-label="Cihlová"></button>
+          <button aria-pressed="false" data-v="tmavě hnědá" data-c="#4A3A30" style="background:#4A3A30" aria-label="Tmavě hnědá"></button>
+          <button aria-pressed="false" data-v="černá" data-c="#1B1C1E" style="background:#1B1C1E" aria-label="Černá"></button>
+          <button aria-pressed="false" data-v="zelená" data-c="#2F5D47" style="background:#2F5D47" aria-label="Zelená"></button>
+          <button aria-pressed="false" data-v="měděná" data-c="#B87333" style="background:#B87333" aria-label="Měděná"></button>
+        </div></div>
+        <div class="grp"><h3>Klempířské prvky</h3><div class="ck">
+          <label><input type="checkbox" id="c-okap" checked> Okapy a svody</label>
+          <label><input type="checkbox" id="c-komin"> Oplechování komína</label>
+          <label><input type="checkbox" id="c-okno"> Střešní okno a lemování</label>
+        </div></div>
+        <div class="out" id="out" aria-live="polite"></div>
+        <button class="btn" id="poslat">Poslat výběr do poptávky</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proc" class="why">
+  <div class="wrap">
+    <h2 class="h2">Proč se obrátit na nás</h2>
+    <p class="sub">Střecha je velká investice. Proto je dobré mít práci i materiál z jedné ruky.</p>
+    <div class="wg">
+      <div><h3>Materiál i montáž</h3><p>Krytinu u nás koupíte a rovnou ji i položíme, takže nic neřešíte ve dvou firmách.</p></div>
+      <div><h3>Pokrývač i klempíř</h3><p>Krytinu, okapy i oplechování zajistíme sami, takže detaily na sebe navazují.</p></div>
+      <div><h3>Místní firma</h3><p>Sídlíme v Bystřici a známe zdejší počasí, sníh i domy.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="h2">Naše střechy</h2>
+    <p class="sub">Sem přijdou fotky vašich zakázek.</p>
+    <div class="gal">
+      <div class="ph"><span>Sem přijdou fotky vašich zakázek</span></div>
+      <div class="ph"><span>Taška</span></div>
+      <div class="ph"><span>Falc</span></div>
+      <div class="ph"><span>Okapy</span></div>
+      <div class="ph"><span>Rekonstrukce</span></div>
+      <div class="ph"><span>Oplechování</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" class="kontakt">
+  <div class="wrap kg">
+    <div>
+      <h2 class="h2">Kontakt</h2>
+      <p>Zavolejte nebo napište, domluvíme se na prohlídce střechy.</p>
+      <a class="tel" href="tel:+420733556207">733 556 207</a>
+      <dl>
+        <dt>E-mail</dt><dd><a href="mailto:rene.szturc@seznam.cz">rene.szturc@seznam.cz</a></dd>
+        <dt>Adresa</dt><dd>Bystřice 1479, 739 95 Bystřice</dd>
+      </dl>
+    </div>
+    <form id="form">
+      <label class="f">Jméno<input required autocomplete="name"></label>
+      <label class="f">Telefon nebo e-mail<input required></label>
+      <label class="f">Zpráva<textarea id="zprava" placeholder="Popište střechu a co je potřeba"></textarea></label>
+      <button class="btn" type="submit">Odeslat poptávku</button>
+      <p class="msg" id="msg" role="status">Toto je ukázka formuláře. V hotovém webu by zpráva přišla rovnou na váš e-mail.</p>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 René Szturc</span><span>Návrh připravila Tereweb.cz</span></div></footer>
+
+<script>
+const st={tvar:"sedlová",kryt:"plechová taška",barva:"antracit",c:"#383E42"};
+const $=id=>document.getElementById(id);
+document.querySelectorAll('[data-k]').forEach(g=>g.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+  g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));st[g.dataset.k]=b.dataset.v;if(b.dataset.c)st.c=b.dataset.c;draw();}));
+['c-okap','c-komin','c-okno'].forEach(i=>$(i).addEventListener('change',draw));
+function shade(h,a){const n=parseInt(h.slice(1),16);let r=(n>>16)+a,g=(n>>8&255)+a,b=(n&255)+a;r=Math.max(0,Math.min(255,r));g=Math.max(0,Math.min(255,g));b=Math.max(0,Math.min(255,b));return`rgb(${r},${g},${b})`}
+function draw(){
+  const c=st.c,d=shade(c,-22),l=shade(c,30);
+  let roof,clip;
+  const wallTop=200,L=110,R=450;
+  if(st.tvar==='sedlová')roof=`M${L-24} ${wallTop}L280 70L${R+24} ${wallTop}z`;
+  if(st.tvar==='valbová')roof=`M${L-24} ${wallTop}L210 90H350L${R+24} ${wallTop}z`;
+  if(st.tvar==='pultová')roof=`M${L-24} ${wallTop}L${L-24} 120L${R+24} ${wallTop-30}L${R+24} ${wallTop}z`;
+  if(st.tvar==='mansardová')roof=`M${L-24} ${wallTop}L${L+10} 120L200 80H360L${R-10} 120L${R+24} ${wallTop}z`;
+  let pat='';
+  if(st.kryt==='plechová taška'||st.kryt==='taška'){const gap=st.kryt==='taška'?14:20;for(let y=60;y<wallTop;y+=gap)pat+=`<path d="M60 ${y}h460" stroke="${d}" stroke-width="${st.kryt==='taška'?3:2}"/>`;if(st.kryt==='taška')for(let y=60,i=0;y<wallTop;y+=gap,i++)for(let x=60+(i%2)*12;x<520;x+=24)pat+=`<path d="M${x} ${y}v${gap}" stroke="${d}"/>`;else for(let y=60;y<wallTop;y+=20)for(let x=60;x<520;x+=30)pat+=`<path d="M${x} ${y+2}q15 14 30 0" fill="none" stroke="${l}" stroke-width="1.5"/>`}
+  if(st.kryt==='falcovaný plech')for(let x=60;x<520;x+=26)pat+=`<path d="M${x} 50v${wallTop}" stroke="${l}" stroke-width="3"/>`;
+  if(st.kryt==='trapézový plech')for(let x=60;x<520;x+=18)pat+=`<path d="M${x} 50v${wallTop}" stroke="${x%36?d:l}" stroke-width="6"/>`;
+  let s=`<defs><clipPath id="rc"><path d="${roof}"/></clipPath></defs>`;
+  s+=`<rect x="0" y="352" width="560" height="28" fill="#2F5D47"/>`;
+  s+=`<rect x="${L}" y="${wallTop}" width="${R-L}" height="152" fill="#FFFFFF" stroke="#C7CED3"/>`;
+  s+=`<rect x="150" y="235" width="60" height="60" fill="#C9DCE8" stroke="#383E42" stroke-width="3"/><rect x="350" y="235" width="60" height="60" fill="#C9DCE8" stroke="#383E42" stroke-width="3"/><rect x="255" y="262" width="50" height="90" fill="#383E42"/>`;
+  if($('c-komin').checked){s+=`<rect x="360" y="70" width="34" height="90" fill="#9D6A58"/><rect x="354" y="64" width="46" height="10" fill="#9BA7AF"/>`}
+  s+=`<path d="${roof}" fill="${c}"/><g clip-path="url(#rc)">${pat}</g><path d="${roof}" fill="none" stroke="${d}" stroke-width="3"/>`;
+  if($('c-komin').checked)s+=`<path d="M352 ${st.tvar==='pultová'?170:150}h50" stroke="#9BA7AF" stroke-width="8"/>`;
+  if($('c-okno').checked)s+=`<rect x="170" y="${st.tvar==='pultová'?150:140}" width="44" height="40" fill="#C9DCE8" stroke="#9BA7AF" stroke-width="5"/>`;
+  if($('c-okap').checked)s+=`<rect x="${L-30}" y="${wallTop-2}" width="${R-L+60}" height="10" rx="5" fill="#9BA7AF"/><rect x="${R+12}" y="${wallTop+6}" width="9" height="146" fill="#9BA7AF"/><rect x="${L-21}" y="${wallTop+6}" width="9" height="146" fill="#9BA7AF"/>`;
+  $('dum').innerHTML=s;
+  const prv=[$('c-okap').checked&&'okapy a svody',$('c-komin').checked&&'oplechování komína',$('c-okno').checked&&'střešní okno'].filter(Boolean);
+  $('out').textContent=`Střecha ${st.tvar}, krytina ${st.kryt}, barva ${st.barva}`+(prv.length?`, klempířské prvky: ${prv.join(', ')}.`:'.');
+}
+draw();
+$('poslat').addEventListener('click',()=>{const z=$('zprava');z.value='Mám zájem o střechu. '+$('out').textContent;$('kontakt').scrollIntoView({behavior:'smooth'});z.focus({preventScroll:true})});
+$('form').addEventListener('submit',e=>{e.preventDefault();$('msg').style.display='block'});
+</script>
+</body>
+</html>

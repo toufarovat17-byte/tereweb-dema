@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Tomáš Brejla – Bystřice (návrh webu)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,500;112..125,700;112..125,900&family=Atkinson+Hyperlegible:wght@400;700&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+:root{
+  --zinek:#E4E8EB;    /* pozinkovaný plech */
+  --grafit:#1C2126;   /* rozvaděč */
+  --med:#B8622B;      /* měděný vodič */
+  --pe:#2E9A4B;       /* zelenožlutý ochranný vodič */
+  --pez:#F0C419;
+  --mrak:#46525E;
+  --bila:#FAFBFC;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Atkinson Hyperlegible",system-ui,sans-serif;background:var(--bila);color:var(--grafit);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:"Archivo",sans-serif;font-stretch:125%;font-weight:900;line-height:1.02;letter-spacing:-.01em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--med);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.strip{background:var(--grafit);color:#D9DEE2;text-align:center;font-size:14px;padding:8px 16px}
+.strip b{color:var(--pez)}
+nav{background:var(--zinek);border-bottom:3px solid var(--grafit)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:"Archivo";font-stretch:125%;font-weight:900;font-size:18px;text-transform:uppercase;letter-spacing:.02em}
+.nl{display:flex;gap:28px;font-weight:700;font-size:15px}
+.nl a{text-decoration:none}
+.nl a:hover{color:var(--med)}
+.call{background:var(--med);color:#fff;text-decoration:none;font-weight:700;padding:12px 18px;display:inline-flex;gap:8px;align-items:center;border:0;font:inherit;font-weight:700;cursor:pointer}
+.call:hover{background:#9a4f20}
+.call.dark{background:var(--grafit)}
+@media(max-width:880px){.nl{display:none}}
+@media(max-width:560px){.hidem{display:none}}
+
+/* HERO */
+.hero{background:var(--zinek);position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:20px;align-items:end;min-height:600px}
+.hero .txt{padding:70px 0 80px}
+.hero h1{font-size:clamp(38px,5.6vw,74px);text-transform:uppercase}
+.hero h1 span{display:block;font-weight:500;font-size:.34em;letter-spacing:.04em;margin-bottom:16px;color:var(--mrak)}
+.hero p{max-width:50ch;margin:24px 0 30px;font-size:19px}
+.hero .acts{display:flex;gap:12px;flex-wrap:wrap}
+.pohot{display:inline-flex;gap:10px;align-items:center;margin-top:26px;font-weight:700;font-size:15px}
+.pohot i{width:10px;height:10px;border-radius:50%;background:var(--pe);box-shadow:0 0 0 4px rgba(46,154,75,.25)}
+.scene{align-self:stretch;display:flex;align-items:flex-end}
+.scene svg{width:100%;height:auto;max-height:600px}
+.bolt{opacity:0;animation:bolt 4.5s 0.6s infinite}
+@keyframes bolt{0%,100%{opacity:0}2%,6%{opacity:1}4%{opacity:.2}10%{opacity:0}}
+.flow{stroke-dasharray:14 400;stroke-dashoffset:414;animation:flow 4.5s .7s infinite}
+@keyframes flow{0%{stroke-dashoffset:414}12%{stroke-dashoffset:0}13%,100%{stroke-dashoffset:-20;opacity:0}}
+.ground{animation:gl 4.5s .7s infinite;opacity:0}
+@keyframes gl{0%,10%{opacity:0}13%{opacity:1}25%,100%{opacity:0}}
+@media(max-width:880px){.hero .wrap{grid-template-columns:1fr;min-height:0}.hero .txt{padding:48px 0 10px}.scene svg{max-height:360px}}
+
+section{padding:90px 0}
+.h2{font-size:clamp(28px,3.6vw,44px);text-transform:uppercase;margin-bottom:14px}
+.sub{max-width:62ch;margin-bottom:42px;color:#3d4650}
+
+/* SLUŽBY jako vodiče */
+.wires{display:grid;gap:0}
+.wire{display:grid;grid-template-columns:70px 280px 1fr;align-items:center;gap:24px;padding:22px 0;border-bottom:1px solid #CDD3D8}
+.wire:first-child{border-top:1px solid #CDD3D8}
+.wire .c{height:12px;border-radius:6px}
+.wire h3{font-size:19px;font-stretch:112%;text-transform:uppercase}
+.wire p{color:#3d4650}
+@media(max-width:760px){.wire{grid-template-columns:44px 1fr}.wire p{grid-column:2}}
+
+/* ROZVADĚČ */
+.board-sec{background:var(--grafit);color:#E8ECEF}
+.board-sec .sub{color:#AEB7BF}
+.bgrid{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:start}
+.board{background:#2A3138;border:3px solid #48525C;border-radius:6px;padding:22px}
+.board .rail-t{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#9AA4AD;margin:4px 0 10px}
+.rail{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;background:repeating-linear-gradient(90deg,#3a434c 0 2px,#323a42 2px 8px);padding:14px 10px;border-radius:4px;margin-bottom:18px}
+.brk{background:#F2F4F5;color:var(--grafit);border:0;border-radius:3px;padding:10px 6px 12px;cursor:pointer;font:inherit;font-size:12.5px;line-height:1.25;display:flex;flex-direction:column;align-items:center;gap:8px;min-height:170px;transition:background .2s}
+.brk .lev{width:22px;height:54px;background:#D5DADE;border-radius:3px;position:relative}
+.brk .lev::after{content:"";position:absolute;left:3px;right:3px;height:24px;bottom:3px;background:var(--grafit);border-radius:2px;transition:bottom .2s}
+.brk .led{width:9px;height:9px;border-radius:50%;background:#AEB6BD}
+.brk[aria-pressed="true"] .lev::after{bottom:27px;background:var(--med)}
+.brk[aria-pressed="true"] .led{background:var(--pe);box-shadow:0 0 8px var(--pe)}
+.brk[aria-pressed="true"]{background:#fff}
+.brk b{font-weight:700}
+.obj{display:flex;flex-wrap:wrap;gap:8px}
+.obj button{background:transparent;color:#E8ECEF;border:2px solid #56616B;padding:8px 14px;font:inherit;font-size:15px;cursor:pointer}
+.obj button[aria-pressed="true"]{border-color:var(--pez);color:var(--pez);font-weight:700}
+.ticket{background:#F7F7F2;color:var(--grafit);padding:26px;border-top:10px solid transparent;border-image:repeating-linear-gradient(90deg,var(--pe) 0 16px,var(--pez) 16px 32px) 10}
+.ticket h3{font-size:20px;text-transform:uppercase;margin-bottom:10px}
+.ticket ul{list-style:none;margin:12px 0 18px;min-height:60px}
+.ticket li{padding:6px 0;border-bottom:1px dotted #A9B0B6;display:flex;justify-content:space-between;gap:10px}
+.ticket .empty{color:#6b747c;font-style:italic}
+@media(max-width:900px){.bgrid{grid-template-columns:1fr}.rail{grid-template-columns:repeat(3,1fr)}}
+
+/* PROČ */
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:2px solid var(--grafit)}
+.why div{padding:30px;border-right:2px solid var(--grafit)}
+.why div:last-child{border-right:0}
+.why h3{font-size:20px;text-transform:uppercase;margin:14px 0 8px;font-stretch:112%}
+@media(max-width:800px){.why{grid-template-columns:1fr}.why div{border-right:0;border-bottom:2px solid var(--grafit)}.why div:last-child{border-bottom:0}}
+
+/* GALERIE */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.ph{aspect-ratio:3/4;background:var(--zinek);position:relative;display:flex;align-items:flex-end;padding:14px;font-weight:700;font-size:14px;overflow:hidden}
+.ph svg{position:absolute;inset:0;width:100%;height:100%}
+.ph span{position:relative;background:var(--grafit);color:#fff;padding:5px 9px}
+.gal .ph:nth-child(2){background:#D7DDE2}.gal .ph:nth-child(3){background:#F2E3D6}.gal .ph:nth-child(4){background:#DCE9DF}
+@media(max-width:800px){.gal{grid-template-columns:1fr 1fr}}
+
+/* KONTAKT */
+.kontakt{background:var(--zinek)}
+.kg{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.big{font-family:"Archivo";font-stretch:125%;font-weight:900;font-size:clamp(30px,4.2vw,48px);text-decoration:none;display:block;margin:10px 0 22px}
+.kg dl{display:grid;grid-template-columns:80px 1fr;gap:10px 14px}
+.kg dt{font-weight:700}
+form{background:#fff;border:2px solid var(--grafit);padding:28px;display:grid;gap:14px}
+label{display:grid;gap:6px;font-weight:700;font-size:15px}
+input,textarea{font:inherit;padding:11px 12px;border:1px solid #9CA6AF;width:100%;background:#fff}
+textarea{min-height:120px;resize:vertical}
+.msg{display:none;padding:12px 14px;background:#E4F2E8;border-left:4px solid var(--pe);font-size:15px}
+@media(max-width:860px){.kg{grid-template-columns:1fr}}
+footer{background:var(--grafit);color:#AEB7BF;padding:26px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.bolt{opacity:0}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="strip">Návrh nového webu pro <b>Tomáš Brejla</b>, připravila Tereza Toufarová z Tereweb.cz</div>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="Tomáš Brejla, elektro">
+      <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true"><rect width="42" height="42" fill="#1C2126"/><path d="M24 5L12 23h8l-3 14 13-19h-8z" fill="#F0C419"/><rect x="0" y="38" width="42" height="4" fill="#B8622B"/></svg>
+      <span>Tomáš Brejla</span>
+    </a>
+    <div class="nl"><a href="#sluzby">Služby</a><a href="#rozvadec">Poptávka</a><a href="#proc">Proč my</a><a href="#kontakt">Kontakt</a></div>
+    <a class="call" href="tel:+420777333266">Zavolat<span class="hidem"> 777 333 266</span></a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="txt">
+      <h1><span>Elektro · Hromosvody · Brány</span>Elektřina, která je v pořádku</h1>
+      <p>Elektroinstalace v domech i v průmyslu, hromosvody, veřejné osvětlení a montáž vjezdových bran. Pracujeme v Bystřici u Benešova a okolí, u instalací zajistíme i revize.</p>
+      <div class="acts"><a class="call" href="#rozvadec">Sestavit poptávku</a><a class="call dark" href="tel:+420777333266">777 333 266</a></div>
+      <div class="pohot"><i></i>Nonstop pohotovost na telefonu</div>
+    </div>
+    <div class="scene">
+      <svg viewBox="0 0 420 520" aria-hidden="true">
+        <path d="M60 70q10-40 60-36q20-30 70-14q40-20 80 6q50-6 60 34q30 10 20 40H40q-20-20 20-30z" fill="#46525E"/>
+        <path d="M100 96q20-14 50-4q30-16 60 0q40-10 60 6H96z" fill="#5B6773"/>
+        <path class="bolt" d="M232 100l-26 70h20l-22 70 42-86h-22l20-54z" fill="#F0C419"/>
+        <rect x="0" y="470" width="420" height="50" fill="#7A5B3E"/>
+        <rect x="0" y="462" width="420" height="10" fill="#5E8C4A"/>
+        <path d="M70 300L215 205L360 300z" fill="#1C2126"/>
+        <rect x="95" y="300" width="240" height="162" fill="#FAFBFC" stroke="#1C2126" stroke-width="3"/>
+        <rect x="125" y="330" width="50" height="50" fill="#C9D6E0" stroke="#1C2126" stroke-width="3"/>
+        <rect x="250" y="330" width="50" height="50" fill="#C9D6E0" stroke="#1C2126" stroke-width="3"/>
+        <rect x="190" y="390" width="46" height="72" fill="#B8622B"/>
+        <line x1="215" y1="205" x2="215" y2="160" stroke="#8A949C" stroke-width="5"/>
+        <circle cx="215" cy="158" r="4" fill="#8A949C"/>
+        <path d="M215 205L360 300v170" fill="none" stroke="#8A949C" stroke-width="4"/>
+        <path d="M360 470v30H250" fill="none" stroke="#8A949C" stroke-width="4" stroke-dasharray="6 4"/>
+        <path class="flow" d="M215 160V205L360 300v170v30H250" fill="none" stroke="#F0C419" stroke-width="6" stroke-linecap="round"/>
+        <g class="ground" stroke="#F0C419" stroke-width="3"><path d="M240 500l-14 -8M240 500l-14 8M240 500l-18 0"/></g>
+        <rect x="346" y="400" width="28" height="18" fill="#E4E8EB" stroke="#1C2126" stroke-width="2"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section id="sluzby">
+  <div class="wrap">
+    <h2 class="h2">Co pro vás uděláme</h2>
+    <p class="sub">Každý obor je jeden vodič. Dohromady tvoří kompletní elektro pro dům, firmu i obec.</p>
+    <div class="wires">
+      <div class="wire"><div class="c" style="background:#B8622B"></div><h3>Elektroinstalace</h3><p>Bytové a domovní instalace, rozvody v novostavbách i při rekonstrukci, včetně revize.</p></div>
+      <div class="wire"><div class="c" style="background:#1C2126"></div><h3>Průmysl</h3><p>Průmyslové elektroinstalace pro dílny, haly a provozy.</p></div>
+      <div class="wire"><div class="c" style="background:repeating-linear-gradient(90deg,#2E9A4B 0 12px,#F0C419 12px 24px)"></div><h3>Hromosvody</h3><p>Montáž hromosvodů na rodinné domy i další objekty.</p></div>
+      <div class="wire"><div class="c" style="background:#2F6FB5"></div><h3>Veřejné osvětlení</h3><p>Montáž veřejného osvětlení pro obce a soukromé areály.</p></div>
+      <div class="wire"><div class="c" style="background:#8A949C"></div><h3>Brány a ploty</h3><p>Montáž vjezdových bran, servis plotů, vrat a bran.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="rozvadec" class="board-sec">
+  <div class="wrap">
+    <h2 class="h2">Zapněte, co potřebujete</h2>
+    <p class="sub">Vyberte typ objektu a jističem zapněte práce, o které máte zájem. Vpravo se vám skládá poptávka, kterou pak jedním klikem odešlete.</p>
+    <div class="bgrid">
+      <div class="board">
+        <div class="rail-t">Objekt</div>
+        <div class="obj" id="obj" role="group" aria-label="Typ objektu">
+          <button aria-pressed="true">Rodinný dům</button><button aria-pressed="false">Byt</button><button aria-pressed="false">Firma nebo hala</button><button aria-pressed="false">Obec</button>
+        </div>
+        <div class="rail-t" style="margin-top:20px">Okruhy</div>
+        <div class="rail" id="rail">
+          <button class="brk" aria-pressed="false" data-n="Nová elektroinstalace"><span class="led"></span><span class="lev"></span><b>Nová instalace</b></button>
+          <button class="brk" aria-pressed="false" data-n="Úprava nebo oprava rozvodů"><span class="led"></span><span class="lev"></span><b>Oprava rozvodů</b></button>
+          <button class="brk" aria-pressed="false" data-n="Revize"><span class="led"></span><span class="lev"></span><b>Revize</b></button>
+          <button class="brk" aria-pressed="false" data-n="Hromosvod"><span class="led"></span><span class="lev"></span><b>Hromosvod</b></button>
+          <button class="brk" aria-pressed="false" data-n="Veřejné osvětlení"><span class="led"></span><span class="lev"></span><b>Osvětlení</b></button>
+          <button class="brk" aria-pressed="false" data-n="Vjezdová brána"><span class="led"></span><span class="lev"></span><b>Brána</b></button>
+        </div>
+      </div>
+      <div class="ticket" aria-live="polite">
+        <h3>Vaše poptávka</h3>
+        <div>Objekt: <b id="tobj">Rodinný dům</b></div>
+        <ul id="tlist"><li class="empty">Zatím nemáte zapnutý žádný okruh.</li></ul>
+        <button class="call" id="send">Přenést do formuláře</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proc">
+  <div class="wrap">
+    <h2 class="h2">Proč zavolat právě nám</h2>
+    <p class="sub">Elektro, hromosvod i bránu u vás vyřeší jeden člověk, takže nemusíte shánět tři řemeslníky.</p>
+    <div class="why">
+      <div><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="16" fill="none" stroke="#B8622B" stroke-width="4"/><path d="M20 10v10l7 5" stroke="#1C2126" stroke-width="4" fill="none"/></svg><h3>Pohotovost</h3><p>Při poruše nám můžete volat nonstop.</p></div>
+      <div><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect x="6" y="6" width="28" height="28" fill="none" stroke="#B8622B" stroke-width="4"/><path d="M13 20l5 5 9-11" stroke="#1C2126" stroke-width="4" fill="none"/></svg><h3>Včetně revizí</h3><p>Domovní i průmyslové instalace děláme včetně revize.</p></div>
+      <div><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><path d="M4 34h32M10 34V16h20v18" fill="none" stroke="#B8622B" stroke-width="4"/><path d="M20 4l-6 10h12z" fill="#1C2126"/></svg><h3>Od domu po obec</h3><p>Rodinné domy, provozy i veřejné osvětlení pro obce.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 class="h2">Hotové práce</h2>
+    <p class="sub">Sem přijdou fotky vašich zakázek.</p>
+    <div class="gal">
+      <div class="ph"><svg viewBox="0 0 120 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect x="30" y="30" width="60" height="80" fill="#fff" stroke="#1C2126" stroke-width="3"/><path d="M40 50h40M40 64h40M40 78h40" stroke="#B8622B" stroke-width="5"/></svg><span>Rozvaděč</span></div>
+      <div class="ph"><svg viewBox="0 0 120 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M20 90L60 60L100 90z" fill="#1C2126"/><path d="M60 60V40M60 60l40 30v50" stroke="#8A949C" stroke-width="3" fill="none"/></svg><span>Hromosvod</span></div>
+      <div class="ph"><svg viewBox="0 0 120 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M50 140V40h26" stroke="#1C2126" stroke-width="4" fill="none"/><path d="M66 44h22l-6 8H72z" fill="#1C2126"/><path d="M70 54l-14 40h48z" fill="#F0C419" opacity=".5"/></svg><span>Osvětlení</span></div>
+      <div class="ph"><svg viewBox="0 0 120 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect x="10" y="80" width="100" height="50" fill="none" stroke="#1C2126" stroke-width="3"/><path d="M20 80v50M35 80v50M50 80v50M65 80v50M80 80v50M95 80v50" stroke="#1C2126" stroke-width="2"/></svg><span>Brána</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" class="kontakt">
+  <div class="wrap kg">
+    <div>
+      <h2 class="h2">Kontakt</h2>
+      <p>Zavolejte, nebo nám pošlete poptávku přes formulář.</p>
+      <a class="big" href="tel:+420777333266">777 333 266</a>
+      <dl>
+        <dt>E-mail</dt><dd><a href="mailto:tomasbrejla@seznam.cz">tomasbrejla@seznam.cz</a></dd>
+        <dt>Adresa</dt><dd>Jírovice 61, 256 01 Bystřice</dd>
+      </dl>
+    </div>
+    <form id="form">
+      <label>Jméno<input required autocomplete="name"></label>
+      <label>Telefon<input required type="tel" autocomplete="tel"></label>
+      <label>Zpráva<textarea id="zprava" placeholder="Co potřebujete udělat a kde"></textarea></label>
+      <button class="call" type="submit">Odeslat poptávku</button>
+      <p class="msg" id="msg" role="status">Toto je ukázka formuláře. V hotovém webu by zpráva přišla rovnou na váš e-mail.</p>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 Tomáš Brejla</span><span>Návrh připravila Tereweb.cz</span></div></footer>
+
+<script>
+let obj='Rodinný dům';
+const tl=document.getElementById('tlist');
+document.getElementById('obj').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+  document.querySelectorAll('#obj button').forEach(x=>x.setAttribute('aria-pressed',x===b));obj=b.textContent;document.getElementById('tobj').textContent=obj;});
+function render(){
+  const on=[...document.querySelectorAll('.brk[aria-pressed="true"]')].map(b=>b.dataset.n);
+  tl.innerHTML=on.length?on.map((n,i)=>`<li><span>${n}</span><span>okruh ${i+1}</span></li>`).join(''):'<li class="empty">Zatím nemáte zapnutý žádný okruh.</li>';
+  return on;
+}
+document.getElementById('rail').addEventListener('click',e=>{const b=e.target.closest('.brk');if(!b)return;
+  b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true');render();});
+document.getElementById('send').addEventListener('click',()=>{
+  const on=render();const z=document.getElementById('zprava');
+  z.value='Objekt: '+obj+'. Mám zájem o: '+(on.length?on.join(', ').toLowerCase():'zatím nevím, poraďte')+'.';
+  document.getElementById('kontakt').scrollIntoView({behavior:'smooth'});z.focus({preventScroll:true});
+});
+document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();document.getElementById('msg').style.display='block'});
+</script>
+</body>
+</html>
