@@ -380,22 +380,22 @@
   "layout": "3 služby ve sloupcích pod silnou antracitovou linkou s krátkými seznamy, bílá sekce konfigurátoru (náhled vlevo, volby vpravo), smrkově zelená sekce 3 důvodů s horními linkami, galerie 6 dlaždic ve vzorech krytin, antracitový kontakt"
  },
  {
-  "slug": "jerabnicke-prace-robert-marek",
+  "slug": "masaze-elena-sestrenkova",
   "datum": "2026-11-26",
-  "obor": "jeřábnické práce autojeřáby AD20 a AD16",
+  "obor": "masáže, rehabilitace, regenerace, konzultace a léčivé obrazy",
   "pisma": [
-   "Saira Condensed",
-   "Public Sans"
+   "Lora",
+   "Onest"
   ],
   "paleta": [
-   "#E3E5E6",
-   "#14213D",
-   "#D62828",
-   "#FCA311",
-   "#8D99A6"
+   "#EAF0EC",
+   "#4B2E4F",
+   "#B9A6D3",
+   "#7FA88E",
+   "#26222A"
   ],
-  "hero": "betonově šedá plocha mezi dvěma červenobílými výstražnými pásy, obří kondenzovaný verzálkový nadpis vlevo, zprava do hero zasahuje SVG autojeřáb, jehož výložník se při načtení zvedne a spustí hák",
-  "interakce": "plánovač zvedání: typ břemene (materiál, vazníky, bazén, hala, vozidlo), posuvníky výšky, vzdálenosti a hmotnosti, živý SVG bokorys s jeřábem, výložníkem, břemenem a kótami, přenos do formuláře",
-  "layout": "služby jako mřížka 3x2 tenkých buněk v tmavém rámu, tmavá sekce dvou vozů s SVG, světlý plánovač (volby vlevo, nákres + tmavý souhrnný pás vpravo), mapka oblasti + tabulka kde a kdy, galerie 3 dlaždice s výstražným pruhem, šedý kontakt s obřím červeným telefonem"
+  "hero": "vycentrovaná patková typografie s kurzívou na šalvějové ploše, za ní dva rozmazané kruhy, které se pomalu nadechují a vydechují",
+  "interakce": "mapa těla: klikací SVG postava (hlava, šíje, záda, bedra, ruce, nohy) + výběr cíle návštěvy, karta se štítky a přenos zprávy do formuláře",
+  "layout": "nabídka jako 3 oblé sloupy s obloukem nahoře, švestková sekce s postavou vlevo, citát s linkou + seznam s fajfkami, galerie 4 kruhy, kontakt s týdenní mřížkou otevírací doby a zaobleným formulářem"
  }
 ]

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Masáže Elena Sestřenková – Bystřice (návrh webu)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Onest:wght@400;500;700&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+:root{
+  --mlha:#EAF0EC;     /* šalvějová mlha */
+  --svestka:#4B2E4F;  /* švestka */
+  --levandule:#B9A6D3;
+  --mata:#7FA88E;
+  --inkoust:#26222A;
+  --bila:#FBFCFB;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Onest",system-ui,sans-serif;background:var(--bila);color:var(--inkoust);line-height:1.7;font-size:17px}
+h1,h2,h3{font-family:"Lora",Georgia,serif;font-weight:600;line-height:1.15}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--svestka);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.strip{background:var(--svestka);color:#EDE4F1;font-size:14px;text-align:center;padding:8px 16px}
+.strip b{color:#fff}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Lora";font-size:19px;font-weight:600;line-height:1.2}
+.nl{display:flex;gap:26px;font-size:15px;font-weight:500}
+.nl a{text-decoration:none}
+.nl a:hover{color:var(--svestka)}
+.btn{white-space:nowrap;display:inline-flex;align-items:center;gap:6px;background:var(--svestka);color:#fff;border:0;border-radius:40px;padding:12px 22px;font:inherit;font-weight:700;text-decoration:none;cursor:pointer}
+.btn:hover{background:#3a2240}
+.btn.soft{background:#fff;color:var(--svestka);box-shadow:inset 0 0 0 2px var(--svestka)}
+@media(max-width:860px){.nl{display:none}}
+@media(max-width:560px){.hidem{display:none}}
+
+/* HERO: dech */
+.hero{background:var(--mlha);text-align:center;padding:110px 0 120px;position:relative;overflow:hidden}
+.breath{position:absolute;left:50%;top:50%;width:620px;height:620px;margin:-310px 0 0 -310px;border-radius:50%;background:radial-gradient(circle,rgba(185,166,211,.55) 0 40%,rgba(127,168,142,.25) 60%,transparent 70%);animation:dech 8s ease-in-out infinite}
+.breath.b2{width:420px;height:420px;margin:-210px 0 0 -210px;background:radial-gradient(circle,rgba(255,255,255,.7) 0 50%,transparent 70%);animation-delay:-4s}
+@keyframes dech{0%,100%{transform:scale(.82)}50%{transform:scale(1.08)}}
+.hero .in{position:relative}
+.hero h1{font-size:clamp(40px,6vw,76px);max-width:14ch;margin:0 auto}
+.hero h1 i{font-weight:500}
+.hero p{max-width:50ch;margin:22px auto 30px;font-size:19px;color:#4a4450}
+.hero .acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.hint{margin-top:34px;font-size:14px;color:#5e5864}
+@media(max-width:600px){.breath{width:420px;height:420px;margin:-210px 0 0 -210px}.breath.b2{width:280px;height:280px;margin:-140px 0 0 -140px}}
+
+section{padding:90px 0}
+.h2{font-size:clamp(30px,4vw,46px);margin-bottom:14px}
+.sub{max-width:58ch;color:#5e5864;margin-bottom:40px}
+
+/* NABÍDKA: tři oblé sloupy */
+.offer{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pill{border-radius:200px 200px 24px 24px;padding:60px 30px 34px;text-align:center}
+.pill:nth-child(1){background:#F1ECF7}
+.pill:nth-child(2){background:#E6EFE9}
+.pill:nth-child(3){background:#F5EFE6}
+.pill svg{margin-bottom:16px}
+.pill h3{font-size:24px;margin-bottom:10px}
+.pill p{color:#4a4450}
+@media(max-width:820px){.offer{grid-template-columns:1fr}.pill{border-radius:120px 120px 24px 24px}}
+
+/* MAPA TĚLA */
+.body-sec{background:var(--svestka);color:#F1EAF4}
+.body-sec .sub{color:#D6C8DE}
+.bg{display:grid;grid-template-columns:320px 1fr;gap:56px;align-items:center}
+.fig{background:rgba(255,255,255,.06);border-radius:30px;padding:24px}
+.fig svg{width:100%;height:auto;display:block}
+.zone{fill:rgba(255,255,255,.12);stroke:rgba(255,255,255,.5);stroke-width:1.5;cursor:pointer;transition:fill .25s}
+.zone:hover{fill:rgba(185,166,211,.45)}
+.zone[aria-pressed="true"]{fill:var(--levandule);stroke:#fff}
+.zone:focus-visible{outline:none;stroke:#FFE08A;stroke-width:4}
+.goals{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 26px}
+.goals button{background:transparent;border:1.5px solid rgba(255,255,255,.45);color:#F1EAF4;border-radius:30px;padding:8px 16px;font:inherit;font-size:15px;cursor:pointer}
+.goals button[aria-pressed="true"]{background:#fff;color:var(--svestka);font-weight:700}
+.card{background:#fff;color:var(--inkoust);border-radius:22px;padding:26px}
+.card h3{font-size:22px;margin-bottom:8px}
+.chosen{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 16px;min-height:34px}
+.chosen span{background:var(--mlha);border-radius:20px;padding:4px 12px;font-size:14px}
+.chosen em{color:#7a7380;font-size:15px}
+@media(max-width:860px){.bg{grid-template-columns:1fr}.fig{max-width:320px;margin:0 auto}}
+
+/* O MNĚ / proč */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.quote{font-family:"Lora";font-style:italic;font-size:clamp(24px,3vw,32px);line-height:1.35;color:var(--svestka);border-left:4px solid var(--mata);padding-left:26px}
+.about ul{list-style:none}
+.about li{padding:14px 0;border-bottom:1px solid #DCE4DF;display:flex;gap:14px}
+.about li svg{flex:none;margin-top:4px}
+@media(max-width:820px){.about{grid-template-columns:1fr}}
+
+/* GALERIE */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.ph{aspect-ratio:1;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;font-size:14px;color:#4a4450}
+.ph:nth-child(1){background:radial-gradient(circle at 30% 30%,#fff,#D9CDE8)}
+.ph:nth-child(2){background:radial-gradient(circle at 30% 30%,#fff,#CFE0D5)}
+.ph:nth-child(3){background:radial-gradient(circle at 30% 30%,#fff,#EADDC9)}
+.ph:nth-child(4){background:radial-gradient(circle at 30% 30%,#fff,#C9D7E0)}
+@media(max-width:760px){.gal{grid-template-columns:1fr 1fr}}
+
+/* KONTAKT */
+.kontakt{background:var(--mlha)}
+.kg{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.tel{font-family:"Lora";font-size:clamp(32px,4vw,46px);font-weight:600;text-decoration:none;display:block;margin:8px 0 20px;color:var(--svestka)}
+.hours{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin:18px 0 22px;max-width:420px}
+.hours div{text-align:center;font-size:13px;border-radius:12px;padding:8px 0;background:#fff}
+.hours div b{display:block;font-size:14px}
+.hours .off{background:transparent;color:#8a8390;border:1px dashed #BFC8C2}
+.kg dl{display:grid;grid-template-columns:80px 1fr;gap:8px}
+.kg dt{font-weight:700}
+form{background:#fff;border-radius:24px;padding:30px;display:grid;gap:14px}
+label.f{display:grid;gap:6px;font-weight:500;font-size:15px}
+.f input,.f textarea{font:inherit;padding:12px 14px;border:1.5px solid #CFD8D2;border-radius:14px;width:100%;background:var(--bila)}
+textarea{min-height:120px;resize:vertical}
+.msg{display:none;background:#F1ECF7;border-radius:14px;padding:12px 14px;font-size:15px}
+@media(max-width:860px){.kg{grid-template-columns:1fr}}
+footer{padding:28px 0;font-size:14px;color:#6b6470}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="strip">Návrh nového webu pro <b>Masáže Elena Sestřenková</b>, připravila Tereza Toufarová z Tereweb.cz</div>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="Masáže Elena Sestřenková">
+      <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="20" fill="#4B2E4F"/><path d="M21 30c-7-4-9-10-6-16 3 4 5 8 6 16zM21 30c7-4 9-10 6-16-3 4-5 8-6 16z" fill="#B9A6D3"/><path d="M21 31V14" stroke="#EAF0EC" stroke-width="1.5"/></svg>
+      <span>Elena Sestřenková</span>
+    </a>
+    <div class="nl"><a href="#nabidka">Nabídka</a><a href="#telo">Kde to bolí</a><a href="#kontakt">Kontakt a hodiny</a></div>
+    <a class="btn" href="tel:+420777905577">Objednat se<span class="hidem"> 777 905 577</span></a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="breath" aria-hidden="true"></div>
+  <div class="breath b2" aria-hidden="true"></div>
+  <div class="wrap in">
+    <h1>Na hodinu <i>vypněte</i> a nechte tělo odpočinout</h1>
+    <p>Masáže, rehabilitace a regenerace v Bystřici. Přijďte se uvolnit po práci, po sportu nebo když vás bolí záda.</p>
+    <div class="acts"><a class="btn" href="#telo">Ukázat, kde to bolí</a><a class="btn soft" href="#kontakt">Otevírací doba</a></div>
+    <p class="hint">Nadechněte se s kruhem v pozadí. Pomalu. A výdech.</p>
+  </div>
+</header>
+
+<section id="nabidka">
+  <div class="wrap">
+    <h2 class="h2">Co u mě najdete</h2>
+    <p class="sub">Péče o tělo i o hlavu. Každou návštěvu přizpůsobím tomu, s čím přicházíte.</p>
+    <div class="offer">
+      <div class="pill"><svg width="56" height="56" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="26" fill="#fff"/><path d="M14 34c6-8 22-8 28 0" fill="none" stroke="#4B2E4F" stroke-width="3" stroke-linecap="round"/><circle cx="20" cy="24" r="3" fill="#B9A6D3"/><circle cx="36" cy="24" r="3" fill="#B9A6D3"/></svg><h3>Masáže</h3><p>Uvolnění ztuhlých svalů, šíje i zad a celkové zklidnění.</p></div>
+      <div class="pill"><svg width="56" height="56" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="26" fill="#fff"/><path d="M28 12v32M18 22l10-10 10 10" fill="none" stroke="#4B2E4F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Rehabilitace a regenerace</h3><p>Péče o tělo po zátěži a pomoc s návratem do formy.</p></div>
+      <div class="pill"><svg width="56" height="56" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="26" fill="#fff"/><rect x="16" y="16" width="24" height="24" fill="none" stroke="#4B2E4F" stroke-width="3"/><circle cx="28" cy="28" r="6" fill="#7FA88E"/></svg><h3>Konzultace a obrazy</h3><p>Konzultace v oblasti společenských věd a prodej léčivých obrazů.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="telo" class="body-sec">
+  <div class="wrap bg">
+    <div class="fig">
+      <svg viewBox="0 0 200 420" role="group" aria-label="Postava, klikněte na místa, která vás trápí">
+        <circle class="zone" cx="100" cy="42" r="28" tabindex="0" role="button" aria-pressed="false" data-z="hlava"><title>Hlava</title></circle>
+        <rect class="zone" x="82" y="70" width="36" height="22" rx="8" tabindex="0" role="button" aria-pressed="false" data-z="šíje"><title>Šíje</title></rect>
+        <path class="zone" d="M54 96q46-14 92 0l6 74H48z" tabindex="0" role="button" aria-pressed="false" data-z="horní záda a ramena"><title>Horní záda a ramena</title></path>
+        <path class="zone" d="M50 172h100l-4 56H54z" tabindex="0" role="button" aria-pressed="false" data-z="bedra"><title>Bedra</title></path>
+        <path class="zone" d="M44 100l-18 110 16 4 20-96z" tabindex="0" role="button" aria-pressed="false" data-z="ruce"><title>Ruce</title></path>
+        <path class="zone" d="M156 100l18 110-16 4-20-96z" tabindex="0" role="button" aria-pressed="false" data-z="ruce"><title>Ruce</title></path>
+        <path class="zone" d="M56 232h88l-6 176h-30l-8-140-8 140H62z" tabindex="0" role="button" aria-pressed="false" data-z="nohy"><title>Nohy</title></path>
+      </svg>
+    </div>
+    <div>
+      <h2 class="h2">Kde vás to trápí?</h2>
+      <p class="sub">Klikněte na místa na postavě a vyberte, co od návštěvy čekáte. Vznikne krátká zpráva, se kterou se snadno objednáte.</p>
+      <div class="goals" id="goals" role="group" aria-label="Co od návštěvy čekáte">
+        <button aria-pressed="true">Uvolnit se</button><button aria-pressed="false">Regenerace po sportu</button><button aria-pressed="false">Bolest a ztuhlost</button><button aria-pressed="false">Dárek pro blízkého</button>
+      </div>
+      <div class="card" aria-live="polite">
+        <h3>Vaše návštěva</h3>
+        <div class="chosen" id="chosen"><em>Zatím jste nevybrali žádné místo.</em></div>
+        <button class="btn" id="poslat">Objednat se s touto zprávou</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap about">
+    <p class="quote">Uvolněné tělo, klidnější hlava.</p>
+    <ul>
+      <li><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10" fill="#7FA88E"/><path d="M6 11l4 4 6-8" stroke="#fff" stroke-width="2.2" fill="none"/></svg><span><b>Osobní přístup.</b> Každou návštěvu přizpůsobím tomu, co zrovna potřebujete.</span></li>
+      <li><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10" fill="#7FA88E"/><path d="M6 11l4 4 6-8" stroke="#fff" stroke-width="2.2" fill="none"/></svg><span><b>Odpoledne i podvečer.</b> Otevřeno ve všední dny od 11 do 18 hodin.</span></li>
+      <li><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10" fill="#7FA88E"/><path d="M6 11l4 4 6-8" stroke="#fff" stroke-width="2.2" fill="none"/></svg><span><b>Tělo i mysl.</b> Kromě masáží nabízím i konzultace a léčivé obrazy.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 class="h2">Nahlédněte dovnitř</h2>
+    <p class="sub">Sem přijdou fotky vašeho salonu a obrazů.</p>
+    <div class="gal">
+      <div class="ph">Sem přijdou fotky vašich zakázek</div>
+      <div class="ph">Masážní místnost</div>
+      <div class="ph">Léčivé obrazy</div>
+      <div class="ph">Detail péče</div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" class="kontakt">
+  <div class="wrap kg">
+    <div>
+      <h2 class="h2">Objednejte se</h2>
+      <p>Nejrychleji po telefonu, nebo mi napište.</p>
+      <a class="tel" href="tel:+420777905577">777 905 577</a>
+      <div class="hours" aria-label="Otevírací doba">
+        <div><b>Po</b>11-18</div><div><b>Út</b>11-18</div><div><b>St</b>11-18</div><div><b>Čt</b>11-18</div><div><b>Pá</b>11-18</div><div class="off"><b>So</b>zavř.</div><div class="off"><b>Ne</b>zavř.</div>
+      </div>
+      <dl>
+        <dt>E-mail</dt><dd><a href="mailto:elena.sestrenkova@seznam.cz">elena.sestrenkova@seznam.cz</a></dd>
+        <dt>Adresa</dt><dd>Bystřice 323, 739 95 Bystřice</dd>
+      </dl>
+    </div>
+    <form id="form">
+      <label class="f">Jméno<input required autocomplete="name"></label>
+      <label class="f">Telefon<input required type="tel" autocomplete="tel"></label>
+      <label class="f">Zpráva<textarea id="zprava" placeholder="Kdy by se vám hodilo přijít a co vás trápí"></textarea></label>
+      <button class="btn" type="submit">Odeslat</button>
+      <p class="msg" id="msg" role="status">Toto je ukázka formuláře. V hotovém webu by zpráva přišla rovnou na váš e-mail.</p>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 Masáže Elena Sestřenková</span><span>Návrh připravila Tereweb.cz</span></div></footer>
+
+<script>
+const sel=new Set();let goal='Uvolnit se';
+const ch=document.getElementById('chosen');
+function render(){ch.innerHTML=sel.size?[...sel].map(z=>`<span>${z}</span>`).join('')+`<span>${goal}</span>`:'<em>Zatím jste nevybrali žádné místo.</em>'}
+document.querySelectorAll('.zone').forEach(z=>{
+  const t=()=>{const k=z.dataset.z;const on=!sel.has(k);on?sel.add(k):sel.delete(k);
+    document.querySelectorAll(`.zone[data-z="${k}"]`).forEach(x=>x.setAttribute('aria-pressed',on));render();};
+  z.addEventListener('click',t);z.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();t()}});
+});
+document.getElementById('goals').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+  document.querySelectorAll('#goals button').forEach(x=>x.setAttribute('aria-pressed',x===b));goal=b.textContent;render();});
+document.getElementById('poslat').addEventListener('click',()=>{const z=document.getElementById('zprava');
+  z.value='Dobrý den, chtěla/chtěl bych se objednat. Cíl: '+goal.toLowerCase()+'.'+(sel.size?' Trápí mě: '+[...sel].join(', ')+'.':'')+' Hodí se mi:';
+  document.getElementById('kontakt').scrollIntoView({behavior:'smooth'});z.focus({preventScroll:true});});
+document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();document.getElementById('msg').style.display='block'});
+</script>
+</body>
+</html>
