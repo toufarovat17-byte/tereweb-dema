@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>2MArt – Bystřice (návrh webu)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,400..900&family=Manrope:wght@400;500;700&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+:root{
+  --inkoust:#1D1A2B;
+  --kobalt:#2747D6;
+  --koral:#FF6F59;
+  --safran:#F5B700;
+  --list:#2BA84A;
+  --zed:#F1F0EC;
+  --bila:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Manrope,system-ui,sans-serif;color:var(--inkoust);background:var(--bila);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:Anybody,sans-serif;font-stretch:130%;font-weight:800;line-height:.98;letter-spacing:-.01em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--koral);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+.strip{background:var(--inkoust);color:#e9e7f2;font-size:14px;text-align:center;padding:8px 14px}
+.nav{position:sticky;top:0;z-index:20;background:var(--bila)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.logo{font-family:Anybody;font-stretch:150%;font-weight:900;font-size:26px;text-decoration:none;display:flex;align-items:center;gap:2px}
+.logo i{font-style:normal;color:var(--koral)}
+.nav nav{display:flex;gap:28px;font-weight:500;font-size:15px}
+.nav nav a{text-decoration:none}
+.nav nav a:hover{color:var(--kobalt)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--inkoust);color:#fff;font:inherit;font-weight:700;padding:13px 22px;text-decoration:none;border:0;cursor:pointer;border-radius:0;box-shadow:5px 5px 0 var(--safran);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--safran)}
+.btn.k{background:var(--kobalt);box-shadow:5px 5px 0 var(--koral)}
+/* HERO: zeď, na kterou se maluje */
+.hero{background:var(--zed);position:relative;overflow:hidden;border-top:1px solid #e2e0da}
+.hero svg.mural{position:absolute;inset:0;width:100%;height:100%}
+.tah{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:3000;stroke-dashoffset:3000;animation:maluj 2.4s cubic-bezier(.5,0,.2,1) forwards}
+.tah:nth-of-type(2){animation-delay:.35s}.tah:nth-of-type(3){animation-delay:.7s}.tah:nth-of-type(4){animation-delay:1.05s}.tah:nth-of-type(5){animation-delay:1.4s}.tah:nth-of-type(6){animation-delay:1.7s}
+@keyframes maluj{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.tah{animation:none;stroke-dashoffset:0}}
+.hero .wrap{position:relative;z-index:2;padding-top:90px;padding-bottom:90px;min-height:620px;display:flex;flex-direction:column;justify-content:center}
+.hero h1{font-size:clamp(48px,9vw,128px);max-width:900px}
+.hero h1 span{display:block;font-stretch:60%;font-weight:600;font-size:.42em;letter-spacing:.02em;margin-top:14px}
+.hero p{max-width:470px;font-size:19px;margin:28px 0 32px;background:var(--zed);padding:6px 0}
+.hero .akce{display:flex;gap:18px;flex-wrap:wrap}
+/* kde malujeme */
+section{padding:90px 0}
+.h2{font-size:clamp(34px,5vw,64px);margin-bottom:18px}
+.pod{max-width:560px;color:#4a465a;margin-bottom:44px}
+.mista{display:flex;flex-wrap:wrap;gap:0;border-top:3px solid var(--inkoust)}
+.misto{flex:1 1 200px;padding:28px 22px 30px;border-right:1px solid #ddd;border-bottom:1px solid #ddd}
+.misto b{display:block;font-family:Anybody;font-stretch:120%;font-weight:800;font-size:24px;margin:12px 0 6px}
+.misto svg{width:46px;height:46px}
+.fakta{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:46px}
+.fakt{padding:24px;border:3px solid var(--inkoust)}
+.fakt:nth-child(1){background:var(--safran)}
+.fakt:nth-child(2){background:var(--kobalt);color:#fff}
+.fakt:nth-child(3){background:var(--koral)}
+.fakt h3{font-size:22px;margin-bottom:8px}
+/* STUDIO zeď */
+.studio{background:var(--inkoust);color:#fff}
+.studio .pod{color:#bcb8cf}
+.konf{display:grid;grid-template-columns:1.4fr 1fr;gap:34px;align-items:start}
+.pokoj{background:#fff;padding:14px;border:3px solid #fff}
+.pokoj svg{width:100%;height:auto;display:block}
+.ovl fieldset{border:0;margin-bottom:24px}
+.ovl legend{font-family:Anybody;font-stretch:120%;font-weight:700;font-size:19px;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{cursor:pointer}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips span{display:inline-block;padding:9px 14px;border:2px solid #4b4660;font-size:15px;font-weight:500}
+.chips input:checked+span{background:#fff;color:var(--inkoust);border-color:#fff}
+.chips input:focus-visible+span{outline:3px solid var(--koral);outline-offset:2px}
+.palety label span{display:inline-flex;gap:0;padding:4px}
+.palety i{display:inline-block;width:24px;height:30px}
+.shrnuti{margin-top:6px;padding:18px;background:#2a2640;font-size:15px}
+.shrnuti b{color:var(--safran)}
+/* proces */
+.proces{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:p}
+.krok{padding:26px 22px;border-left:3px solid var(--inkoust);counter-increment:p}
+.krok::before{content:counter(p);font-family:Anybody;font-stretch:150%;font-weight:900;font-size:56px;line-height:1;color:var(--kobalt);display:block;margin-bottom:10px}
+.krok h3{font-size:21px;margin-bottom:6px}
+/* galerie */
+.gal{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:170px;gap:12px}
+.gal div{position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:14px;font-weight:700;font-size:14px}
+.gal div:nth-child(1){grid-column:span 3;grid-row:span 2;background:var(--kobalt);color:#fff}
+.gal div:nth-child(2){grid-column:span 3;background:var(--safran)}
+.gal div:nth-child(3){grid-column:span 2;background:var(--koral)}
+.gal div:nth-child(4){grid-column:span 1;background:var(--list);color:#fff}
+.gal svg{position:absolute;inset:0;width:100%;height:100%}
+.gal span{position:relative;background:var(--bila);color:var(--inkoust);padding:4px 8px}
+/* kontakt */
+.kontakt{background:var(--zed)}
+.kg{display:grid;grid-template-columns:1fr 1fr;gap:54px}
+.tel{display:inline-block;font-family:Anybody;font-stretch:140%;font-weight:900;font-size:clamp(32px,4.4vw,54px);text-decoration:none;margin:16px 0 22px;border-bottom:6px solid var(--safran)}
+.kg p{margin-bottom:10px}
+form{background:#fff;border:3px solid var(--inkoust);padding:28px;display:grid;gap:14px}
+label.f{display:grid;gap:6px;font-weight:700;font-size:14px}
+label.f input,label.f textarea{font:inherit;padding:12px;border:2px solid #cfcbd9;border-radius:0}
+textarea{min-height:120px}
+.ok{display:none;background:#e7f5ea;border-left:5px solid var(--list);padding:12px}
+footer{background:var(--inkoust);color:#bcb8cf;font-size:14px;padding:24px 0}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media (max-width:900px){
+  .nav nav{display:none}
+  .hero .wrap{min-height:0;padding-top:50px;padding-bottom:230px}
+  .hero svg.mural{top:auto;height:240px}
+  .fakta,.konf,.kg{grid-template-columns:1fr}
+  .proces{grid-template-columns:1fr 1fr}
+  .gal{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
+  .gal div:nth-child(n){grid-column:span 1;grid-row:span 1}
+  .gal div:nth-child(1){grid-column:span 2}
+  section{padding:64px 0}
+}
+@media (max-width:480px){.proces{grid-template-columns:1fr}.nav .btn span{display:none}}
+</style>
+</head>
+<body>
+<div class="strip">Návrh nového webu pro <b>2MArt</b>, připravila Tereza Toufarová z Tereweb.cz</div>
+<header class="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="2MArt, úvod">2M<i>A</i>rt</a>
+    <nav aria-label="Hlavní"><a href="#kde">Kde malujeme</a><a href="#studio">Vyzkoušejte zeď</a><a href="#postup">Postup</a><a href="#kontakt">Kontakt</a></nav>
+    <a class="btn k" href="tel:+420731909586">☎ <span>731 909 586</span></a>
+  </div>
+</header>
+<main id="top">
+<section class="hero" style="padding:0">
+  <svg class="mural" viewBox="0 0 1400 700" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+    <path class="tah" d="M1460 110C1300 70 1200 190 1120 160S990 80 940 120" stroke="#2747D6" stroke-width="58"/>
+    <path class="tah" d="M1460 300C1340 260 1250 360 1150 330S1020 260 990 300" stroke="#F5B700" stroke-width="46"/>
+    <path class="tah" d="M1160 700C1150 560 1220 470 1320 440" stroke="#2BA84A" stroke-width="30"/>
+    <path class="tah" d="M1240 520c40-60 120-60 140-10" stroke="#2BA84A" stroke-width="26"/>
+    <path class="tah" d="M1000 560a70 70 0 1 0 140 0a70 70 0 1 0-140 0" stroke="#FF6F59" stroke-width="34"/>
+    <path class="tah" d="M800 640c60-40 120 40 180 0s120 40 180 0" stroke="#1D1A2B" stroke-width="12"/>
+  </svg>
+  <div class="wrap">
+    <h1>Malujeme na zeď.<span>Ručně, štětcem, po celé ČR</span></h1>
+    <p>Malby do restaurací, kaváren, barů, firem i domovů. Námět podle vás, nebo vlastní návrh po konzultaci. Omyvatelnými barvami, které vydrží i čisticí prostředky.</p>
+    <div class="akce"><a class="btn" href="#studio">Vyzkoušet na zdi</a><a class="btn k" href="#kontakt">Poslat poptávku</a></div>
+  </div>
+</section>
+
+<section id="kde">
+  <div class="wrap">
+    <h2 class="h2">Kde malujeme</h2>
+    <p class="pod">Prázdná stěna je plátno. Malba dá prostoru charakter, který se nedá koupit v obchodě s tapetami.</p>
+    <div class="mista">
+      <div class="misto"><svg viewBox="0 0 46 46"><path d="M10 40V20h26v20M6 20h34l-4-10H10z" fill="none" stroke="#2747D6" stroke-width="3"/></svg><b>Restaurace</b>Stěna, kterou si hosté vyfotí.</div>
+      <div class="misto"><svg viewBox="0 0 46 46"><path d="M10 16h22v14a8 8 0 0 1-8 8h-6a8 8 0 0 1-8-8zM32 20h4a4 4 0 0 1 0 8h-4" fill="none" stroke="#FF6F59" stroke-width="3"/></svg><b>Kavárny a bary</b>Atmosféra podle vašeho podniku.</div>
+      <div class="misto"><svg viewBox="0 0 46 46"><rect x="8" y="8" width="30" height="30" fill="none" stroke="#1D1A2B" stroke-width="3"/><path d="M8 18h30M18 18v20" stroke="#1D1A2B" stroke-width="3"/></svg><b>Firmy</b>Recepce, zasedačky, chodby.</div>
+      <div class="misto"><svg viewBox="0 0 46 46"><path d="M6 22L23 8l17 14v18H6z" fill="none" stroke="#2BA84A" stroke-width="3"/></svg><b>Domovy</b>Obývák, ložnice i dětský pokoj.</div>
+    </div>
+    <div class="fakta">
+      <div class="fakt"><h3>Váš námět</h3>Namalujeme, co si vymyslíte. Nebo po konzultaci připravíme vlastní návrh.</div>
+      <div class="fakt"><h3>Omyvatelné barvy</h3>Vodou ředitelné barvy odolné čisticím prostředkům. Do provozu i do dětského pokoje.</div>
+      <div class="fakt"><h3>Po celé ČR</h3>Sídlíme v Bystřici u Benešova a za zakázkou přijedeme kamkoliv v republice.</div>
+    </div>
+  </div>
+</section>
+
+<section class="studio" id="studio">
+  <div class="wrap">
+    <h2 class="h2">Vyzkoušejte si zeď</h2>
+    <p class="pod">Vyberte prostor, motiv a barevnost. Je to jen orientační náčrt, skutečný návrh vzniká na míru vaší stěně.</p>
+    <div class="konf">
+      <div class="pokoj"><svg id="pokoj" viewBox="0 0 600 380" role="img" aria-label="Náhled místnosti s malbou"></svg></div>
+      <div class="ovl">
+        <fieldset><legend>Prostor</legend><div class="chips">
+          <label><input type="radio" name="prostor" value="kavarna" checked><span>Kavárna</span></label>
+          <label><input type="radio" name="prostor" value="restaurace"><span>Restaurace</span></label>
+          <label><input type="radio" name="prostor" value="detsky"><span>Dětský pokoj</span></label>
+          <label><input type="radio" name="prostor" value="kancelar"><span>Kancelář</span></label>
+        </div></fieldset>
+        <fieldset><legend>Motiv</legend><div class="chips">
+          <label><input type="radio" name="motiv" value="botanika" checked><span>Botanika</span></label>
+          <label><input type="radio" name="motiv" value="krajina"><span>Krajina</span></label>
+          <label><input type="radio" name="motiv" value="abstrakce"><span>Abstrakce</span></label>
+          <label><input type="radio" name="motiv" value="vesmir"><span>Vesmír</span></label>
+        </div></fieldset>
+        <fieldset><legend>Barevnost</legend><div class="chips palety">
+          <label><input type="radio" name="paleta" value="0" checked><span aria-label="Živá"><i style="background:#2747D6"></i><i style="background:#F5B700"></i><i style="background:#FF6F59"></i><i style="background:#2BA84A"></i></span></label>
+          <label><input type="radio" name="paleta" value="1"><span aria-label="Tlumená"><i style="background:#5E7B6A"></i><i style="background:#C9A67A"></i><i style="background:#B66D5A"></i><i style="background:#E6DDCB"></i></span></label>
+          <label><input type="radio" name="paleta" value="2"><span aria-label="Noční"><i style="background:#16183A"></i><i style="background:#4B3C8F"></i><i style="background:#E5C15A"></i><i style="background:#D3D7F0"></i></span></label>
+        </div></fieldset>
+        <div class="shrnuti" id="shrnuti"></div>
+        <p style="margin-top:20px"><a class="btn" href="#kontakt" id="poslat" style="background:#fff;color:#1D1A2B">Chci podobnou zeď</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="postup">
+  <div class="wrap">
+    <h2 class="h2">Od nápadu ke zdi</h2>
+    <p class="pod">Malba vzniká přímo u vás, ručně a bez šablon z katalogu.</p>
+    <div class="proces">
+      <div class="krok"><h3>Konzultace</h3>Pošlete fotku stěny a představu. Probereme námět, velikost a termín.</div>
+      <div class="krok"><h3>Návrh</h3>Malujeme váš námět, nebo připravíme vlastní návrh.</div>
+      <div class="krok"><h3>Malování</h3>Přijedeme a malujeme ručně omyvatelnými barvami.</div>
+      <div class="krok"><h3>Hotovo</h3>Stěnu předáme a můžete ji začít používat.</div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 class="h2">Naše zdi</h2>
+    <div class="gal" style="margin-top:30px">
+      <div><svg viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice"><path d="M40 300C60 180 140 150 200 160M150 220c30-60 90-70 120-40" fill="none" stroke="#F5B700" stroke-width="16" stroke-linecap="round"/></svg><span>Sem přijdou fotky vašich zakázek</span></div>
+      <div><svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice"><path d="M0 120c50-40 100 0 150-30s100 10 150-20" fill="none" stroke="#1D1A2B" stroke-width="10"/></svg><span>Kavárna</span></div>
+      <div><svg viewBox="0 0 200 150" preserveAspectRatio="xMidYMid slice"><circle cx="140" cy="60" r="34" fill="#F5B700"/></svg><span>Dětský pokoj</span></div>
+      <div><svg viewBox="0 0 100 150" preserveAspectRatio="xMidYMid slice"><path d="M50 150V60M50 90c-20-10-26-36-10-46M50 70c20-10 24-34 10-42" fill="none" stroke="#fff" stroke-width="6"/></svg><span>Bar</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="wrap kg">
+    <div>
+      <h2 class="h2">Máte prázdnou zeď?</h2>
+      <a class="tel" href="tel:+420731909586">731 909 586</a>
+      <p><b>E-mail:</b> <a href="mailto:matheyusbm@gmail.com">matheyusbm@gmail.com</a></p>
+      <p><b>Adresa:</b> Líštěnecká 196, 257 51 Bystřice</p>
+      <p><b>IČO:</b> 01375555</p>
+      <p>Malujeme po celé České republice.</p>
+    </div>
+    <form id="form">
+      <label class="f">Jméno<input name="jmeno" autocomplete="name"></label>
+      <label class="f">Telefon nebo e-mail<input name="kontakt"></label>
+      <label class="f">Kde je stěna a co si představujete<textarea id="zprava" name="zprava"></textarea></label>
+      <button class="btn k" type="submit">Odeslat poptávku</button>
+      <p class="ok" id="ok" role="status">Toto je ukázka formuláře. V hotovém webu by zpráva přišla rovnou na váš e-mail.</p>
+    </form>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><span>© 2026 2MArt</span><span>Návrh připravila Tereweb.cz</span></div></footer>
+<script>
+const P=[['#2747D6','#F5B700','#FF6F59','#2BA84A'],['#5E7B6A','#C9A67A','#B66D5A','#E6DDCB'],['#16183A','#4B3C8F','#E5C15A','#D3D7F0']];
+const PN=['živé barvy','tlumené barvy','noční barvy'];
+const prostory={kavarna:['kavárnu','#efe9e1'],restaurace:['restauraci','#ece7e0'],detsky:['dětský pokoj','#f2f0ea'],kancelar:['kancelář','#eceeef']};
+const motivy={botanika:'botanický motiv',krajina:'krajinu',abstrakce:'abstrakci',vesmir:'vesmír'};
+const v=n=>document.querySelector(`input[name="${n}"]:checked`).value;
+function mural(m,c){
+  if(m==='botanika')return `<path d="M120 300C130 200 180 140 240 120" stroke="${c[3]}" stroke-width="10" fill="none"/><path d="M170 200c-40-10-60-50-40-70 30 10 44 40 40 70zM200 160c10-40 50-60 70-40-10 30-40 44-70 40zM150 250c-50 0-70-30-60-50 30 0 54 20 60 50z" fill="${c[3]}"/><circle cx="330" cy="120" r="34" fill="${c[1]}"/><path d="M380 300c10-80 60-120 110-130" stroke="${c[0]}" stroke-width="10" fill="none"/><path d="M430 210c40-20 70 0 70 20-30 10-56 0-70-20zM410 250c-40-10-50-40-40-56 26 6 40 30 40 56z" fill="${c[0]}"/><circle cx="260" cy="250" r="16" fill="${c[2]}"/><circle cx="470" cy="140" r="12" fill="${c[2]}"/>`;
+  if(m==='krajina')return `<circle cx="420" cy="110" r="38" fill="${c[1]}"/><path d="M80 300L200 150l80 90 60-60 180 120z" fill="${c[0]}"/><path d="M80 300c80-50 160-30 240-50s140 20 200 50z" fill="${c[3]}"/><path d="M220 300l40-60 40 60z" fill="${c[2]}"/>`;
+  if(m==='abstrakce')return `<circle cx="200" cy="170" r="80" fill="${c[0]}"/><rect x="270" y="90" width="150" height="150" fill="${c[1]}" transform="rotate(12 345 165)"/><path d="M100 280c80-60 160 40 240-20s120 20 180-10" stroke="${c[2]}" stroke-width="16" fill="none" stroke-linecap="round"/><circle cx="460" cy="110" r="26" fill="${c[3]}"/>`;
+  return `<rect x="80" y="60" width="440" height="240" fill="${c[0]}"/><circle cx="380" cy="150" r="50" fill="${c[1]}"/><ellipse cx="380" cy="150" rx="84" ry="16" fill="none" stroke="${c[3]}" stroke-width="5"/><circle cx="170" cy="230" r="26" fill="${c[2]}"/>${[[120,90],[240,110],[300,240],[470,90],[460,260],[200,160]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="3" fill="${c[3]}"/>`).join('')}`;
+}
+function nabytek(p){
+  if(p==='kavarna')return `<rect x="380" y="300" width="160" height="10" fill="#1D1A2B"/><rect x="400" y="310" width="8" height="50" fill="#1D1A2B"/><rect x="512" y="310" width="8" height="50" fill="#1D1A2B"/><path d="M430 300v-18h20v18M470 300v-14h16v14" fill="#fff" stroke="#1D1A2B" stroke-width="3"/><circle cx="110" cy="320" r="40" fill="none" stroke="#1D1A2B" stroke-width="4"/><path d="M110 360v-80" stroke="#1D1A2B" stroke-width="4"/>`;
+  if(p==='restaurace')return `<rect x="70" y="310" width="200" height="10" fill="#1D1A2B"/><rect x="330" y="310" width="200" height="10" fill="#1D1A2B"/><path d="M90 320v40M250 320v40M350 320v40M510 320v40" stroke="#1D1A2B" stroke-width="6"/>`;
+  if(p==='detsky')return `<rect x="70" y="300" width="220" height="50" rx="8" fill="#fff" stroke="#1D1A2B" stroke-width="4"/><rect x="70" y="280" width="20" height="70" fill="#1D1A2B"/><rect x="430" y="310" width="50" height="40" fill="#FF6F59" stroke="#1D1A2B" stroke-width="3"/><rect x="480" y="320" width="40" height="30" fill="#F5B700" stroke="#1D1A2B" stroke-width="3"/>`;
+  return `<rect x="100" y="300" width="300" height="12" fill="#1D1A2B"/><path d="M120 312v48M380 312v48" stroke="#1D1A2B" stroke-width="6"/><rect x="200" y="250" width="80" height="50" fill="#fff" stroke="#1D1A2B" stroke-width="4"/><rect x="470" y="200" width="20" height="160" fill="#2BA84A"/>`;
+}
+function kresli(){
+  const p=v('prostor'),m=v('motiv'),pi=+v('paleta');
+  document.getElementById('pokoj').innerHTML=`<rect width="600" height="380" fill="${prostory[p][1]}"/><rect y="350" width="600" height="30" fill="#d6d1c8"/>${mural(m,P[pi])}${nabytek(p)}`;
+  const t=`Malba na zeď pro ${prostory[p][0]}: ${motivy[m]}, ${PN[pi]}.`;
+  document.getElementById('shrnuti').innerHTML='Váš výběr: <b>'+t+'</b>';
+  return t;
+}
+document.querySelectorAll('.ovl input').forEach(i=>i.addEventListener('change',kresli));kresli();
+document.getElementById('poslat').addEventListener('click',()=>{document.getElementById('zprava').value=kresli()+' '});
+document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();document.getElementById('ok').style.display='block'});
+</script>
+</body>
+</html>

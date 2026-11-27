@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>David Przyhoda – Bystřice (návrh webu)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Libre+Franklin:wght@400;500;600&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+:root{
+  --beton:#D3CFC8;
+  --grafit:#26292B;
+  --epoxid:#1F8A84;
+  --dub:#C8915A;
+  --dub-tmavy:#9A6A3C;
+  --papir:#FAFAF8;
+  --linka:#BDB8AF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Libre Franklin",system-ui,sans-serif;color:var(--grafit);background:var(--papir);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:"Big Shoulders Display",sans-serif;font-weight:800;line-height:.95;text-transform:uppercase;letter-spacing:.01em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--epoxid);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.strip{background:var(--dub);color:var(--grafit);font-size:14px;text-align:center;padding:8px 14px}
+.nav{background:var(--grafit);color:#fff;position:sticky;top:0;z-index:20}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;height:66px;gap:16px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo b{font-family:"Big Shoulders Display";font-weight:900;font-size:26px;letter-spacing:.04em;text-transform:uppercase}
+.logo small{display:block;font-size:12px;color:#b7b3ab;letter-spacing:.08em;margin-top:-2px}
+.nav nav{display:flex;gap:26px;font-size:15px}
+.nav nav a{text-decoration:none;color:#dcd8d0}
+.nav nav a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--epoxid);color:#fff;font:inherit;font-weight:600;text-decoration:none;padding:12px 20px;border:0;cursor:pointer;border-radius:2px}
+.btn:hover{background:#176d68}
+.btn.dub{background:var(--dub);color:var(--grafit)}
+.btn.dub:hover{background:#b57d47}
+/* HERO: karta přes ilustraci pokládané podlahy */
+.hero{position:relative;min-height:640px;background:#ECE9E3;overflow:hidden}
+.hero svg.pokoj{position:absolute;inset:0;width:100%;height:100%}
+.prkno{opacity:0;animation:poloz .5s ease-out forwards}
+@keyframes poloz{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.prkno{animation:none;opacity:1}}
+.hero .wrap{position:relative;z-index:2;padding-top:70px;padding-bottom:70px}
+.karta{background:var(--papir);max-width:540px;padding:38px 36px;border-top:10px solid var(--epoxid);box-shadow:0 30px 60px -30px rgba(38,41,43,.45)}
+.karta h1{font-size:clamp(46px,6vw,80px)}
+.karta p{margin:18px 0 26px;font-size:18px}
+.karta .akce{display:flex;gap:12px;flex-wrap:wrap}
+.karta .misto{margin-top:22px;font-size:14px;color:#5d5f60;border-top:1px solid var(--linka);padding-top:14px}
+/* služby jako vzorník */
+section{padding:86px 0}
+.h2{font-size:clamp(40px,5.4vw,70px);margin-bottom:14px}
+.uvod{max-width:560px;color:#55585a;margin-bottom:40px}
+.vzornik{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.vzorek{background:#fff;border:1px solid #e2ded7}
+.vzorek .plocha{height:130px}
+.vzorek div.t{padding:18px}
+.vzorek h3{font-size:26px;margin-bottom:6px}
+.vzorek p{font-size:15px;color:#55585a}
+.p-lita{background:linear-gradient(135deg,#bdb8b0,#d9d5ce 60%,#c9c4bc)}
+.p-epox{background:radial-gradient(circle at 30% 40%,#2fa39c,#1F8A84 60%,#166c67)}
+.p-vinyl{background:repeating-linear-gradient(90deg,#d8c3a5 0 70px,#cdb593 70px 72px)}
+.p-parkety{background:repeating-linear-gradient(45deg,#C8915A 0 18px,#b57d47 18px 36px)}
+.p-lino{background:repeating-linear-gradient(0deg,#8aa79b 0 4px,#97b3a7 4px 9px)}
+.p-koberec{background:radial-gradient(#7b6f8f 1px,transparent 1.5px) 0 0/6px 6px,#6a5e80}
+.p-stěrka{background:linear-gradient(180deg,#e4e1db,#cfcbc4)}
+.p-renov{background:repeating-linear-gradient(90deg,#d9a46c 0 46px,#c8915a 46px 48px)}
+/* SKLADBA */
+.skladba{background:var(--grafit);color:#fff}
+.skladba .uvod{color:#bdb9b1}
+.konf{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:start}
+.ovl{display:grid;gap:24px}
+.ovl h3{font-size:22px;color:var(--dub);margin-bottom:10px}
+.volby{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.volby label{cursor:pointer}
+.volby input{position:absolute;opacity:0;width:1px;height:1px}
+.volby span{display:block;padding:11px 12px;border:1px solid #4a4e51;font-size:15px;background:#2f3335}
+.volby input:checked+span{background:var(--papir);color:var(--grafit);border-color:var(--papir);font-weight:600}
+.volby input:focus-visible+span{outline:3px solid var(--epoxid);outline-offset:2px}
+.posuv{display:flex;align-items:center;gap:14px}
+.posuv input{flex:1;accent-color:var(--epoxid)}
+.posuv output{font-family:"Big Shoulders Display";font-weight:800;font-size:34px;min-width:96px;text-align:right}
+.rez{background:#1d1f21;padding:24px;border:1px solid #3a3e41}
+.rez svg{width:100%;height:auto;display:block}
+.vysledek{margin-top:18px;display:grid;gap:10px}
+.vysledek li{list-style:none;display:flex;justify-content:space-between;gap:14px;border-bottom:1px dashed #4a4e51;padding-bottom:8px;font-size:15px}
+.vysledek li b{font-weight:600;text-align:right}
+/* postup */
+.kroky{display:grid;grid-template-columns:repeat(4,1fr);border-top:4px solid var(--grafit)}
+.krok{padding:24px 20px 10px 0}
+.krok h3{font-size:28px;margin-bottom:8px}
+.krok h3 small{display:block;font-family:'Libre Franklin';font-weight:600;font-size:13px;line-height:1.4;color:var(--epoxid);letter-spacing:.1em;margin-bottom:6px}
+/* galerie jako prkna */
+.gal{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;height:360px}
+.gal div{position:relative;display:flex;align-items:flex-end;padding:14px;font-size:14px;font-weight:600}
+.gal div:nth-child(1){grid-column:span 2;background:repeating-linear-gradient(90deg,#C8915A 0 60px,#b57d47 60px 62px);}
+.gal div:nth-child(2){background:radial-gradient(circle at 40% 30%,#2fa39c,#1F8A84 70%)}
+.gal div:nth-child(3){background:linear-gradient(135deg,#bdb8b0,#d9d5ce)}
+.gal div:nth-child(4){background:repeating-linear-gradient(45deg,#C8915A 0 16px,#9A6A3C 16px 32px)}
+.gal span{background:var(--papir);padding:4px 8px}
+/* kontakt */
+.kontakt{background:var(--beton)}
+.kg{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.tel{display:block;font-family:"Big Shoulders Display";font-weight:900;font-size:clamp(44px,6vw,76px);text-decoration:none;line-height:1;margin:16px 0 24px}
+.kg p{margin-bottom:8px}
+form{background:var(--papir);padding:28px;display:grid;gap:14px;border-top:10px solid var(--dub)}
+label.f{display:grid;gap:6px;font-weight:600;font-size:14px}
+label.f input,label.f textarea{font:inherit;padding:11px 12px;border:1px solid #bdb8af;background:#fff}
+textarea{min-height:120px}
+.ok{display:none;background:#dff0ee;border-left:5px solid var(--epoxid);padding:12px}
+footer{background:var(--grafit);color:#bdb9b1;font-size:14px;padding:24px 0}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media (max-width:920px){
+  .nav nav{display:none}
+  .hero{min-height:0}
+  .hero .wrap{padding-top:200px;padding-bottom:30px}
+  .karta{padding:28px 22px}
+  .vzornik{grid-template-columns:1fr 1fr}
+  .konf,.kg{grid-template-columns:1fr}
+  .kroky{grid-template-columns:1fr 1fr;gap:0 18px}
+  .gal{grid-template-columns:1fr 1fr;height:auto;grid-auto-rows:150px}
+  .gal div:nth-child(1){grid-column:span 2}
+  section{padding:64px 0}
+}
+@media (max-width:440px){.vzorek .plocha{height:80px}.vzorek h3{font-size:21px}.vzorek div.t{padding:12px}.nav .btn span{display:none}.logo small{display:none}}
+</style>
+</head>
+<body>
+<div class="strip">Návrh nového webu pro <b>David Przyhoda</b>, připravila Tereza Toufarová z Tereweb.cz</div>
+<header class="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="David Przyhoda podlahy, úvod">
+      <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect x="2" y="2" width="36" height="36" fill="#C8915A"/><path d="M2 14h20M22 2v12M2 26h36M14 14v12M30 26v12M26 14h12" stroke="#26292B" stroke-width="2.5"/></svg>
+      <span><b>Przyhoda</b><small>PODLAHY · BYSTŘICE</small></span>
+    </a>
+    <nav aria-label="Hlavní"><a href="#podlahy">Podlahy</a><a href="#skladba">Skladba podlahy</a><a href="#postup">Postup</a><a href="#kontakt">Kontakt</a></nav>
+    <a class="btn" href="tel:+420777686110">☎ <span>777 686 110</span></a>
+  </div>
+</header>
+<main id="top">
+<section class="hero" style="padding:0">
+  <svg class="pokoj" viewBox="0 0 1400 640" preserveAspectRatio="xMaxYMax slice" aria-hidden="true">
+    <rect width="1400" height="640" fill="#ECE9E3"/>
+    <rect x="0" y="0" width="1400" height="330" fill="#E3DFD8"/>
+    <rect x="900" y="80" width="260" height="200" fill="#F6F4F0" stroke="#cfcac2" stroke-width="6"/>
+    <path d="M1030 80v200M900 180h260" stroke="#cfcac2" stroke-width="4"/>
+    <path d="M0 330h1400" stroke="#bdb8af" stroke-width="3"/>
+    <g id="prkna"></g>
+    <rect x="0" y="322" width="1400" height="10" fill="#fff"/>
+  </svg>
+  <div class="wrap">
+    <div class="karta">
+      <h1>Podlahy od podkladu po poslední lištu</h1>
+      <p>Lité a epoxidové podlahy, vinyl, parkety, třívrstvé a exotické dřevo, linoleum i koberce. Srovnáme podklad a broušením vrátíme život starým parketám.</p>
+      <div class="akce"><a class="btn" href="#skladba">Sestavit skladbu podlahy</a><a class="btn dub" href="tel:+420777686110">Zavolat</a></div>
+      <p class="misto">David Przyhoda, Bystřice 319 · Třinecko a okolí</p>
+    </div>
+  </div>
+</section>
+
+<section id="podlahy">
+  <div class="wrap">
+    <h2 class="h2">Vzorník prací</h2>
+    <p class="uvod">Kompletní realizace od přípravy podkladu po pokládku. Materiál umíme i dodat.</p>
+    <div class="vzornik">
+      <article class="vzorek"><div class="plocha p-lita"></div><div class="t"><h3>Lité podlahy</h3><p>Kompletní realizace litých podlah.</p></div></article>
+      <article class="vzorek"><div class="plocha p-epox"></div><div class="t"><h3>Epoxidové podlahy</h3><p>Odolný povrch pro garáže, dílny i provozovny.</p></div></article>
+      <article class="vzorek"><div class="plocha p-vinyl"></div><div class="t"><h3>Vinyl</h3><p>Pokládka všech druhů vinylových podlah.</p></div></article>
+      <article class="vzorek"><div class="plocha p-parkety"></div><div class="t"><h3>Parkety a dřevo</h3><p>Parkety, třívrstvé a exotické dřevěné podlahy.</p></div></article>
+      <article class="vzorek"><div class="plocha p-lino"></div><div class="t"><h3>Linoleum a marmoleum</h3><p>Prodej i pokládka, včetně thermofixu.</p></div></article>
+      <article class="vzorek"><div class="plocha p-koberec"></div><div class="t"><h3>Koberce</h3><p>Pokládka kobercových podlah.</p></div></article>
+      <article class="vzorek"><div class="plocha p-stěrka"></div><div class="t"><h3>Vyrovnání podkladu</h3><p>Samonivelační stěrky a liapor.</p></div></article>
+      <article class="vzorek"><div class="plocha p-renov"></div><div class="t"><h3>Renovace parket</h3><p>Broušení a renovace starých parket.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="skladba" id="skladba">
+  <div class="wrap">
+    <h2 class="h2">Sestavte si skladbu podlahy</h2>
+    <p class="uvod">Vyberte nášlapnou vrstvu, stav podkladu a plochu. Řez ukáže, z čeho se podlaha skládá a co bude potřeba udělat.</p>
+    <div class="konf">
+      <div class="ovl">
+        <div><h3>Nášlapná vrstva</h3><div class="volby" id="vrstvy">
+          <label><input type="radio" name="vrstva" value="vinyl" checked><span>Vinyl</span></label>
+          <label><input type="radio" name="vrstva" value="parkety"><span>Parkety</span></label>
+          <label><input type="radio" name="vrstva" value="trivrstva"><span>Třívrstvá podlaha</span></label>
+          <label><input type="radio" name="vrstva" value="lino"><span>Linoleum / marmoleum</span></label>
+          <label><input type="radio" name="vrstva" value="epoxid"><span>Epoxid</span></label>
+          <label><input type="radio" name="vrstva" value="koberec"><span>Koberec</span></label>
+        </div></div>
+        <div><h3>Podklad</h3><div class="volby">
+          <label><input type="radio" name="podklad" value="rovny" checked><span>Rovný</span></label>
+          <label><input type="radio" name="podklad" value="nerovny"><span>Nerovný, potřebuje srovnat</span></label>
+          <label><input type="radio" name="podklad" value="vyska"><span>Velký výškový rozdíl</span></label>
+          <label><input type="radio" name="podklad" value="stare"><span>Staré parkety k renovaci</span></label>
+        </div></div>
+        <div><h3>Plocha</h3><div class="posuv"><input type="range" id="plocha" min="5" max="200" step="1" value="40" aria-label="Plocha v metrech čtverečních"><output id="plochaV">40 m²</output></div></div>
+      </div>
+      <div>
+        <div class="rez"><svg id="rez" viewBox="0 0 560 300" role="img" aria-label="Řez skladbou podlahy"></svg></div>
+        <ul class="vysledek" id="vysledek"></ul>
+        <p style="margin-top:20px"><a class="btn dub" href="#kontakt" id="poslat">Poslat skladbu jako poptávku</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="postup">
+  <div class="wrap">
+    <h2 class="h2">Jak to probíhá</h2>
+    <p class="uvod">Dobrá podlaha začíná u podkladu. Proto ho vždy nejdřív posoudíme.</p>
+    <div class="kroky">
+      <div class="krok"><h3><small>Krok 1</small>Zaměření</h3>Prohlédneme místnost, změříme plochu a zkontrolujeme podklad.</div>
+      <div class="krok"><h3><small>Krok 2</small>Výběr</h3>Poradíme s materiálem. Linoleum, marmoleum i thermofix dodáme.</div>
+      <div class="krok"><h3><small>Krok 3</small>Podklad</h3>Srovnáme stěrkou nebo liaporem, aby podlaha dobře ležela.</div>
+      <div class="krok"><h3><small>Krok 4</small>Pokládka</h3>Položíme, zalijeme nebo vybrousíme a předáme hotovou podlahu.</div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 class="h2" style="margin-bottom:28px">Hotové podlahy</h2>
+    <div class="gal">
+      <div><span>Sem přijdou fotky vašich zakázek</span></div>
+      <div><span>Epoxid</span></div>
+      <div><span>Litá podlaha</span></div>
+      <div><span>Parkety</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="wrap kg">
+    <div>
+      <h2 class="h2">Domluvte zaměření</h2>
+      <a class="tel" href="tel:+420777686110">777 686 110</a>
+      <p><b>E-mail:</b> <a href="mailto:d.javor@seznam.cz">d.javor@seznam.cz</a></p>
+      <p><b>Adresa:</b> Bystřice 319, 739 95</p>
+      <p><b>IČO:</b> 74673271</p>
+    </div>
+    <form id="form">
+      <label class="f">Jméno<input name="jmeno" autocomplete="name"></label>
+      <label class="f">Telefon<input name="tel" type="tel" autocomplete="tel"></label>
+      <label class="f">Jakou podlahu potřebujete<textarea id="zprava" name="zprava"></textarea></label>
+      <button class="btn" type="submit">Odeslat poptávku</button>
+      <p class="ok" id="ok" role="status">Toto je ukázka formuláře. V hotovém webu by zpráva přišla rovnou na váš e-mail.</p>
+    </form>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><span>© 2026 David Przyhoda</span><span>Návrh připravila Tereweb.cz</span></div></footer>
+<script>
+// pokládaná prkna v hero (perspektiva)
+(function(){
+  const g=document.getElementById('prkna');let html='',i=0;
+  const rad=[];{let y=330,h=22;while(y<640){rad.push([y,Math.min(640,y+h)]);y+=h;h=Math.round(h*1.18);}}
+  rad.forEach(([y1,y2],r)=>{
+    const w=260+r*90,off=((r*37)%5)/5*w;
+    for(let x=-off;x<1400;x+=w){
+      const c=['#C8915A','#BE8650','#D29D66','#B97F49'][(i++)%4];
+      html+=`<rect class="prkno" style="animation-delay:${(r*0.18+x/1400*0.6).toFixed(2)}s" x="${x+2}" y="${y1+1}" width="${w-3}" height="${y2-y1-2}" fill="${c}"/>`;
+    }
+  });
+  g.innerHTML=html;
+})();
+const V={
+  vinyl:{n:'Vinyl',c:'#d8c3a5',h:14,podl:'stěrka pod vinyl musí být hladká'},
+  parkety:{n:'Parkety',c:'#C8915A',h:26,podl:'parkety se lepí na suchý a rovný podklad'},
+  trivrstva:{n:'Třívrstvá podlaha',c:'#D29D66',h:22,podl:'plovoucí pokládka na podložku'},
+  lino:{n:'Linoleum / marmoleum',c:'#8aa79b',h:10,podl:'lepení na vyrovnaný podklad'},
+  epoxid:{n:'Epoxidová stěrka',c:'#1F8A84',h:10,podl:'nanáší se na pevný betonový podklad'},
+  koberec:{n:'Koberec',c:'#6a5e80',h:18,podl:'lepení nebo napnutí'}
+};
+const val=n=>document.querySelector(`input[name="${n}"]:checked`).value;
+function rez(){
+  const v=V[val('vrstva')],p=val('podklad'),m=+document.getElementById('plocha').value;
+  document.getElementById('plochaV').textContent=m+' m²';
+  let vrstvy=[['Betonový podklad','#8f8a82',80]];
+  const ukoly=[];
+  if(p==='vyska'){vrstvy.push(['Liapor (vyrovnání výšky)','#b0623a',46]);ukoly.push(['Vyrovnání výšky','liapor'])}
+  if(p==='nerovny'||p==='vyska'){vrstvy.push(['Samonivelační stěrka','#cfcbc4',18]);ukoly.push(['Srovnání podkladu','samonivelační stěrka'])}
+  if(p==='stare'){vrstvy.push(['Původní parkety','#9A6A3C',26]);ukoly.push(['Renovace','broušení a renovace parket'])}
+  if(val('vrstva')==='trivrstva') vrstvy.push(['Podložka','#e9e4c9',6]);
+  if(p!=='stare'||val('vrstva')!=='parkety') vrstvy.push([v.n,v.c,v.h]);
+  let y=280,s='';
+  vrstvy.forEach(([n,c,h],i)=>{y-=h*1.2;const hh=h*1.2;
+    s+=`<rect x="20" y="${y}" width="320" height="${hh}" fill="${c}" stroke="#1d1f21" stroke-width="1"/>`;
+    s+=`<line x1="340" y1="${y+hh/2}" x2="356" y2="${y+hh/2}" stroke="#bdb9b1"/><text x="362" y="${y+hh/2+5}" fill="#fff" font-size="14" font-family="Libre Franklin">${n}</text>`;
+  });
+  s+=`<text x="20" y="26" fill="#C8915A" font-size="20" font-family="Big Shoulders Display" font-weight="800">ŘEZ PODLAHOU · ${m} m²</text>`;
+  document.getElementById('rez').innerHTML=s;
+  ukoly.push(['Nášlapná vrstva',(p==='stare'&&val('vrstva')==='parkety')?'renovace stávajících parket':v.n.toLowerCase()+', '+v.podl]);
+  ukoly.push(['Plocha',m+' m²']);
+  document.getElementById('vysledek').innerHTML=ukoly.map(([a,b])=>`<li><span>${a}</span><b>${b}</b></li>`).join('');
+  return ukoly.map(([a,b])=>a+': '+b).join('; ');
+}
+document.querySelectorAll('.ovl input').forEach(i=>i.addEventListener('input',rez));rez();
+document.getElementById('poslat').addEventListener('click',()=>{document.getElementById('zprava').value='Dobrý den, poptávám podlahu. '+rez()+'.'});
+document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();document.getElementById('ok').style.display='block'});
+</script>
+</body>
+</html>

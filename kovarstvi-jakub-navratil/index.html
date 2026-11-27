@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Kovářství Jakub Navrátil – Bystřice (návrh webu)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Young+Serif&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+:root{
+  --zelezo:#1F2326;      /* kované železo */
+  --okuj:#3A4045;        /* okuje */
+  --vyhen:#E2682B;       /* žhavá výheň */
+  --zlata:#E9B45A;       /* barva žíhání */
+  --popel:#EEF0EF;       /* popel, světlá plocha */
+  --modra:#4E7A97;       /* modř popouštění */
+  --bila:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Instrument Sans",system-ui,sans-serif;color:var(--zelezo);background:var(--popel);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:"Young Serif",Georgia,serif;font-weight:400;line-height:1.12}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--zlata);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+.strip{background:var(--zlata);color:var(--zelezo);text-align:center;font-size:14px;padding:8px 14px}
+header.nav{background:var(--zelezo);color:var(--popel);position:sticky;top:0;z-index:20;border-bottom:1px solid #2c3236}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo svg{flex:none}
+.logo b{font-family:"Young Serif",serif;font-weight:400;font-size:19px;letter-spacing:.2px;display:block;line-height:1.1}
+.logo small{font-size:12px;opacity:.7;letter-spacing:.06em}
+.nav ul{display:flex;gap:26px;list-style:none;font-size:15px}
+.nav ul a{text-decoration:none;opacity:.85}
+.nav ul a:hover{opacity:1;color:var(--zlata)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--vyhen);color:var(--bila);text-decoration:none;font-weight:600;padding:12px 20px;border-radius:3px;border:0;font:inherit;font-weight:600;cursor:pointer}
+.btn:hover{background:#c9551d}
+.btn.ghost{background:transparent;border:1.5px solid currentColor;color:inherit}
+/* HERO */
+.hero{background:var(--zelezo);color:var(--popel);position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;min-height:600px;padding-top:40px;padding-bottom:40px}
+.hero h1{font-size:clamp(40px,5.6vw,72px)}
+.hero p.lead{font-size:19px;max-width:520px;margin:22px 0 30px;color:#cfd4d6}
+.hero .akce{display:flex;gap:14px;flex-wrap:wrap}
+.hero .podpis{margin-top:34px;font-size:14px;color:#9ea6aa;border-left:2px solid var(--vyhen);padding-left:12px;max-width:430px}
+.scena{width:100%;height:auto;max-height:520px}
+#tyc{animation:chladne 7s ease-in-out infinite alternate}
+@keyframes chladne{0%{fill:#FFD27A}35%{fill:#F08A2E}70%{fill:#9B3B1E}100%{fill:#4A4F53}}
+.jiskra{animation:jiskra 1.6s ease-out infinite;opacity:0}
+.jiskra:nth-child(2){animation-delay:.4s}.jiskra:nth-child(3){animation-delay:.9s}.jiskra:nth-child(4){animation-delay:1.2s}
+@keyframes jiskra{0%{opacity:1;transform:translate(0,0)}100%{opacity:0;transform:translate(var(--dx),var(--dy))}}
+#kladivo{transform-origin:330px 120px;animation:uder 1.6s cubic-bezier(.6,0,.4,1) infinite}
+@keyframes uder{0%,100%{transform:rotate(-24deg)}45%{transform:rotate(4deg)}55%{transform:rotate(0deg)}}
+@media (prefers-reduced-motion:reduce){#tyc,#kladivo,.jiskra{animation:none}.jiskra{opacity:0}}
+/* SEKCE */
+section{padding:88px 0}
+.sec-h{max-width:640px;margin-bottom:44px}
+.sec-h h2{font-size:clamp(30px,3.6vw,46px)}
+.sec-h p{margin-top:14px;color:#4a5155}
+/* služby: řada ve tvaru kovaných článků */
+.sluzby{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--zelezo)}
+.sluzba{padding:30px 26px 34px;border-right:1px solid #c9cdcf}
+.sluzba:last-child{border-right:0}
+.sluzba svg{width:54px;height:54px;margin-bottom:18px}
+.sluzba h3{font-size:24px;margin-bottom:10px}
+.sluzba ul{list-style:none;margin-top:12px}
+.sluzba li{padding:6px 0;border-bottom:1px dashed #c9cdcf;font-size:15px}
+/* KONFIGURÁTOR */
+.dilna{background:var(--okuj);color:var(--popel)}
+.dilna .sec-h p{color:#c7cdd0}
+.konf{display:grid;grid-template-columns:380px 1fr;gap:34px;align-items:start}
+.panel{background:var(--zelezo);padding:26px;border-radius:4px}
+.panel fieldset{border:0;margin-bottom:22px}
+.panel legend{font-weight:600;margin-bottom:10px;font-size:15px;color:var(--zlata)}
+.volby{display:flex;flex-wrap:wrap;gap:8px}
+.volby label{cursor:pointer}
+.volby input{position:absolute;opacity:0;width:1px;height:1px}
+.volby span{display:inline-block;padding:8px 13px;border:1.5px solid #5b6368;border-radius:3px;font-size:14px;transition:.15s}
+.volby input:checked+span{background:var(--vyhen);border-color:var(--vyhen);color:#fff}
+.volby input:focus-visible+span{outline:3px solid var(--zlata);outline-offset:2px}
+.panel input[type=range]{width:100%;accent-color:var(--vyhen)}
+.rozmer{display:flex;justify-content:space-between;font-size:14px;color:#c7cdd0}
+.vykres{background:var(--popel);color:var(--zelezo);border-radius:4px;padding:24px;position:relative}
+.vykres svg{width:100%;height:auto;display:block}
+.vykres .souhrn{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;margin-top:16px;border-top:1px solid #c9cdcf;padding-top:16px}
+.vykres .souhrn p{font-size:15px;max-width:520px}
+.stitek{position:absolute;top:16px;left:20px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#6b7377}
+/* proč on */
+.proc{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:center}
+.proc blockquote{font-family:"Young Serif",serif;font-size:clamp(24px,2.6vw,34px);line-height:1.3;border-left:4px solid var(--vyhen);padding-left:24px}
+.proc dl{display:grid;gap:22px}
+.proc dt{font-weight:700;font-size:18px}
+.proc dd{color:#4a5155}
+/* galerie */
+.galerie{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:220px 220px;gap:14px}
+.foto{background:var(--zelezo);border-radius:3px;display:flex;align-items:flex-end;padding:16px;color:#c7cdd0;font-size:14px;position:relative;overflow:hidden}
+.foto:first-child{grid-row:span 2}
+.foto svg{position:absolute;inset:0;width:100%;height:100%;opacity:.35}
+.foto span{position:relative}
+/* kontakt */
+.kontakt{background:var(--zelezo);color:var(--popel)}
+.kgrid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.tel{font-family:"Young Serif",serif;font-size:clamp(32px,4vw,50px);text-decoration:none;color:var(--zlata);display:inline-block;margin:10px 0 18px}
+.kinfo p{margin-bottom:10px;color:#cfd4d6}
+form{background:var(--popel);color:var(--zelezo);padding:28px;border-radius:4px;display:grid;gap:14px}
+form label{font-size:14px;font-weight:600;display:grid;gap:6px}
+form input,form textarea{font:inherit;padding:11px 12px;border:1.5px solid #b9bfc2;border-radius:3px;background:#fff}
+form textarea{min-height:120px;resize:vertical}
+.ok{display:none;background:#e3efe6;border-left:4px solid #2f7a49;padding:12px;font-size:15px}
+footer{background:#15181a;color:#9ea6aa;font-size:14px;padding:26px 0}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media (max-width:900px){
+  .nav ul{display:none}
+  .hero .wrap{grid-template-columns:1fr;min-height:0;padding-top:34px}
+  .scena{max-height:330px}
+  .sluzby{grid-template-columns:1fr}
+  .sluzba{border-right:0;border-bottom:1px solid #c9cdcf}
+  .konf,.proc,.kgrid{grid-template-columns:1fr}
+  .galerie{grid-template-columns:1fr 1fr;grid-template-rows:200px 140px 140px}
+  .foto:first-child{grid-column:span 2;grid-row:auto}
+  section{padding:64px 0}
+}
+@media (max-width:480px){.nav .btn span{display:none}.logo small{display:none}}
+</style>
+</head>
+<body>
+<div class="strip">Návrh nového webu pro <b>Kovářství Jakub Navrátil</b>, připravila Tereza Toufarová z Tereweb.cz</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Kovářství Jakub Navrátil, úvod">
+      <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true"><rect x="1" y="1" width="40" height="40" rx="3" fill="none" stroke="#E9B45A" stroke-width="2"/><path d="M12 30V12l9 11 9-11v18" fill="none" stroke="#E9B45A" stroke-width="2.6" stroke-linejoin="round"/><circle cx="21" cy="33" r="1.8" fill="#E2682B"/></svg>
+      <span><b>Kovářství Navrátil</b><small>UMĚLECKÉ KOVÁŘSTVÍ · BYSTŘICE</small></span>
+    </a>
+    <ul>
+      <li><a href="#sluzby">Co kovám</a></li>
+      <li><a href="#navrh">Navrhnout</a></li>
+      <li><a href="#prace">Práce</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <a class="btn" href="tel:+420776180385" aria-label="Zavolat 776 180 385">☎ <span>776 180 385</span></a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div>
+      <h1>Železo, které vydrží generace.</h1>
+      <p class="lead">Ručně kované brány, zábradlí, mříže i drobné zdobné prvky z dílny v Bystřici. Navrhuji podle vašeho domu a opravím i zemědělské nářadí.</p>
+      <div class="akce">
+        <a class="btn" href="#navrh">Navrhnout kovaný prvek</a>
+        <a class="btn ghost" href="tel:+420776180385">Zavolat kováři</a>
+      </div>
+      <p class="podpis">Jakub Navrátil, vyučený umělecký kovář a zámečník ze Školy uměleckých řemesel v Praze. Většinu prací tvořím podle vlastních výtvarných návrhů.</p>
+    </div>
+    <svg class="scena" viewBox="0 0 520 480" role="img" aria-label="Kovadlina, žhavá tyč a kladivo">
+      <defs>
+        <radialGradient id="zar" cx="50%" cy="60%" r="50%"><stop offset="0" stop-color="#E2682B" stop-opacity=".55"/><stop offset="1" stop-color="#E2682B" stop-opacity="0"/></radialGradient>
+      </defs>
+      <circle cx="260" cy="250" r="230" fill="url(#zar)"/>
+      <!-- kovadlina -->
+      <path d="M70 250h300c40 0 70-10 100-30v26c-20 22-50 34-90 38l-40 6v40h-40l-10 40h70v30H150v-30h70l-10-40h-40v-40c-50-4-90-16-100-40z" fill="#3A4045" stroke="#565e63" stroke-width="2"/>
+      <path d="M70 250h300" stroke="#7d868b" stroke-width="3"/>
+      <!-- žhavá tyč se spirálou -->
+      <g>
+        <path id="tyc" d="M120 238h170c14 0 22-8 22-18s-8-16-16-16-12 6-12 11 4 8 8 8" fill="#F08A2E" stroke="none"/>
+        <path d="M120 238h170c14 0 22-8 22-18s-8-16-16-16-12 6-12 11 4 8 8 8" fill="none" stroke="#FFD27A" stroke-width="9" stroke-linecap="round" opacity=".9" style="mix-blend-mode:screen"/>
+        <path d="M40 238h90" stroke="#4A4F53" stroke-width="9" stroke-linecap="round"/>
+      </g>
+      <!-- jiskry -->
+      <g transform="translate(300 215)">
+        <circle class="jiskra" r="3" fill="#FFD27A" style="--dx:40px;--dy:-60px"/>
+        <circle class="jiskra" r="2.5" fill="#E9B45A" style="--dx:-30px;--dy:-70px"/>
+        <circle class="jiskra" r="2" fill="#FFD27A" style="--dx:60px;--dy:-30px"/>
+        <circle class="jiskra" r="2.5" fill="#E2682B" style="--dx:10px;--dy:-90px"/>
+      </g>
+      <!-- kladivo -->
+      <g id="kladivo">
+        <rect x="320" y="110" width="150" height="14" rx="5" fill="#8a6a45" transform="rotate(0)"/>
+        <rect x="286" y="88" width="46" height="58" rx="4" fill="#565e63" stroke="#7d868b" stroke-width="2"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<section id="sluzby">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2>Co se v dílně kove</h2>
+      <p>Umělecké kovářství i poctivé zámečnictví. Užitné věci, které jsou zároveň hezké, a opravy, které vrátí nářadí do práce.</p>
+    </div>
+    <div class="sluzby">
+      <article class="sluzba">
+        <svg viewBox="0 0 54 54" aria-hidden="true"><path d="M8 48V14M46 48V14M8 20h38M8 44h38M18 20v24M27 20v24M36 20v24M27 14c-6 0-8-8-2-9s5 6 2 6" fill="none" stroke="#E2682B" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <h3>Zdobné prvky</h3>
+        <p>Ruční výroba zdobných prvků z kovu podle vlastních výtvarných návrhů nebo vašeho zadání.</p>
+        <ul><li>Brány a branky</li><li>Zábradlí a mříže</li><li>Doplňky do domu a zahrady</li></ul>
+      </article>
+      <article class="sluzba">
+        <svg viewBox="0 0 54 54" aria-hidden="true"><path d="M10 40l20-20M26 12l16 16-6 6-16-16z" fill="none" stroke="#E2682B" stroke-width="2.5" stroke-linejoin="round"/><circle cx="12" cy="42" r="4" fill="none" stroke="#E2682B" stroke-width="2.5"/></svg>
+        <h3>Užitné kování</h3>
+        <p>Kovové věci pro každodenní použití, které vydrží. Zámečnické práce na míru.</p>
+        <ul><li>Kování a úchyty</li><li>Zámečnické výrobky na zakázku</li><li>Drobné opravy kovových prvků</li></ul>
+      </article>
+      <article class="sluzba">
+        <svg viewBox="0 0 54 54" aria-hidden="true"><path d="M14 48V22M8 22h12l-2-12h-8zM34 10v14c0 4 4 6 8 6M30 48l4-24 4 24" fill="none" stroke="#E2682B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Zemědělské nářadí</h3>
+        <p>Opravy zemědělského nářadí. Přivezte, co se ohnulo, ulomilo nebo ztupilo.</p>
+        <ul><li>Opravy a překování</li><li>Navaření a vyrovnání</li><li>Domluva po telefonu</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="dilna" id="navrh">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2>Načrtněte si, co potřebujete</h2>
+      <p>Vyberte typ, motiv a přibližnou šířku. Náčrt se překreslí a s jedním kliknutím ho pošlete kováři jako poptávku. Finální návrh vždy vzniká až po domluvě.</p>
+    </div>
+    <div class="konf">
+      <div class="panel">
+        <fieldset>
+          <legend>Co chcete vykovat</legend>
+          <div class="volby" id="typ">
+            <label><input type="radio" name="typ" value="branka" checked><span>Branka</span></label>
+            <label><input type="radio" name="typ" value="zabradli"><span>Zábradlí</span></label>
+            <label><input type="radio" name="typ" value="mriz"><span>Okenní mříž</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Motiv</legend>
+          <div class="volby" id="motiv">
+            <label><input type="radio" name="motiv" value="spirala" checked><span>Spirály</span></label>
+            <label><input type="radio" name="motiv" value="hroty"><span>Hroty</span></label>
+            <label><input type="radio" name="motiv" value="listy"><span>Listy</span></label>
+            <label><input type="radio" name="motiv" value="cista"><span>Čisté pruty</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Přibližná šířka</legend>
+          <input type="range" id="sirka" min="80" max="300" step="10" value="120" aria-label="Šířka v centimetrech">
+          <div class="rozmer"><span>80 cm</span><b id="sirkaTxt">120 cm</b><span>300 cm</span></div>
+        </fieldset>
+        <fieldset>
+          <legend>Povrch</legend>
+          <div class="volby" id="povrch">
+            <label><input type="radio" name="povrch" value="cerna" checked><span>Černá</span></label>
+            <label><input type="radio" name="povrch" value="patina"><span>Patina</span></label>
+            <label><input type="radio" name="povrch" value="vosk"><span>Přírodní ve vosku</span></label>
+          </div>
+        </fieldset>
+      </div>
+      <div class="vykres">
+        <span class="stitek">Náčrt z dílny</span>
+        <svg id="nacrt" viewBox="0 0 640 380" role="img" aria-label="Živý náčrt kovaného prvku"></svg>
+        <div class="souhrn">
+          <p id="popis">Branka se spirálami, šířka asi 120 cm, černý povrch.</p>
+          <a class="btn" href="#kontakt" id="poslat">Poslat náčrt kováři</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap proc">
+    <blockquote>„Většinu svých prací vytvářím dle vlastních výtvarných návrhů.“</blockquote>
+    <dl>
+      <div><dt>Vyučený umělecký kovář</dt><dd>Obor umělecký kovář a zámečník na Škole uměleckých řemesel v Praze, roky 1989 až 1993.</dd></div>
+      <div><dt>Ručně, ne z katalogu</dt><dd>Každý kus se kove ve výhni a tvaruje na kovadlině. Proto může přesně ladit s vaším domem.</dd></div>
+      <div><dt>Dílna přímo v Bystřici</dt><dd>Provozovna v areálu firmy Netis, Bystřice 8. Návštěvu se vyplatí domluvit předem telefonem.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="prace" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h"><h2>Z dílny</h2></div>
+    <div class="galerie">
+      <div class="foto"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice"><path d="M30 200V60c0-30 40-30 40 0s-30 20-30 0M100 200V40c0-30 40-30 40 0s-30 20-30 0M170 200V60" fill="none" stroke="#E9B45A" stroke-width="5"/></svg><span>Sem přijdou fotky vašich zakázek</span></div>
+      <div class="foto"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice"><path d="M0 150h200M20 150V60l10-16 10 16v90M80 150V60l10-16 10 16v90M140 150V60l10-16 10 16v90" fill="none" stroke="#E2682B" stroke-width="5"/></svg><span>Brány a branky</span></div>
+      <div class="foto"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice"><path d="M100 180V40M100 80c-30-10-40-40-20-50M100 110c30-10 40-40 20-50" fill="none" stroke="#4E7A97" stroke-width="5"/></svg><span>Zdobné detaily</span></div>
+      <div class="foto"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice"><path d="M20 40h160v130H20zM60 40v130M100 40v130M140 40v130" fill="none" stroke="#E9B45A" stroke-width="5"/></svg><span>Mříže</span></div>
+      <div class="foto"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice"><path d="M40 170l80-80M110 60l40 40-16 16-40-40z" fill="none" stroke="#E2682B" stroke-width="5"/></svg><span>Opravy nářadí</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="wrap kgrid">
+    <div class="kinfo">
+      <h2 style="font-size:clamp(30px,3.6vw,44px)">Domluvme se u kovadliny</h2>
+      <a class="tel" href="tel:+420776180385">776 180 385</a>
+      <p><b>E-mail:</b> <a href="mailto:kovarstvinavratil@seznam.cz">kovarstvinavratil@seznam.cz</a></p>
+      <p><b>Provozovna:</b> Bystřice 8 (areál firmy Netis), 739 95 Bystřice</p>
+      <p><b>IČO:</b> 88108040</p>
+      <p>Dílna je otevřená v úterý a čtvrtek odpoledne. Jindy po telefonické domluvě.</p>
+    </div>
+    <form id="form" novalidate>
+      <label>Jméno<input name="jmeno" autocomplete="name" required></label>
+      <label>Telefon nebo e-mail<input name="kontakt" required></label>
+      <label>Co potřebujete<textarea name="zprava" id="zprava" placeholder="Např. branka ke vchodu, šířka asi 1 m"></textarea></label>
+      <button class="btn" type="submit">Odeslat poptávku</button>
+      <p class="ok" id="ok" role="status">Toto je ukázka formuláře. V hotovém webu by zpráva přišla rovnou na váš e-mail.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Kovářství Jakub Navrátil</span><span>Návrh připravila Tereweb.cz</span></div></footer>
+
+<script>
+const svg=document.getElementById('nacrt');
+const NS='http://www.w3.org/2000/svg';
+const barvy={cerna:'#1F2326',patina:'#3E5A52',vosk:'#6B5A4A'};
+const nazvy={branka:'Branka',zabradli:'Zábradlí',mriz:'Okenní mříž'};
+const motivy={spirala:'se spirálami',hroty:'s hroty',listy:'s kovanými listy',cista:'z čistých prutů'};
+const povrchy={cerna:'černý povrch',patina:'povrch s patinou',vosk:'přírodní kov ve vosku'};
+function val(n){return document.querySelector('input[name="'+n+'"]:checked').value}
+function el(t,a){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e}
+function ornament(x,y,m,c,dir){
+  const g=el('g',{fill:'none',stroke:c,'stroke-width':4,'stroke-linecap':'round'});
+  if(m==='spirala'){g.appendChild(el('path',{d:`M${x} ${y} c0 ${-26*dir} 22 ${-26*dir} 22 ${-10*dir} s-14 10 -14 2`}))}
+  if(m==='hroty'){g.appendChild(el('path',{d:`M${x-7} ${y} L${x} ${y-24*dir} L${x+7} ${y}`,fill:c}))}
+  if(m==='listy'){g.appendChild(el('path',{d:`M${x} ${y} q-16 ${-14*dir} 0 ${-30*dir} q16 ${16*dir} 0 ${30*dir}z`,fill:c,'fill-opacity':.25}))}
+  return g;
+}
+function kresli(){
+  const typ=val('typ'),m=val('motiv'),p=val('povrch'),s=+document.getElementById('sirka').value;
+  document.getElementById('sirkaTxt').textContent=s+' cm';
+  const c=barvy[p];svg.innerHTML='';
+  const w=Math.min(560,140+s*1.4),x0=(640-w)/2;
+  let top=typ==='zabradli'?170:70, bot=typ==='zabradli'?300:320;
+  if(typ==='mriz'){top=80;bot=300}
+  // zem / zeď
+  if(typ==='mriz'){svg.appendChild(el('rect',{x:x0-24,y:top-24,width:w+48,height:bot-top+48,fill:'#d9dcdc'}));svg.appendChild(el('rect',{x:x0,y:top,width:w,height:bot-top,fill:'#b9cbd6'}))}
+  else svg.appendChild(el('line',{x1:20,y1:bot+20,x2:620,y2:bot+20,stroke:'#9aa1a4','stroke-width':2,'stroke-dasharray':'6 6'}));
+  const g=el('g',{stroke:c,'stroke-width':6,fill:'none','stroke-linecap':'round'});
+  g.appendChild(el('rect',{x:x0,y:top,width:w,height:bot-top}));
+  if(typ==='branka'){g.appendChild(el('path',{d:`M${x0} ${top} Q${x0+w/2} ${top-46} ${x0+w} ${top}`}))}
+  const n=Math.max(4,Math.round(w/46)),step=w/n;
+  for(let i=1;i<n;i++){const x=x0+i*step;g.appendChild(el('line',{x1:x,y1:top,x2:x,y2:bot,'stroke-width':4}))}
+  g.appendChild(el('line',{x1:x0,y1:top+(bot-top)*.22,x2:x0+w,y2:top+(bot-top)*.22,'stroke-width':4}));
+  svg.appendChild(g);
+  if(m!=='cista'){
+    for(let i=1;i<n;i++){const x=x0+i*step;
+      if(m==='hroty'&&typ!=='mriz') svg.appendChild(ornament(x,top,m,c,1));
+      else if(i%2===1) svg.appendChild(ornament(x,top+(bot-top)*.22+ (m==='spirala'?40:44),m,c,1));
+    }
+  }
+  if(typ!=='mriz'){
+    svg.appendChild(el('rect',{x:x0-16,y:top-20,width:16,height:bot-top+40,fill:c}));
+    svg.appendChild(el('rect',{x:x0+w,y:top-20,width:16,height:bot-top+40,fill:c}));
+  }
+  // kóta
+  const k=el('g',{stroke:'#E2682B','stroke-width':1.5});
+  k.appendChild(el('line',{x1:x0,y1:bot+44,x2:x0+w,y2:bot+44}));
+  k.appendChild(el('line',{x1:x0,y1:bot+36,x2:x0,y2:bot+52}));k.appendChild(el('line',{x1:x0+w,y1:bot+36,x2:x0+w,y2:bot+52}));
+  svg.appendChild(k);
+  const t=el('text',{x:320,y:bot+40,'text-anchor':'middle','font-size':15,fill:'#E2682B','font-family':'Instrument Sans'});t.textContent='≈ '+s+' cm';svg.appendChild(t);
+  const txt=`${nazvy[typ]} ${motivy[m]}, šířka asi ${s} cm, ${povrchy[p]}.`;
+  document.getElementById('popis').textContent=txt;
+  return txt;
+}
+document.querySelectorAll('.panel input').forEach(i=>i.addEventListener('input',kresli));
+kresli();
+document.getElementById('poslat').addEventListener('click',()=>{document.getElementById('zprava').value='Dobrý den, zajímá mě: '+kresli()+' '});
+document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();document.getElementById('ok').style.display='block'});
+</script>
+</body>
+</html>

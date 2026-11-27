@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Instalatérství Klus – Bystřice (návrh webu)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&family=Sora:wght@500;600;700;800&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+:root{
+  --med:#B8642C;        /* měděné trubky */
+  --med-svetla:#E59A5E;
+  --petrol:#0F3B44;     /* hluboká voda */
+  --mata:#DDEEE9;       /* chladná voda */
+  --plamen:#E2412F;     /* topení, plamen kotle */
+  --bila:#F7FAF9;
+  --text:#14262B;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Lexend,system-ui,sans-serif;font-weight:300;color:var(--text);background:var(--bila);line-height:1.65;font-size:17px}
+h1,h2,h3{font-family:Sora,sans-serif;line-height:1.1;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--plamen);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.strip{background:var(--petrol);color:var(--mata);font-size:14px;text-align:center;padding:8px 14px}
+.nav{background:var(--bila);border-bottom:1px solid #d2e2de;position:sticky;top:0;z-index:20}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.logo{display:flex;gap:10px;align-items:center;text-decoration:none;font-family:Sora;font-weight:800;font-size:20px;color:var(--petrol)}
+.logo em{font-style:normal;color:var(--med)}
+.nav nav{display:flex;gap:26px;font-size:15px}
+.nav nav a{text-decoration:none}
+.nav nav a:hover{color:var(--med)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--med);color:#fff;font:inherit;font-weight:500;text-decoration:none;padding:12px 20px;border-radius:40px;border:0;cursor:pointer}
+.btn:hover{background:#9c5222}
+.btn.alt{background:var(--petrol)}
+.btn.out{background:transparent;color:var(--petrol);border:1.5px solid var(--petrol)}
+/* HERO asymetrická mřížka s potrubím */
+.hero{position:relative;overflow:hidden;padding:70px 0 80px}
+.hero .g{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;position:relative;z-index:2}
+.hero h1{grid-column:1/9;font-size:clamp(42px,6.4vw,86px);font-weight:800;color:var(--petrol)}
+.hero .txt{grid-column:2/7;margin-top:26px}
+.hero .txt p{font-size:19px;margin-bottom:26px}
+.hero .karta{grid-column:8/13;grid-row:2/4;align-self:end;background:var(--petrol);color:var(--mata);border-radius:22px;padding:26px}
+.karta h3{font-size:18px;color:#fff;margin-bottom:12px}
+.karta ul{list-style:none;display:grid;gap:8px;font-size:15px}
+.karta li{display:flex;justify-content:space-between;border-bottom:1px solid #2a5761;padding-bottom:6px}
+.karta li b{font-weight:500;color:#fff}
+.akce{display:flex;gap:12px;flex-wrap:wrap}
+.potrubi{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+.potrubi path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.trubka{stroke:var(--med);stroke-width:14;stroke-dasharray:2400;stroke-dashoffset:2400;animation:tece 2.6s ease-out forwards}
+.trubka.t2{stroke:var(--plamen);stroke-width:10;animation-delay:.5s;opacity:.85}
+.trubka.t3{stroke:#7FB6AE;stroke-width:10;animation-delay:.9s}
+@keyframes tece{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.trubka{animation:none;stroke-dashoffset:0}}
+/* služby jako potrubní trasa */
+section{padding:84px 0}
+.nadpis{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:40px;flex-wrap:wrap}
+.nadpis h2{font-size:clamp(30px,4vw,50px);color:var(--petrol);max-width:620px}
+.nadpis p{max-width:380px;color:#3f5a60}
+.trasa{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.trasa::before{content:"";position:absolute;left:0;right:0;top:34px;height:8px;background:var(--med);border-radius:8px}
+.uzel{position:relative;padding:0 14px 0 0}
+.uzel .koleno{width:76px;height:76px;border-radius:50%;background:var(--bila);border:8px solid var(--med);display:grid;place-items:center;position:relative;z-index:1;margin-bottom:18px}
+.uzel svg{width:32px;height:32px}
+.uzel h3{font-size:19px;margin-bottom:6px;color:var(--petrol)}
+.uzel p{font-size:15px;color:#3f5a60}
+/* DIAGNOSTIKA */
+.diag{background:var(--petrol);color:var(--mata)}
+.diag .nadpis h2{color:#fff}
+.diag .nadpis p{color:#a9c7c2}
+.box{background:#0a2e35;border-radius:26px;padding:34px;display:grid;grid-template-columns:220px 1fr;gap:34px;min-height:360px}
+.kroky{list-style:none;display:grid;gap:12px;align-content:start}
+.kroky li{display:flex;gap:12px;align-items:center;color:#7fa4a0;font-size:15px}
+.kroky li span{width:30px;height:30px;border-radius:50%;border:2px solid currentColor;display:grid;place-items:center;font-weight:500;font-size:14px;flex:none}
+.kroky li.on{color:#fff}
+.kroky li.on span{background:var(--med);border-color:var(--med)}
+.kroky li.hot{color:var(--med-svetla)}
+.otazka h3{font-size:clamp(22px,2.6vw,30px);color:#fff;margin-bottom:20px}
+.moznosti{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
+.moznosti button{font:inherit;text-align:left;background:#123f48;border:1.5px solid #2a5761;color:#fff;border-radius:16px;padding:16px;cursor:pointer;display:flex;gap:12px;align-items:center;transition:.15s}
+.moznosti button:hover{border-color:var(--med-svetla);background:#16505b}
+.moznosti button svg{width:30px;height:30px;flex:none}
+.vysledek{display:none}
+.vysledek.on{display:block}
+.vysledek p{margin:10px 0 22px;max-width:560px;color:#cfe3df}
+.vysledek .tag{display:inline-block;background:var(--plamen);color:#fff;border-radius:30px;padding:4px 12px;font-size:13px;font-weight:500}
+.vysledek .tag.klid{background:#3c8d7f}
+.zpet{background:none;border:0;color:#a9c7c2;font:inherit;text-decoration:underline;cursor:pointer;margin-top:16px}
+/* recenze + postup */
+.dva{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.postup{counter-reset:k;list-style:none;display:grid;gap:22px}
+.postup li{counter-increment:k;padding-left:58px;position:relative}
+.postup li::before{content:counter(k);position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;background:var(--mata);color:var(--petrol);font-family:Sora;font-weight:700;display:grid;place-items:center}
+.postup b{display:block;font-family:Sora;font-weight:600;color:var(--petrol)}
+.citace{background:var(--mata);border-radius:24px;padding:30px;display:grid;gap:22px;align-content:start}
+.citace blockquote{font-size:18px;font-weight:400;color:var(--petrol)}
+.citace cite{display:block;font-style:normal;font-size:14px;color:#3f5a60;margin-top:6px}
+.citace small{font-size:13px;color:#3f5a60}
+/* galerie */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gal div{aspect-ratio:3/4;border-radius:20px;background:var(--mata);position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:16px;font-size:14px;color:var(--petrol)}
+.gal div:nth-child(2){background:#f3dccb}
+.gal div:nth-child(3){background:var(--petrol);color:var(--mata)}
+.gal svg{position:absolute;top:0;left:0;width:100%;height:75%}
+.gal span{position:relative}
+/* kontakt */
+.kontakt .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:50px;align-items:start}
+.kontakt h2{font-size:clamp(30px,4vw,48px);color:var(--petrol)}
+.big{display:block;font-family:Sora;font-weight:800;font-size:clamp(30px,4vw,46px);color:var(--med);text-decoration:none;margin:14px 0 20px}
+.kontakt dl{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-size:16px}
+.kontakt dt{font-weight:500}
+form{background:#fff;border:1.5px solid #d2e2de;border-radius:24px;padding:28px;display:grid;gap:14px}
+label{display:grid;gap:6px;font-size:14px;font-weight:500}
+input,textarea,select{font:inherit;font-weight:300;padding:12px 14px;border:1.5px solid #c3d6d2;border-radius:12px;background:var(--bila)}
+textarea{min-height:110px}
+.ok{display:none;background:var(--mata);padding:12px 14px;border-radius:12px;font-size:15px}
+footer{border-top:1px solid #d2e2de;padding:24px 0;font-size:14px;color:#3f5a60}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media (max-width:920px){
+  .nav nav{display:none}
+  .hero .g{grid-template-columns:1fr}
+  .hero h1,.hero .txt,.hero .karta{grid-column:1/-1;grid-row:auto}
+  .hero .karta{margin-top:20px}
+  .potrubi{display:none}
+  .trasa{grid-template-columns:1fr;gap:22px}
+  .trasa::before{left:34px;right:auto;top:0;bottom:0;width:8px;height:auto}
+  .uzel{display:grid;grid-template-columns:76px 1fr;gap:0 18px}
+  .uzel .koleno{grid-row:span 2;margin:0}
+  .box{grid-template-columns:1fr;padding:22px}
+  .kroky{grid-auto-flow:column;grid-auto-columns:max-content;gap:16px;overflow-x:auto}
+  .kroky li em{display:none}
+  .dva,.kontakt .wrap{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr}
+  section{padding:62px 0}
+}
+@media (max-width:420px){.nav .btn span{display:none}}
+</style>
+</head>
+<body>
+<div class="strip">Návrh nového webu pro <b>Instalatérství Klus</b>, připravila Tereza Toufarová z Tereweb.cz</div>
+<header class="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Instalatérství Klus, úvod">
+      <svg width="38" height="38" viewBox="0 0 38 38" aria-hidden="true"><path d="M6 32V16a10 10 0 0 1 10-10h16" fill="none" stroke="#B8642C" stroke-width="6" stroke-linecap="round"/><path d="M19 22c0 4-3 6-3 9a3 3 0 0 0 6 0c0-3-3-5-3-9z" fill="#E2412F"/></svg>
+      <span>Klus<em>.</em></span>
+    </a>
+    <nav aria-label="Hlavní"><a href="#sluzby">Služby</a><a href="#porucha">Co se děje?</a><a href="#postup">Jak pracuji</a><a href="#kontakt">Kontakt</a></nav>
+    <a class="btn" href="tel:+420777695439">☎ <span>777 695 439</span></a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <svg class="potrubi" viewBox="0 0 1400 700" preserveAspectRatio="none" aria-hidden="true">
+    <path class="trubka" d="M1420 120H1150a60 60 0 0 0-60 60v300a60 60 0 0 0 60 60h300"/>
+    <path class="trubka t2" d="M1420 170H1210a40 40 0 0 0-40 40v230a40 40 0 0 0 40 40h240"/>
+    <path class="trubka t3" d="M-20 660H520a40 40 0 0 0 40-40v-20"/>
+  </svg>
+  <div class="wrap g">
+    <h1>Voda, topení a kotle v Bystřici a okolí.</h1>
+    <div class="txt">
+      <p>Rozvody vody a kanalizace, topení, plynové kotle i kotle na tuhá paliva. Montáž od jednoho instalatéra, se kterým se domluvíte napřímo.</p>
+      <div class="akce"><a class="btn" href="#porucha">Popsat, co se děje</a><a class="btn out" href="tel:+420777695439">Zavolat</a></div>
+    </div>
+    <aside class="karta" aria-label="Kdy mě zastihnete">
+      <h3>Kdy mě zastihnete</h3>
+      <ul>
+        <li>Pondělí až pátek <b>7:00 až 16:00</b></li>
+        <li>Sobota a neděle <b>zavřeno</b></li>
+        <li>Adresa <b>Bystřice 54</b></li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section id="sluzby" style="padding-top:30px">
+  <div class="wrap">
+    <div class="nadpis"><h2>Celá trasa od přípojky po radiátor</h2><p>Instalatérské a topenářské práce pro rodinné domy, byty i menší provozovny.</p></div>
+    <div class="trasa">
+      <div class="uzel"><div class="koleno"><svg viewBox="0 0 32 32"><path d="M16 4c0 7-8 11-8 18a8 8 0 0 0 16 0c0-7-8-11-8-18z" fill="#7FB6AE"/></svg></div><h3>Rozvody vody</h3><p>Nové rozvody i rekonstrukce v koupelně a kuchyni.</p></div>
+      <div class="uzel"><div class="koleno"><svg viewBox="0 0 32 32"><path d="M4 10h14a6 6 0 0 1 6 6v12" fill="none" stroke="#0F3B44" stroke-width="4"/></svg></div><h3>Kanalizace</h3><p>Montáž odpadů a kanalizačního potrubí.</p></div>
+      <div class="uzel"><div class="koleno"><svg viewBox="0 0 32 32"><path d="M6 8v18M12 8v18M18 8v18M24 8v18M4 12h24M4 22h24" stroke="#B8642C" stroke-width="3"/></svg></div><h3>Topení</h3><p>Rozvody topení, radiátory, podlahové topení.</p></div>
+      <div class="uzel"><div class="koleno"><svg viewBox="0 0 32 32"><rect x="7" y="4" width="18" height="24" rx="3" fill="none" stroke="#0F3B44" stroke-width="3"/><path d="M16 12c0 3-3 4-3 7a3 3 0 0 0 6 0c0-3-3-4-3-7z" fill="#E2412F"/></svg></div><h3>Plynové kotle</h3><p>Montáž a výměna plynových kotlů.</p></div>
+      <div class="uzel"><div class="koleno"><svg viewBox="0 0 32 32"><rect x="6" y="6" width="20" height="22" rx="2" fill="none" stroke="#0F3B44" stroke-width="3"/><path d="M10 20h12M12 24h8" stroke="#B8642C" stroke-width="3"/></svg></div><h3>Kotle na tuhá paliva</h3><p>Montáž kotlů na dřevo a uhlí a jejich napojení.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="diag" id="porucha">
+  <div class="wrap">
+    <div class="nadpis"><h2>Co se u vás děje?</h2><p>Tři kliknutí a víte, s čím zavolat. Odpověď se rovnou předvyplní do poptávky.</p></div>
+    <div class="box">
+      <ol class="kroky" aria-label="Postup">
+        <li class="on" data-k="1"><span>1</span><em>Kde to je</em></li>
+        <li data-k="2"><span>2</span><em>Co přesně</em></li>
+        <li data-k="3"><span>3</span><em>Jak to spěchá</em></li>
+      </ol>
+      <div>
+        <div class="otazka" id="otazka" aria-live="polite"></div>
+        <div class="vysledek" id="vysledek" aria-live="polite">
+          <span class="tag" id="tag">Spěchá</span>
+          <h3 id="vTitul" style="font-size:clamp(22px,2.6vw,30px);color:#fff;margin-top:14px"></h3>
+          <p id="vText"></p>
+          <div class="akce"><a class="btn" href="tel:+420777695439">☎ Zavolat 777 695 439</a><a class="btn out" style="color:#fff;border-color:#fff" href="#kontakt" id="doFormu">Poslat jako poptávku</a></div>
+          <button class="zpet" id="znovu" type="button">Začít znovu</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="postup">
+  <div class="wrap dva">
+    <div>
+      <div class="nadpis" style="margin-bottom:26px"><h2>Jak pracuji</h2></div>
+      <ol class="postup">
+        <li><b>Zavoláte nebo napíšete</b>Popíšete, co potřebujete. Fotka od vás hodně pomůže.</li>
+        <li><b>Přijedu se podívat</b>Na místě domluvíme rozsah, materiál a termín.</li>
+        <li><b>Montáž</b>Rozvody, kotel nebo topení zapojím a vyzkouším.</li>
+        <li><b>Předání</b>Ukážu, jak vše funguje, a nechám po sobě pořádek.</li>
+      </ol>
+    </div>
+    <div class="citace">
+      <div><blockquote>„Vřele doporučuji. Profesionální přístup a skvěle odvedená práce. V rodinném domku výměna plynového kotle a zapojení podlahového topení.“</blockquote><cite>Jackbocek, leden 2022</cite></div>
+      <div><blockquote>„Dobrá a rychlá kvalitní práce, doporučuji všem.“</blockquote><cite>Josef Suchy, leden 2022</cite></div>
+      <small>Hodnocení zákazníků z Firmy.cz</small>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="nadpis"><h2>Hotové zakázky</h2></div>
+    <div class="gal">
+      <div><svg viewBox="0 0 100 100"><path d="M20 100V40a20 20 0 0 1 20-20h60" fill="none" stroke="#B8642C" stroke-width="6"/></svg><span>Sem přijdou fotky vašich zakázek</span></div>
+      <div><svg viewBox="0 0 100 100"><rect x="30" y="20" width="40" height="56" rx="6" fill="none" stroke="#0F3B44" stroke-width="5"/><path d="M50 40c0 6-6 8-6 14a6 6 0 0 0 12 0c0-6-6-8-6-14z" fill="#E2412F"/></svg><span>Výměna kotle</span></div>
+      <div><svg viewBox="0 0 100 100"><path d="M10 70h80M10 60c10-10 20 10 30 0s20 10 30 0 20 10 30 0" fill="none" stroke="#7FB6AE" stroke-width="5"/></svg><span>Podlahové topení</span></div>
+      <div><svg viewBox="0 0 100 100"><path d="M20 30h60v10H20zM30 40v40M70 40v40" fill="none" stroke="#0F3B44" stroke-width="5"/></svg><span>Koupelna</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt" style="background:#fff">
+  <div class="wrap">
+    <div>
+      <h2>Ozvěte se</h2>
+      <a class="big" href="tel:+420777695439">777 695 439</a>
+      <dl>
+        <dt>E-mail</dt><dd><a href="mailto:klus.jakub@seznam.cz">klus.jakub@seznam.cz</a></dd>
+        <dt>Adresa</dt><dd>Bystřice 54, 739 95</dd>
+        <dt>Pracovní doba</dt><dd>Po až Pá 7:00 až 16:00</dd>
+        <dt>IČO</dt><dd>73098582</dd>
+      </dl>
+    </div>
+    <form id="form">
+      <label>Jméno<input name="jmeno" autocomplete="name"></label>
+      <label>Telefon<input name="tel" type="tel" autocomplete="tel"></label>
+      <label>Obec<input name="obec" placeholder="Bystřice, Vendryně, Třinec…"></label>
+      <label>Co potřebujete<textarea id="zprava" name="zprava"></textarea></label>
+      <button class="btn alt" type="submit">Odeslat poptávku</button>
+      <p class="ok" id="ok" role="status">Toto je ukázka formuláře. V hotovém webu by zpráva přišla rovnou na váš e-mail.</p>
+    </form>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><span>© 2026 Instalatérství Klus</span><span>Návrh připravila Tereweb.cz</span></div></footer>
+
+<script>
+const ik={
+  voda:'<svg viewBox="0 0 32 32"><path d="M16 4c0 7-8 11-8 18a8 8 0 0 0 16 0c0-7-8-11-8-18z" fill="#7FB6AE"/></svg>',
+  top:'<svg viewBox="0 0 32 32"><path d="M6 8v18M12 8v18M18 8v18M24 8v18" stroke="#E59A5E" stroke-width="3"/></svg>',
+  kotel:'<svg viewBox="0 0 32 32"><path d="M16 6c0 6-7 9-7 15a7 7 0 0 0 14 0c0-6-7-9-7-15z" fill="#E2412F"/></svg>',
+  odpad:'<svg viewBox="0 0 32 32"><path d="M4 10h14a6 6 0 0 1 6 6v12" fill="none" stroke="#DDEEE9" stroke-width="4"/></svg>',
+  hod:'<svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11" fill="none" stroke="#DDEEE9" stroke-width="3"/><path d="M16 9v8l5 3" stroke="#E59A5E" stroke-width="3" fill="none"/></svg>'
+};
+const strom={
+  1:{q:'Kde to je?',o:[['voda','Voda a baterie','voda'],['top','Topení a radiátory','top'],['kotel','Kotel','kotel'],['odpad','Odpad a kanalizace','odpad']]},
+  2:{voda:['Kape nebo teče','Nová koupelna či kuchyně','Nový rozvod vody'],top:['Radiátor netopí','Chci podlahové topení','Nové rozvody topení'],kotel:['Výměna plynového kotle','Kotel na tuhá paliva','Kotel nefunguje správně'],odpad:['Ucpaný nebo zapáchá','Nový odpad','Přípojka kanalizace']},
+  3:{q:'Jak to spěchá?',o:[['kotel','Teče to nebo nemáme teplo','hned'],['hod','Do pár týdnů','brzy'],['top','Plánujeme, máme čas','plan']]}
+};
+const nazev={voda:'Voda',top:'Topení',kotel:'Kotel',odpad:'Odpad a kanalizace'};
+let st={};
+const Q=document.getElementById('otazka'),V=document.getElementById('vysledek');
+function kroky(k){document.querySelectorAll('.kroky li').forEach(l=>{l.classList.toggle('on',+l.dataset.k<=k)})}
+function tlacitka(list,cb){const d=document.createElement('div');d.className='moznosti';list.forEach(([i,t,v])=>{const b=document.createElement('button');b.type='button';b.innerHTML=ik[i]+'<span>'+t+'</span>';b.onclick=()=>cb(v,t);d.appendChild(b)});return d}
+function krok1(){st={};kroky(1);V.classList.remove('on');Q.style.display='block';Q.innerHTML='<h3>'+strom[1].q+'</h3>';Q.appendChild(tlacitka(strom[1].o,(v)=>{st.oblast=v;krok2()}));}
+function krok2(){kroky(2);Q.innerHTML='<h3>'+nazev[st.oblast]+': co přesně?</h3>';Q.appendChild(tlacitka(strom[2][st.oblast].map(t=>[st.oblast,t,t]),(v)=>{st.co=v;krok3()}));}
+function krok3(){kroky(3);Q.innerHTML='<h3>'+strom[3].q+'</h3>';Q.appendChild(tlacitka(strom[3].o,(v,t)=>{st.kdy=v;st.kdyT=t;vysledek()}));}
+function vysledek(){
+  Q.style.display='none';V.classList.add('on');
+  const tag=document.getElementById('tag');
+  if(st.kdy==='hned'){tag.textContent='Spěchá';tag.className='tag';document.getElementById('vTitul').textContent='Zavolejte rovnou, ať se domluvíme co nejdřív.';document.getElementById('vText').textContent='U úniku vody nejdřív zavřete hlavní uzávěr. Pak volejte v pracovní době Po až Pá 7:00 až 16:00.';}
+  else{tag.textContent=st.kdy==='brzy'?'Do pár týdnů':'Plánovaná práce';tag.className='tag klid';document.getElementById('vTitul').textContent='Pošlete poptávku, ozvu se s termínem.';document.getElementById('vText').textContent='Přidejte do zprávy pár fotek nebo rozměry místnosti. Na místě pak domluvíme rozsah a materiál.';}
+}
+document.getElementById('znovu').onclick=krok1;
+document.getElementById('doFormu').onclick=()=>{document.getElementById('zprava').value=`${nazev[st.oblast]}: ${st.co}. Termín: ${st.kdyT.toLowerCase()}.`};
+krok1();
+document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();document.getElementById('ok').style.display='block'});
+</script>
+</body>
+</html>
